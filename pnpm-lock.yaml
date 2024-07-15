@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       twikoo-vercel:
-        specifier: ^1.6.36
-        version: 1.6.36
+        specifier: ^1.6.38
+        version: 1.6.38
 
 packages:
 
@@ -1101,11 +1101,11 @@ packages:
   tweetnacl@0.14.5:
     resolution: {integrity: sha512-KXXFFdAbFXY4geFIwoyNK+f5Z1b7swfXABfL7HXCmoIWMKU3dmS26672A4EeQtDzLKy7SXmfBu51JolvEKwtGA==}
 
-  twikoo-func@1.6.36:
-    resolution: {integrity: sha512-AMDQlYP3KA1imdCAg/nlGcwPlgjl1MaK9O583g9COPTs/LmSZPCRvk/d+OHb2gU86NBdkbY7P6OHh937vqLUfw==}
+  twikoo-func@1.6.38:
+    resolution: {integrity: sha512-bYE90YkwS5asGYoBcXT1ou3QiPpPi3hmjc/JGFPy4qTciupapzcxZGOg46He2TT81awPH2QFPV2UdqxALNFmsA==}
 
-  twikoo-vercel@1.6.36:
-    resolution: {integrity: sha512-JdWuysOX2xdW7C3TakVKLyD/+yioQNOMCGn0+GpA3YRP1SsXVw3uk1VpNQjmz9IByNzOVsSsmnDD5/NyS1nKbg==}
+  twikoo-vercel@1.6.38:
+    resolution: {integrity: sha512-SLQ8QAtBSllHcUSGFAu4rzcym8mQKtbL3ZDsq3ipXzqilu6HP9fU/Hnxaq4thBj9c4vd2rk1fLb1+0qEkso1RQ==}
 
   undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
@@ -2404,7 +2404,7 @@ snapshots:
 
   tweetnacl@0.14.5: {}
 
-  twikoo-func@1.6.36:
+  twikoo-func@1.6.38:
     dependencies:
       '@cloudbase/manager-node': 3.12.1
       '@cloudbase/node-sdk': 2.11.0
@@ -2431,11 +2431,11 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  twikoo-vercel@1.6.36:
+  twikoo-vercel@1.6.38:
     dependencies:
       get-user-ip: 1.0.3
       mongodb: 6.7.0
-      twikoo-func: 1.6.36
+      twikoo-func: 1.6.38
       uuid: 8.3.2
     transitivePeerDependencies:
       - '@aws-sdk/credential-providers'
