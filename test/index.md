@@ -3,13 +3,12 @@
 layout: home
 
 hero:
-  name: "My Awesome Project"
-  text: "A VitePress Site"
-  tagline: My great project tagline
-  image:
-    src: https://ninja-squad.com/public/img/xvue-logo.png.pagespeed.ic.eVKfjlFdB4.png
+  name: "tmfe"
+  text: "vitepress beautification module"
+  # tagline: vitepress beautification module
+  image: ./avatar.png
   prelink:
-    title: '🎉 站点迁移至 <u>https://doc.theojs.cn</u><div style="text-align: right; font-weight: bold;"><i class="fas fa-star" style="color: #FFD43B;"></i>Ctrl+D 快速收藏网址</div>'
+    title: '🎉 站点迁移至 <u>https://xxxxx</u><div style="text-align: right; font-weight: bold;"><i class="fas fa-star" style="color: #FFD43B;"></i>Ctrl+D 快速收藏网址</div>'
     link: https://doc.theojs.cn/
     target: _blank
   actions:

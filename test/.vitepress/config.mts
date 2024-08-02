@@ -1,10 +1,12 @@
 import { defineConfig } from 'vitepress'
 
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "My Awesome Project",
-  description: "A VitePress Site",
+  title: "tmfe",
+  description: "vitepress beautification module",
+  cleanUrls: true,
+  head:[['link', { rel: 'icon', type: 'icon', href: '/avatar.png' }],],
   themeConfig: {
+    logo: { src: '/avatar.png', width: 24, height: 24 },
     nav: [
       { text: 'Home', link: '/' },
       { text: 'test', link: '/test' }
