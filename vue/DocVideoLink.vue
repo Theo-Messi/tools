@@ -1,24 +1,11 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
+import { videoDomains } from './videoDomains'
 
 const props = defineProps<{
   href: string
   name: string
 }>()
-
-const videoDomains = [
-  'https://i.theojs.cn/',
-  'https://www.youtube.com/',
-  'https://youtu.be',
-  '//player.bilibili.com/',
-  'https://v.youku.com/',
-  'https://www.iqiyi.com/',
-  'https://www.bilibili.com/',
-  'https://www.tudou.com/',
-  'https://www.mgtv.com/',
-  'https://www.youku.com/',
-  'https://v.qq.com/'
-]
 
 const isVideo = computed(() => {
   return videoDomains.some((domain) => props.href.startsWith(domain))
