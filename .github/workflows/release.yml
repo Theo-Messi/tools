@@ -6,7 +6,7 @@ permissions:
 on:
   push:
     tags:
-      - 'v*'
+      - 'tmfe@v*'
 
 jobs:
   release:
