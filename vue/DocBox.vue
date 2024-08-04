@@ -1,6 +1,20 @@
 <script lang="ts">
+/**
+ * 导入 Vue 的 defineComponent 方法，用于定义组件。
+ */
 import { defineComponent } from 'vue'
 
+/**
+ * Item 接口定义了一个链接项的结构。
+ * @interface Item
+ * @property {string} link - 链接地址。
+ * @property {string} icon - 图标的 URL 或类名。
+ * @property {string} name - 名称。
+ * @property {string} [tag] - 标签（可选）。
+ * @property {string} [light] - 浅色模式下的图标 URL（可选）。
+ * @property {string} [dark] - 深色模式下的图标 URL（可选）。
+ * @property {string} [color] - 图标的颜色（可选）。
+ */
 interface Item {
   link: string
   icon: string
@@ -11,15 +25,28 @@ interface Item {
   color?: string
 }
 
+/**
+ * 定义并导出 Box 组件。
+ */
 export default defineComponent({
   name: 'Box',
   props: {
+    /**
+     * items 属性，类型为 Item 数组，且为必需属性。
+     * @type {Array<Item>}
+     */
     items: {
       type: Array as () => Item[],
       required: true
     }
   },
   methods: {
+    /**
+     * 检查给定的 URL 是否为图片链接。
+     *
+     * @param {string} url - 要检查的 URL。
+     * @returns {boolean} - 如果 URL 是图片链接则返回 true，否则返回 false。
+     */
     isImage(url: string): boolean {
       return (
         typeof url === 'string' &&

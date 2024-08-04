@@ -2,17 +2,39 @@
 import { computed, ref } from 'vue'
 import { videoDomains } from './videoDomains'
 
+/**
+ * 定义组件的 props 类型。
+ * @typedef {Object} Props
+ * @property {string} href - 视频链接或目标 URL。
+ * @property {string} name - 按钮或链接的显示名称。
+ */
+
+/**
+ * 获取组件的 props。
+ * @type {Props}
+ */
 const props = defineProps<{
   href: string
   name: string
 }>()
 
+/**
+ * 计算属性，判断 `href` 是否属于视频域名。
+ * @type {ComputedRef<boolean>}
+ */
 const isVideo = computed(() => {
   return videoDomains.some((domain) => props.href.startsWith(domain))
 })
 
+/**
+ * 视频播放状态，初始为关闭状态。
+ * @type {Ref<boolean>}
+ */
 const isVideoOpen = ref(false)
 
+/**
+ * 切换视频播放状态为打开。
+ */
 const toggleVideo = () => {
   isVideoOpen.value = true
 }
