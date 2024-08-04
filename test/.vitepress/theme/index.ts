@@ -18,7 +18,7 @@ export default {
       // 'aside-ads-before': () => h(DocAsideLogo)
     })
   },
-  enhanceApp: ({ app }, ctx) => {
+  enhanceApp: ({ app }) => {
     app.component('Box', DocBox)
     app.component('Links', DocLinks)
     app.component('BoxCube', DocBoxCube)
