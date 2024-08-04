@@ -112,7 +112,7 @@ export default defineComponent({
 
 .box {
   position: relative;
-  border: 1px solid var(--vp-c-bg-alt);
+  border: 1px dotted var(--vp-c-bg-alt);
   background-color: var(--vp-c-bg-alt);
   padding: 0.8rem 1.6rem;
   border-radius: 0.8rem;
@@ -156,8 +156,7 @@ export default defineComponent({
   color: var(--vp-c-brand-text);
   font-size: 0.625rem;
   padding: 0.25rem 0.5rem;
-  border-top-right-radius: 0.7rem;
-  border-bottom-left-radius: 0.7rem;
+  border-radius: 0 0.7rem 0 0.7rem;
   z-index: 1;
 }
 

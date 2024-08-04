@@ -33,111 +33,112 @@ const isVideo = computed(() => {
 const isVideoOpen = ref(false)
 
 /**
- * 切换视频播放状态为打开。
+ * 切换视频播放状态。
  */
 const toggleVideo = () => {
-  isVideoOpen.value = true
+  isVideoOpen.value = !isVideoOpen.value
 }
 </script>
 
 <template>
-  <div class="mp">
-    <template v-if="isVideo">
-      <template v-if="isVideoOpen">
-        <div class="video-embed">
-          <div style="padding: 56.25% 0 0 0; position: relative">
-            <iframe
-              loading="lazy"
-              title="Gumlet video player"
-              :src="props.href"
-              style="
-                border: none;
-                position: absolute;
-                top: 0;
-                left: 0;
-                height: 100%;
-                width: 100%;
-              "
-              allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;"
-              frameborder="0"
-              allowfullscreen
-            >
-            </iframe>
-          </div>
-        </div>
-      </template>
-      <template v-else>
-        <button class="cta" :title="props.name" @click="toggleVideo">
-          <div class="name">{{ props.name }}</div>
-          <i class="fas fa-circle-play fa-2xl"></i>
-        </button>
-      </template>
-    </template>
-    <template v-else>
-      <a
-        :href="props.href"
-        target="_blank"
-        rel="noopener"
-        :title="props.name"
-        class="cta"
-      >
+  <div class="mp" @click="toggleVideo">
+    <div class="cta" :title="props.name">
+      <div class="name-container">
+        <i v-if="isVideo" class="fas fa-video"></i>
         <div class="name">{{ props.name }}</div>
-      </a>
-    </template>
+      </div>
+      <i v-if="isVideo && isVideoOpen" class="fas fa-chevron-up"></i>
+      <i v-else class="fas fa-chevron-down"></i>
+    </div>
+    <transition name="slide">
+      <div v-if="isVideo && isVideoOpen" class="video-embed">
+        <div class="iframe-container">
+          <iframe
+            loading="lazy"
+            title="Gumlet video player"
+            :src="props.href"
+            class="video-iframe"
+            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </transition>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .mp {
-  margin-top: 20px;
+  margin-top: 1rem;
+  cursor: pointer;
+  position: relative;
+  padding: 1rem 1.25rem;
+  border-radius: 0.8rem;
+  transition: border-color 0.3s;
+  border: 1px dotted var(--vp-c-bg-alt);
+  background-color: var(--vp-c-bg-alt);
 
-  &:has(.cta) {
-    position: relative;
-    transition: border-color 0.3s;
-    padding: 1rem 1.25rem;
-    height: 3.5rem;
-    border-radius: 0.8rem;
-    border: 1px solid var(--vp-c-bg-alt);
-    background-color: var(--vp-c-bg-alt);
+  &:hover {
+    border-color: var(--vp-c-brand-1);
+  }
 
-    &:hover {
-      border-color: var(--vp-c-brand-1);
+  .cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none !important;
+
+    .name-container {
+      display: flex;
+      align-items: center;
+
+      .fa-video {
+        margin-right: 0.5rem;
+        color: var(--vp-c-brand-1);
+      }
+
+      .name {
+        font-weight: 600;
+        transition: border-color 0.3s;
+        color: var(--vp-c-brand-1);
+      }
+    }
+
+    .fa-chevron-up,
+    .fa-chevron-down {
+      color: var(--vp-c-brand-1);
+    }
+  }
+
+  .video-embed {
+    padding-top: 1rem;
+
+    .iframe-container {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+
+      .video-iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 0.8rem;
+      }
     }
   }
 }
 
-.name {
-  font-size: 0.9rem;
-  font-weight: 550;
-  transition: border-color 0.3s;
-  color: var(--vp-c-brand-1);
+.slide-enter-active,
+.slide-leave-active {
+  transition: max-height 0.5s ease-in-out;
 }
-
-.cta {
-  font-size: 0.9rem;
-  color: var(--c-text);
-  position: relative;
-  display: flex;
-  gap: 1em;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 2.25rem;
-  text-decoration: none !important;
-
-  &:hover {
-    color: var(--vp-c-brand-1);
-    text-decoration: underline;
-  }
-
-  .content {
-    flex-grow: 1;
-  }
-
-  .fa-circle-play {
-    position: absolute;
-    left: 0;
-    color: var(--vp-c-brand-1);
-  }
+.slide-enter,
+.slide-leave-to {
+  max-height: 0;
+  overflow: hidden;
 }
 </style>

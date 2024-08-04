@@ -103,7 +103,7 @@ export default defineComponent({
   margin-top: 1rem;
   width: 7.5rem;
   height: 7.5rem;
-  border: 1px solid var(--vp-c-bg-alt);
+  border: 1px dotted var(--vp-c-bg-alt);
   background-color: var(--vp-c-bg-alt);
   border-radius: 0.8rem;
   display: flex;
@@ -114,34 +114,29 @@ export default defineComponent({
 
   &:hover {
     border-color: var(--vp-c-brand-1);
-
-    .name {
-      color: var(--vp-c-brand-1);
-    }
   }
-}
 
-.icon {
-  margin-top: -1rem;
-  color: var(--vp-c-text-1);
-}
+  .icon {
+    margin-top: -1rem;
+    color: var(--vp-c-text-1);
+  }
 
-.img {
-  width: 2rem;
-  margin-top: -1rem;
-}
+  .img {
+    width: 2rem;
+    margin-top: -1rem;
+  }
 
-.name {
-  position: absolute;
-  font-size: 0.87rem;
-  bottom: 1.25rem;
-  color: var(--vp-c-text-1);
-}
+  .name {
+    position: absolute;
+    font-size: 0.87rem;
+    bottom: 1.25rem;
+  }
 
-.desc {
-  position: absolute;
-  font-size: 0.75rem;
-  bottom: 0.15rem;
-  color: var(--vp-c-text-3);
+  .desc {
+    position: absolute;
+    font-size: 0.75rem;
+    bottom: 0.15rem;
+    color: var(--vp-c-text-3);
+  }
 }
 </style>

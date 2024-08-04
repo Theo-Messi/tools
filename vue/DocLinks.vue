@@ -125,6 +125,7 @@ export default defineComponent({
   position: relative;
   transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
   text-decoration: none !important;
+  border: 1px dotted var(--vp-c-bg-alt);
 
   &:hover {
     border-color: var(--vp-c-brand-1);
