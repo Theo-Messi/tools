@@ -3,8 +3,8 @@
 layout: home
 
 hero:
-  name: "tmfe"
-  text: "vitepress beautification module"
+  name: 'tmfe'
+  text: 'vitepress beautification module'
   # tagline: vitepress beautification module
   image: ./avatar.png
   prelink:
@@ -39,4 +39,3 @@ features:
   - title: Feature C
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
-

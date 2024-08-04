@@ -1,10 +1,10 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: "tmfe",
-  description: "vitepress beautification module",
+  title: 'tmfe',
+  description: 'vitepress beautification module',
   cleanUrls: true,
-  head:[['link', { rel: 'icon', type: 'icon', href: '/avatar.png' }],],
+  head: [['link', { rel: 'icon', type: 'icon', href: '/avatar.png' }]],
   themeConfig: {
     logo: { src: '/avatar.png', width: 24, height: 24 },
     nav: [
@@ -14,12 +14,13 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: '测试',link: '/test',
-/*         items: [
+        text: '测试',
+        link: '/test'
+        /*         items: [
           { text: 'Markdown Examples', link: '/markdown-examples' },
           { text: 'Runtime API Examples', link: '/api-examples' }
         ] */
       }
-    ],
+    ]
   }
 })

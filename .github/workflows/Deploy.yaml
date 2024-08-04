@@ -23,23 +23,23 @@ jobs:
         with:
           version: 9
           run_install: false
-          
+
       - name: Install dependencies
         run: pnpm install
-        
+
       - name: Build
         run: pnpm run build
-        
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: test/.vitepress/dist
           cname: tmfe.theojs.cn
-          
+
       - name: Set DATE environment variable
         run: echo "DATE=$(TZ='Asia/Shanghai' date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_ENV
-      
+
       - name: Translate job status to Chinese
         id: translate-status
         run: |
@@ -50,9 +50,9 @@ jobs:
             *) translated_status="未知" ;;
           esac
           echo "translated_status=$translated_status" >> $GITHUB_ENV
-  
+
       - name: Notify job status
-        if: always()  # 确保这一步始终运行，不管之前的步骤是否成功
+        if: always() # 确保这一步始终运行，不管之前的步骤是否成功
         run: |
           curl -X "POST" "${{ secrets.BARK_KEY }}" \
               -H 'Content-Type: application/json; charset=utf-8' \
