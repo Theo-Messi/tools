@@ -1,16 +1,15 @@
-
 /**
  * Component: doc
  * -------------------------------------------------------------------------- */
 
 .vp-doc {
-    a {
-      -webkit-text-decoration: underline dotted;
-      text-decoration: underline dotted;
-  
-      &:hover {
-        -webkit-text-decoration: underline;
-        text-decoration: underline;
-      }
+  a {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+
+    &:hover {
+      -webkit-text-decoration: underline;
+      text-decoration: underline;
     }
   }
+}

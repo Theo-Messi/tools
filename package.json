@@ -29,17 +29,20 @@
     "release": "bumpp && pnpm -r publish",
     "dev": "vitepress dev test",
     "build": "vitepress build test",
-    "preview": "vitepress preview test"
+    "preview": "vitepress preview test",
+    "prettier": "prettier . --write",
+    "check": "prettier . --check"
   },
   "devDependencies": {
     "@types/node": "^22.1.0",
     "@vitejs/plugin-vue": "^5.1.2",
     "npm-run-all": "^4.1.5",
-    "sass": "^1.77.8",
+    "prettier": "3.3.3",
     "typescript": "^5.5.4",
     "vite": "^5.3.5",
     "vitepress": "^1.3.1",
-    "vue": "^3.4.35"
+    "lint-staged": "^15.2.8",
+    "simple-git-hooks": "^2.11.1"
   },
   "files": [
     "scss/",
@@ -47,6 +50,22 @@
   ],
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.6.0",
-    "bumpp": "^9.4.2"
+    "bumpp": "^9.4.2",
+    "vue": "^3.4.35",
+    "sass": "^1.77.8"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "printWidth": 80,
+    "trailingComma": "none"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": [
+      "prettier --write --ignore-unknown"
+    ]
   }
 }
