@@ -1,6 +1,16 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
+/**
+ * Item 接口定义了一个链接项的结构。
+ * @interface Item
+ * @property {string} name - 链接项的名称。
+ * @property {string} link - 链接项的链接。
+ * @property {string} [color] - 图标的颜色（可选）。
+ * @property {string} [icon] - 图标的 URL 或类名（可选）。
+ * @property {string} [light] - 浅色模式下的图标 URL（可选）。
+ * @property {string} [dark] - 深色模式下的图标 URL（可选）。
+ */
 interface Item {
   name: string
   link: string
@@ -10,15 +20,28 @@ interface Item {
   dark?: string
 }
 
+/**
+ * 定义并导出 Links 组件。
+ * @component
+ */
 export default defineComponent({
   name: 'Links',
   props: {
+    /**
+     * 链接项数组，类型为 Item[]，且为必需属性。
+     * @type {Array<Item>}
+     */
     items: {
       type: Array as () => Item[],
       required: true
     }
   },
   methods: {
+    /**
+     * 判断给定的 URL 是否为图像文件。
+     * @param {string} url - 要判断的 URL。
+     * @returns {boolean} 如果 URL 是图像文件，则返回 true，否则返回 false。
+     */
     isImage(url: string): boolean {
       return (
         typeof url === 'string' &&

@@ -1,6 +1,19 @@
 <script setup lang="ts">
+/**
+ * 从 VitePress 导入 useData 函数，用于获取当前页面的数据。
+ * @module vitepress
+ */
 import { useData } from 'vitepress'
 
+/**
+ * 从 useData 函数中解构出 frontmatter 对象，用于访问页面的元数据。
+ * @const {Object} fm - 包含页面 frontmatter 的对象
+ * @property {Object} hero - 页面 hero 部分的数据
+ * @property {Object} hero.prelink - hero 部分的 prelink 数据
+ * @property {string} hero.prelink.link - prelink 的 URL
+ * @property {string} hero.prelink.target - prelink 的打开方式（例如 `_blank`）
+ * @property {string} hero.prelink.title - prelink 的标题内容
+ */
 const { frontmatter: fm } = useData()
 </script>
 

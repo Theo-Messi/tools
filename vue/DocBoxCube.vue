@@ -1,6 +1,17 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
+/**
+ * Item 接口定义了一个项目的结构。
+ * @interface Item
+ * @property {string} icon - 图标的 URL 或类名。
+ * @property {string} name - 项目的名称。
+ * @property {string} link - 项目的链接。
+ * @property {string} [desc] - 项目的描述（可选）。
+ * @property {string} [color] - 图标的颜色（可选）。
+ * @property {string} [light] - 浅色模式下的图标 URL（可选）。
+ * @property {string} [dark] - 深色模式下的图标 URL（可选）。
+ */
 interface Item {
   icon: string
   name: string
@@ -11,15 +22,28 @@ interface Item {
   dark?: string
 }
 
+/**
+ * 定义并导出 BoxCube 组件。
+ * @component
+ */
 export default defineComponent({
   name: 'BoxCube',
   props: {
+    /**
+     * 项目数组，类型为 Item[]，且为必需属性。
+     * @type {Array<Item>}
+     */
     items: {
       type: Array as () => Item[],
       required: true
     }
   },
   methods: {
+    /**
+     * 判断给定的 URL 是否为图像文件。
+     * @param {string} url - 要判断的 URL。
+     * @returns {boolean} 如果 URL 是图像文件，则返回 true，否则返回 false。
+     */
     isImage(url: string): boolean {
       return (
         typeof url === 'string' &&
