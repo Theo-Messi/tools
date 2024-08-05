@@ -132,10 +132,6 @@ const toggleVideo = () => {
   }
 }
 
-.slide-enter-active,
-.slide-leave-active {
-  transition: max-height 0.5s ease-in-out;
-}
 .slide-enter,
 .slide-leave-to {
   max-height: 0;
