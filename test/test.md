@@ -108,11 +108,11 @@ head:
 
 ```html
 <iframe
-  src="//player.bilibili.com/player.html?isOutside=true&aid=1205847484&bvid=BV1if421Q7mL&cid=1584505931&p=1"
-  scrolling="no"
-  border="0"
-  frameborder="no"
-  framespacing="0"
+  loading="lazy"
+  src="//player.bilibili.com/player.html?aid=1205847484"
+  width="100%"
+  height="400"
+  frameborder="0"
   allowfullscreen="true"
 ></iframe>
 ```
@@ -121,9 +121,9 @@ head:
 
 <iframe
   loading="lazy"
+  src="//player.bilibili.com/player.html?aid=1205847484"
   width="100%"
   height="400"
-  src="//player.bilibili.com/player.html?isOutside=true&aid=1205847484&bvid=BV1if421Q7mL&cid=1584505931&p=1"
   frameborder="0"
   allowfullscreen="true"
 ></iframe>
@@ -134,7 +134,7 @@ head:
 
 ```vue
 <VideoLink
-  href="//player.bilibili.com/player.html?isOutside=true&aid=1205847484&bvid=BV1if421Q7mL&cid=1584505931&p=1"
+  href="//player.bilibili.com/player.html?aid=1205847484"
   name="【MV】HELP!! - 可波·卡娜埃露"
 />
 ```
@@ -142,39 +142,9 @@ head:
 **输出**
 
 <VideoLink
-  href="//player.bilibili.com/player.html?isOutside=true&aid=1205847484&bvid=BV1if421Q7mL&cid=1584505931&p=1"
+  href="//player.bilibili.com/player.html?aid=1205847484"
   name="【MV】HELP!! - 可波·卡娜埃露"
 />
-
-## 音乐
-
-**输入**
-
-```html
-<iframe
-  :frameborder="0"
-  :border="0"
-  :marginwidth="0"
-  :marginheight="0"
-  :width="330"
-  :height="86"
-  src="//music.163.com/outchain/player?type=2&id=393697&auto=1&height=66"
->
-</iframe>
-```
-
-**输出**
-
-<iframe
-  frameborder="0"
-  border="0"
-  marginwidth="0"
-  marginheight="0"
-  width="330"
-  height="86"
-  src="//music.163.com/outchain/player?type=2&id=393697&auto=1&height=66"
->
-</iframe>
 
 ## 容器
 
