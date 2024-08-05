@@ -27,7 +27,7 @@
     "build:vue": "vite build",
     "all": "npm-run-all build:all build:vue",
     "release": "bumpp && pnpm -r publish",
-    "dev": "vitepress dev test",
+    "dev": "vitepress dev test --host",
     "build": "vitepress build test",
     "preview": "vitepress preview test",
     "prettier": "prettier . --write",
