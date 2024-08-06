@@ -4,9 +4,11 @@ layout: home
 
 hero:
   name: 'tmfe'
-  text: 'vitepress beautification module'
-  # tagline: vitepress beautification module
-  image: ./avatar.png
+  text: 'Enhanced '
+  tagline: 用于VitePress主题美化和集成Vue功能组件
+  image:
+    src: ./avatar.png
+    alt: Theme
   prelink:
     title: '🎉 站点迁移至 <u>https://xxxxx</u><div style="text-align: right; font-weight: bold;"><i class="fas fa-star" style="color: #FFD43B;"></i>Ctrl+D 快速收藏网址</div>'
     link: https://doc.theojs.cn/
@@ -39,3 +41,5 @@ features:
   - title: Feature C
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
+
+<Home />

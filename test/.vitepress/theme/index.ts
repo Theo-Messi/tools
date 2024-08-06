@@ -8,7 +8,8 @@ import {
   DocBoxCube,
   DocVideoLink,
   Announcement,
-  DocAsideLogo
+  DocAsideLogo,
+  HomeUnderline
 } from '../../../vue'
 import { banners } from '../data/AsideData'
 export default {
@@ -23,6 +24,7 @@ export default {
     app.component('Box', DocBox)
     app.component('Links', DocLinks)
     app.component('BoxCube', DocBoxCube)
+    app.component('Home', HomeUnderline)
     app.component('VideoLink', DocVideoLink)
   }
 }
