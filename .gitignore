@@ -11,7 +11,8 @@ dist
 *.swp
 *.swo
 ._*
-
+scss/
+vue/
 # Node.js模块
 node_modules/
 npm-debug.log
@@ -19,8 +20,8 @@ yarn-error.log
 .pnpm-debug.log
 
 # Vitepress生成的文件
-test/.vitepress/dist
-test/.vitepress/cache
+docs/.vitepress/dist
+docs/.vitepress/cache
 
 # Vite缓存文件
 dist/
