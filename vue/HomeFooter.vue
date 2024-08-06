@@ -1,27 +1,11 @@
 <script lang="ts">
-import { defineComponent, PropType } from 'vue'
-
-interface Link {
-  name: string
-  href: string
-}
-
-interface Section {
-  title: string
-  links: Link[]
-  internal?: boolean
-}
+import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'HomeFooter',
-  props: {
-    sections: {
-      type: Array as PropType<Section[]>,
-      default: () => (window as any).Footer_Data || []
-    }
-  },
-  setup(props) {
-    return { sections: props.sections }
+  name: 'Footer',
+  setup() {
+    const sections = FooterData
+    return { sections }
   }
 })
 </script>

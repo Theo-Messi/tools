@@ -1,5 +1,4 @@
 import { defineConfig } from 'vitepress'
-import { sections } from './data/FooterData'
 import { fileURLToPath, URL } from 'node:url'
 
 export default defineConfig({
@@ -18,7 +17,9 @@ export default defineConfig({
         }
       ]
     },
-    define: { Footer_Data: sections }
+    define: {
+      FooterData: JSON.stringify(require('./data/FooterData').sections)
+    }
   },
   themeConfig: {
     logo: { src: '/avatar.png', width: 24, height: 24 },
