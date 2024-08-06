@@ -7,15 +7,16 @@ import {
   DocLinks,
   DocBoxCube,
   DocVideoLink,
-  Announcement
+  Announcement,
+  DocAsideLogo
 } from '../../../vue'
-
+import { banners } from '../data/AsideData'
 export default {
   extends: DefaultTheme,
   Layout() {
     return h(DefaultTheme.Layout, null, {
-      'home-hero-info-before': () => h(Announcement)
-      // 'aside-ads-before': () => h(DocAsideLogo)
+      'home-hero-info-before': () => h(Announcement),
+      'aside-ads-before': () => h(DocAsideLogo, { banners })
     })
   },
   enhanceApp: ({ app }) => {
