@@ -10,13 +10,13 @@ import {
   DocAsideLogo,
   HomeUnderline
 } from '../../../package/vue'
-import { banners } from '../data/AsideData'
+import { Aside_Data } from '../data/AsideData'
 export default {
   extends: DefaultTheme,
   Layout() {
     return h(DefaultTheme.Layout, null, {
       'home-hero-info-before': () => h(Announcement),
-      'aside-ads-before': () => h(DocAsideLogo, { banners })
+      'aside-ads-before': () => h(DocAsideLogo, { Aside_Data })
     })
   },
   enhanceApp: ({ app }) => {

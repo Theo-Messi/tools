@@ -4,12 +4,12 @@ import { defineComponent, PropType } from 'vue'
 export default defineComponent({
   name: 'DocAsideLogo',
   props: {
-    banners: {
+    Aside_Data: {
       type: Array as PropType<
         Array<{
           link: string
           icon: string
-          name: string
+          name?: string
           Activity?: string
           hide1?: string
           info1?: string
@@ -26,7 +26,7 @@ export default defineComponent({
 <template>
   <div>
     <a
-      v-for="(banner, index) in banners"
+      v-for="(banner, index) in Aside_Data"
       :key="index"
       :href="banner.link"
       :name="banner.Activity || banner.name"

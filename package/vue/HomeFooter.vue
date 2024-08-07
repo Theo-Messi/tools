@@ -4,8 +4,8 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   name: 'Footer',
   setup() {
-    const sections = FooterData
-    return { sections }
+    const Footer_Data = FooterData
+    return { Footer_Data }
   }
 })
 </script>
@@ -13,7 +13,11 @@ export default defineComponent({
 <template>
   <footer class="ba">
     <div class="ff">
-      <div class="sc" v-for="(section, index) in sections" :key="index">
+      <div
+        class="sc"
+        v-for="(section, index) in Footer_Data.group"
+        :key="index"
+      >
         <div class="st">{{ section.title }}</div>
         <ul>
           <li v-for="(link, idx) in section.links" :key="idx">
@@ -40,7 +44,7 @@ export default defineComponent({
           name="ICP备案"
           title="ICP备案"
         >
-          <i class="fas fa-earth-americas"></i>鄂ICP备2024060426号
+          <i class="fas fa-earth-americas"></i>{{ Footer_Data.beian.icp }}
         </a>
       </span>
       <span>
@@ -50,20 +54,20 @@ export default defineComponent({
           name="公安备案"
           title="公安备案"
         >
-          <i class="fas fa-shield"></i>粤公网安备44200102445449号
+          <i class="fas fa-shield"></i>{{ Footer_Data.beian.police }}
         </a>
       </span>
     </div>
     <div class="flex" style="display: inline-block">
       <span>
-        Copyright<i class="far fa-copyright"></i>2019 -
+        Copyright<i class="far fa-copyright"></i>{{ Footer_Data.author.time }} -
         {{ new Date().getFullYear() }}
         <a
           target="_blank"
           name="GitHub"
           title="GitHub"
-          href="https://github.com/Theo-Messi"
-          >Theo-Messi</a
+          :href="Footer_Data.author.link"
+          >{{ Footer_Data.author.name }}</a
         >. All Rights Reserved
       </span>
     </div>

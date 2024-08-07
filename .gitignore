@@ -6,13 +6,13 @@ dist
 .DS_Store
 .AppleDouble
 .LSOverride
-
+scss/
+vue/
 # macOS缓存文件
 *.swp
 *.swo
 ._*
-scss/
-vue/
+
 # Node.js模块
 node_modules/
 npm-debug.log
