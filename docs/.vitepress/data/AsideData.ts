@@ -1,22 +1,10 @@
-// src/banners.ts
-export interface Banner {
-  link: string
-  icon: string
-  Activity?: string
-  name: string
-  hide1?: string
-  hide2?: string
-  info1?: string
-  info2?: string
-}
-
-export const banners: Banner[] = [
+export const Aside_Data = [
   // {
   //   link: 'https://fbinv01.fbaff.cc/auth/register?code=RZP3',
   //   icon: 'https://flyingbirdlimo.com/wp-content/uploads/2022/03/Flying-Bird-Logo-cropped.png',
   //   Activity: 'FlyingBird 618活动来了',
   //   info1: '月付 85折 优惠码  2461885',
-  //   info2: '年付 64折 优惠码  2461880',
+  //   info2: '年付 64折 优惠码  2461880'
   // },
   {
     link: 'https://xx.theojs.cn/',

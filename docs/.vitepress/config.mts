@@ -18,7 +18,7 @@ export default defineConfig({
       ]
     },
     define: {
-      FooterData: JSON.stringify(require('./data/FooterData').sections)
+      FooterData: JSON.stringify(require('./data/FooterData').Footer_Data)
     }
   },
   themeConfig: {
