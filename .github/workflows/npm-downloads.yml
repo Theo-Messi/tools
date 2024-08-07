@@ -1,0 +1,32 @@
+name: NPM Downloads to Bark
+
+on:
+  schedule:
+    - cron: '30 1 * * *'
+  workflow_dispatch:
+
+jobs:
+  send-downloads:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '*'
+
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: '*'
+
+      - name: Install dependencies
+        run: pnpm add axios
+
+      - name: Run Node.js script
+        env:
+          BARK_KEY: ${{ secrets.BARK_KEY }}
+        run: node script/npm_downloads.js
