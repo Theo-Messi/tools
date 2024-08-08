@@ -8,7 +8,7 @@ export default defineConfig({
     vue(),
     copy({
       targets: [
-        { src: 'packages/scss/*', dest: 'scss' },
+        { src: 'packages/scss/*', dest: 'theme' },
         { src: 'packages/vue/*', dest: 'vue' }
       ],
       hook: 'writeBundle'
