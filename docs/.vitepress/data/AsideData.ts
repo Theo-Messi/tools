@@ -7,6 +7,18 @@ export const Aside_Data = [
   //   info2: '年付 64折 优惠码  2461880'
   // },
   {
+    link: 'https://github.com/sponsors/Theo-Messi',
+    icon: 'https://doc.theojs.cn/爱心.png',
+    name: '赞助我的项目'
+  },
+  {
+    link: 'https://doc.theojs.cn/',
+    icon: 'https://i.theojs.cn/avatar.png',
+    name: 'Theo-Docs',
+    hide1: '流媒体观影',
+    hide2: '一站式服务'
+  },
+  {
     link: 'https://xx.theojs.cn/',
     icon: 'https://i.theojs.cn/avatar.png',
     name: '玄学宝典',
@@ -28,8 +40,10 @@ export const Aside_Data = [
     hide2: '共享车位'
   },
   {
-    link: 'https://github.com/sponsors/Theo-Messi',
-    icon: 'https://doc.theojs.cn/爱心.png',
-    name: '为我赞助'
+    link: 'https://github.com/Theo-Messi/dotfiles',
+    icon: 'https://img.icons8.com/?size=400&id=nuPce-GYYZeC&format=png&color=000000',
+    name: '常用配置 - dotfiles',
+    hide1: 'zshrc、系统优化一键脚本',
+    hide2: 'Clash/Loon/QX... 配置'
   }
 ]
