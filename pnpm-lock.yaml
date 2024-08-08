@@ -11,6 +11,9 @@ importers:
       '@fortawesome/fontawesome-free':
         specifier: ^6.6.0
         version: 6.6.0
+      '@mdit/plugin-img-size':
+        specifier: ^0.13.0
+        version: 0.13.0
       bumpp:
         specifier: ^9.4.2
         version: 9.4.2
@@ -307,6 +310,15 @@ packages:
   '@jsdevtools/ez-spawn@3.0.4':
     resolution: {integrity: sha512-f5DRIOZf7wxogefH03RjMPMdBF7ADTWUMoOs9kaJo06EfwF+aFhMZMDZxHg/Xe12hptN9xoZjGso2fdjapBRIA==}
     engines: {node: '>=10'}
+
+  '@mdit/plugin-img-size@0.13.0':
+    resolution: {integrity: sha512-3ZpKQkch75WH5//U3GFe0U8z46Oz+lDIlLFzcf8VXuTgNUC9MJ8tnBRVbmv058C4kGPONTv4YrxfL7jsG5zqFg==}
+    engines: {node: '>= 18'}
+    peerDependencies:
+      markdown-it: ^14.1.0
+    peerDependenciesMeta:
+      markdown-it:
+        optional: true
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -1484,6 +1496,10 @@ snapshots:
       cross-spawn: 7.0.3
       string-argv: 0.3.2
       type-detect: 4.1.0
+
+  '@mdit/plugin-img-size@0.13.0':
+    dependencies:
+      '@types/markdown-it': 14.1.2
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
