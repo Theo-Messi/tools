@@ -20,7 +20,7 @@ export default defineConfig({
         main: resolve(__dirname, 'packages/vue/index.ts')
       },
       output: {
-        dir: 'dist',
+        dir: 'vue',
         entryFileNames: '[name].js',
         chunkFileNames: '[name].js',
         assetFileNames: '[name].[ext]',

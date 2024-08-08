@@ -20,7 +20,8 @@
     "typescript",
     "vitepress"
   ],
-  "main": "dist/vue/index.ts",
+  "main": "vue/index.ts",
+  "style": "scss/all.scss",
   "scripts": {
     "build:all": "sass packages/scss/all.scss dist/scss/all.css",
     "build:vue": "vite build",
