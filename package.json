@@ -68,5 +68,6 @@
     "*": [
       "prettier --write --ignore-unknown"
     ]
-  }
+  },
+  "packageManager": "pnpm@9.7.0"
 }
