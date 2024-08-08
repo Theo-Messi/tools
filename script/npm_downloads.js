@@ -2,11 +2,11 @@ const axios = require('axios')
 const { execSync } = require('child_process')
 
 // 环境变量
-const packageName = 'tmfe'
+const packagesName = 'tmfe'
 const barkUrl = process.env.BARK_KEY
 
-async function getNpmDownloads(packageName) {
-  const url = `https://api.npmjs.org/downloads/range/last-month/${packageName}`
+async function getNpmDownloads(packagesName) {
+  const url = `https://api.npmjs.org/downloads/range/last-month/${packagesName}`
   try {
     const response = await axios.get(url)
     return response.data.downloads
@@ -17,7 +17,7 @@ async function getNpmDownloads(packageName) {
 }
 
 async function main() {
-  const downloads = await getNpmDownloads(packageName)
+  const downloads = await getNpmDownloads(packagesName)
 
   // 计算当月的总下载量
   const totalDownloads = downloads.reduce(
@@ -27,8 +27,8 @@ async function main() {
 
   const body =
     totalDownloads > 0
-      ? `${packageName} 包当月的总下载量是 ${totalDownloads}`
-      : `${packageName} 包本月没有下载量数据`
+      ? `${packagesName} 包当月的总下载量是 ${totalDownloads}`
+      : `${packagesName} 包本月没有下载量数据`
 
   const curlCommand = `curl -X "POST" "${barkUrl}" \
     -H 'Content-Type: application/json; charset=utf-8' \

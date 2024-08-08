@@ -22,7 +22,7 @@
   ],
   "main": "dist/vue/index.ts",
   "scripts": {
-    "build:all": "sass package/scss/all.scss dist/scss/all.css",
+    "build:all": "sass packages/scss/all.scss dist/scss/all.css",
     "build:vue": "vite build",
     "all": "npm-run-all build:all build:vue",
     "release": "bumpp && pnpm -r publish",

@@ -8,8 +8,8 @@ export default defineConfig({
     vue(),
     copy({
       targets: [
-        { src: 'package/scss/*', dest: 'scss' },
-        { src: 'package/vue/*', dest: 'vue' }
+        { src: 'packages/scss/*', dest: 'scss' },
+        { src: 'packages/vue/*', dest: 'vue' }
       ],
       hook: 'writeBundle'
     })
@@ -17,7 +17,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'package/vue/index.ts')
+        main: resolve(__dirname, 'packages/vue/index.ts')
       },
       output: {
         dir: 'dist',
