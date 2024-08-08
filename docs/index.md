@@ -3,29 +3,29 @@
 layout: home
 
 hero:
-  name: 'tmfe'
+  name: TM-FE
   text: 'Enhanced '
-  tagline: 用于VitePress主题美化和集成Vue功能组件
+  tagline: ✨ 集成 Vue 功能组件和主题美化的 VitePress 插件
   image:
-    src: ./avatar.png
+    src: https://cdn1.iconfinder.com/data/icons/prettyoffice8/256/Theme.png
     alt: Theme
   prelink:
-    title: '🎉 站点迁移至 <u>https://xxxxx</u><div style="text-align: right; font-weight: bold;"><i class="fas fa-star" style="color: #FFD43B;"></i>Ctrl+D 快速收藏网址</div>'
-    link: https://doc.theojs.cn/
-    target: _blank
+    title: '<i class="fa-solid fa-bolt" style="color: #63E6BE;"></i> 快速开始<div style="text-align: right; font-weight: bold;"><i class="fas fa-pnpm" style="color: #FFD43B;"></i>pnpm add tmfe</div>'
+    # link: https://doc.theojs.cn/
+    # target: _blank
   actions:
     - theme: brand
-      text: 立即开始
-      link: /test
+      text: 快速开始
+      link: /guide/getting-started
     - theme: alt
       text: 账号合租
-      link: /
+      link: https://doc.theojs.cn/serve/sharing/Account-sharing-guide
     - theme: alt
       text: 机场推荐
-      link: /
+      link: https://doc.theojs.cn/serve/airport/FlyingBird
     - theme: brand
       text: ❤️ 成为赞助商
-      link: /
+      link: https://github.com/sponsors/Theo-Messi
     - theme: cta pan
       text: 云盘资源
       link: https://share.theojs.cn/
