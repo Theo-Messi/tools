@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
 import copy from 'rollup-plugin-copy'
+import deletePlugin from 'rollup-plugin-delete'
 
 export default defineConfig({
   plugins: [
@@ -12,19 +13,20 @@ export default defineConfig({
         { src: 'packages/vue/*', dest: 'vue' }
       ],
       hook: 'writeBundle'
+    }),
+    deletePlugin({
+      targets: ['vue/index.js', 'vue/index.css'],
+      hook: 'writeBundle'
     })
   ],
   build: {
     rollupOptions: {
-      input: {
-        main: resolve(__dirname, 'packages/vue/index.ts')
-      },
+      input: resolve(__dirname, 'packages/vue/index.ts'),
       output: {
         dir: 'vue',
         entryFileNames: '[name].js',
         chunkFileNames: '[name].js',
         assetFileNames: '[name].[ext]',
-        manualChunks: undefined,
         globals: {
           vue: 'Vue',
           vitepress: 'VitePress'
