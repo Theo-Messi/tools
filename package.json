@@ -24,11 +24,11 @@
   "style": "scss/all.scss",
   "exports": {
     ".": {
-      "import": "./vue/index.ts",
-      "require": "./vue/index.js"
+      "import": "./vue/index.ts"
     },
     "./theme": "./theme/all.scss",
-    "./vue": "./vue/index.ts"
+    "./vue": "./vue/index.ts",
+    "./Footer": "./vue/HomeFooter.vue"
   },
   "scripts": {
     "all": "vite build",
