@@ -6,8 +6,8 @@ dist
 .DS_Store
 .AppleDouble
 .LSOverride
-scss/
-vue/
+/scss
+/vue
 # macOS缓存文件
 *.swp
 *.swo
