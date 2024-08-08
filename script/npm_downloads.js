@@ -38,7 +38,7 @@ async function main() {
           "badge": 1,
           "category": "Github Actions",
           "sound": "multiwayinvitation.caf",
-          "icon": "https://authy.com/wp-content/uploads/npm-logo.png",
+          "icon": "https://cdn1.iconfinder.com/data/icons/data-analytics-and-data-storage-circle-flat-vol-4/100/report__analysis__chart__statistics-1024.png",
           "group": "Github Actions"
         }'`
 
