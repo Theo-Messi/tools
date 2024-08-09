@@ -10,6 +10,7 @@ export default defineConfig({
   lang: 'zh-CN',
   cleanUrls: true,
   lastUpdated: true,
+  sitemap: { hostname: 'https://tmfe.theojs.cn' },
   head: [
     [
       'link',

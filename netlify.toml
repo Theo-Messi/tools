@@ -1,0 +1,29 @@
+[build.environment]
+  NODE_VERSION = "20"
+
+[build]
+  publish = "docs/.vitepress/dist"
+  command = "pnpm build"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    cache-control = "max-age=31536000, immutable"
+
+[[redirects]]
+  from = "https://tmfe.theovan.cn/*"
+  to = "https://tmfe.theojs.cn/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://tmfe.theovan.xyz/*"
+  to = "https://tmfe.theojs.cn/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://tmfe.theovan.wiki/*"
+  to = "https://tmfe.theojs.cn/:splat"
+  status = 301
+  force = true
