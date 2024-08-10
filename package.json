@@ -68,6 +68,7 @@
   "exports": {
     ".": "./vue/index.ts",
     "./theme": "./theme/all.scss",
+    "./icon": "./theme/icon.scss",
     "./button": "./theme/button.scss",
     "./colors": "./theme/colors.scss",
     "./doc": "./theme/doc.scss",
