@@ -5,12 +5,18 @@ title: 主题配置文件
 ```ts
 // theme/index.ts
 
+/* 引入所有主题文件 */
 import '@theo-messi/tm-fe/theme'
 
-// 也可单独引入
-import '@theo-messi/tm-fe/colors'
-import '@theo-messi/tm-fe/doc'
-...
+/* 也可单独引入 */
+import '@theo-messi/tm-fe/icon' /* 图标 */
+import '@theo-messi/tm-fe/button' /* 按钮 */
+import '@theo-messi/tm-fe/colors' /* 配色 */
+import '@theo-messi/tm-fe/doc' /* 文档样式 */
+import '@theo-messi/tm-fe/doc-blocks' /* 容器样式 */
+import '@theo-messi/tm-fe/home' /* 首页样式 */
+import '@theo-messi/tm-fe/home-blocks' /* 首页按钮 */
+import '@theo-messi/tm-fe/pic' /* 图片样式 */
 ```
 
 :::tip
