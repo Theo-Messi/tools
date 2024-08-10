@@ -15,7 +15,7 @@
     "typescript",
     "vitepress"
   ],
-  "main": "vue/index.ts",
+  "main": "components/index.ts",
   "style": "theme/all.scss",
   "scripts": {
     "all": "vite build",
@@ -40,8 +40,9 @@
   },
   "files": [
     "theme/",
-    "vue/",
-    "readme.md"
+    "components/",
+    "readme.md",
+    "License"
   ],
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.6.0",
@@ -66,7 +67,7 @@
   },
   "packageManager": "pnpm@9.7.0",
   "exports": {
-    ".": "./vue/index.ts",
+    ".": "./components/index.ts",
     "./theme": "./theme/all.scss",
     "./icon": "./theme/icon.scss",
     "./button": "./theme/button.scss",
@@ -76,7 +77,7 @@
     "./home": "./theme/home.scss",
     "./home-blocks": "./theme/home-links.scss",
     "./pic": "./theme/picture.scss",
-    "./vue": "./vue/index.ts",
-    "./Footer": "./vue/HomeFooter.vue"
+    "./components": "./components/index.ts",
+    "./Footer": "./components/HomeFooter.vue"
   }
 }

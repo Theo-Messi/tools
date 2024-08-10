@@ -9,6 +9,7 @@ dist
 /scss
 /vue
 /theme
+/components
 # macOS缓存文件
 *.swp
 *.swo

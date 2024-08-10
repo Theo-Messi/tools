@@ -23,7 +23,7 @@ export default defineConfig({
         {
           find: /^.*\/VPFooter\.vue$/,
           replacement: fileURLToPath(
-            new URL('../../packages/vue/HomeFooter.vue', import.meta.url)
+            new URL('../../packages/components/HomeFooter.vue', import.meta.url)
           )
         }
       ]
