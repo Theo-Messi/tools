@@ -17,7 +17,7 @@ export default defineConfig({
       {
         rel: 'icon',
         type: 'icon',
-        href: 'https://cdn1.iconfinder.com/data/icons/prettyoffice8/256/Theme.png'
+        href: './TM-FELogo.png'
       }
     ]
   ],
@@ -43,7 +43,7 @@ export default defineConfig({
   },
   themeConfig: {
     logo: {
-      src: 'https://cdn1.iconfinder.com/data/icons/prettyoffice8/256/Theme.png',
+      src: './TM-FELogo.png',
       width: 24,
       height: 24
     },
