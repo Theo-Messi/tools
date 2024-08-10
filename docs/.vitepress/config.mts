@@ -11,16 +11,7 @@ export default defineConfig({
   cleanUrls: true,
   lastUpdated: true,
   sitemap: { hostname: 'https://tmfe.theojs.cn' },
-  head: [
-    [
-      'link',
-      {
-        rel: 'icon',
-        type: 'icon',
-        href: './TM-FELogo.png'
-      }
-    ]
-  ],
+  head: [['link', { rel: 'icon', type: 'icon', href: '/TM-FELogo.png' }]],
   markdown: {
     config: (md) => {
       md.use(imgSize)
@@ -42,11 +33,7 @@ export default defineConfig({
     }
   },
   themeConfig: {
-    logo: {
-      src: './TM-FELogo.png',
-      width: 24,
-      height: 24
-    },
+    logo: { src: '/TM-FELogo.png', width: 24, height: 24 },
     editLink: {
       pattern: 'https://github.com/Theo-Messi/tm-fe/blob/main/docs/:path',
       text: '为此页提供修改建议'

@@ -38,3 +38,10 @@
     max-height: 320px;
   }
 }
+html.dark:root {
+  --vp-home-hero-name-background: -webkit-linear-gradient(
+    78deg,
+    var(--c-yellow-2) 30%,
+    var(--c-green-2)
+  );
+}

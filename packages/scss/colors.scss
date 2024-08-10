@@ -83,12 +83,6 @@ html.dark:root {
   --vp-c-mute: var(--vp-c-bg-mute);
   --vp-c-mute-dark: var(--c-black-lighter);
   --vp-c-mute-darker: var(--c-black-darker);
-
-  --vp-home-hero-name-background: -webkit-linear-gradient(
-    78deg,
-    var(--c-yellow-2) 30%,
-    var(--c-green-2)
-  );
 }
 
 html.dark .DocSearch {
