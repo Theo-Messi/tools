@@ -110,8 +110,8 @@ export default defineComponent({
 .container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  margin-top: 1rem;
+  gap: 0.5rem;
+  // margin-top: 1rem;
 }
 
 .link {

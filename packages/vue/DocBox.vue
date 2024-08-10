@@ -106,8 +106,8 @@ export default defineComponent({
 .box-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  margin-top: 1rem;
+  gap: 0.5rem;
+  // margin-top: 1rem;
 }
 
 .box {
@@ -116,7 +116,7 @@ export default defineComponent({
   background-color: var(--vp-c-bg-alt);
   padding: 0.8rem 1.6rem;
   border-radius: 0.8rem;
-  width: 13rem;
+  width: 14rem;
   height: 3.5rem;
   display: flex;
   text-decoration: none !important;
@@ -127,13 +127,13 @@ export default defineComponent({
   }
 
   @media (max-width: 1024px) {
-    flex: 1 1 calc(50% - 20px);
-    max-width: calc(50% - 20px);
+    flex: 1 1 calc(50% - 0.5rem);
+    max-width: calc(50% - 0.5rem);
   }
 
   @media (max-width: 768px) {
-    flex: 1 1 100%;
-    max-width: 100%;
+    flex: 1 1 calc(50% - 0.5rem);
+    max-width: calc(50% - 0.5rem);
   }
 }
 

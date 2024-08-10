@@ -51,18 +51,18 @@ export default defineComponent({
 .banner {
   margin: 0.25rem 0;
   padding: 0.4rem 0;
-  border-radius: 14px;
+  border-radius: 0.8rem;
   position: relative;
   font-size: 0.9rem;
-  font-weight: 700;
+  font-weight: 900;
   line-height: 1.1rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  // width: 100%;
   gap: 1rem;
   background-color: var(--vp-c-bg-alt);
-  border: 2px solid var(--vp-c-bg-alt);
+  border: 1px solid var(--vp-c-bg-alt);
   transition: border-color 0.5s;
 
   &:last-of-type {
@@ -70,7 +70,7 @@ export default defineComponent({
   }
 
   &:hover {
-    border: 2px solid var(--vp-c-brand-1);
+    border-color: var(--vp-c-brand-1);
 
     img {
       transform: scale(1.75);
