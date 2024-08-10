@@ -104,13 +104,13 @@ export default defineComponent({
 .container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 0.5rem;
 }
 
 .link {
-  margin-top: 1rem;
-  width: 7.5rem;
-  height: 7.5rem;
+  // margin-top: 1rem;
+  width: 8.2rem;
+  height: 8.2rem;
   border: 1px dotted var(--vp-c-bg-alt);
   background-color: var(--vp-c-bg-alt);
   border-radius: 0.8rem;
@@ -120,17 +120,27 @@ export default defineComponent({
   position: relative;
   transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 
+  @media (max-width: 1024px) {
+    flex: 1 1 calc(25% - 0.5rem);
+    max-width: calc(25% - 0.5rem);
+  }
+
+  @media (max-width: 768px) {
+    flex: 1 1 calc(33.33% - -0.5rem);
+    max-width: calc(33.33% - 0.5rem);
+  }
   &:hover {
     border-color: var(--vp-c-brand-1);
   }
 
   .icon {
     margin-top: -1rem;
+    font-size: 1.2rem;
     color: var(--vp-c-text-1);
   }
 
   .img {
-    width: 2rem;
+    width: 2.5rem;
     margin-top: -1rem;
   }
 

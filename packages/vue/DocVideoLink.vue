@@ -70,7 +70,7 @@ const toggleVideo = () => {
 
 <style lang="scss" scoped>
 .mp {
-  margin-top: 1rem;
+  gap: 0.5rem;
   cursor: pointer;
   position: relative;
   padding: 1rem 1.25rem;

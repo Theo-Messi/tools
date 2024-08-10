@@ -48,8 +48,8 @@ export default defineConfig({
   vite: {
     resolve: {
       alias: [
-        { find: /^.*\/VPFooter\.vue$/, replacement: '@theo-messi/tm-fe/Footer' }
-      ] // [!code ++]
+        { find: /^.*\/VPFooter\.vue$/, replacement: '@theo-messi/tm-fe/Footer' } // [!code ++]
+      ]
     },
     define: {
       FooterData: JSON.stringify(require('./data/footerData').Footer_Data) // [!code ++]
