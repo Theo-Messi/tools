@@ -23,8 +23,8 @@ hero:
     - theme: alt
       text: 机场推荐
       link: https://doc.theojs.cn/serve/airport/FlyingBird
-    - theme: brand
-      text: ❤️ 成为赞助商
+    - theme: sponsor
+      text: ✨ 成为赞助商
       link: https://github.com/sponsors/Theo-Messi
     - theme: cta pan
       text: 云盘资源
