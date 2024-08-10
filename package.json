@@ -16,15 +16,7 @@
     "vitepress"
   ],
   "main": "vue/index.ts",
-  "style": "scss/all.scss",
-  "exports": {
-    ".": {
-      "import": "./vue/index.ts"
-    },
-    "./theme": "./theme/all.scss",
-    "./vue": "./vue/index.ts",
-    "./Footer": "./vue/HomeFooter.vue"
-  },
+  "style": "theme/all.scss",
   "scripts": {
     "all": "vite build",
     "release": "pnpm all && bumpp && pnpm -r publish",
@@ -72,5 +64,18 @@
       "prettier --write --ignore-unknown"
     ]
   },
-  "packageManager": "pnpm@9.7.0"
+  "packageManager": "pnpm@9.7.0",
+  "exports": {
+    ".": "./vue/index.ts",
+    "./theme": "./theme/all.scss",
+    "./button": "./theme/button.scss",
+    "./colors": "./theme/colors.scss",
+    "./doc": "./theme/doc.scss",
+    "./doc-blocks": "./theme/doc-blocks.scss",
+    "./home": "./theme/home.scss",
+    "./home-blocks": "./theme/home-links.scss",
+    "./pic": "./theme/picture.scss",
+    "./vue": "./vue/index.ts",
+    "./Footer": "./vue/HomeFooter.vue"
+  }
 }

@@ -8,8 +8,8 @@ title: 主题配置文件
 import '@theo-messi/tm-fe/theme'
 
 // 也可单独引入
-import '@theo-messi/tm-fe/scss/colors.scss'
-import '@theo-messi/tm-fe/scss/doc.scss'
+import '@theo-messi/tm-fe/colors'
+import '@theo-messi/tm-fe/doc'
 ...
 ```
 
