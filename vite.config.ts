@@ -9,21 +9,21 @@ export default defineConfig({
     vue(),
     copy({
       targets: [
-        { src: 'packages/scss/*', dest: 'theme' },
-        { src: 'packages/vue/*', dest: 'vue' }
+        { src: 'packages/theme/*', dest: 'theme' },
+        { src: 'packages/components/*', dest: 'components' }
       ],
       hook: 'writeBundle'
     }),
     deletePlugin({
-      targets: ['vue/index.js', 'vue/index.css'],
+      targets: ['components/index.js', 'components/index.css'],
       hook: 'writeBundle'
     })
   ],
   build: {
     rollupOptions: {
-      input: resolve(__dirname, 'packages/vue/index.ts'),
+      input: resolve(__dirname, 'packages/components/index.ts'),
       output: {
-        dir: 'vue',
+        dir: 'components',
         entryFileNames: '[name].js',
         chunkFileNames: '[name].js',
         assetFileNames: '[name].[ext]',

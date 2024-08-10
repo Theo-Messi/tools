@@ -20,7 +20,7 @@ import '@theo-messi/tm-fe/pic' /* 图片样式 */
 ```
 
 :::tip
-具体可查看所有主题文件 [tm-fe/theme](https://github.com/Theo-Messi/tm-fe/tree/main/packages/scss)
+具体可查看所有主题文件 [tm-fe/theme](https://github.com/Theo-Messi/tm-fe/tree/main/packages/theme)
 :::
 
 ## 示例
