@@ -1,6 +1,7 @@
 import DefaultTheme from 'vitepress/theme'
 import { h } from 'vue'
 import '../../../packages/scss/all.scss'
+
 import {
   DocBox,
   DocLinks,
