@@ -12,16 +12,17 @@ title: 首页公告栏
 // .vitepress/theme/index.ts
 
 import DefaultTheme from 'vitepress/theme'
-import { Announcement } from '@theo-messi/tm-fe'
-import { h } from 'vue'
+import { Announcement } from '@theo-messi/tm-fe' // [!code ++]
+import { h } from 'vue' // [!code ++]
 
 export default {
   extends: DefaultTheme,
-  Layout() {
-    return h(DefaultTheme.Layout, null, {
-      'home-hero-info-before': () => h(Announcement)
-    })
-  }
+  Layout() { // [!code ++]
+    return h(DefaultTheme.Layout, null, { // [!code ++]
+      'home-hero-info-before': () => h(Announcement) // [!code ++]
+    }) // [!code ++]
+  } // [!code ++]
+  ... //其他代码
 }
 ```
 

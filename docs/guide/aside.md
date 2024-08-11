@@ -52,10 +52,11 @@ import { DocAsideLogo } from '@theo-messi/tm-fe' // [!code ++]
 import { Aside_Data } from '../data/AsideData' // [!code ++]
 export default {
   extends: DefaultTheme,
-  Layout() {
-    return h(DefaultTheme.Layout, null, {
+  Layout() {// [!code ++]
+    return h(DefaultTheme.Layout, null, {// [!code ++]
       'aside-ads-before': () => h(DocAsideLogo, { Aside_Data }) // [!code ++]
-    })
-  }
+    })// [!code ++]
+  }// [!code ++]
+ ... //其他代码
 }
 ```

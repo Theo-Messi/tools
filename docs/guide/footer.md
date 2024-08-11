@@ -45,15 +45,10 @@ export const Footer_Data = {
 //.vitepress/config.mts
 import { defineConfig } from 'vitepress'
 export default defineConfig({
-  vite: {
-    resolve: {
-      alias: [
-        { find: /^.*\/VPFooter\.vue$/, replacement: '@theo-messi/tm-fe/Footer' } // [!code ++]
-      ]
-    },
-    define: {
-      FooterData: JSON.stringify(require('./data/footerData').Footer_Data) // [!code ++]
-    }
-  }
+  vite: {// [!code ++]
+    resolve: { alias: [{ find: /^.*\/VPFooter\.vue$/, replacement: '@theo-messi/tm-fe/Footer' }] },// [!code ++]
+    define: {FooterData: JSON.stringify(require('./data/footerData').Footer_Data)}// [!code ++]
+  }// [!code ++]
+  ...//其他代码
 })
 ```
