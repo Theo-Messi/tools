@@ -20,9 +20,10 @@ import { HomeUnderline } from '@theo-messi/tm-fe' // [!code ++]
 
 export default {
   extends: DefaultTheme,
-  enhanceApp: ({ app }) => {
+  enhanceApp: ({ app }) => {    // [!code ++]
     app.component('Home', HomeUnderline) // [!code ++]
-  }
+  } // [!code ++]
+ ...//其他代码
 }
 ```
 
