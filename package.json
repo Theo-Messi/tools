@@ -9,7 +9,7 @@
   "author": "Theo-Messi",
   "license": "MIT",
   "scripts": {
-    "release": "pnpm all && bumpp && pnpm -r publish",
+    "release": "bumpp && pnpm -r publish",
     "dev": "vitepress dev docs --host",
     "build": "vitepress build docs",
     "preview": "vitepress preview docs",
