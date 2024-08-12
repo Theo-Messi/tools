@@ -1,6 +1,6 @@
 {
   "name": "@theo-messi/tm-fe",
-  "version": "2.4.2",
+  "version": "2.4.3",
   "description": "用于 VitePress 主题美化和集成 Vue 功能组件",
   "repository": "Theo-Messi/tm-fe",
   "homepage": "https://tmfe.theojs.cn/",
