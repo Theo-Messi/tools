@@ -99,32 +99,36 @@ export default defineConfig({
             text: '配置',
             items: [
               {
-                text: '<i class="fas fa-palette" style="color: #ff9900;"></i> 导入主题配色',
+                text: '<i class="fas fa-palette" style="color: #f39c12;"></i> 导入主题配色',
                 link: 'theme'
               },
               {
-                text: '<i class="fas fa-bullhorn" style="color: #63E6BE;"></i> 首页公告栏',
+                text: '<i class="fas fa-bullhorn" style="color: #e74c3c;"></i> 首页公告栏',
                 link: 'prelink'
               },
               {
-                text: '<i class="fas fa-underline" style="color: #74C0FC;"></i> 首页下划线',
+                text: '<i class="fas fa-underline" style="color: #3498db;"></i> 首页下划线',
                 link: 'underline'
               },
               {
-                text: '<i class="fas fa-shoe-prints" style="color: #63E6BE;"></i> 页脚配置',
+                text: '<i class="fas fa-cogs" style="color: #2ecc71;"></i> 页脚配置',
                 link: 'footer'
               },
               {
-                text: '<i class="fas fa-link" style="color: #74C0FC;"></i> 侧边栏链接',
+                text: '<i class="fas fa-th-list" style="color: #9b59b6;"></i> 侧边栏链接',
                 link: 'aside'
               },
               {
-                text: '<i class="fas fa-video" style="color: #63E6BE;"></i> 视频组件',
+                text: '<i class="fas fa-video" style="color: #e67e22;"></i> 视频组件',
                 link: 'video'
               },
               {
-                text: '<i class="fas fa-link" style="color: #74C0FC;"></i> 链接卡片',
+                text: '<i class="fas fa-id-card" style="color: #1abc9c;"></i> 链接卡片',
                 link: 'links'
+              },
+              {
+                text: '<i class="fas fa-download" style="color: #34495e;"></i> 附件下载',
+                link: 'attachment'
               }
             ]
           }

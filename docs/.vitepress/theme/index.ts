@@ -9,7 +9,8 @@ import {
   DocVideoLink,
   Announcement,
   DocAsideLogo,
-  HomeUnderline
+  HomeUnderline,
+  DocAttachment
 } from '../../../packages/components'
 import { Aside_Data } from '../data/AsideData'
 export default {
@@ -23,6 +24,7 @@ export default {
   enhanceApp: ({ app }) => {
     app.component('Box', DocBox)
     app.component('Links', DocLinks)
+    app.component('File', DocAttachment)
     app.component('BoxCube', DocBoxCube)
     app.component('Home', HomeUnderline)
     app.component('VideoLink', DocVideoLink)
