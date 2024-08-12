@@ -16,7 +16,7 @@ title: 首页下划线
 // .vitepress/theme/index.ts
 
 import DefaultTheme from 'vitepress/theme'
-import { HomeUnderline } from '@theo-messi/tm-fe' // [!code ++]
+import { HomeUnderline } from '@theojs/lumen' // [!code ++]
 
 export default {
   extends: DefaultTheme,
@@ -34,7 +34,7 @@ export default {
 layout: home
 
 hero:
-  name: TM-FE
+  name: Lumen
   text: 'Enhanced '
   tagline: ✨ 集成 Vue 功能组件和主题美化的 VitePress 插件
   image:

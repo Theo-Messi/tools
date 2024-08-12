@@ -1,6 +1,6 @@
 import DefaultTheme from 'vitepress/theme'
 import { h } from 'vue'
-import '../../../packages/theme/all.scss'
+import '../../../packages/Lumen/theme/all.scss'
 
 import {
   DocBox,
@@ -11,7 +11,7 @@ import {
   DocAsideLogo,
   HomeUnderline,
   DocAttachment
-} from '../../../packages/components'
+} from '../../../packages/Lumen/components'
 import { Aside_Data } from '../data/AsideData'
 export default {
   extends: DefaultTheme,

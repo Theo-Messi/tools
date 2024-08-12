@@ -1,0 +1,19 @@
+/**
+ * Component: picture
+ * -------------------------------------------------------------------------- */
+
+:root:not(.dark) .dark-only {
+  display: none;
+}
+
+:root:is(.dark) .light-only {
+  display: none;
+}
+
+:root:not(.dark) img[src$='#dark'] {
+  display: none;
+}
+
+:root:is(.dark) img[src$='#light'] {
+  display: none;
+}

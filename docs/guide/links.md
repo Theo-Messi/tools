@@ -7,7 +7,7 @@ title: 链接卡片
 ```ts
 import DefaultTheme from 'vitepress/theme'
 
-import { DocBox, DocLinks, DocBoxCube } from '@theo-messi/tm-fe'// [!code ++]
+import { DocBox, DocLinks, DocBoxCube } from '@theojs/lumen'// [!code ++]
 export default {
   extends: DefaultTheme,
   enhanceApp: ({ app }) => {// [!code ++]

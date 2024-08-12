@@ -8,7 +8,7 @@ title: 视频组件
 // .vitepress/theme/index.ts
 
 import DefaultTheme from 'vitepress/theme'
-import { DocVideoLink } from '@theo-messi/tm-fe' // [!code ++]
+import { DocVideoLink } from '@theojs/lumen' // [!code ++]
 
 export default {
   ... //其他代码
