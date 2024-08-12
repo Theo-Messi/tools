@@ -11,19 +11,19 @@
     cache-control = "max-age=31536000, immutable"
 
 [[redirects]]
-  from = "https://tmfe.theovan.cn/*"
-  to = "https://tmfe.theojs.cn/:splat"
+  from = "https://tools.theovan.cn/*"
+  to = "https://tools.theojs.cn/:splat"
   status = 301
   force = true
 
 [[redirects]]
-  from = "https://tmfe.theovan.xyz/*"
-  to = "https://tmfe.theojs.cn/:splat"
+  from = "https://tools.theovan.xyz/*"
+  to = "https://tools.theojs.cn/:splat"
   status = 301
   force = true
 
 [[redirects]]
-  from = "https://tmfe.theovan.wiki/*"
-  to = "https://tmfe.theojs.cn/:splat"
+  from = "https://tools.theovan.wiki/*"
+  to = "https://tools.theojs.cn/:splat"
   status = 301
   force = true

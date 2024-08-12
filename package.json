@@ -1,28 +1,14 @@
 {
-  "name": "@theo-messi/tm-fe",
   "private": true,
   "workspaces": [
     "packages/*"
   ],
-  "version": "2.4.2",
-  "repository": "Theo-Messi/tm-fe",
-  "homepage": "https://tmfe.theojs.cn/",
-  "funding": "https://github.com/Theo-Messi/tm-fe?sponsor=1",
+  "repository": "Theo-Messi/tools",
+  "homepage": "https://tools.theojs.cn/",
+  "funding": "https://github.com/Theo-Messi/tools?sponsor=1",
   "author": "Theo-Messi",
   "license": "MIT",
-  "keywords": [
-    "scss",
-    "sass",
-    "styles",
-    "vue",
-    "vite",
-    "typescript",
-    "vitepress"
-  ],
-  "main": "components/index.ts",
-  "style": "theme/all.scss",
   "scripts": {
-    "all": "vite build",
     "release": "pnpm all && bumpp && pnpm -r publish",
     "dev": "vitepress dev docs --host",
     "build": "vitepress build docs",
@@ -32,22 +18,13 @@
   },
   "devDependencies": {
     "@types/node": "^22.2.0",
-    "@vitejs/plugin-vue": "^5.1.2",
     "lint-staged": "^15.2.8",
     "prettier": "3.3.3",
-    "rollup-plugin-copy": "^3.5.0",
-    "rollup-plugin-delete": "^2.0.0",
     "simple-git-hooks": "^2.11.1",
     "typescript": "^5.5.4",
     "vite": "^5.4.0",
     "vitepress": "^1.3.2"
   },
-  "files": [
-    "theme/",
-    "components/",
-    "readme.md",
-    "License"
-  ],
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.6.0",
     "@mdit/plugin-img-size": "^0.13.0",
@@ -69,19 +46,5 @@
       "prettier --write --ignore-unknown"
     ]
   },
-  "packageManager": "pnpm@9.7.0",
-  "exports": {
-    ".": "./components/index.ts",
-    "./theme": "./theme/all.scss",
-    "./icon": "./theme/icon.scss",
-    "./button": "./theme/button.scss",
-    "./colors": "./theme/colors.scss",
-    "./doc": "./theme/doc.scss",
-    "./doc-blocks": "./theme/doc-blocks.scss",
-    "./home": "./theme/home.scss",
-    "./home-blocks": "./theme/home-links.scss",
-    "./pic": "./theme/picture.scss",
-    "./components": "./components/index.ts",
-    "./Footer": "./components/HomeFooter.vue"
-  }
+  "packageManager": "pnpm@9.7.0"
 }

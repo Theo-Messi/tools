@@ -2,9 +2,9 @@
   "name": "@theo-messi/tm-fe",
   "version": "2.4.3",
   "description": "用于 VitePress 主题美化和集成 Vue 功能组件",
-  "repository": "Theo-Messi/tm-fe",
-  "homepage": "https://tmfe.theojs.cn/",
-  "funding": "https://github.com/Theo-Messi/tm-fe?sponsor=1",
+  "repository": "Theo-Messi/tools",
+  "homepage": "https://tools.theojs.cn/",
+  "funding": "https://github.com/Theo-Messi/tools?sponsor=1",
   "author": "Theo-Messi",
   "license": "MIT",
   "keywords": [

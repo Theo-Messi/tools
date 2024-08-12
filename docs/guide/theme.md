@@ -26,7 +26,7 @@ import '@theojs/lumen/pic' /* 图片样式 */
 :::
 
 :::tip
-具体可查看所有主题文件 [Lumen/theme](https://github.com/Theo-Messi/tm-fe/tree/main/packages/Lumen/theme)
+具体可查看所有主题文件 [Lumen/theme](https://github.com/Theo-Messi/tools/tree/main/packages/Lumen/theme)
 :::
 
 ## 示例
