@@ -1,10 +1,7 @@
 {
-  "name": "@theo-messi/tm-fe",
-  "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
+  "name": "@theojs/lumen",
   "version": "2.4.2",
+  "description": "用于 VitePress 主题美化和集成 Vue 功能组件",
   "repository": "Theo-Messi/tm-fe",
   "homepage": "https://tmfe.theojs.cn/",
   "funding": "https://github.com/Theo-Messi/tm-fe?sponsor=1",
@@ -22,21 +19,14 @@
   "main": "components/index.ts",
   "style": "theme/all.scss",
   "scripts": {
-    "all": "vite build",
-    "release": "pnpm all && bumpp && pnpm -r publish",
-    "dev": "vitepress dev docs --host",
-    "build": "vitepress build docs",
-    "preview": "vitepress preview docs",
+    "release": "bumpp && pnpm -r publish",
     "prettier": "prettier . --write",
     "check": "prettier . --check"
   },
   "devDependencies": {
     "@types/node": "^22.2.0",
-    "@vitejs/plugin-vue": "^5.1.2",
     "lint-staged": "^15.2.8",
     "prettier": "3.3.3",
-    "rollup-plugin-copy": "^3.5.0",
-    "rollup-plugin-delete": "^2.0.0",
     "simple-git-hooks": "^2.11.1",
     "typescript": "^5.5.4",
     "vite": "^5.4.0",
@@ -50,7 +40,6 @@
   ],
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.6.0",
-    "@mdit/plugin-img-size": "^0.13.0",
     "bumpp": "^9.4.2",
     "sass": "^1.77.8",
     "vue": "^3.4.37"

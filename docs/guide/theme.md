@@ -7,26 +7,26 @@ title: 主题配置文件
 ```ts [所有主题]
 // theme/index.ts
 
-import '@theo-messi/tm-fe/theme'
+import '@theojs/lumen/theme'
 ```
 
 ```ts [部分主题]
 // theme/index.ts
 
-import '@theo-messi/tm-fe/icon' /* 图标 */
-import '@theo-messi/tm-fe/button' /* 按钮 */
-import '@theo-messi/tm-fe/colors' /* 配色 */
-import '@theo-messi/tm-fe/doc' /* 文档样式 */
-import '@theo-messi/tm-fe/doc-blocks' /* 容器样式 */
-import '@theo-messi/tm-fe/home' /* 首页样式 */
-import '@theo-messi/tm-fe/home-blocks' /* 首页按钮 */
-import '@theo-messi/tm-fe/pic' /* 图片样式 */
+import '@theojs/lumen/icon' /* 图标 */
+import '@theojs/lumen/button' /* 按钮 */
+import '@theojs/lumen/colors' /* 配色 */
+import '@theojs/lumen/doc' /* 文档样式 */
+import '@theojs/lumen/doc-blocks' /* 容器样式 */
+import '@theojs/lumen/home' /* 首页样式 */
+import '@theojs/lumen/home-blocks' /* 首页按钮 */
+import '@theojs/lumen/pic' /* 图片样式 */
 ```
 
 :::
 
 :::tip
-具体可查看所有主题文件 [tm-fe/theme](https://github.com/Theo-Messi/tm-fe/tree/main/packages/theme)
+具体可查看所有主题文件 [Lumen/theme](https://github.com/Theo-Messi/tm-fe/tree/main/packages/Lumen/theme)
 :::
 
 ## 示例

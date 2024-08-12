@@ -12,15 +12,15 @@ title: 快速开始
 ::: code-group
 
 ```sh [pnpm]
-pnpm add @theo-messi/tm-fe
+pnpm add @theojs/lumen
 ```
 
 ```sh [npm]
-npm install @theo-messi/tm-fe
+npm install @theojs/lumen
 ```
 
 ```sh [yarn]
-yarn add @theo-messi/tm-fe
+yarn add @theojs/lumen
 ```
 
 :::

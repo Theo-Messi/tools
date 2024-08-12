@@ -46,7 +46,7 @@ export const Footer_Data = {
 import { defineConfig } from 'vitepress'
 export default defineConfig({
   vite: {// [!code ++]
-    resolve: { alias: [{ find: /^.*\/VPFooter\.vue$/, replacement: '@theo-messi/tm-fe/Footer' }] },// [!code ++]
+    resolve: { alias: [{ find: /^.*\/VPFooter\.vue$/, replacement: '@theojs/lumen/Footer' }] },// [!code ++]
     define: {FooterData: JSON.stringify(require('./data/footerData').Footer_Data)}// [!code ++]
   }// [!code ++]
   ...//其他代码

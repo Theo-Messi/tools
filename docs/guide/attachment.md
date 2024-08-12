@@ -7,7 +7,7 @@ title: 附件下载
 ```ts
 import DefaultTheme from 'vitepress/theme'
 
-import { DocAttachment } from '@theo-messi/tm-fe'// [!code ++]
+import { DocAttachment } from '@theojs/lumen'// [!code ++]
 export default {
   extends: DefaultTheme,
   enhanceApp: ({ app }) => {// [!code ++]

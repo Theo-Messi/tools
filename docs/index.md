@@ -3,14 +3,14 @@
 layout: home
 
 hero:
-  name: TM-FE
+  name: Lumen
   text: 'Enhanced '
   tagline: ✨ 集成 Vue 功能组件和主题美化的 VitePress 插件
   image:
     src: '/TM-FELogo.png'
     alt: Theme
   prelink:
-    title: '<i class="fa-solid fa-bolt" style="color: #63E6BE;"></i> 快速开始<div style="text-align: right; font-weight: bold;"><i class="fas fa-pnpm" style="color: #FFD43B;"></i>pnpm add @theo-messi/tm-fe</div>'
+    title: '<i class="fa-solid fa-bolt" style="color: #63E6BE;"></i> 快速开始<div style="text-align: right; font-weight: bold;"><i class="fas fa-pnpm" style="color: #FFD43B;"></i>pnpm add @theo-messi/lumen</div>'
     # link: https://doc.theojs.cn/
     # target: _blank
   actions:

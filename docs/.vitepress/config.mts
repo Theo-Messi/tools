@@ -2,10 +2,10 @@ import { defineConfig } from 'vitepress'
 import { fileURLToPath, URL } from 'node:url'
 import { imgSize } from '@mdit/plugin-img-size'
 
-import pkg from '../../package.json'
+import pkg from '../../packages/Lumen/package.json'
 
 export default defineConfig({
-  title: 'TM-FE',
+  title: 'Lumen',
   description: '用于VitePress主题美化和集成Vue功能组件',
   lang: 'zh-CN',
   cleanUrls: true,
@@ -23,7 +23,10 @@ export default defineConfig({
         {
           find: /^.*\/VPFooter\.vue$/,
           replacement: fileURLToPath(
-            new URL('../../packages/components/HomeFooter.vue', import.meta.url)
+            new URL(
+              '../../packages/Lumen/components/HomeFooter.vue',
+              import.meta.url
+            )
           )
         }
       ]
@@ -137,7 +140,7 @@ export default defineConfig({
     },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/Theo-Messi/tm-fe' },
-      { icon: 'npm', link: 'https://www.npmjs.com/package/@theo-messi/tm-fe' }
+      { icon: 'npm', link: 'https://www.npmjs.com/package/@theojs/lumen' }
     ],
     search: {
       provider: 'local',
