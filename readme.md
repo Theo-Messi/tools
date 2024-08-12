@@ -6,15 +6,15 @@
 ## 安装
 
 ```sh [pnpm]
-pnpm add @theo-messi/tm-fe
+pnpm add @theojs/lumen
 ```
 
 ```sh [npm]
-npm install @theo-messi/tm-fe
+npm install @theojs/lumen
 ```
 
 ```sh [yarn]
-yarn add @theo-messi/tm-fe
+yarn add @theojs/lumen
 ```
 
-## [查看详细文档](https://tmfe.theojs.cn/)
+## [查看详细文档](https://tools.theojs.cn/)

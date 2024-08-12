@@ -38,7 +38,7 @@ export default defineConfig({
   themeConfig: {
     logo: { src: '/TM-FELogo.png', width: 24, height: 24 },
     editLink: {
-      pattern: 'https://github.com/Theo-Messi/tm-fe/blob/main/docs/:path',
+      pattern: 'https://github.com/Theo-Messi/tools/blob/main/docs/:path',
       text: '为此页提供修改建议'
     },
     // 目录设置
@@ -78,11 +78,11 @@ export default defineConfig({
       { text: '指南', link: '/guide/getting-started' },
       {
         text: '提交反馈',
-        link: 'https://github.com/Theo-Messi/tm-fe/issues'
+        link: 'https://github.com/Theo-Messi/tools/issues'
       },
       {
         text: pkg.version,
-        link: 'https://github.com/Theo-Messi/tm-fe/releases'
+        link: 'https://github.com/Theo-Messi/tools/releases'
       }
     ],
     sidebar: {
@@ -139,7 +139,7 @@ export default defineConfig({
       }
     },
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/Theo-Messi/tm-fe' },
+      { icon: 'github', link: 'https://github.com/Theo-Messi/tools' },
       { icon: 'npm', link: 'https://www.npmjs.com/package/@theojs/lumen' }
     ],
     search: {
