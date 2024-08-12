@@ -2,7 +2,11 @@ import { defineConfig } from 'vitepress'
 import { fileURLToPath, URL } from 'node:url'
 import { imgSize } from '@mdit/plugin-img-size'
 
-import pkg from '../../packages/Lumen/package.json'
+import Lumenpkg from '../../packages/Lumen/package.json'
+import tmfepkg from '../../packages/tm-fe/package.json'
+
+const version = `Lumen@` + Lumenpkg.version
+const tmfeVersion = `(已弃用) tm-fe@` + tmfepkg.version
 
 export default defineConfig({
   title: 'Lumen',
@@ -81,8 +85,17 @@ export default defineConfig({
         link: 'https://github.com/Theo-Messi/tools/issues'
       },
       {
-        text: pkg.version,
-        link: 'https://github.com/Theo-Messi/tools/releases'
+        text: version,
+        items: [
+          {
+            text: '更新日志',
+            link: 'https://github.com/Theo-Messi/tools/releases'
+          },
+          {
+            text: tmfeVersion,
+            link: 'https://github.com/Theo-Messi/tools/releases'
+          }
+        ]
       }
     ],
     sidebar: {
