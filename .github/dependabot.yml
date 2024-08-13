@@ -1,33 +1,16 @@
 version: 2
 updates:
   - package-ecosystem: 'npm'
-    directory: '/'
     schedule:
       interval: 'weekly'
       day: 'sunday'
       timezone: 'Asia/Shanghai'
       time: '09:00'
-
-  - package-ecosystem: 'npm'
-    directory: '/packages/Lumen'
-    schedule:
-      interval: 'weekly'
-      day: 'sunday'
-      timezone: 'Asia/Shanghai'
-      time: '09:00'
-
-  - package-ecosystem: 'npm'
-    directory: '/packages/tm-fe'
-    schedule:
-      interval: 'weekly'
-      day: 'sunday'
-      timezone: 'Asia/Shanghai'
-      time: '09:00'
-
-  - package-ecosystem: 'npm'
-    directory: '/docs'
-    schedule:
-      interval: 'weekly'
-      day: 'sunday'
-      timezone: 'Asia/Shanghai'
-      time: '09:00'
+    groups:
+      all-dependencies:
+        patterns:
+          - '*'
+    directories:
+      - '/'
+      - '/packages/*'
+      - '/docs'
