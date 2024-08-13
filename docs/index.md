@@ -22,7 +22,7 @@ hero:
       link: https://doc.theojs.cn/serve/sharing/Account-sharing-guide
     - theme: alt
       text: 机场推荐
-      link: https://doc.theojs.cn/serve/airport/FlyingBird
+      link: https://doc.theojs.cn/serve/airport/qingyunti
     - theme: sponsor
       text: ✨ 成为赞助商
       link: https://github.com/sponsors/Theo-Messi

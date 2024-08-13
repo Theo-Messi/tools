@@ -7,6 +7,13 @@ export const Aside_Data = [
   //   info2: '年付 64折 优惠码  2461880'
   // },
   {
+    link: 'https://ivt01.qytaff.cc/register?aff=jjgD79Jd',
+    icon: 'https://www.qingyunti.cc/images/qytlogo-144-49.png',
+    Activity: '青云梯·三周年专属优惠',
+    info1: '月付 85折 优惠码  qyt85',
+    info2: '季付以上8折 优惠码  qyt8'
+  },
+  {
     link: 'https://github.com/sponsors/Theo-Messi',
     icon: 'https://doc.theojs.cn/爱心.png',
     name: '赞助我的项目'
