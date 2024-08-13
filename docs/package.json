@@ -1,0 +1,16 @@
+{
+  "name": "docs",
+  "scripts": {
+    "dev": "vitepress dev --host",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "vitepress": "^1.3.2"
+  },
+  "dependencies": {
+    "@mdit/plugin-img-size": "^0.13.0",
+    "@theojs/lumen": "workspace:*"
+  },
+  "packageManager": "pnpm@9.7.0"
+}

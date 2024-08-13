@@ -25,40 +25,23 @@
   },
   "devDependencies": {
     "@types/node": "^22.2.0",
-    "lint-staged": "^15.2.8",
-    "prettier": "3.3.3",
-    "simple-git-hooks": "^2.11.1",
     "typescript": "^5.5.4",
     "vite": "^5.4.0",
     "vitepress": "^1.3.2"
   },
-  "files": [
-    "theme/",
-    "components/",
-    "readme.md",
-    "License"
-  ],
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.6.0",
     "bumpp": "^9.4.2",
     "sass": "^1.77.8",
     "vue": "^3.4.37"
   },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true,
-    "printWidth": 80,
-    "trailingComma": "none"
-  },
-  "simple-git-hooks": {
-    "pre-commit": "pnpm lint-staged"
-  },
-  "lint-staged": {
-    "*": [
-      "prettier --write --ignore-unknown"
-    ]
-  },
   "packageManager": "pnpm@9.7.0",
+  "files": [
+    "theme/",
+    "components/",
+    "readme.md",
+    "License"
+  ],
   "exports": {
     ".": "./components/index.ts",
     "./theme": "./theme/all.scss",
@@ -71,6 +54,7 @@
     "./home-blocks": "./theme/home-links.scss",
     "./pic": "./theme/picture.scss",
     "./components": "./components/index.ts",
-    "./Footer": "./components/HomeFooter.vue"
+    "./Footer": "./components/HomeFooter.vue",
+    "./package.json": "./package.json"
   }
 }
