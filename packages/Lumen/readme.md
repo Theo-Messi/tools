@@ -17,4 +17,4 @@ npm install @theojs/lumen
 yarn add @theojs/lumen
 ```
 
-## [查看详细文档](https://tmfe.theojs.cn/)
+## [查看详细文档](https://tools.theojs.cn/)
