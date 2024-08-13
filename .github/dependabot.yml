@@ -7,7 +7,7 @@ updates:
       day: 'sunday'
       timezone: 'Asia/Shanghai'
       time: '09:00'
-      
+
   - package-ecosystem: 'npm'
     directory: '/packages/Lumen'
     schedule:
@@ -15,9 +15,17 @@ updates:
       day: 'sunday'
       timezone: 'Asia/Shanghai'
       time: '09:00'
-      
+
   - package-ecosystem: 'npm'
-    directory: '/packages/tm-fe' 
+    directory: '/packages/tm-fe'
+    schedule:
+      interval: 'weekly'
+      day: 'sunday'
+      timezone: 'Asia/Shanghai'
+      time: '09:00'
+
+  - package-ecosystem: 'npm'
+    directory: '/docs'
     schedule:
       interval: 'weekly'
       day: 'sunday'

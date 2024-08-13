@@ -22,7 +22,7 @@ jobs:
         name: Install pnpm
 
       - name: Install dependencies
-        run: pnpm add axios
+        run: pnpm add axios -w
 
       - name: Run Node.js script
         env:

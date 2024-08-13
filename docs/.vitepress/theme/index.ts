@@ -1,6 +1,6 @@
 import DefaultTheme from 'vitepress/theme'
 import { h } from 'vue'
-import '../../../packages/Lumen/theme/all.scss'
+import '@theojs/lumen/theme'
 
 import {
   DocBox,
@@ -11,7 +11,7 @@ import {
   DocAsideLogo,
   HomeUnderline,
   DocAttachment
-} from '../../../packages/Lumen/components'
+} from '@theojs/lumen'
 import { Aside_Data } from '../data/AsideData'
 export default {
   extends: DefaultTheme,
