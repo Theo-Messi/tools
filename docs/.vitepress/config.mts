@@ -14,7 +14,7 @@ export default defineConfig({
   lang: 'zh-CN',
   cleanUrls: true,
   lastUpdated: true,
-  sitemap: { hostname: 'https://tmfe.theojs.cn' },
+  sitemap: { hostname: 'https://tools.theojs.cn' },
   head: [['link', { rel: 'icon', type: 'icon', href: '/TM-FELogo.png' }]],
   markdown: {
     config: (md) => {
