@@ -1,30 +1,29 @@
 <script setup lang="ts">
-/**
- * 从 VitePress 导入 useData 函数，用于获取当前页面的数据。
- * @module vitepress
- */
+import { computed } from 'vue'
 import { useData } from 'vitepress'
 
 /**
- * 从 useData 函数中解构出 frontmatter 对象，用于访问页面的元数据。
- * @const {Object} fm - 包含页面 frontmatter 的对象
- * @property {Object} hero - 页面 hero 部分的数据
- * @property {Object} hero.prelink - hero 部分的 prelink 数据
- * @property {string} hero.prelink.link - prelink 的 URL
- * @property {string} hero.prelink.target - prelink 的打开方式（例如 `_blank`）
- * @property {string} hero.prelink.title - prelink 的标题内容
+ * 从 useData 函数中解构出 frontmatter 对象。
+ * useData 返回的 frontmatter 是一个 Ref 对象，因此需要通过 .value 访问具体的值。
  */
-const { frontmatter: fm } = useData()
+const { frontmatter } = useData()
+
+/**
+ * 计算属性 prelink
+ * 如果 hero 和 prelink 存在，则返回 prelink 对象，否则返回 undefined。
+ * 使用 computed 保证 prelink 只在 frontmatter 发生变化时重新计算，提升性能。
+ */
+const prelink = computed(() => frontmatter.value.hero?.prelink)
 </script>
 
 <template>
   <a
-    v-if="fm.hero.prelink"
-    :href="fm.hero.prelink.link"
-    :target="fm.hero.prelink.target"
+    v-if="prelink"
+    :href="prelink.link"
+    :target="prelink.target"
     class="custom-link"
   >
-    <span v-html="fm.hero.prelink.title"></span>
+    <span v-html="prelink.title"></span>
   </a>
 </template>
 
