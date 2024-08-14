@@ -45,7 +45,7 @@ export default defineComponent({
     isImage(url: string): boolean {
       return (
         typeof url === 'string' &&
-        /\.(png|jpe?g|gif|svg|webp|bmp|tif?f|tiff|ico)(\?.*)?$/.test(url)
+        /\.(png|jpe?g|gif|svg|webp|bmp|tif?f|tiff|ico|avif)(\?.*)?$/.test(url)
       )
     }
   }
@@ -55,8 +55,8 @@ export default defineComponent({
 <template>
   <div class="container">
     <a
-      v-for="(item, index) in items"
-      :key="item.name + index"
+      v-for="item in items"
+      :key="item.name"
       class="link"
       :href="item.link"
       :name="item.name"
