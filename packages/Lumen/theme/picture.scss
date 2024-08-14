@@ -2,18 +2,43 @@
  * Component: picture
  * -------------------------------------------------------------------------- */
 
-:root:not(.dark) .dark-only {
-  display: none;
+:root {
+  &:not(.dark) {
+    .dark-only {
+      display: none;
+    }
+  }
+
+  &:is(.dark) {
+    .light-only {
+      display: none;
+    }
+  }
+
+  &:not(.dark) {
+    img[src$='#dark'] {
+      display: none;
+    }
+  }
+
+  &:is(.dark) {
+    img[src$='#light'] {
+      display: none;
+    }
+  }
 }
 
-:root:is(.dark) .light-only {
-  display: none;
-}
+/* image subtitle */
+figure {
+  figcaption {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: var(--vp-c-text-3);
+    font-size: 0.875rem;
+    font-weight: 400;
 
-:root:not(.dark) img[src$='#dark'] {
-  display: none;
-}
-
-:root:is(.dark) img[src$='#light'] {
-  display: none;
+    a {
+      color: var(--vp-c-text-3) !important;
+    }
+  }
 }
