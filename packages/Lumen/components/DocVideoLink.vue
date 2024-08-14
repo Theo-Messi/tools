@@ -32,6 +32,11 @@ const isVideo = computed(() => {
  */
 const isVideoOpen = ref(false)
 
+// 动态计算 iframe 的 src
+const videoSrc = computed(() => {
+  return isVideoOpen.value ? props.href : ''
+})
+
 /**
  * 切换视频播放状态。
  */
@@ -47,16 +52,21 @@ const toggleVideo = () => {
         <i v-if="isVideo" class="fas fa-video"></i>
         <div class="name">{{ props.name }}</div>
       </div>
-      <i v-if="isVideo && isVideoOpen" class="fas fa-chevron-up"></i>
-      <i v-else class="fas fa-chevron-down"></i>
+      <i
+        v-if="isVideo"
+        :class="{
+          'fas fa-chevron-up': isVideoOpen,
+          'fas fa-chevron-down': !isVideoOpen
+        }"
+      ></i>
     </div>
     <transition name="slide">
-      <div v-if="isVideo && isVideoOpen" class="video-embed">
+      <div v-show="isVideo && isVideoOpen" class="video-embed">
         <div class="iframe-container">
           <iframe
             loading="lazy"
-            title="Gumlet video player"
-            :src="props.href"
+            title="Video Player"
+            :src="videoSrc"
             class="video-iframe"
             allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;"
             frameborder="0"
@@ -100,7 +110,7 @@ const toggleVideo = () => {
 
       .name {
         font-weight: 600;
-        transition: border-color 0.3s;
+        transition: color 0.3s;
         color: var(--vp-c-brand-1);
       }
     }
@@ -130,6 +140,11 @@ const toggleVideo = () => {
       }
     }
   }
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: max-height 0.3s ease;
 }
 
 .slide-enter,
