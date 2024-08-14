@@ -126,9 +126,10 @@ export default defineComponent({
   }
 
   @media (max-width: 768px) {
-    flex: 1 1 calc(33.33% - -0.5rem);
+    flex: 1 1 calc(33.33% - 0.5rem);
     max-width: calc(33.33% - 0.5rem);
   }
+
   &:hover {
     border-color: var(--vp-c-brand-1);
   }
