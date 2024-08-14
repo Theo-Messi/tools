@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 import { fileURLToPath, URL } from 'node:url'
 import { imgSize } from '@mdit/plugin-img-size'
+import mdImageFigures from 'markdown-it-image-figures'
 
 import Lumenpkg from '../../packages/Lumen/package.json'
 import tmfepkg from '../../packages/tm-fe/package.json'
@@ -19,6 +20,10 @@ export default defineConfig({
   markdown: {
     config: (md) => {
       md.use(imgSize)
+      md.use(mdImageFigures, {
+        figcaption: 'title',
+        copyAttrs: '^class$'
+      })
     }
   },
   vite: {
