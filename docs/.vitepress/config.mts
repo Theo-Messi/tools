@@ -150,6 +150,10 @@ export default defineConfig({
               {
                 text: '<i class="fas fa-download" style="color: #34495e;"></i> 附件下载',
                 link: 'attachment'
+              },
+              {
+                text: '<i class="fas fa-image" style="color: #2ecc71;"></i> 图片描述',
+                link: 'Image-description'
               }
             ]
           }

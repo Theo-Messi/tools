@@ -36,6 +36,7 @@ yarn add @theojs/lumen
     { name: '侧边栏链接', link: 'aside', icon: 'fas fa-th-list', color: '#9b59b6' },
     { name: '视频组件', link: 'video', icon: 'fas fa-video', color: '#e67e22' },
     { name: '链接卡片', link: 'links', icon: 'fas fa-id-card', color: '#1abc9c' },
-    { name: '附件下载', link: 'attachment', icon: 'fas fa-download', color: '#34495e' }
+    { name: '附件下载', link: 'attachment', icon: 'fas fa-download', color: '#34495e' },
+     { name: '图片描述', link: 'Image-description', icon: 'fas fa-image', color: '#2ecc71' }
   ]"
 />
