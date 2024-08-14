@@ -2,9 +2,7 @@
 title: 页脚配置
 ---
 
-## 效果图
-
-![](https://i.theojs.cn/docs/202408081933196.png)
+![](https://i.theojs.cn/docs/202408081933196.png '首页页脚 - 效果图')
 
 ## 创建数据
 

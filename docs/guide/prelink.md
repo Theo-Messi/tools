@@ -2,9 +2,7 @@
 title: 首页公告栏
 ---
 
-## 效果图
-
-![](https://i.theojs.cn/docs/202408082101730.png)
+![](https://i.theojs.cn/docs/202408082101730.png '首页公告栏 - 效果图')
 
 ## 引入组件
 
