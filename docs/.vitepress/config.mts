@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress'
 import { fileURLToPath, URL } from 'node:url'
 import { imgSize } from '@mdit/plugin-img-size'
-import mdImageFigures from 'markdown-it-image-figures'
+import { figure } from '@mdit/plugin-figure'
 
 import Lumenpkg from '../../packages/Lumen/package.json'
 import tmfepkg from '../../packages/tm-fe/package.json'
@@ -18,10 +18,11 @@ export default defineConfig({
   sitemap: { hostname: 'https://tools.theojs.cn' },
   head: [['link', { rel: 'icon', type: 'icon', href: '/TM-FELogo.png' }]],
   markdown: {
+    image: { lazyLoading: true },
     config: (md) => {
       md.use(imgSize)
-      md.use(mdImageFigures, {
-        figcaption: 'title',
+      md.use(figure, {
+        figcaption: 'alt',
         copyAttrs: '^class$'
       })
     }

@@ -2,23 +2,23 @@
 title: 图片描述
 ---
 
-![](/TM-FELogo.png '效果图')
+![效果图](/TM-FELogo.png)
 
-## 安装 markdown-it-image-figures 插件
+## 安装 @mdit/plugin-figure 插件
 
 ::: code-group
 
 ```sh [pnpm]
-pnpm add markdown-it-image-figures
+pnpm add -D @mdit/plugin-figure
 ```
 
 ```sh [npm]
-npm install markdown-it-image-figures
+npm install -D @mdit/plugin-figure
 
 ```
 
 ```sh [yarn]
-yarn add markdown-it-image-figures
+yarn add -D @mdit/plugin-figure
 ```
 
 :::
@@ -29,14 +29,15 @@ yarn add markdown-it-image-figures
 // .vitepress/config.mts
 import { defineConfig } from 'vitepress'
 import { fileURLToPath, URL } from 'node:url'
-import mdImageFigures from 'markdown-it-image-figures' // [!code ++]
+import { figure } from '@mdit/plugin-figure' // [!code ++]
 
 export default defineConfig({
   markdown: {// [!code ++]
     config: (md) => {// [!code ++]
-      md.use(mdImageFigures, {// [!code ++]
-        figcaption: 'title', // [!code ++]
-        copyAttrs: '^class$' // [!code ++]
+      md.use(figure, {// [!code ++]
+        figcaption: 'alt',// [!code ++]
+        copyAttrs: '^class$',// [!code ++]
+        lazy: true// [!code ++]
       }) // [!code ++]
     } // [!code ++]
   } // [!code ++]
@@ -115,7 +116,7 @@ figure figcaption a {
 ## 使用
 
 ```md
-![](/TM-FELogo.png '效果图')
+![效果图](/TM-FELogo.png)
 ```
 
-![](/TM-FELogo.png '效果图')
+![效果图](/TM-FELogo.png)

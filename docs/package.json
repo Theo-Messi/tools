@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "@mdit/plugin-img-size": "^0.13.0",
-    "@theojs/lumen": "workspace:*",
-    "markdown-it-image-figures": "^2.1.1"
+    "@mdit/plugin-figure": "^0.13.0",
+    "@theojs/lumen": "workspace:*"
   },
   "packageManager": "pnpm@9.7.0"
 }

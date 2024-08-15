@@ -2,10 +2,7 @@
 title: 侧边栏链接
 ---
 
-<figure style="display: grid; justify-content: center; text-align: center;">
-  <img src="https://i.theojs.cn/docs/202408081937401.png" alt="侧边栏 - 效果图" width="400">
-  <figcaption>侧边栏 - 效果图</figcaption>
-</figure>
+![侧边栏 - 效果图](https://i.theojs.cn/docs/202408081937401.png =400x)
 
 ## 创建数据
 
