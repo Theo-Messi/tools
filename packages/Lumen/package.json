@@ -19,7 +19,7 @@
   "main": "components/index.ts",
   "style": "theme/all.scss",
   "scripts": {
-    "release": "bumpp && pnpm -r publish",
+    "release": "bumpp && pnpm -r publish --registry=https://registry.npmjs.org",
     "prettier": "prettier . --write",
     "check": "prettier . --check"
   },
