@@ -1,16 +1,19 @@
 version: 2
+
 updates:
   - package-ecosystem: 'npm'
+    directories:
+      - '/'
+      - '/packages/*'
+      - '/docs'
     schedule:
-      interval: 'weekly'
-      day: 'sunday'
+      interval: 'daily'
       timezone: 'Asia/Shanghai'
       time: '09:00'
     groups:
       all-dependencies:
         patterns:
           - '*'
-    directories:
-      - '/'
-      - '/packages/*'
-      - '/docs'
+    commit-message:
+      prefix: 'fix'
+      include: 'scope'
