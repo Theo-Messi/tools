@@ -29,7 +29,7 @@ export default defineComponent({
       v-for="(banner, index) in Aside_Data"
       :key="index"
       :href="banner.link"
-      :name="banner.Activity || banner.name"
+      :class="{ 'has-activity': banner.Activity, 'has-name': banner.name }"
       :title="banner.Activity || banner.name"
       class="banner"
       target="_blank"
@@ -50,7 +50,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 .banner {
   margin: 0.25rem 0;
-  padding: 0.4rem 0;
+  padding: 0.25rem 0;
   border-radius: 0.8rem;
   position: relative;
   font-size: 0.9rem;
@@ -59,10 +59,9 @@ export default defineComponent({
   display: flex;
   align-items: center;
   justify-content: center;
-  // width: 100%;
   gap: 1rem;
   background-color: var(--vp-c-bg-alt);
-  border: 1px solid var(--vp-c-bg-alt);
+  border: 1.5px solid var(--vp-c-bg-alt);
   transition: border-color 0.5s;
 
   &:last-of-type {
@@ -70,8 +69,6 @@ export default defineComponent({
   }
 
   &:hover {
-    border-color: var(--vp-c-brand-1);
-
     img {
       transform: scale(1.75);
     }
@@ -79,6 +76,14 @@ export default defineComponent({
     .hide,
     .info {
       opacity: 0.9;
+    }
+
+    &.has-activity {
+      border-color: rgba(100, 108, 255, 1);
+    }
+
+    &.has-name {
+      border-color: var(--vp-c-brand-1);
     }
   }
 
@@ -88,7 +93,7 @@ export default defineComponent({
   }
 
   .hide {
-    color: var(--vp-c-text-1);
+    color: var(--vp-c-text-2);
     opacity: 0;
     font-size: 0.7rem;
     padding-left: 0.1rem;
@@ -103,8 +108,8 @@ export default defineComponent({
 
   .name {
     background-image: linear-gradient(
-      120deg,
-      var(--vp-c-brand-3) 32%,
+      292deg,
+      var(--vp-c-brand-3) 16%,
       var(--vp-c-brand-2),
       var(--vp-c-brand-1)
     );
@@ -114,7 +119,12 @@ export default defineComponent({
   }
 
   .Activity {
-    background-image: linear-gradient(120deg, #b047ff 16%, #646cff, #747bff);
+    background-image: linear-gradient(
+      292deg,
+      rgba(176, 71, 255, 1) 16%,
+      rgba(100, 108, 255, 1),
+      rgba(116, 123, 255, 1)
+    );
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
