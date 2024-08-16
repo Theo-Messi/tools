@@ -24,6 +24,7 @@ export default defineComponent({
             <a
               :class="{ 'external-link': !section.internal }"
               :target="section.internal ? '_self' : '_blank'"
+              rel="noopener"
               :name="link.name"
               :title="link.name"
               :href="link.href"
@@ -36,29 +37,31 @@ export default defineComponent({
     </div>
 
     <!-- 底部信息栏 -->
-    <div class="ff" style="display: inline-block">
+    <div class="flex">
       <span>
+        <i class="fas fa-earth-americas"></i>
         <a
           target="_blank"
           rel="noopener"
           href="https://beian.miit.gov.cn/"
           title="ICP备案"
         >
-          <i class="fas fa-earth-americas"></i>{{ Footer_Data.beian.icp }}
+          {{ Footer_Data.beian.icp }}
         </a>
       </span>
       <span>
+        <i class="fas fa-shield"></i>
         <a
           target="_blank"
           rel="noopener"
           href="https://beian.mps.gov.cn/"
           title="公安备案"
         >
-          <i class="fas fa-shield"></i>{{ Footer_Data.beian.police }}
+          {{ Footer_Data.beian.police }}
         </a>
       </span>
     </div>
-    <div class="flex" style="display: inline-block">
+    <div class="flex">
       <span>
         Copyright<i class="far fa-copyright"></i>{{ Footer_Data.author.time }} -
         {{ new Date().getFullYear() }}
@@ -78,10 +81,13 @@ export default defineComponent({
 /* 页脚 */
 footer {
   width: 100%;
-
+  a {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
   a:hover {
     -webkit-text-decoration: underline dotted;
     text-decoration: underline dotted;
+    color: var(--vp-c-brand-1);
   }
 
   .has-sidebar ~ & {
@@ -111,6 +117,7 @@ i {
     content: '\f061';
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
+    margin-left: 0.25rem;
     font-size: 0.5rem;
     position: absolute;
     color: var(--vp-c-text-3);
@@ -136,8 +143,7 @@ i {
 }
 
 .flex {
-  display: flex;
-  justify-content: center;
+  display: inline-block;
   margin-bottom: 1.25rem;
 
   &-grow-1 {
