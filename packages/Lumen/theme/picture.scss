@@ -7,21 +7,15 @@
     .dark-only {
       display: none;
     }
-  }
-
-  &:is(.dark) {
-    .light-only {
-      display: none;
-    }
-  }
-
-  &:not(.dark) {
     img[src$='#dark'] {
       display: none;
     }
   }
 
   &:is(.dark) {
+    .light-only {
+      display: none;
+    }
     img[src$='#light'] {
       display: none;
     }
