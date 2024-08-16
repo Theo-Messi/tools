@@ -111,13 +111,12 @@ export default defineComponent({
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  // margin-top: 1rem;
 }
 
 .link {
   width: 100%;
   height: 3rem;
-  border: 1px solid var(--vp-c-bg-alt);
+  border: 1px dotted var(--vp-c-bg-alt);
   background-color: var(--vp-c-bg-alt);
   border-radius: 0.8rem;
   display: flex;
@@ -125,7 +124,6 @@ export default defineComponent({
   position: relative;
   transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
   text-decoration: none !important;
-  border: 1px dotted var(--vp-c-bg-alt);
 
   &:hover {
     border-color: var(--vp-c-brand-1);
