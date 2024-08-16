@@ -34,7 +34,12 @@ export default defineComponent({
       class="banner"
       target="_blank"
     >
-      <img :src="banner.icon" width="22" height="22" />
+      <img
+        :src="banner.icon"
+        width="22"
+        height="22"
+        :alt="banner.Activity || banner.name"
+      />
       <span>
         <p v-if="banner.Activity" class="Activity">{{ banner.Activity }}</p>
         <p v-if="banner.hide1" class="hide">{{ banner.hide1 }}</p>
