@@ -62,6 +62,7 @@ export default defineComponent({
       :name="item.name"
       :title="item.name"
       target="_blank"
+      rel="noopener"
     >
       <span class="box">
         <img
