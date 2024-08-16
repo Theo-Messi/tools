@@ -108,7 +108,6 @@ export default defineComponent({
 }
 
 .link {
-  // margin-top: 1rem;
   width: 8.2rem;
   height: 8.2rem;
   border: 1px dotted var(--vp-c-bg-alt);

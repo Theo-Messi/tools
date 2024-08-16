@@ -107,7 +107,6 @@ export default defineComponent({
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  // margin-top: 1rem;
 }
 
 .box {

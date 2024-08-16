@@ -49,12 +49,6 @@
 }
 
 html.dark:root {
-  // --c-black: rgba(255, 255, 255, 1);
-  // --c-white: rgba(0, 0, 0, 1);
-  // --c-divider-light: rgba(60, 60, 67, 0.12);
-  // --c-divider-dark: rgba(84, 84, 88, 0.48);
-  // --c-brand-light: var(--c-yellow-light);
-
   --vp-c-brand-1: var(--c-yellow-1);
   --vp-c-brand-2: var(--c-yellow-2);
   --vp-c-brand-3: var(--c-yellow-3);
@@ -70,7 +64,6 @@ html.dark:root {
   --c-text-lighter: var(--c-text-dark-3);
   --c-divider: var(--c-divider-dark);
   --c-bg-accent: var(--c-black-light);
-  /* --vp-code-inline-bg: var(--vp-c-black-light); */
 
   --vp-c-bg: var(--c-black);
   --vp-c-bg-soft: var(--c-black-light);

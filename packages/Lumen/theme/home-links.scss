@@ -27,12 +27,10 @@ a.cta {
 
   &.pan::before {
     background-image: url('https://i.theojs.cn/docs/202405101119004.png');
-    /* background-color: var(--c-black); */
   }
 
   &.xx::before {
     background-image: url('https://i.theojs.cn/avatar.png');
-    /* background-color: var(--c-black); */
   }
 
   &.img {
@@ -65,7 +63,6 @@ a.cta {
       left: 0;
       width: 100%;
       height: 100%;
-      // background-color: var(--vp-button-brand-border);
       border: 1px solid var(--vp-button-brand-border);
       border-radius: 20px;
       animation: ping 3s cubic-bezier(0, 0, 0.2, 1) infinite;
