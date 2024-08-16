@@ -72,6 +72,7 @@ export default defineComponent({
       :name="item.name"
       :title="item.name"
       :target="isExternalLink(item.link) ? '_blank' : '_self'"
+      rel="noopener"
     >
       <span v-if="isImage(item.icon)">
         <img :src="item.icon" alt="icon" class="img" />

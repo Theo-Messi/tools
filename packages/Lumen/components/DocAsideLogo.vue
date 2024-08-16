@@ -33,6 +33,7 @@ export default defineComponent({
       :title="banner.Activity || banner.name"
       class="banner"
       target="_blank"
+      rel="noopener"
     >
       <img
         :src="banner.icon"

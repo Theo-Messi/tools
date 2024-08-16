@@ -67,6 +67,7 @@ export default defineComponent({
       :title="item.name"
       class="box"
       target="_blank"
+      rel="noopener"
     >
       <div class="box-content">
         <span v-if="item.tag" class="tag">{{ item.tag }}</span>
