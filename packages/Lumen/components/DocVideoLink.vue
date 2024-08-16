@@ -69,7 +69,6 @@ const toggleVideo = () => {
             :src="videoSrc"
             class="video-iframe"
             allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;"
-            frameborder="0"
             allowfullscreen
           ></iframe>
         </div>
