@@ -38,22 +38,12 @@ export default defineComponent({
     <!-- 底部信息栏 -->
     <div class="ff" style="display: inline-block">
       <span>
-        <a
-          target="_blank"
-          href="https://beian.miit.gov.cn/"
-          name="ICP备案"
-          title="ICP备案"
-        >
+        <a target="_blank" href="https://beian.miit.gov.cn/" title="ICP备案">
           <i class="fas fa-earth-americas"></i>{{ Footer_Data.beian.icp }}
         </a>
       </span>
       <span>
-        <a
-          target="_blank"
-          href="https://beian.mps.gov.cn/"
-          name="公安备案"
-          title="公安备案"
-        >
+        <a target="_blank" href="https://beian.mps.gov.cn/" title="公安备案">
           <i class="fas fa-shield"></i>{{ Footer_Data.beian.police }}
         </a>
       </span>
@@ -62,12 +52,9 @@ export default defineComponent({
       <span>
         Copyright<i class="far fa-copyright"></i>{{ Footer_Data.author.time }} -
         {{ new Date().getFullYear() }}
-        <a
-          target="_blank"
-          name="GitHub"
-          title="GitHub"
-          :href="Footer_Data.author.link"
-          >{{ Footer_Data.author.name }}</a
+        <a target="_blank" title="GitHub" :href="Footer_Data.author.link">{{
+          Footer_Data.author.name
+        }}</a
         >. All Rights Reserved
       </span>
     </div>
