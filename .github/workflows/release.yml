@@ -6,9 +6,7 @@ permissions:
 on:
   push:
     tags:
-      - 'v*'
-      - 'tm-fe@*'
-      - 'Lumen@*'
+      - '*@*'
 
 jobs:
   release:
