@@ -33,7 +33,6 @@
     "sass": "^1.77.8",
     "vue": "^3.4.38"
   },
-  "packageManager": "pnpm@9.7.0",
   "files": [
     "theme/",
     "components/",
@@ -54,5 +53,6 @@
     "./components": "./components/index.ts",
     "./Footer": "./components/HomeFooter.vue",
     "./package.json": "./package.json"
-  }
+  },
+  "packageManager": "pnpm@9.7.1"
 }
