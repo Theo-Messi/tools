@@ -28,7 +28,7 @@ const prelink = computed(() => frontmatter.value.hero?.prelink)
   </a>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .custom-link {
   display: inline-flex;
   align-items: center;
