@@ -9,11 +9,12 @@
   "author": "Theo-Messi",
   "license": "MIT",
   "scripts": {
-    "dev": "pnpx vitepress dev docs",
-    "build": "pnpx vitepress build docs",
-    "preview": "pnpx vitepress preview docs",
-    "prettier": "prettier . --write",
-    "check": "prettier . --check"
+    "dev": "pnpm -F docs dev",
+    "build": "pnpm -F docs build",
+    "preview": "pnpm -F docs preview",
+    "release": "pnpm -F lumen release",
+    "format": "prettier --write .",
+    "format:cheak": "prettier --check ."
   },
   "devDependencies": {
     "lint-staged": "^15.2.9",
@@ -35,5 +36,5 @@
       "prettier --write --ignore-unknown"
     ]
   },
-  "packageManager": "pnpm@9.7.0"
+  "packageManager": "pnpm@9.7.1"
 }
