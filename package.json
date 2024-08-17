@@ -1,8 +1,5 @@
 {
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
   "repository": "Theo-Messi/tools",
   "homepage": "https://tools.theojs.cn/",
   "funding": "https://github.com/Theo-Messi/tools?sponsor=1",
