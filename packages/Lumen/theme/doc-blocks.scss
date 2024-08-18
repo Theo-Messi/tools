@@ -39,19 +39,21 @@
 
   &.details {
     border: 1px solid var(--c-text-light-3);
+    p {
+      color: var(--vp-c-text-2);
+    }
+    .custom-block-title,
     &:before {
       content: '\f059';
+      color: var(--vp-c-text-1);
     }
-  }
-  .custom-block-title {
-    color: var(--vp-c-text-1);
-    transition: color 0.5s;
   }
 
   &.info,
   &.note {
     border: 1px solid var(--c-text-light-3);
     color: var(--vp-c-text-2);
+    .custom-block-title,
     &:before {
       color: var(--vp-c-text-1);
     }
@@ -68,7 +70,7 @@
 
   &.warning {
     border: 1px solid var(--vp-c-yellow-1);
-    color: var((--vp-c-yellow-2));
+    color: var(--vp-c-yellow-2);
     .custom-block-title,
     &:before {
       color: var(--vp-c-yellow-1);
