@@ -3,7 +3,7 @@ import { computed, ref } from 'vue'
 import { videoDomains } from './videoDomains'
 
 /**
- * 定义组件的 props 类型。
+ * 组件的 props 类型定义。
  * @typedef {Object} Props
  * @property {string} href - 视频链接或目标 URL。
  * @property {string} name - 按钮或链接的显示名称。
@@ -84,9 +84,9 @@ const toggleVideo = () => {
   position: relative;
   padding: 1rem 1.25rem;
   border-radius: 0.8rem;
-  transition: border-color 0.3s;
   border: 1px dotted var(--vp-c-bg-alt);
   background-color: var(--vp-c-bg-alt);
+  transition: border-color 0.3s;
 
   &:hover {
     border-color: var(--vp-c-brand-1);

@@ -2,7 +2,7 @@
 import { defineComponent } from 'vue'
 
 /**
- * Item 接口定义了一个链接项的结构。
+ * 定义 `Item` 接口，用于描述每个链接项的结构。
  * @interface Item
  * @property {string} name - 链接项的名称。
  * @property {string} link - 链接项的链接。
@@ -21,14 +21,15 @@ interface Item {
 }
 
 /**
- * 定义并导出 Links 组件。
+ * 定义并导出 `Links` 组件。
  * @component
+ * @description 渲染一组链接项，每项包括图标和名称。
  */
 export default defineComponent({
   name: 'Links',
   props: {
     /**
-     * 链接项数组，类型为 Item[]，且为必需属性。
+     * 链接项数组，包含若干 `Item` 对象，是组件的必需属性。
      * @type {Array<Item>}
      */
     items: {
@@ -40,7 +41,7 @@ export default defineComponent({
     /**
      * 判断给定的 URL 是否为图像文件。
      * @param {string} url - 要判断的 URL。
-     * @returns {boolean} 如果 URL 是图像文件，则返回 true，否则返回 false。
+     * @returns {boolean} 如果 URL 是图像文件，则返回 `true`，否则返回 `false`。
      */
     isImage(url: string): boolean {
       return (
@@ -53,7 +54,9 @@ export default defineComponent({
 </script>
 
 <template>
+  <!-- 渲染包含多个链接项的容器 -->
   <div class="container">
+    <!-- 遍历 `items` 数组，渲染每个链接项 -->
     <a
       v-for="item in items"
       :key="item.name"
@@ -64,6 +67,7 @@ export default defineComponent({
       target="_blank"
       rel="noopener"
     >
+      <!-- 渲染图标 -->
       <span class="box">
         <img
           v-if="item.icon && isImage(item.icon)"
@@ -94,16 +98,19 @@ export default defineComponent({
         />
       </span>
 
+      <!-- 渲染链接项的名称 -->
       <span class="name">{{ item.name }}</span>
     </a>
   </div>
 </template>
 
 <style lang="scss" scoped>
+/* 在非深色模式下隐藏深色模式图标 */
 :root:not(.dark) .dark-only {
   display: none;
 }
 
+/* 在深色模式下隐藏浅色模式图标 */
 :root:is(.dark) .light-only {
   display: none;
 }

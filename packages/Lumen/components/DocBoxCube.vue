@@ -2,7 +2,7 @@
 import { defineComponent } from 'vue'
 
 /**
- * Item 接口定义了一个项目的结构。
+ * 定义 `Item` 接口，用于描述项目的结构。
  * @interface Item
  * @property {string} icon - 图标的 URL 或类名。
  * @property {string} name - 项目的名称。
@@ -23,14 +23,15 @@ interface Item {
 }
 
 /**
- * 定义并导出 BoxCube 组件。
+ * 定义并导出 `BoxCube` 组件。
  * @component
+ * @description 渲染一个包含图标和描述的盒子组件。
  */
 export default defineComponent({
   name: 'BoxCube',
   props: {
     /**
-     * 项目数组，类型为 Item[]，且为必需属性。
+     * 项目数组，包含若干 `Item` 对象，是组件的必需属性。
      * @type {Array<Item>}
      */
     items: {
@@ -42,7 +43,7 @@ export default defineComponent({
     /**
      * 判断给定的 URL 是否为图像文件。
      * @param {string} url - 要判断的 URL。
-     * @returns {boolean} 如果 URL 是图像文件，则返回 true，否则返回 false。
+     * @returns {boolean} 如果 URL 是图像文件，则返回 `true`，否则返回 `false`。
      */
     isImage(url: string): boolean {
       return (
@@ -51,9 +52,9 @@ export default defineComponent({
       )
     },
     /**
-     * 判断链接是否是外部链接。
+     * 判断给定的链接是否是外部链接。
      * @param {string} link - 要判断的链接。
-     * @returns {boolean} 如果链接是外部链接，则返回 true，否则返回 false。
+     * @returns {boolean} 如果链接是外部链接，则返回 `true`，否则返回 `false`。
      */
     isExternalLink(link: string): boolean {
       return /^https?:\/\//.test(link)
@@ -63,7 +64,9 @@ export default defineComponent({
 </script>
 
 <template>
+  <!-- 渲染包含多个链接项的容器 -->
   <div class="container">
+    <!-- 遍历 `items` 数组，渲染每个项目 -->
     <a
       v-for="(item, index) in items"
       :key="item.name + index"
@@ -74,30 +77,38 @@ export default defineComponent({
       :target="isExternalLink(item.link) ? '_blank' : '_self'"
       rel="noopener"
     >
+      <!-- 如果图标是图片，显示图片 -->
       <span v-if="isImage(item.icon)">
         <img :src="item.icon" alt="icon" class="img" />
       </span>
+      <!-- 如果图标不是图片，显示 Font Awesome 图标 -->
       <span v-else class="icon">
         <i :class="item.icon + ' fa-2xl'" :style="{ color: item.color }"></i>
       </span>
+      <!-- 显示浅色模式下的图标 -->
       <img
         v-if="item.light"
         :src="item.light"
         alt="icon"
         class="img light-only"
       />
+      <!-- 显示深色模式下的图标 -->
       <img v-if="item.dark" :src="item.dark" alt="icon" class="img dark-only" />
+      <!-- 显示项目名称 -->
       <span class="name">{{ item.name }}</span>
+      <!-- 显示项目描述 -->
       <span class="desc">{{ item.desc }}</span>
     </a>
   </div>
 </template>
 
 <style lang="scss" scoped>
+/* 在非深色模式下隐藏深色模式图标 */
 :root:not(.dark) .dark-only {
   display: none;
 }
 
+/* 在深色模式下隐藏浅色模式图标 */
 :root:is(.dark) .light-only {
   display: none;
 }

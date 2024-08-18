@@ -4,13 +4,25 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   name: 'DocAttachment',
   props: {
+    /**
+     * 附件的名称，用于下载时的文件名。
+     * @type {String}
+     * @required
+     */
     name: { type: String, required: true },
+
+    /**
+     * 附件的下载链接。
+     * @type {String}
+     * @required
+     */
     link: { type: String, required: true }
   }
 })
 </script>
 
 <template>
+  <!-- 下载链接，点击后会触发文件下载 -->
   <a :href="link" :download="name" class="link">
     <i class="fas fa-download fa-icon"></i>
     <span class="name">{{ name }}</span>

@@ -1,11 +1,11 @@
 <script lang="ts">
 /**
- * 导入 Vue 的 defineComponent 方法，用于定义组件。
+ * 导入 Vue 的 `defineComponent` 方法，用于定义组件。
  */
 import { defineComponent } from 'vue'
 
 /**
- * Item 接口定义了一个链接项的结构。
+ * `Item` 接口定义了一个链接项的结构。
  * @interface Item
  * @property {string} link - 链接地址。
  * @property {string} icon - 图标的 URL 或类名。
@@ -26,13 +26,16 @@ interface Item {
 }
 
 /**
- * 定义并导出 Box 组件。
+ * 定义并导出 `Box` 组件。
+ * @component
+ * @name Box
+ * @description 渲染一个包含链接和图标的盒子组件。
  */
 export default defineComponent({
   name: 'Box',
   props: {
     /**
-     * items 属性，类型为 Item 数组，且为必需属性。
+     * `items` 属性，类型为 `Item` 数组，且为必需属性。
      * @type {Array<Item>}
      */
     items: {
@@ -43,9 +46,8 @@ export default defineComponent({
   methods: {
     /**
      * 检查给定的 URL 是否为图片链接。
-     *
      * @param {string} url - 要检查的 URL。
-     * @returns {boolean} - 如果 URL 是图片链接则返回 true，否则返回 false。
+     * @returns {boolean} - 如果 URL 是图片链接则返回 `true`，否则返回 `false`。
      */
     isImage(url: string): boolean {
       return (
@@ -58,7 +60,9 @@ export default defineComponent({
 </script>
 
 <template>
+  <!-- 渲染盒子容器，包含多个链接项 -->
   <div class="box-container">
+    <!-- 遍历 `items` 数组并渲染每个链接项 -->
     <a
       v-for="(item, index) in items"
       :key="index"
@@ -70,25 +74,31 @@ export default defineComponent({
       rel="noopener"
     >
       <div class="box-content">
+        <!-- 如果有标签，则显示标签 -->
         <span v-if="item.tag" class="tag">{{ item.tag }}</span>
+        <!-- 如果图标是图片，则显示图片 -->
         <span v-if="isImage(item.icon)" class="icon-container">
           <img :src="item.icon" alt="icon" class="icon-container" />
         </span>
+        <!-- 如果图标不是图片，则显示 Font Awesome 图标 -->
         <span v-else class="icon">
           <i :class="item.icon + ' fa-2xl'" :style="{ color: item.color }"></i>
         </span>
+        <!-- 如果有浅色模式图标，则显示 -->
         <img
           v-if="item.light"
           :src="item.light"
           alt="icon"
           class="icon-container light-only"
         />
+        <!-- 如果有深色模式图标，则显示 -->
         <img
           v-if="item.dark"
           :src="item.dark"
           alt="icon"
           class="icon-container dark-only"
         />
+        <!-- 显示名称 -->
         <p class="name">{{ item.name }}</p>
       </div>
     </a>
@@ -96,10 +106,12 @@ export default defineComponent({
 </template>
 
 <style lang="scss" scoped>
+/* 在非深色模式下隐藏深色模式图标 */
 :root:not(.dark) .dark-only {
   display: none;
 }
 
+/* 在深色模式下隐藏浅色模式图标 */
 :root:is(.dark) .light-only {
   display: none;
 }
