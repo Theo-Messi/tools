@@ -3,15 +3,16 @@ import { computed } from 'vue'
 import { useData } from 'vitepress'
 
 /**
- * 从 useData 函数中解构出 frontmatter 对象。
- * useData 返回的 frontmatter 是一个 Ref 对象，因此需要通过 .value 访问具体的值。
+ * 从 `useData` 函数中解构出 `frontmatter` 对象。
+ * `useData` 返回的 `frontmatter` 是一个 `Ref` 对象，因此需要通过 `.value` 访问实际的值。
  */
 const { frontmatter } = useData()
 
 /**
- * 计算属性 prelink
- * 如果 hero 和 prelink 存在，则返回 prelink 对象，否则返回 undefined。
- * 使用 computed 保证 prelink 只在 frontmatter 发生变化时重新计算，提升性能。
+ * 计算属性 `prelink`。
+ * 依据 `frontmatter.value.hero` 对象中的 `prelink` 属性计算其值。
+ * 如果 `hero` 或 `prelink` 不存在，则返回 `undefined`。
+ * 使用 `computed` 确保 `prelink` 只在 `frontmatter` 发生变化时重新计算，从而提升性能。
  */
 const prelink = computed(() => frontmatter.value.hero?.prelink)
 </script>

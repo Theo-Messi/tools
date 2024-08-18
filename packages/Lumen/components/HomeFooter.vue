@@ -4,18 +4,31 @@ import { defineComponent, ref, onMounted, onUnmounted } from 'vue'
 export default defineComponent({
   name: 'Footer',
   setup() {
+    // 底部数据
     const Footer_Data = FooterData
+
+    // 当前打开的 section 索引
     const openSectionIndex = ref<number | null>(null)
+
+    // 当前窗口宽度
     const windowWidth = ref<number | null>(null)
 
+    /**
+     * 切换 section 的显示状态
+     * @param index - 要切换的 section 的索引
+     */
     const toggleSection = (index: number) => {
       openSectionIndex.value = openSectionIndex.value === index ? null : index
     }
 
+    /**
+     * 更新窗口宽度
+     */
     const updateWindowWidth = () => {
       windowWidth.value = window.innerWidth
     }
 
+    // 组件挂载时添加 resize 事件监听器
     onMounted(() => {
       if (typeof window !== 'undefined') {
         windowWidth.value = window.innerWidth
@@ -23,6 +36,7 @@ export default defineComponent({
       }
     })
 
+    // 组件卸载时移除 resize 事件监听器
     onUnmounted(() => {
       if (typeof window !== 'undefined') {
         window.removeEventListener('resize', updateWindowWidth)
@@ -107,7 +121,6 @@ export default defineComponent({
 </template>
 
 <style lang="scss" scoped>
-/* 页脚 */
 footer {
   width: 100%;
 

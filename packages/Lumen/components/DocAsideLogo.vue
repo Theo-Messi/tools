@@ -4,6 +4,20 @@ import { defineComponent, PropType } from 'vue'
 export default defineComponent({
   name: 'DocAsideLogo',
   props: {
+    /**
+     * `Aside_Data` 属性的类型定义。
+     * 包含一个对象数组，每个对象代表一个横幅，具体字段如下：
+     * - `link`: 横幅的链接地址
+     * - `icon`: 横幅的图标地址
+     * - `name` (可选): 横幅的名称
+     * - `Activity` (可选): 横幅的活动信息
+     * - `hide1` (可选): 隐藏信息1
+     * - `info1` (可选): 信息1
+     * - `hide2` (可选): 隐藏信息2
+     * - `info2` (可选): 信息2
+     *
+     * 该属性为必需的。
+     */
     Aside_Data: {
       type: Array as PropType<
         Array<{
@@ -25,6 +39,7 @@ export default defineComponent({
 
 <template>
   <div>
+    <!-- 遍历 Aside_Data 数组并渲染每个横幅 -->
     <a
       v-for="(banner, index) in Aside_Data"
       :key="index"
