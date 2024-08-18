@@ -15,5 +15,5 @@ updates:
         patterns:
           - '*'
     commit-message:
-      prefix: 'fix'
+      prefix: 'fix(Dependabot)'
       include: 'scope'
