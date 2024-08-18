@@ -1,6 +1,6 @@
 {
   "name": "@theojs/lumen",
-  "version": "2.6.1",
+  "version": "2.6.2",
   "description": "用于 VitePress 主题美化和集成 Vue 功能组件",
   "repository": "Theo-Messi/tools",
   "homepage": "https://tools.theojs.cn/",
