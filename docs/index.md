@@ -44,5 +44,7 @@ features:
 
 <Home />
 <style>
-  :root{--vp-home-hero-image-background-image: none;}
+  :root {
+    --vp-home-hero-image-background-image: none !important;
+  }
 </style>
