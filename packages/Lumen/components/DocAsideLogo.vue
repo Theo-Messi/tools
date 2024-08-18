@@ -42,12 +42,12 @@ export default defineComponent({
         :alt="banner.Activity || banner.name"
       />
       <span>
-        <p v-if="banner.Activity" class="Activity">{{ banner.Activity }}</p>
-        <p v-if="banner.hide1" class="hide">{{ banner.hide1 }}</p>
-        <p v-if="banner.info1" class="info">{{ banner.info1 }}</p>
-        <p v-if="banner.name" class="name">{{ banner.name }}</p>
-        <p v-if="banner.hide2" class="hide">{{ banner.hide2 }}</p>
-        <p v-if="banner.info2" class="info">{{ banner.info2 }}</p>
+        <p v-if="banner.Activity" class="Activity" v-html="banner.Activity"></p>
+        <p v-if="banner.hide1" class="hide" v-html="banner.hide1"></p>
+        <p v-if="banner.info1" class="info" v-html="banner.info1"></p>
+        <p v-if="banner.name" class="name" v-html="banner.name"></p>
+        <p v-if="banner.hide2" class="hide" v-html="banner.hide2"></p>
+        <p v-if="banner.info2" class="info" v-html="banner.info2"></p>
       </span>
     </a>
   </div>
