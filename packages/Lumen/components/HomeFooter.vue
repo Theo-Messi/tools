@@ -1,11 +1,35 @@
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref, onMounted, onUnmounted } from 'vue'
 
 export default defineComponent({
   name: 'Footer',
   setup() {
     const Footer_Data = FooterData
-    return { Footer_Data }
+    const openSectionIndex = ref<number | null>(null)
+    const windowWidth = ref<number | null>(null)
+
+    const toggleSection = (index: number) => {
+      openSectionIndex.value = openSectionIndex.value === index ? null : index
+    }
+
+    const updateWindowWidth = () => {
+      windowWidth.value = window.innerWidth
+    }
+
+    onMounted(() => {
+      if (typeof window !== 'undefined') {
+        windowWidth.value = window.innerWidth
+        window.addEventListener('resize', updateWindowWidth)
+      }
+    })
+
+    onUnmounted(() => {
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', updateWindowWidth)
+      }
+    })
+
+    return { Footer_Data, openSectionIndex, toggleSection, windowWidth }
   }
 })
 </script>
@@ -18,8 +42,13 @@ export default defineComponent({
         v-for="(section, index) in Footer_Data.group"
         :key="index"
       >
-        <div class="st">{{ section.title }}</div>
-        <ul>
+        <div class="st" @click="toggleSection(index)">
+          {{ section.title }}
+          <button class="toggle-button">
+            {{ openSectionIndex === index ? '−' : '+' }}
+          </button>
+        </div>
+        <ul v-if="openSectionIndex === index || windowWidth > 768">
           <li v-for="(link, idx) in section.links" :key="idx">
             <a
               :class="{ 'external-link': !section.internal }"
@@ -81,13 +110,14 @@ export default defineComponent({
 /* 页脚 */
 footer {
   width: 100%;
+
   a {
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  }
-  a:hover {
-    -webkit-text-decoration: underline dotted;
-    text-decoration: underline dotted;
-    color: var(--vp-c-brand-1);
+    &:hover {
+      -webkit-text-decoration: underline dotted;
+      text-decoration: underline dotted;
+      color: var(--vp-c-brand-1);
+    }
   }
 
   .has-sidebar ~ & {
@@ -102,11 +132,11 @@ span {
 li {
   margin-bottom: 0.5rem;
   line-height: 1.2rem;
+  opacity: 0.9;
 }
 
 i {
-  margin-right: 0.25rem;
-  margin-left: 0.25rem;
+  margin: 0 0.25rem;
 }
 
 .external-link {
@@ -127,7 +157,7 @@ i {
 
 .ba {
   background: var(--vp-c-bg-alt);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   text-align: center;
   margin: 0 auto;
 }
@@ -159,5 +189,50 @@ i {
   margin-bottom: 0.5rem;
   font-weight: 600;
   font-size: 0.8rem;
+
+  .toggle-button {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0;
+
+    @media (min-width: 769px) {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .ff {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 2rem 3.5rem;
+  }
+
+  .sc {
+    width: 100%;
+    flex-basis: auto;
+  }
+
+  li {
+    text-align: left;
+    margin-left: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .st {
+    font-size: 0.9rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.5rem 0;
+  }
+
+  .toggle-button {
+    padding: 0 0.5rem;
+  }
 }
 </style>
