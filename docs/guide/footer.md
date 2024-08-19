@@ -50,3 +50,96 @@ export default defineConfig({
   ...//其他代码
 })
 ```
+
+## 数据接口说明
+
+```ts
+/**
+ * Footer 的数据对象。
+ */
+interface FooterData {
+  /**
+   * 各个 section 的数据。
+   */
+  group: Array<{
+    /**
+     * Section 的标题。
+     */
+    title: string
+
+    /**
+     * 图标的类名（Font Awesome 图标类名）。
+     * @default undefined
+     */
+    icon?: string
+
+    /**
+     * 该 section 下的链接。
+     */
+    links: Array<{
+      /**
+       * 链接文本。
+       */
+      name: string
+
+      /**
+       * 链接的图标类名（Font Awesome 图标类名）。
+       * @default undefined
+       */
+      icon?: string
+
+      /**
+       * 链接地址。
+       */
+      href: string
+
+      /**
+       * 链接是否为内部链接。
+       */
+      internal: boolean
+    }>
+  }>
+
+  /**
+   * 备案信息。
+   * @default undefined
+   */
+  beian?: {
+    /**
+     * ICP 备案号。
+     * @default undefined
+     */
+    icp?: string
+
+    /**
+     * 公安备案号。
+     * @default undefined
+     */
+    police?: string
+  }
+
+  /**
+   * 作者信息。
+   * @default undefined
+   */
+  author?: {
+    /**
+     * 作者名称。
+     * @default undefined
+     */
+    name?: string
+
+    /**
+     * 版权年份。
+     * @default undefined
+     */
+    time?: string
+
+    /**
+     * 作者的链接。
+     * @default undefined
+     */
+    link?: string
+  }
+}
+```
