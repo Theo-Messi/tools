@@ -11,6 +11,7 @@ export const Footer_Data = {
   group: [
     {
       title: 'GitHub Source',
+      icon: 'fab fa-github',
       links: [
         {
           name: 'Theo-Docs',
@@ -36,6 +37,7 @@ export const Footer_Data = {
     },
     {
       title: '合作伙伴',
+      icon: 'fas fa-handshake',
       links: [
         {
           name: '🔥 青云梯',
@@ -63,6 +65,7 @@ export const Footer_Data = {
     },
     {
       title: '观影指南',
+      icon: 'fas fa-book-open',
       links: [
         {
           name: 'Netflix',
@@ -86,6 +89,7 @@ export const Footer_Data = {
     },
     {
       title: '相关链接',
+      icon: 'fas fa-link',
       links: [
         { name: 'Theo-Docs', href: 'https://doc.theojs.cn/' },
         { name: '玄学宝典', href: 'https://xx.theojs.cn/' },
