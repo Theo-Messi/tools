@@ -57,6 +57,7 @@ export default defineComponent({
         :key="index"
       >
         <div class="st" @click="toggleSection(index)">
+          <i v-if="section.icon" :class="section.icon"></i>
           {{ section.title }}
           <button class="toggle-button">
             {{ openSectionIndex === index ? '−' : '+' }}
@@ -64,6 +65,7 @@ export default defineComponent({
         </div>
         <ul v-if="openSectionIndex === index || windowWidth > 768">
           <li v-for="(link, idx) in section.links" :key="idx">
+            <i v-if="link.icon" :class="link.icon"></i>
             <a
               :class="{ 'external-link': !section.internal }"
               :target="section.internal ? '_self' : '_blank'"
@@ -183,19 +185,11 @@ i {
   display: flex;
   justify-content: center;
   margin: 1.25rem;
-
-  &-grow-1 {
-    flex-grow: 1;
-  }
 }
 
 .flex {
   display: inline-block;
   margin-bottom: 1.25rem;
-
-  &-grow-1 {
-    flex-grow: 1;
-  }
 }
 
 .sc {
@@ -240,16 +234,17 @@ i {
 
   .st {
     font-size: 0.9rem;
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
     padding: 0.5rem 0;
-  }
-
-  .toggle-button {
-    padding: 0 0.5rem;
+    i {
+      margin-right: 1rem;
+    }
+    .toggle-button {
+      margin-left: auto;
+    }
   }
 }
 </style>
