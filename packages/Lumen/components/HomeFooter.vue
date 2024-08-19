@@ -80,8 +80,11 @@ export default defineComponent({
     </div>
 
     <!-- 底部信息栏 -->
-    <div class="flex">
-      <span>
+    <div
+      class="flex"
+      v-if="Footer_Data.beian?.icp || Footer_Data.beian?.police"
+    >
+      <span v-if="Footer_Data.beian?.icp">
         <i class="fas fa-earth-americas"></i>
         <a
           target="_blank"
@@ -92,7 +95,7 @@ export default defineComponent({
           {{ Footer_Data.beian.icp }}
         </a>
       </span>
-      <span>
+      <span v-if="Footer_Data.beian?.police">
         <i class="fas fa-shield"></i>
         <a
           target="_blank"
@@ -104,16 +107,17 @@ export default defineComponent({
         </a>
       </span>
     </div>
-    <div class="flex">
+    <div class="flex" v-if="Footer_Data.author?.name">
       <span>
-        Copyright<i class="far fa-copyright"></i>{{ Footer_Data.author.time }} -
+        Copyright<i class="far fa-copyright"></i
+        >{{ Footer_Data.author?.time }} -
         {{ new Date().getFullYear() }}
         <a
           target="_blank"
           rel="noopener"
           title="GitHub"
-          :href="Footer_Data.author.link"
-          >{{ Footer_Data.author.name }}</a
+          :href="Footer_Data.author?.link"
+          >{{ Footer_Data.author?.name }}</a
         >. All Rights Reserved
       </span>
     </div>
