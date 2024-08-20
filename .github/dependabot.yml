@@ -16,4 +16,3 @@ updates:
           - '*'
     commit-message:
       prefix: 'fix(Dependabot)'
-      include: 'scope'
