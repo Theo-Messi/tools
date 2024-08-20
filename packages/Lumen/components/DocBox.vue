@@ -3,6 +3,7 @@
  * 导入 Vue 的 `defineComponent` 方法，用于定义组件。
  */
 import { defineComponent } from 'vue'
+import { Icon } from '@iconify/vue'
 
 /**
  * `Item` 接口定义了一个链接项的结构。
@@ -55,6 +56,9 @@ export default defineComponent({
         /\.(png|jpe?g|gif|svg|webp|bmp|tif?f|tiff|ico)(\?.*)?$/.test(url)
       )
     }
+  },
+  components: {
+    Icon
   }
 })
 </script>
@@ -81,8 +85,18 @@ export default defineComponent({
           <img :src="item.icon" alt="icon" class="icon-container" />
         </span>
         <!-- 如果图标不是图片，则显示 Font Awesome 图标 -->
-        <span v-else class="icon">
-          <i :class="item.icon + ' fa-2xl'" :style="{ color: item.color }"></i>
+        <span v-else>
+          <i
+            v-if="item.icon?.startsWith('fa')"
+            :class="item.icon"
+            :style="{ color: item.color }"
+          ></i>
+          <Icon
+            v-else-if="item.icon"
+            :icon="item.icon"
+            :style="{ color: item.color }"
+            class="iconify"
+          ></Icon>
         </span>
         <!-- 如果有浅色模式图标，则显示 -->
         <img
@@ -179,13 +193,10 @@ export default defineComponent({
   align-items: center;
 }
 
-.icon {
-  display: inline-block;
-  height: 2em;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1rem;
+i,
+.iconify {
   color: var(--vp-c-text-1);
+  font-size: 1.8rem;
 }
 
 .name {

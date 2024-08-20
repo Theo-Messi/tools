@@ -1,5 +1,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { Icon } from '@iconify/vue'
 
 /**
  * 定义 `Item` 接口，用于描述项目的结构。
@@ -59,6 +60,9 @@ export default defineComponent({
     isExternalLink(link: string): boolean {
       return /^https?:\/\//.test(link)
     }
+  },
+  components: {
+    Icon
   }
 })
 </script>
@@ -77,24 +81,37 @@ export default defineComponent({
       :target="isExternalLink(item.link) ? '_blank' : '_self'"
       rel="noopener"
     >
-      <!-- 如果图标是图片，显示图片 -->
-      <span v-if="isImage(item.icon)">
+      <template v-if="item.icon && isImage(item.icon)">
         <img :src="item.icon" alt="icon" class="img" />
-      </span>
-      <!-- 如果图标不是图片，显示 Font Awesome 图标 -->
-      <span v-else class="icon">
-        <i :class="item.icon + ' fa-2xl'" :style="{ color: item.color }"></i>
-      </span>
-      <!-- 显示浅色模式下的图标 -->
+      </template>
+      <template v-else>
+        <span>
+          <i
+            v-if="item.icon?.startsWith('fa')"
+            :class="[item.icon]"
+            :style="{ color: item.color }"
+          ></i>
+          <Icon
+            class="iconify"
+            v-else
+            v-if="item.icon"
+            :icon="item.icon"
+            :style="{ color: item.color }"
+          ></Icon>
+        </span>
+      </template>
       <img
         v-if="item.light"
         :src="item.light"
-        alt="icon"
+        alt="light icon"
         class="img light-only"
       />
-      <!-- 显示深色模式下的图标 -->
-      <img v-if="item.dark" :src="item.dark" alt="icon" class="img dark-only" />
-      <!-- 显示项目名称 -->
+      <img
+        v-if="item.dark"
+        :src="item.dark"
+        alt="dark icon"
+        class="img dark-only"
+      />
       <span class="name">{{ item.name }}</span>
       <!-- 显示项目描述 -->
       <span class="desc">{{ item.desc }}</span>
@@ -145,9 +162,10 @@ export default defineComponent({
     border-color: var(--vp-c-brand-1);
   }
 
-  .icon {
+  i,
+  .iconify {
     margin-top: -1rem;
-    font-size: 1.2rem;
+    font-size: 2.5rem;
     color: var(--vp-c-text-1);
   }
 

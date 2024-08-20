@@ -1,5 +1,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { Icon } from '@iconify/vue'
 
 /**
  * 定义 `Item` 接口，用于描述每个链接项的结构。
@@ -49,14 +50,15 @@ export default defineComponent({
         /\.(png|jpe?g|gif|svg|webp|bmp|tif?f|tiff|ico|avif)(\?.*)?$/.test(url)
       )
     }
+  },
+  components: {
+    Icon
   }
 })
 </script>
 
 <template>
-  <!-- 渲染包含多个链接项的容器 -->
   <div class="container">
-    <!-- 遍历 `items` 数组，渲染每个链接项 -->
     <a
       v-for="item in items"
       :key="item.name"
@@ -67,38 +69,41 @@ export default defineComponent({
       target="_blank"
       rel="noopener"
     >
-      <!-- 渲染图标 -->
       <span class="box">
-        <img
-          v-if="item.icon && isImage(item.icon)"
-          :src="item.icon"
-          alt="Icon"
-          class="icon"
-        />
-        <i
-          v-else-if="item.icon"
-          :class="item.icon + ' fa-2xl icon'"
-          :style="{ color: item.color }"
-        ></i>
-        <i
+        <!-- 判断并显示不同类型的图标 -->
+        <template v-if="item.icon">
+          <img
+            v-if="item.icon && isImage(item.icon)"
+            :src="item.icon"
+            alt="Icon"
+          />
+          <i
+            v-else-if="item.icon?.startsWith('fa')"
+            :class="item.icon"
+            :style="{ color: item.color }"
+          ></i>
+          <Icon v-else :icon="item.icon" :style="{ color: item.color }"></Icon>
+        </template>
+
+        <!-- 如果没有图标，也没有浅色和深色模式图标，则使用默认图标 -->
+
+        <Icon
           v-else-if="!item.light && !item.dark"
-          class="fas fa-arrow-up-right-from-square fa-lg fa-icon"
-        ></i>
+          icon="ci:external-link"
+        ></Icon>
+
+        <!-- 渲染浅色模式图标 -->
         <img
           v-if="item.light"
           :src="item.light"
           alt="icon"
-          class="icon light-only"
+          class="light-only"
         />
-        <img
-          v-if="item.dark"
-          :src="item.dark"
-          alt="icon"
-          class="icon dark-only"
-        />
+
+        <!-- 渲染深色模式图标 -->
+        <img v-if="item.dark" :src="item.dark" alt="icon" class="dark-only" />
       </span>
 
-      <!-- 渲染链接项的名称 -->
       <span class="name">{{ item.name }}</span>
     </a>
   </div>
@@ -147,25 +152,19 @@ export default defineComponent({
   }
 }
 
-.icon-only {
+img {
   width: 2rem;
   margin-left: 1.5rem;
-  margin-top: -1.5rem;
-}
-
-.icon {
-  width: 2rem;
-  margin-left: 1.5rem;
-}
-
-.fa-icon {
-  width: 2rem;
-  margin-left: 1.5rem;
-  margin-top: -1.5rem;
 }
 
 .name {
   font-size: 0.87rem;
   margin-left: 1rem;
+}
+
+i,
+.iconify {
+  font-size: 1.8rem;
+  margin-left: 1.5rem;
 }
 </style>
