@@ -43,6 +43,13 @@ export default defineConfig({
       FooterData: JSON.stringify(require('./data/FooterData').Footer_Data)
     }
   },
+  vue: {
+    template: {
+      compilerOptions: {
+        isCustomElement: (tag) => tag === 'iconify-icon'
+      }
+    }
+  },
   themeConfig: {
     logo: { src: '/TM-FELogo.png', width: 24, height: 24 },
     editLink: {
@@ -117,6 +124,10 @@ export default defineConfig({
               {
                 text: '<i class="fas fa-palette" style="color: #f39c12;"></i> 导入主题配色',
                 link: 'theme'
+              },
+              {
+                text: '<i class="fas fa-icons" style="color: #3498db;"></i> 图标库',
+                link: 'Icon-library'
               },
               {
                 text: '<i class="fas fa-bullhorn" style="color: #e74c3c;"></i> 首页公告栏',

@@ -42,9 +42,15 @@ importers:
       '@fortawesome/fontawesome-free':
         specifier: ^6.6.0
         version: 6.6.0
+      '@iconify/vue':
+        specifier: ^4.1.2
+        version: 4.1.2(vue@3.4.38(typescript@5.5.4))
       bumpp:
         specifier: ^9.5.1
         version: 9.5.1
+      iconify-icon:
+        specifier: ^2.1.0
+        version: 2.1.0
       sass:
         specifier: ^1.77.8
         version: 1.77.8
@@ -316,6 +322,14 @@ packages:
   '@fortawesome/fontawesome-free@6.6.0':
     resolution: {integrity: sha512-60G28ke/sXdtS9KZCpZSHHkCbdsOGEhIUGlwq6yhY74UpTiToIh8np7A8yphhM4BWsvNFtIvLpi4co+h9Mr9Ow==}
     engines: {node: '>=6'}
+
+  '@iconify/types@2.0.0':
+    resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
+
+  '@iconify/vue@4.1.2':
+    resolution: {integrity: sha512-CQnYqLiQD5LOAaXhBrmj1mdL2/NCJvwcC4jtW2Z8ukhThiFkLDkutarTOV2trfc9EXqUqRs0KqXOL9pZ/IyysA==}
+    peerDependencies:
+      vue: '>=3'
 
   '@jridgewell/sourcemap-codec@1.5.0':
     resolution: {integrity: sha512-gv3ZRaISU3fjPAgNsriBRqGWQL6quFx04YMPW/zD8XMLsU32mhCCbfbO6KZFLjvYpCZ8zyDEgqsgf+PwPaM7GQ==}
@@ -775,6 +789,9 @@ packages:
   human-signals@5.0.0:
     resolution: {integrity: sha512-AXcZb6vzzrFAUE61HnN4mpLqd/cSIwNQjtNWR0euPm6y0iqx3G4gOXaIDdtdDwZmhwe82LA6+zinmW4UBWVePQ==}
     engines: {node: '>=16.17.0'}
+
+  iconify-icon@2.1.0:
+    resolution: {integrity: sha512-lto4XU3bwTQnb+D/CsJ4dWAo0aDe+uPMxEtxyOodw9l7R9QnJUUab3GCehlw2M8mDHdeUu/ufx8PvRQiJphhXg==}
 
   immutable@4.3.7:
     resolution: {integrity: sha512-1hqclzwYwjRDFLjcFxOM5AYkkG0rpFPpr1RLPMEuGczoS7YA8gLhy8SWXYRAA/XwfEHpfo3cw5JGioS32fnMRw==}
@@ -1552,6 +1569,13 @@ snapshots:
 
   '@fortawesome/fontawesome-free@6.6.0': {}
 
+  '@iconify/types@2.0.0': {}
+
+  '@iconify/vue@4.1.2(vue@3.4.38(typescript@5.5.4))':
+    dependencies:
+      '@iconify/types': 2.0.0
+      vue: 3.4.38(typescript@5.5.4)
+
   '@jridgewell/sourcemap-codec@1.5.0': {}
 
   '@jsdevtools/ez-spawn@3.0.4':
@@ -2009,6 +2033,10 @@ snapshots:
   hookable@5.5.3: {}
 
   human-signals@5.0.0: {}
+
+  iconify-icon@2.1.0:
+    dependencies:
+      '@iconify/types': 2.0.0
 
   immutable@4.3.7: {}
 

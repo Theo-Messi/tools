@@ -29,16 +29,11 @@ export default {
 ```vue-html
 <Box
   :items="[
-    //使用FontAwesome图标 + 颜色
-    { name: 'Vue.js', link: '', icon: 'fab fa-vuejs', color: '#4FC08D' },
-    //使用FontAwesome图标 + 标签
-    { name: 'GitHub', link: '', icon: 'fab fa-github', tag: 'Github' },
-    //使用FontAwesome图标 + 标签 + 颜色
+    { name: 'Vue.js', link: '', icon: 'logos:vue', color: '#4FC08D' },
+    { name: 'GitHub', link: '', icon: 'logos:github-icon', tag: 'Github' },
     { name: '支付宝', link: 'https://i.theojs.cn/docs/202405201752089.jpg', icon: 'fab fa-alipay', color: '#00a1e9', tag: '打赏' },
     { name: '微信', link: 'https://i.theojs.cn/docs/202405201752087.jpg', icon: 'fab fa-weixin', color: '#2ca83c', tag: '打赏' },
-    //使用自定义图标 + 标签
     { name: 'GitHub', link: '', icon: 'https://i.theojs.cn/logo/github.svg', tag: 'Github' },
-    //使用自定义图标 + 深浅模式 + 标签
     { name: 'GitHub', link: '', light: 'https://i.theojs.cn/logo/github.svg', dark: 'https://i.theojs.cn/logo/github-dark.svg', tag: 'Github' }
   ]"
 />
@@ -48,7 +43,7 @@ export default {
 <Box
   :items="[
     //使用FontAwesome图标 + 颜色
-    { name: 'Vue.js', link: '', icon: 'fab fa-vuejs', color: '#4FC08D' },
+    { name: 'Vue.js', link: '', icon: 'logos:vue', color: '#4FC08D' },
     //使用FontAwesome图标 + 标签
     { name: 'GitHub', link: '', icon: 'fab fa-github', tag: 'Github' },
     //使用FontAwesome图标 + 标签 + 颜色
@@ -109,7 +104,7 @@ export default {
 ```vue-html
 <Links
   :items="[
-    { name: '支付宝', link: 'https://www.alipay.com', icon: 'fab fa-alipay', color: '#00a1e9' },
+    { name: '支付宝', link: 'https://www.alipay.com', icon: 'bi:alipay', color: '#00a1e9' },
     { name: '微信支付', link: 'https://pay.weixin.qq.com', icon: 'fab fa-weixin', color: '#2ca83c' },
     { name: '支付宝', link: 'https://www.alipay.com', icon: 'https://i.theojs.cn/logo/github.svg' },
     { name: '支付宝', link: 'https://www.alipay.com', light: 'https://i.theojs.cn/logo/github.svg', dark: 'https://i.theojs.cn/logo/github-dark.svg' },
@@ -124,7 +119,7 @@ export default {
     {
       name: '支付宝',
       link: 'https://www.alipay.com',
-      icon: 'fab fa-alipay',
+      icon: 'bi:alipay',
       color: '#00a1e9'
     },
     {
@@ -172,13 +167,9 @@ export default {
 ```vue-html
 <BoxCube
   :items="[
-    //使用FontAwesome图标
-    { name: 'Github', link: '', icon: 'fab fa-github' },
-    //使用FontAwesome图标 + 副标题
+    { name: 'Github', link: '', icon: 'logos:github-icon' },
     { name: 'Vue.js', link: '', icon: 'fab fa-vuejs', desc: 'v3.4.31' },
-    //使用自定义图标+副标题
     { name: 'Node.js', link: '', icon: 'https://i.theojs.cn/logo/nodejs.svg', desc: 'v20.15.0' },
-    //使用自定义图标+深浅模式+副标题
     { name: 'Github', link: '', light: 'https://i.theojs.cn/logo/github.svg', dark: 'https://i.theojs.cn/logo/github-dark.svg', desc: 'v20.15.0' }
   ]"
 />
@@ -187,18 +178,14 @@ export default {
 **输出**
 <BoxCube
   :items="[
-    //使用FontAwesome图标
-    { name: 'Github', link: '', icon: 'fab fa-github' },
-    //使用FontAwesome图标 + 副标题
+    { name: 'Github', link: '', icon: 'logos:github-icon' },
     { name: 'Vue.js', link: '', icon: 'fab fa-vuejs', desc: 'v3.4.31' },
-    //使用自定义图标+副标题
     {
       name: 'Node.js',
       link: '',
       icon: 'https://i.theojs.cn/logo/nodejs.svg',
       desc: 'v20.15.0'
     },
-    //使用自定义图标+深浅模式+副标题
     {
       name: 'Github',
       link: '',

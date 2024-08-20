@@ -16,17 +16,18 @@ export const Footer_Data = {
   author: { name: 'Theo', link: 'https://', time: '2019' },
   group: [
     {
-      title: '分组1',
+      title: '外部链接',
       links: [
         { name: '示例1', href: 'https://' },
         { name: '示例2', href: 'https://' }
       ]
     },
     {
-      title: '分组2',
+      title: '内部链接',
+      internal: true,
       links: [
-        { name: '示例1', href: 'https://' },
-        { name: '示例2', href: 'https://' }
+        { name: '示例1', href: '/docs' },
+        { name: '示例2', href: '/page' }
       ]
     }
   ]

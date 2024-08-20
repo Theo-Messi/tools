@@ -13,7 +13,7 @@ import '@theojs/lumen/theme'
 ```ts [部分主题]
 // theme/index.ts
 
-import '@theojs/lumen/icon' /* 图标 */
+import '@theojs/lumen/icon' /* 图标样式 */
 import '@theojs/lumen/button' /* 按钮 */
 import '@theojs/lumen/colors' /* 配色 */
 import '@theojs/lumen/doc' /* 文档样式 */
