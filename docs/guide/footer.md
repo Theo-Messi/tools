@@ -16,17 +16,20 @@ export const Footer_Data = {
   author: { name: 'Theo', link: 'https://', time: '2019' },
   group: [
     {
-      title: '分组1',
+      title: '外部链接',
+      icon: 'fas fa-link', // Font Awesome 图标类名 具体查看:https://fontawesome.com/
       links: [
         { name: '示例1', href: 'https://' },
         { name: '示例2', href: 'https://' }
       ]
     },
     {
-      title: '分组2',
+      title: '内部链接',
+      internal: true, // `internal`默认为 false , 为 true 时不显示外部链接图标
+      icon: 'fas fa-link',
       links: [
-        { name: '示例1', href: 'https://' },
-        { name: '示例2', href: 'https://' }
+        { name: '示例1', icon: 'fas fa-book', href: '/docs' },
+        { name: '示例2', href: '/page' }
       ]
     }
   ]
