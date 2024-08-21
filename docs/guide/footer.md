@@ -39,19 +39,26 @@ export const Footer_Data = {
 ## 引入组件
 
 ::: tip
-`./data/footerData` 可替换为存放数据的路径
+`.. /data/footerData` 可替换为存放数据的路径
 :::
 
 ```ts
-//.vitepress/config.mts
-import { defineConfig } from 'vitepress'
-export default defineConfig({
-  vite: {// [!code ++]
-    resolve: { alias: [{ find: /^.*\/VPFooter\.vue$/, replacement: '@theojs/lumen/Footer' }] },// [!code ++]
-    define: {FooterData: JSON.stringify(require('./data/footerData').Footer_Data)}// [!code ++]
+//.vitepress/theme/index.ts
+import DefaultTheme from 'vitepress/theme'
+import { h } from 'vue'// [!code ++]
+
+import { HomeFooter } from '@theojs/lumen'// [!code ++]
+import { Footer_Data } from '../data/footerData'// [!code ++]
+
+export default {
+  extends: DefaultTheme,
+  Layout() {// [!code ++]
+    return h(DefaultTheme.Layout, null, {// [!code ++]
+      'layout-bottom': () => h(HomeFooter, { Footer_Data }) // [!code ++]
+    }) // [!code ++]
   }// [!code ++]
-  ...//其他代码
-})
+  ...
+}
 ```
 
 ## 数据接口说明
