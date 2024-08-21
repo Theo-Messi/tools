@@ -26,4 +26,4 @@ jobs:
           node-version: 22
           cache: pnpm
       - run: pnpm install
-      - run: npx pkg-pr-new publish --compact --no-template --pnpm --path packages/lumen
+      - run: cd packages/lumen && npx pkg-pr-new publish --compact --no-template --pnpm
