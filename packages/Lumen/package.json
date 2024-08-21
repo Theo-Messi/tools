@@ -36,6 +36,7 @@
   "files": [
     "theme/",
     "components/",
+    "tsconfig.json",
     "readme.md",
     "License"
   ],
