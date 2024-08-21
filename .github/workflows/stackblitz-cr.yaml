@@ -5,12 +5,8 @@ env:
 
 on:
   pull_request:
-    paths-ignore:
-      - '.github/**'
-      - 'docs/**'
-      - '*.md'
-      - 'script/**'
-
+    paths:
+      - 'packages/**'
 
 permissions: {}
 
