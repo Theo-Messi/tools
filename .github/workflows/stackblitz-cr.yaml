@@ -26,5 +26,4 @@ jobs:
           node-version: 22
           cache: pnpm
       - run: pnpm install
-      - run: pnpm build
       - run: npx pkg-pr-new publish --compact --no-template --pnpm
