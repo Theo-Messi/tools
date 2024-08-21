@@ -18,3 +18,5 @@ yarn add @theojs/lumen
 ```
 
 ## [查看详细文档](https://tools.theojs.cn/)
+
+test-cr
