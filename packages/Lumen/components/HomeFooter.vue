@@ -1,5 +1,6 @@
 <script lang="ts">
 import { defineComponent, ref, onMounted, onUnmounted } from 'vue'
+import '@fortawesome/fontawesome-free/css/all.min.css'
 
 export default defineComponent({
   name: 'Footer',
