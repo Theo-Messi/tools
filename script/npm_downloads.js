@@ -3,7 +3,7 @@ const { execSync } = require('child_process')
 
 // 环境变量
 // const packagesNames = ['@theojs/lumen', '@theo-messi/tm-fe', 'tmfe'] // 添加多个包的支持
-const packagesNames = ['@theojs/lumen', '@theo-messi/tm-fe']
+const packagesNames = ['@theojs/lumen']
 const barkUrl = process.env.BARK_KEY
 
 if (!barkUrl) {
