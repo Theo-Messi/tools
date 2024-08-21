@@ -1,12 +1,17 @@
 <script lang="ts">
 import { defineComponent, ref, onMounted, onUnmounted } from 'vue'
-import '@fortawesome/fontawesome-free/css/all.min.css'
 
 export default defineComponent({
   name: 'Footer',
-  setup() {
-    // 底部数据
-    const Footer_Data = FooterData
+  props: {
+    Footer_Data: {
+      type: Object,
+      required: true
+    }
+  },
+  setup(props) {
+    // 使用传入的 Footer_Data
+    const Footer_Data = props.Footer_Data
 
     // 当前打开的 section 索引
     const openSectionIndex = ref<number | null>(null)

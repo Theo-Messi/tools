@@ -1,5 +1,4 @@
 import { defineConfig } from 'vitepress'
-import { fileURLToPath, URL } from 'node:url'
 import { imgSize } from '@mdit/plugin-img-size'
 import { figure } from '@mdit/plugin-figure'
 
@@ -23,24 +22,6 @@ export default defineConfig({
         figcaption: 'alt',
         copyAttrs: '^class$'
       })
-    }
-  },
-  vite: {
-    resolve: {
-      alias: [
-        {
-          find: /^.*\/VPFooter\.vue$/,
-          replacement: fileURLToPath(
-            new URL(
-              '../../packages/Lumen/components/HomeFooter.vue',
-              import.meta.url
-            )
-          )
-        }
-      ]
-    },
-    define: {
-      FooterData: JSON.stringify(require('./data/FooterData').Footer_Data)
     }
   },
   themeConfig: {
