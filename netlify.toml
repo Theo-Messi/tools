@@ -1,23 +1,23 @@
 [build.environment]
-  NODE_VERSION = "22"
+NODE_VERSION = "22"
 
 [build]
-  publish = "docs/.vitepress/dist"
-  command = "pnpm build"
+publish = "docs/.vitepress/dist"
+command = "pnpm run build:docs"
 
 [[headers]]
-  for = "/assets/*"
-  [headers.values]
-    cache-control = "max-age=31536000, immutable"
+for = "/assets/*"
+[headers.values]
+cache-control = "max-age=31536000, immutable"
 
 [[redirects]]
-  from = "https://tools.theovan.cn/*"
-  to = "https://tools.theojs.cn/:splat"
-  status = 301
-  force = true
+from = "https://tools.theovan.cn/*"
+to = "https://tools.theojs.cn/:splat"
+status = 301
+force = true
 
 [[redirects]]
-  from = "https://tools.theovan.wiki/*"
-  to = "https://tools.theojs.cn/:splat"
-  status = 301
-  force = true
+from = "https://tools.theovan.wiki/*"
+to = "https://tools.theojs.cn/:splat"
+status = 301
+force = true
