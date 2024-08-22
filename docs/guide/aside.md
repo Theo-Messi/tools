@@ -93,37 +93,31 @@ Aside_Data: {
 
       /**
        * 名称。
-       * @default undefined
        */
       name?: string
 
       /**
        * 活动信息。
-       * @default undefined
        */
       Activity?: string
 
       /**
        * 隐藏信息1。
-       * @default undefined
        */
       hide1?: string
 
       /**
        * 信息1。
-       * @default undefined
        */
       info1?: string
 
       /**
        * 隐藏信息2。
-       * @default undefined
        */
       hide2?: string
 
       /**
        * 信息2。
-       * @default undefined
        */
       info2?: string
     }>

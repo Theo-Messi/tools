@@ -33,11 +33,11 @@ layout: home
 
 hero:
   name: Lumen
-  text: 'Enhanced '
+  text: 'Enhanced ' // [!code ++]
   tagline: ✨ 集成 Vue 功能组件和主题美化的 VitePress 插件
   image:
     src: https://cdn1.iconfinder.com/data/icons/prettyoffice8/256/Theme.png
-    alt: Theme
+    alt: Theme// [!code ++]
 ---
 
 <Home />

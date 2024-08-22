@@ -38,8 +38,8 @@ hero:
   text: 'Enhanced '
   tagline: 用于VitePress主题美化和集成Vue功能组件
   prelink:// [!code ++]
-    title: '快速开始<div style="text-align: right; font-weight: bold;"><i class="fas fa-pnpm" style="color: #FFD43B;"></i>pnpm add @theojs/lumen</div>'// [!code ++]
-    # link: https://doc.theojs.cn/// [!code ++]
-    # target: _blank// [!code ++]
+    title: '<i class="fa-solid fa-bolt" style="color: #63E6BE;"></i> 快速开始<div style="text-align: right; font-weight: bold;"><i class="fas fa-pnpm" style="color: #FFD43B;"></i>pnpm add @theojs/lumen</div>'// [!code ++]
+    link: /guide/getting-started// [!code ++]
+    target: _blank// [!code ++]
 ---
 ```

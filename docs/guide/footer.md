@@ -79,7 +79,6 @@ interface FooterData {
 
     /**
      * 图标的类名（Font Awesome 图标类名）。
-     * @default undefined
      */
     icon?: string
 
@@ -94,7 +93,6 @@ interface FooterData {
 
       /**
        * 链接的图标类名（Font Awesome 图标类名）。
-       * @default undefined
        */
       icon?: string
 
@@ -112,42 +110,35 @@ interface FooterData {
 
   /**
    * 备案信息。
-   * @default undefined
    */
   beian?: {
     /**
      * ICP 备案号。
-     * @default undefined
      */
     icp?: string
 
     /**
      * 公安备案号。
-     * @default undefined
      */
     police?: string
   }
 
   /**
    * 作者信息。
-   * @default undefined
    */
   author?: {
     /**
      * 作者名称。
-     * @default undefined
      */
     name?: string
 
     /**
      * 版权年份。
-     * @default undefined
      */
     time?: string
 
     /**
      * 作者的链接。
-     * @default undefined
      */
     link?: string
   }

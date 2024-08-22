@@ -64,19 +64,19 @@ export default defineConfig({
     // 语言切换
     langMenuLabel: '切换语言',
     nav: [
-      { text: '指南', link: '/guide/getting-started' },
       {
-        text: '提交反馈',
+        text: '<i class="fas fa-book" style="margin-right:0.25rem; color:#4CAF50" alt="book"></i> 指南',
+        link: '/guide/getting-started'
+      },
+      {
+        text: '<i class="fas fa-bug" style="margin-right:0.25rem;color:#FF4500" alt="bug"></i>提交反馈',
         link: 'https://github.com/Theo-Messi/tools/issues'
       },
       {
-        text: version,
-        items: [
-          {
-            text: '更新日志',
-            link: 'https://github.com/Theo-Messi/tools/releases'
-          }
-        ]
+        text:
+          '<i class="fas fa-clipboard-list" style="margin-right:0.25rem; color:#FF6347" alt="clipboard-list"></i>' +
+          version,
+        link: 'https://github.com/Theo-Messi/tools/releases/latest'
       }
     ],
     sidebar: {
@@ -87,7 +87,7 @@ export default defineConfig({
             // text: '快速开始',
             items: [
               {
-                text: '<i class="fas fa-bolt" style="color: #63E6BE;"></i> 快速开始',
+                text: '<i class="fas fa-bolt" style="margin-right:0.5rem;color: #63E6BE;"></i>快速开始',
                 link: 'getting-started'
               }
             ]
@@ -96,39 +96,39 @@ export default defineConfig({
             text: '配置',
             items: [
               {
-                text: '<i class="fas fa-palette" style="color: #f39c12;"></i> 导入主题配色',
+                text: '<i class="fas fa-palette" style="margin-right:0.5rem;color: #f39c12;"></i>导入主题配色',
                 link: 'theme'
               },
               {
-                text: '<i class="fas fa-bullhorn" style="color: #e74c3c;"></i> 首页公告栏',
+                text: '<i class="fas fa-bullhorn" style="margin-right:0.5rem;color: #e74c3c;"></i>首页公告栏',
                 link: 'prelink'
               },
               {
-                text: '<i class="fas fa-underline" style="color: #3498db;"></i> 首页下划线',
+                text: '<i class="fas fa-underline" style="margin-right:0.5rem;color: #3498db;"></i>首页下划线',
                 link: 'underline'
               },
               {
-                text: '<i class="fas fa-cogs" style="color: #2ecc71;"></i> 页脚配置',
+                text: '<i class="fas fa-cogs" style="margin-right:0.5rem;color: #2ecc71;"></i>页脚配置',
                 link: 'footer'
               },
               {
-                text: '<i class="fas fa-th-list" style="color: #9b59b6;"></i> 侧边栏链接',
+                text: '<i class="fas fa-th-list" style="margin-right:0.5rem;color: #9b59b6;"></i>侧边栏链接',
                 link: 'aside'
               },
               {
-                text: '<i class="fas fa-video" style="color: #e67e22;"></i> 视频组件',
+                text: '<i class="fas fa-video" style="margin-right:0.5rem;color: #e67e22;"></i>视频组件',
                 link: 'video'
               },
               {
-                text: '<i class="fas fa-id-card" style="color: #1abc9c;"></i> 链接卡片',
+                text: '<i class="fas fa-id-card" style="margin-right:0.5rem;color: #1abc9c;"></i>链接卡片',
                 link: 'links'
               },
               {
-                text: '<i class="fas fa-download" style="color: #34495e;"></i> 附件下载',
+                text: '<i class="fas fa-download" style="margin-right:0.5rem;color: #34495e;"></i>附件下载',
                 link: 'attachment'
               },
               {
-                text: '<i class="fas fa-image" style="color: #2ecc71;"></i> 图片描述',
+                text: '<i class="fas fa-image" style="margin-right:0.5rem;color: #2ecc71;"></i>图片描述',
                 link: 'Image-description'
               }
             ]
