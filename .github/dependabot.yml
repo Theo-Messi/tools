@@ -6,6 +6,7 @@ updates:
       - '/'
       - '/packages/*'
       - '/docs'
+      - '/blog'
     schedule:
       interval: 'daily'
       timezone: 'Asia/Shanghai'

@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "types": ["vite/client", "vue", "vitepress"],
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {
+      "@theojs/solis/utils": ["types/solis"]
+    }
+  },
+  "include": ["types/**/*.d.ts", "types/**/*.ts"]
+}
