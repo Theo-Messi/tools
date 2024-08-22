@@ -1,15 +1,14 @@
 {
-  "name": "@theojs/lumen",
-  "version": "3.0.0",
-  "description": "用于 VitePress 主题美化和集成 Vue 功能组件",
+  "name": "@theojs/solis",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "VitePress的博客主题",
   "repository": "Theo-Messi/tools",
   "homepage": "https://tools.theojs.cn/",
   "funding": "https://github.com/Theo-Messi/tools?sponsor=1",
   "author": "Theo-Messi",
   "license": "MIT",
   "keywords": [
-    "scss",
-    "sass",
     "styles",
     "vue",
     "vite",
@@ -18,8 +17,8 @@
     "vitepress-plugin",
     "vitepress-theme"
   ],
-  "main": "components/index.ts",
-  "style": "theme/all.scss",
+  "main": "types/theme.ts",
+  "style": "style/styles.css",
   "scripts": {
     "release": "bumpp && pnpm -r publish --registry=https://registry.npmjs.org"
   },
@@ -33,28 +32,27 @@
     "@fortawesome/fontawesome-free": "^6.6.0",
     "bumpp": "^9.5.1",
     "sass": "^1.77.8",
-    "vue": "^3.4.38"
+    "vue": "^3.4.38",
+    "fs-extra": "^11.2.0",
+    "globby": "^14.0.2",
+    "gray-matter": "^4.0.3"
   },
   "files": [
-    "theme/",
+    "types/",
+    "style/",
     "components/",
     "tsconfig.json",
     "readme.md",
     "License"
   ],
   "exports": {
-    ".": "./components/index.ts",
-    "./theme": "./theme/all.scss",
-    "./icon": "./theme/icon.scss",
-    "./button": "./theme/button.scss",
-    "./colors": "./theme/colors.scss",
-    "./doc": "./theme/doc.scss",
-    "./doc-blocks": "./theme/doc-blocks.scss",
-    "./home": "./theme/home.scss",
-    "./home-blocks": "./theme/home-links.scss",
-    "./pic": "./theme/picture.scss",
-    "./components": "./components/index.ts",
-    "./Footer": "./components/HomeFooter.vue",
+    ".": "./types/theme.ts",
+    "./utils": {
+      "import": "./types/serverUtils.js",
+      "types": "./types/solis.d.ts"
+    },
+    "./functions": "./types/functions.ts",
+    "./page": "./components/Page.vue",
     "./package.json": "./package.json"
   },
   "packageManager": "pnpm@9.7.1"
