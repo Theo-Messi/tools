@@ -7,7 +7,7 @@ export default defineConfig({
   ignoreDeadLinks: true,
   cleanUrls: true,
   themeConfig: {
-    posts: await getPosts(12),
+    posts: await getPosts(2),
     logo: { src: 'https://i.theojs.cn/docs/202405101119004.png' },
     nav: [
       { text: '主页', link: '/' },
