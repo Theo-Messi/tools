@@ -3,18 +3,20 @@
     <div class="post-header">
       <div class="post-title">
         <a :href="withBase(article.regularPath)">
-          {{ article.frontMatter.title }}</a
-        >
+          {{ article.frontMatter.title }}
+        </a>
       </div>
     </div>
-    <p class="describe" v-html="article.frontMatter.description"></p>
+    <a :href="withBase(article.regularPath)">
+      <p class="describe" v-html="article.frontMatter.description"></p>
+    </a>
     <div class="post-info">
       {{ article.frontMatter.date }}
-      <span v-for="item in article.frontMatter.tags"
-        ><a :href="withBase(`/pages/tags.html?tag=${item}`)">
-          {{ item }}</a
-        ></span
-      >
+      <span v-for="item in article.frontMatter.tags" :key="item">
+        <a :href="withBase(`/pages/tags.html?tag=${item}`)">
+          {{ item }}
+        </a>
+      </span>
     </div>
   </div>
 
@@ -25,30 +27,44 @@
       v-for="i in pagesNum"
       :key="i"
       :href="withBase(i === 1 ? '/index.html' : `/page_${i}.html`)"
-      >{{ i }}</a
     >
+      {{ i }}
+    </a>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { withBase } from 'vitepress'
+import { PropType } from 'vue'
 const props = defineProps({
-  posts: Array,
+  posts: Array as PropType<
+    {
+      frontMatter: {
+        title: string
+        description: string
+        date: string
+        tags: string[]
+      }
+      regularPath: string
+    }[]
+  >,
   pageCurrent: Number,
   pagesNum: Number
 })
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .post-list {
-  border-bottom: 1px dashed var(--vp-c-divider-light);
-  padding: 14px 0 14px 0;
+  border-bottom: 1px dashed var(--vp-c-brand-soft);
+  padding: 14px 0;
 }
+
 .post-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 .post-title {
   font-size: 1.125rem;
   font-weight: 500;
@@ -57,67 +73,45 @@ const props = defineProps({
 
 .describe {
   font-size: 0.9375rem;
+  color: var(--vp-c-text-2);
+  margin: 5px 0;
+  line-height: 1.5rem;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
-  color: var(--vp-c-text-2);
-  margin: 10px 0;
-  line-height: 1.5rem;
+  text-overflow: ellipsis;
+  font-weight: 400;
 }
+
 .pagination {
   margin-top: 16px;
   display: flex;
   justify-content: center;
 }
+
 .link {
   display: inline-block;
   width: 24px;
   text-align: center;
-  border: 1px var(--vp-c-divider-light) solid;
   border-right: none;
-  font-weight: 400;
-}
-.link.active {
-  background: var(--vp-c-text-1);
-  color: var(--vp-c-neutral-inverse);
-  border: 1px solid var(--vp-c-text-1) !important;
-}
-.link:first-child {
-  border-bottom-left-radius: 2px;
-  border-top-left-radius: 2px;
-}
-.link:last-child {
-  border-bottom-right-radius: 2px;
-  border-top-right-radius: 2px;
-  border-right: 1px var(--vp-c-divider-light) solid;
-}
 
-@media screen and (max-width: 768px) {
-  .post-list {
-    padding: 14px 0 14px 0;
+  &.active {
+    color: var(--vp-c-text-1);
+    &:hover {
+      color: var(--vp-c-brand-3);
+    }
   }
-  .post-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+
+  &:first-child {
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px;
   }
-  .post-title {
-    font-size: 1.0625rem;
-    font-weight: 400;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    overflow: hidden;
-    width: 17rem;
-  }
-  .describe {
-    font-size: 0.9375rem;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    overflow: hidden;
-    margin: 0.5rem 0 1rem;
+
+  &:last-child {
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
+    border-right: 1px solid var(--vp-c-divider-light);
   }
 }
 </style>

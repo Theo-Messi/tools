@@ -1,6 +1,6 @@
 {
   "name": "@theojs/solis",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "type": "module",
   "description": "VitePress的博客主题",
   "repository": "Theo-Messi/tools",
@@ -15,10 +15,12 @@
     "typescript",
     "vitepress",
     "vitepress-plugin",
-    "vitepress-theme"
+    "vitepress-theme",
+    "scss",
+    "sass"
   ],
   "main": "types/theme.ts",
-  "style": "style/styles.css",
+  "style": "style/styles.scss",
   "scripts": {
     "release": "bumpp && pnpm -r publish --registry=https://registry.npmjs.org"
   },
