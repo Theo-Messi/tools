@@ -1,0 +1,141 @@
+:root {
+  --vp-c-brand: var(--vp-c-brand-1) !important;
+  --li-dot-color: var(--vp-c-brand);
+  --date-color: var(--vp-c-text-3);
+}
+
+.dark {
+  --vp-c-brand: var(--vp-c-brand-1);
+}
+
+.vp-doc a {
+  color: var(--vp-c-brand-1);
+  font-weight: 500;
+  text-decoration: none !important;
+}
+
+.content {
+  a[rel~='noreferrer']:link,
+  a[rel~='noreferrer']:visited {
+    color: var(--vp-c-brand);
+    border-bottom: 1px solid var(--vp-c-brand);
+  }
+}
+
+.aside {
+  position: fixed !important;
+  right: 24px;
+}
+
+.VPDoc {
+  padding-top: 10px !important;
+}
+
+.container {
+  max-width: 60rem !important;
+}
+
+.VPContent .container {
+  max-width: 60rem !important;
+  display: block !important;
+  position: relative;
+}
+
+/* content maxWidth */
+.VPDoc.has-aside .content-container {
+  max-width: 60rem !important;
+}
+
+.posts {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  text-decoration: none;
+  color: inherit;
+
+  &:hover .post-container {
+    color: var(--vp-c-brand);
+  }
+}
+
+.post-container {
+  display: flex;
+  align-items: center;
+  color: var(--vp-c-text-2);
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.post-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--li-dot-color);
+  margin-right: 8px;
+}
+
+.date {
+  font-size: 0.875rem;
+  color: var(--date-color);
+}
+.post-info {
+  font-size: 12px;
+
+  span {
+    display: inline-block;
+    padding: 0 8px;
+    background-color: var(--vp-c-bg-alt);
+    margin-right: 10px;
+    transition: 0.4s;
+    border-radius: 2px;
+    color: var(--vp-c-text-1);
+  }
+}
+@media (min-width: 768px) {
+  .VPDoc {
+    padding-top: 10px !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .post-container {
+    width: 20rem;
+  }
+}
+@media (min-width: 960px) {
+  .VPDoc {
+    padding-top: 10px !important;
+  }
+
+  .VPDoc:not(.has-sidebar) .content {
+    max-width: inherit !important;
+  }
+  .VPDocAsideOutline .content {
+    padding-left: 14px !important;
+  }
+  .content {
+    padding: 0 !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .VPDoc .aside {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1440px) {
+  .VPDoc .aside {
+    display: block !important;
+  }
+}
+
+.vp-doc {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    border-top: none;
+  }
+}

@@ -1,5 +1,8 @@
 <template>
-  <div v-for="yearList in data">
+  <div
+    v-for="yearList in data"
+    :key="yearList[0].frontMatter.date.split('-')[0]"
+  >
     <div class="year">
       {{ yearList[0].frontMatter.date.split('-')[0] }}
     </div>
@@ -27,7 +30,7 @@ const { theme } = useData()
 const data = computed(() => useYearSort(theme.value.posts))
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .year {
   padding: 14px 0 8px 0;
   font-size: 1.25rem;
