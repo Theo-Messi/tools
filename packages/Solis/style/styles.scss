@@ -74,6 +74,15 @@
   margin-right: 8px;
 }
 
+.post-title {
+  display: flex;
+  align-items: center;
+
+  .top-label {
+    margin-right: 6px;
+  }
+}
+
 .date {
   font-size: 0.875rem;
   color: var(--date-color);
