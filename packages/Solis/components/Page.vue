@@ -49,20 +49,10 @@
 <script lang="ts" setup>
 import { withBase } from 'vitepress'
 import { computed, PropType } from 'vue'
+import { Post } from '../types/functions'
 
 const props = defineProps({
-  posts: Array as PropType<
-    {
-      frontMatter: {
-        title: string
-        description: string
-        date: string
-        tags: string[]
-        top?: boolean
-      }
-      regularPath: string
-    }[]
-  >,
+  posts: Array as PropType<Post[]>,
   pageCurrent: Number,
   pagesNum: Number
 })
