@@ -13,7 +13,69 @@ export default defineConfig({
   cleanUrls: true,
   lastUpdated: true,
   sitemap: { hostname: 'https://tools.theojs.cn' },
-  head: [['link', { rel: 'icon', type: 'icon', href: '/TM-FELogo.png' }]],
+  head: [
+    ['link', { rel: 'icon', type: 'icon', href: '/TM-FELogo.png' }],
+    ['meta', { name: 'msapplication-TileColor', content: '#da532c' }],
+    ['meta', { name: 'theme-color', content: '#ffffff' }],
+    ['meta', { name: 'author', content: 'Theo-Messi' }],
+    ['meta', { name: 'copyright', content: 'Theo-Messi' }],
+    ['meta', { name: 'robots', content: 'index, follow' }],
+    ['meta', { name: 'evisit-after', content: '1 day' }],
+    [
+      'meta',
+      { name: 'description', content: '用于VitePress主题美化和集成Vue功能组件' }
+    ],
+    ['meta', { name: 'og:type', content: 'website' }],
+    ['meta', { name: 'og:locale', content: 'zh-CN' }],
+    ['meta', { name: 'og:site_name', content: 'Lumen' }],
+    ['meta', { name: 'og:title', content: 'Lumen' }],
+    ['meta', { name: 'og:url', content: 'https://tools.theojs.cn/' }],
+    [
+      'meta',
+      { name: 'og:image', content: 'https://tools.theojs.cn/TM-FELogo.png' }
+    ],
+    [
+      'meta',
+      {
+        name: 'og:description',
+        content: '用于VitePress主题美化和集成Vue功能组件'
+      }
+    ],
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'twitter:site', content: '@TheoMessi_' }],
+    ['meta', { name: 'twitter:title', content: 'Lumen' }],
+    [
+      'meta',
+      {
+        name: 'twitter:description',
+        content: '用于VitePress主题美化和集成Vue功能组件'
+      }
+    ],
+    [
+      'meta',
+      {
+        name: 'twitter:image',
+        content: 'https://tools.theojs.cn/TM-FELogo.png'
+      }
+    ],
+    [
+      'script',
+      {
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebSite',
+          url: 'https://tools.theojs.cn/',
+          name: 'Lumen',
+          description: '用于VitePress主题美化和集成Vue功能组件',
+          author: {
+            '@type': 'Person',
+            name: 'Theo-Messi'
+          }
+        })
+      }
+    ]
+  ],
   markdown: {
     image: { lazyLoading: true },
     config: (md) => {
@@ -151,11 +213,18 @@ export default defineConfig({
                 buttonAriaLabel: '搜索文档'
               },
               modal: {
+                displayDetails: '显示详细列表',
                 noResultsText: '无法找到相关结果',
                 resetButtonTitle: '清除查询条件',
+                backButtonTitle: '关闭搜索',
                 footer: {
                   selectText: '选择',
-                  navigateText: '切换'
+                  navigateText: '切换',
+                  selectKeyAriaLabel: '输入',
+                  navigateUpKeyAriaLabel: '上箭头',
+                  navigateDownKeyAriaLabel: '下箭头',
+                  closeText: '关闭',
+                  closeKeyAriaLabel: 'esc'
                 }
               }
             }
