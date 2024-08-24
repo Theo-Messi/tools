@@ -22,9 +22,9 @@ jobs:
         name: Install pnpm
 
       - name: Install dependencies
-        run: pnpm add axios -w
+        run: pnpm add axios ts-node typescript -w
 
-      - name: Run Node.js script
+      - name: Run TypeScript script
         env:
           BARK_KEY: ${{ secrets.BARK_KEY }}
-        run: node script/npm_downloads.js
+        run: pnpm ts-node script/npm_downloads.ts

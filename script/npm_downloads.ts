@@ -1,16 +1,19 @@
-const axios = require('axios')
-const { execSync } = require('child_process')
+import axios from 'axios'
+import { execSync } from 'child_process'
 
-// 环境变量
-// const packagesNames = ['@theojs/lumen', '@theo-messi/tm-fe', 'tmfe'] // 添加多个包的支持
-const packagesNames = ['@theojs/lumen']
+const packagesNames: string[] = ['@theojs/lumen', '@theojs/solis']
 const barkUrl = process.env.BARK_KEY
 
 if (!barkUrl) {
   throw new Error('BARK_KEY 环境变量未定义')
 }
 
-async function getNpmDownloads(packageName) {
+interface NpmDownload {
+  day: string
+  downloads: number
+}
+
+async function getNpmDownloads(packageName: string): Promise<NpmDownload[]> {
   const url = `https://api.npmjs.org/downloads/range/last-month/${packageName}`
   try {
     const response = await axios.get(url)
