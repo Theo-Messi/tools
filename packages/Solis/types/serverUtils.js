@@ -46,7 +46,7 @@ page: true
 aside: false
 ---
 <script setup>
-import Page from "@theojs/solis/page";
+import { Page } from "@theojs/solis";
 import { useData } from "vitepress";
 const { theme } = useData();
 const posts = theme.value.posts.slice(${pageSize * (i - 1)},${pageSize * i});
