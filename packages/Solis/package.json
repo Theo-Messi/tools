@@ -54,7 +54,6 @@
       "types": "./types/solis.d.ts"
     },
     "./functions": "./types/functions.ts",
-    "./page": "./components/Page.vue",
     "./package.json": "./package.json"
   },
   "packageManager": "pnpm@9.7.1"
