@@ -89,7 +89,7 @@ export default defineConfig({
   themeConfig: {
     logo: { src: '/TM-FELogo.png', width: 24, height: 24 },
     editLink: {
-      pattern: 'https://github.com/Theo-Messi/tools/blob/main/docs/:path',
+      pattern: 'https://github.com/Theo-Messi/tools/edit/main/docs/:path',
       text: '为此页提供修改建议'
     },
     // 目录设置
