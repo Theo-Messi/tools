@@ -123,7 +123,7 @@ export default {
   :items="[
     {
       name: '支付宝',
-      link: 'https://www.alipay.com',
+      link: '',
       icon: 'fab fa-alipay',
       color: '#00a1e9'
     },
@@ -135,7 +135,7 @@ export default {
     },
     {
       name: '支付宝',
-      link: 'https://www.alipay.com',
+      link: '',
       icon: 'https://i.theojs.cn/logo/github.svg'
     },
     {

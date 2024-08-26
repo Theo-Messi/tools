@@ -48,6 +48,14 @@ export default defineComponent({
         typeof url === 'string' &&
         /\.(png|jpe?g|gif|svg|webp|bmp|tif?f|tiff|ico|avif)(\?.*)?$/.test(url)
       )
+    },
+    /**
+     * 判断给定的链接是否是外部链接。
+     * @param {string} link - 要判断的链接。
+     * @returns {boolean} 如果链接是外部链接，则返回 `true`，否则返回 `false`。
+     */
+    isExternalLink(link: string): boolean {
+      return /^https?:\/\//.test(link)
     }
   }
 })
@@ -64,7 +72,7 @@ export default defineComponent({
       :href="item.link"
       :name="item.name"
       :title="item.name"
-      target="_blank"
+      :target="isExternalLink(item.link) ? '_blank' : '_self'"
       rel="noopener"
     >
       <!-- 渲染图标 -->
