@@ -58,7 +58,7 @@ const props = defineProps({
 })
 
 const sortedPosts = computed(() => {
-  return props.posts.slice().sort((a, b) => {
+  return (props.posts ?? []).slice().sort((a, b) => {
     if (a.frontMatter.top && b.frontMatter.top) {
       return (
         new Date(b.frontMatter.date).getTime() -
