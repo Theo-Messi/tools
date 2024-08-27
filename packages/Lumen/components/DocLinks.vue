@@ -113,12 +113,7 @@ export default defineComponent({
 </template>
 
 <style lang="scss" scoped>
-/* 在非深色模式下隐藏深色模式图标 */
-:root:not(.dark) .dark-only {
-  display: none;
-}
-
-/* 在深色模式下隐藏浅色模式图标 */
+:root:not(.dark) .dark-only,
 :root:is(.dark) .light-only {
   display: none;
 }
