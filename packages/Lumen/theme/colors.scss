@@ -7,7 +7,7 @@
   --c-yellow-2: rgba(247, 211, 54, 1);
   --c-yellow-3: rgba(222, 201, 110, 1);
   --c-yellow-soft-1: rgba(236, 183, 50, 1);
-  --c-yellow-soft-2: rgba(201, 149, 19, 1);
+  --c-yellow-soft-2: rgba(201, 149, 19, 0.3);
 
   --c-teal: rgba(8, 99, 103, 1);
   --c-teal-light: rgba(51, 137, 141, 1);
@@ -52,6 +52,7 @@ html.dark:root {
   --vp-c-brand-1: var(--c-yellow-1);
   --vp-c-brand-2: var(--c-yellow-2);
   --vp-c-brand-3: var(--c-yellow-3);
+  --vp-c-brand-soft: var(--c-yellow-soft-2);
 
   --vp-c-bg-alpha-with-backdrop: rgba(20, 25, 36, 0.7);
   --vp-c-bg-alpha-without-backdrop: rgba(20, 25, 36, 0.9);

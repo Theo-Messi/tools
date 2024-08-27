@@ -38,7 +38,7 @@
   }
 
   &.details {
-    border: 1px solid var(--c-text-light-3);
+    border: 1px solid rgba(144, 164, 183, 1);
     p {
       color: var(--vp-c-text-2);
     }
@@ -51,7 +51,7 @@
 
   &.info,
   &.note {
-    border: 1px solid var(--c-text-light-3);
+    border: 1px solid rgba(144, 164, 183, 1);
     color: var(--vp-c-text-2);
     .custom-block-title,
     &:before {
@@ -62,6 +62,7 @@
   &.tip {
     border: 1px solid var(--vp-c-green-1);
     color: var(--vp-c-green-2);
+    background-color: var(--vp-c-green-soft);
     .custom-block-title,
     &:before {
       color: var(--vp-c-green-1);
