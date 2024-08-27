@@ -94,8 +94,7 @@ export default defineComponent({
       transform: scale(1.75);
     }
 
-    .hide,
-    .info {
+    .hide {
       opacity: 0.9;
     }
 

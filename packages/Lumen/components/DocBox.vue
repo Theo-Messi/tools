@@ -85,7 +85,7 @@ export default defineComponent({
         <!-- 如果有标签，则显示标签 -->
         <span v-if="item.tag" class="tag">{{ item.tag }}</span>
         <!-- 如果图标是图片，则显示图片 -->
-        <span v-if="isImage(item.icon)" class="icon-container">
+        <span v-if="isImage(item.icon)">
           <img :src="item.icon" alt="icon" class="icon-container" />
         </span>
         <!-- 如果图标不是图片，则显示 Font Awesome 图标 -->
@@ -114,12 +114,7 @@ export default defineComponent({
 </template>
 
 <style lang="scss" scoped>
-/* 在非深色模式下隐藏深色模式图标 */
-:root:not(.dark) .dark-only {
-  display: none;
-}
-
-/* 在深色模式下隐藏浅色模式图标 */
+:root:not(.dark) .dark-only,
 :root:is(.dark) .light-only {
   display: none;
 }

@@ -2,24 +2,11 @@
  * Component: picture
  * -------------------------------------------------------------------------- */
 
-:root {
-  &:not(.dark) {
-    .dark-only {
-      display: none;
-    }
-    img[src$='#dark'] {
-      display: none;
-    }
-  }
-
-  &:is(.dark) {
-    .light-only {
-      display: none;
-    }
-    img[src$='#light'] {
-      display: none;
-    }
-  }
+:root:not(.dark) .dark-only,
+:root:is(.dark) .light-only,
+:root:not(.dark) img[src$='#dark'],
+:root:is(.dark) img[src$='#light'] {
+  display: none;
 }
 
 /* image subtitle */
