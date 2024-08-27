@@ -6,6 +6,5 @@ export { default as Announcement } from './Announcement.vue'
 export { default as DocAsideLogo } from './DocAsideLogo.vue'
 export { default as HomeFooter } from './HomeFooter.vue'
 export { default as HomeUnderline } from './HomeUnderline.vue'
-export { default as DocAttachment } from './DocAttachment.vue'
 
 import '@fortawesome/fontawesome-free/css/all.min.css'
