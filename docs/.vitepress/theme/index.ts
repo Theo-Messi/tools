@@ -10,7 +10,6 @@ import {
   Announcement,
   DocAsideLogo,
   HomeUnderline,
-  DocAttachment,
   HomeFooter
 } from '@theojs/lumen'
 import { Aside_Data, Footer_Data } from '../data'
@@ -27,7 +26,6 @@ export default {
   enhanceApp: ({ app }) => {
     app.component('Box', DocBox)
     app.component('Links', DocLinks)
-    app.component('File', DocAttachment)
     app.component('BoxCube', DocBoxCube)
     app.component('Home', HomeUnderline)
     app.component('VideoLink', DocVideoLink)
