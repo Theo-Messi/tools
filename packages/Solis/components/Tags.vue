@@ -43,14 +43,14 @@
 <script lang="ts" setup>
 import { computed, ref } from 'vue'
 import { useData, withBase } from 'vitepress'
-import { initTags } from '../types/functions'
+import { initTags, Post } from '../types/functions'
 
 const { theme } = useData()
 
 // 对文章数据进行排序，置顶的文章会优先显示
-const data = computed(() => {
+const data = computed<Record<string, Post[]>>(() => {
   const tagData = initTags(theme.value.posts)
-  const sortedTagData = {}
+  const sortedTagData: Record<string, Post[]> = {}
 
   for (const key in tagData) {
     sortedTagData[key] = tagData[key].slice().sort((a, b) => {
