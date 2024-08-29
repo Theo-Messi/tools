@@ -34,11 +34,11 @@ importers:
   docs:
     dependencies:
       '@mdit/plugin-figure':
-        specifier: ^0.13.0
-        version: 0.13.0(markdown-it@14.1.0)
+        specifier: ^0.13.1
+        version: 0.13.1(markdown-it@14.1.0)
       '@mdit/plugin-img-size':
-        specifier: ^0.13.0
-        version: 0.13.0(markdown-it@14.1.0)
+        specifier: ^0.13.1
+        version: 0.13.1(markdown-it@14.1.0)
       '@theojs/lumen':
         specifier: workspace:*
         version: link:../packages/Lumen
@@ -387,8 +387,8 @@ packages:
     resolution: {integrity: sha512-f5DRIOZf7wxogefH03RjMPMdBF7ADTWUMoOs9kaJo06EfwF+aFhMZMDZxHg/Xe12hptN9xoZjGso2fdjapBRIA==}
     engines: {node: '>=10'}
 
-  '@mdit/plugin-figure@0.13.0':
-    resolution: {integrity: sha512-jjMwRCztQgTOWpX1z37JJXJqNe2bmNefvYk9Ck+CHAiurzVjwIY+o8igz1GDz/yKwZKJlLedRbMUK7vnP0oVmA==}
+  '@mdit/plugin-figure@0.13.1':
+    resolution: {integrity: sha512-bxeUVMPAuXHYRqPzU+1ux7R3LkpyHTdavCa05rQUhzDI07N+BZDE7oOABXnnFbx6ESamzu3/FBtq9VKjoifLmw==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^14.1.0
@@ -396,8 +396,8 @@ packages:
       markdown-it:
         optional: true
 
-  '@mdit/plugin-img-size@0.13.0':
-    resolution: {integrity: sha512-3ZpKQkch75WH5//U3GFe0U8z46Oz+lDIlLFzcf8VXuTgNUC9MJ8tnBRVbmv058C4kGPONTv4YrxfL7jsG5zqFg==}
+  '@mdit/plugin-img-size@0.13.1':
+    resolution: {integrity: sha512-cgihl72BNzij7GXjrqcKhl2eOqAlqWHiImOgblJPghDFNFKnnynty/Bf9nwbj8hTnhVWznFeuwawzXBfKYNbkg==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^14.1.0
@@ -1721,13 +1721,13 @@ snapshots:
       string-argv: 0.3.2
       type-detect: 4.1.0
 
-  '@mdit/plugin-figure@0.13.0(markdown-it@14.1.0)':
+  '@mdit/plugin-figure@0.13.1(markdown-it@14.1.0)':
     dependencies:
       '@types/markdown-it': 14.1.2
     optionalDependencies:
       markdown-it: 14.1.0
 
-  '@mdit/plugin-img-size@0.13.0(markdown-it@14.1.0)':
+  '@mdit/plugin-img-size@0.13.1(markdown-it@14.1.0)':
     dependencies:
       '@types/markdown-it': 14.1.2
     optionalDependencies:
