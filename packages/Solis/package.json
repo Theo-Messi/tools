@@ -3,7 +3,14 @@
   "version": "1.4.1",
   "type": "module",
   "description": "VitePress的博客主题",
-  "repository": "Theo-Messi/tools",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Theo-Messi/tools",
+    "directory": "packages/Solis"
+  },
+  "bugs": {
+    "url": "https://github.com/Theo-Messi/tools/issues"
+  },
   "homepage": "https://tools.theojs.cn/",
   "funding": "https://github.com/Theo-Messi/tools?sponsor=1",
   "author": "Theo-Messi",
