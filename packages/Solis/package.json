@@ -63,5 +63,5 @@
     "./functions": "./types/functions.ts",
     "./package.json": "./package.json"
   },
-  "packageManager": "pnpm@9.8.0"
+  "packageManager": "pnpm@9.9.0"
 }
