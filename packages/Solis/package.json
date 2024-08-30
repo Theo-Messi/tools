@@ -1,6 +1,6 @@
 {
   "name": "@theojs/solis",
-  "version": "1.4.1",
+  "version": "2.0.0",
   "type": "module",
   "description": "VitePress的博客主题",
   "repository": {
