@@ -40,6 +40,7 @@
     "@fortawesome/fontawesome-free": "^6.6.0",
     "bumpp": "^9.5.2",
     "sass": "^1.77.8",
+    "twikoo": "^1.6.39",
     "vue": "^3.4.38"
   },
   "files": [
