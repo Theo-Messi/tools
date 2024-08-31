@@ -47,3 +47,34 @@ export default {
   ...
 }
 ```
+
+## 在首页使用
+
+```ts
+//.vitepress/theme/index.ts
+import DefaultTheme from 'vitepress/theme'
+import { h } from 'vue'// [!code ++]
+
+import { Twikoo } from '@theojs/lumen'// [!code ++]
+
+export default {
+  extends: DefaultTheme,
+  enhanceApp: ({ app }) => {// [!code ++]
+    app.component('Twikoo', Twikoo)// [!code ++]
+  }// [!code ++]
+  ...
+}
+```
+
+```md
+<!-- index.md -->
+
+---
+
+layout: home
+
+---
+
+<Twikoo :Twikoo_Data="{ envId: 'https://xxxxxx'  }" /> 
+<!-- 修改成部署的Twikoo地址 -->
+```
