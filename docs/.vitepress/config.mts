@@ -188,6 +188,10 @@ export default defineConfig({
               {
                 text: '<i class="fas fa-image" style="margin-right:0.5rem;color: #2ecc71;"></i>图片描述',
                 link: 'Image-description'
+              },
+              {
+                text: '<i class="fas fa-comment-dots" style="margin-right:0.5rem;color: #3498db;"></i>Twikoo 评论',
+                link: 'twikoo'
               }
             ]
           }
