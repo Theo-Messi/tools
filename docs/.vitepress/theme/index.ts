@@ -13,7 +13,7 @@ import {
   HomeFooter,
   Twikoo
 } from '@theojs/lumen'
-import { Aside_Data, Footer_Data } from '../data'
+import { Aside_Data, Footer_Data, Twikoo_Data } from '../data'
 
 export default {
   extends: DefaultTheme,
@@ -22,7 +22,7 @@ export default {
       'home-hero-info-before': () => h(Announcement),
       'aside-ads-before': () => h(DocAsideLogo, { Aside_Data }),
       'layout-bottom': () => h(HomeFooter, { Footer_Data }),
-      'doc-after': () => h(Twikoo, { envId: 'https://twikoojsorg.imaegoo.com' })
+      'doc-after': () => h(Twikoo, { Twikoo_Data })
     })
   },
   enhanceApp: ({ app }) => {

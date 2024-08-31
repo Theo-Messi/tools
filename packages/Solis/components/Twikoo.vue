@@ -1,26 +1,29 @@
 <script setup lang="ts">
-import { onMounted, watch } from 'vue'
+import { onMounted, watch, ref } from 'vue'
 import { useRoute } from 'vitepress'
+import { PropType } from 'vue'
 
-// 定义属性类型
-const props = defineProps<{ envId: string }>()
+// 接受 Twikoo_Data 作为 prop
+const props = defineProps<{
+  Twikoo_Data: {
+    envId: string
+  }
+}>()
 
 const route = useRoute()
-
-// 判断是否为 /posts/ 路径
-const isPostPage = () => route.path.startsWith('/posts/')
+const isPostPage = ref(route.path.startsWith('/posts/'))
 
 // 初始化 Twikoo
 async function initTwikoo() {
   const twikoo = await import('twikoo')
   twikoo.init({
-    envId: props.envId,
+    envId: props.Twikoo_Data.envId,
     el: '#twikoo'
   })
 }
 
 onMounted(() => {
-  if (isPostPage()) {
+  if (isPostPage.value) {
     initTwikoo()
   }
 })
@@ -29,7 +32,8 @@ onMounted(() => {
 watch(
   () => route.path,
   (newPath) => {
-    if (newPath.startsWith('/posts/')) {
+    isPostPage.value = newPath.startsWith('/posts/')
+    if (isPostPage.value) {
       initTwikoo()
     } else {
       const twikooEl = document.getElementById('twikoo')
@@ -41,5 +45,5 @@ watch(
 
 <template>
   <!-- 仅在路径为 /posts/ 开头时渲染评论组件 -->
-  <div v-if="isPostPage()" id="twikoo"></div>
+  <div v-if="isPostPage" id="twikoo"></div>
 </template>

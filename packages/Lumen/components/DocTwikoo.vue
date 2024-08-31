@@ -1,14 +1,17 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 
-// 定义属性类型
-const props = defineProps<{ envId: string }>()
+const props = defineProps<{
+  Twikoo_Data: {
+    envId: string
+  }
+}>()
 
 // 初始化 Twikoo
 async function initTwikoo() {
   const twikoo = await import('twikoo')
   twikoo.init({
-    envId: props.envId,
+    envId: props.Twikoo_Data.envId,
     el: '#twikoo'
   })
 }
