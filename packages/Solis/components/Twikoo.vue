@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { onMounted, watch, ref } from 'vue'
 import { useRoute } from 'vitepress'
-import { PropType } from 'vue'
 
 // 接受 Twikoo_Data 作为 prop
 const props = defineProps<{
@@ -15,15 +14,23 @@ const isPostPage = ref(route.path.startsWith('/posts/'))
 
 // 初始化 Twikoo
 async function initTwikoo() {
-  const twikoo = await import('twikoo')
-  twikoo.init({
-    envId: props.Twikoo_Data.envId,
-    el: '#twikoo'
-  })
+  try {
+    const twikoo = await import('twikoo')
+    if (twikoo && twikoo.init) {
+      twikoo.init({
+        envId: props.Twikoo_Data.envId,
+        el: '#twikoo'
+      })
+    } else {
+      console.error('Twikoo module or init function not found')
+    }
+  } catch (error) {
+    console.error('Failed to load Twikoo:', error)
+  }
 }
 
 onMounted(() => {
-  if (isPostPage.value) {
+  if (typeof window !== 'undefined' && isPostPage.value) {
     initTwikoo()
   }
 })
@@ -32,12 +39,14 @@ onMounted(() => {
 watch(
   () => route.path,
   (newPath) => {
-    isPostPage.value = newPath.startsWith('/posts/')
-    if (isPostPage.value) {
-      initTwikoo()
-    } else {
-      const twikooEl = document.getElementById('twikoo')
-      if (twikooEl) twikooEl.innerHTML = ''
+    if (typeof window !== 'undefined') {
+      isPostPage.value = newPath.startsWith('/posts/')
+      if (isPostPage.value) {
+        initTwikoo()
+      } else {
+        const twikooEl = document.getElementById('twikoo')
+        if (twikooEl) twikooEl.innerHTML = ''
+      }
     }
   }
 )
