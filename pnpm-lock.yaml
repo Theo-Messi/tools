@@ -58,6 +58,9 @@ importers:
       sass:
         specifier: ^1.77.8
         version: 1.77.8
+      twikoo:
+        specifier: ^1.6.39
+        version: 1.6.39
       vue:
         specifier: ^3.4.38
         version: 3.4.38(typescript@5.5.4)
@@ -95,6 +98,9 @@ importers:
       sass:
         specifier: ^1.77.8
         version: 1.77.8
+      twikoo:
+        specifier: ^1.6.39
+        version: 1.6.39
       vue:
         specifier: ^3.4.38
         version: 3.4.38(typescript@5.5.4)
@@ -1370,6 +1376,9 @@ packages:
 
   tslib@2.7.0:
     resolution: {integrity: sha512-gLXCKdN1/j47AiHiOkJN69hJmcbGTHI0ImLmbYLHykhgeN0jVGola9yVjFgzCUklsZQMW55o+dW7IXv3RCXDzA==}
+
+  twikoo@1.6.39:
+    resolution: {integrity: sha512-gWM+gtZlHnlkGHL4ycQN1vLLuRxALwDrLVGcEOgkbKU3WX9qYf9zz/fFxbqCGvB/LTZLRuhLAc3EuwCtBI7VNQ==}
 
   type-detect@4.1.0:
     resolution: {integrity: sha512-Acylog8/luQ8L7il+geoSxhEkazvkslg7PSNKOX59mbB9cOveP5aq9h74Y7YU8yDpJwetzQQrfIwtf4Wp4LKcw==}
@@ -2650,6 +2659,8 @@ snapshots:
       is-number: 7.0.0
 
   tslib@2.7.0: {}
+
+  twikoo@1.6.39: {}
 
   type-detect@4.1.0: {}
 

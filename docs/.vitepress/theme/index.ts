@@ -10,7 +10,8 @@ import {
   Announcement,
   DocAsideLogo,
   HomeUnderline,
-  HomeFooter
+  HomeFooter,
+  Twikoo
 } from '@theojs/lumen'
 import { Aside_Data, Footer_Data } from '../data'
 
@@ -20,7 +21,8 @@ export default {
     return h(DefaultTheme.Layout, null, {
       'home-hero-info-before': () => h(Announcement),
       'aside-ads-before': () => h(DocAsideLogo, { Aside_Data }),
-      'layout-bottom': () => h(HomeFooter, { Footer_Data })
+      'layout-bottom': () => h(HomeFooter, { Footer_Data }),
+      'doc-after': () => h(Twikoo, { envId: 'https://twikoojsorg.imaegoo.com' })
     })
   },
   enhanceApp: ({ app }) => {
