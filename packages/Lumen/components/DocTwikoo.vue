@@ -59,13 +59,6 @@ watch(
 
 <template>
   <div class="comment-container vp-raw">
-    <div id="twikoo"></div>
-    <component
-      :is="'script'"
-      src="https://cdn.jsdelivr.net/npm/twikoo@1.6.39/dist/twikoo.min.js"
-      crossorigin="anonymous"
-      ref="twikooJs"
-    ></component>
+    <div :key="key" id="twikoo"></div>
   </div>
-  <!-- <div :key="key" id="twikoo"></div> -->
 </template>
