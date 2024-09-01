@@ -72,15 +72,6 @@ watch(
 <template>
   <!-- 仅在路径为 /posts/ 开头时渲染评论组件 -->
   <div v-if="isPostPage" class="comment-container vp-raw">
-    <div id="twikoo"></div>
-    <component
-      :is="'script'"
-      src="https://cdn.jsdelivr.net/npm/twikoo@1.6.39/dist/twikoo.min.js"
-      crossorigin="anonymous"
-      ref="twikooJs"
-    ></component>
+    <div :key="key" id="twikoo"></div>
   </div>
-  <!-- <template>
-    <div v-if="isPostPage" :key="key" id="twikoo"></div>
-  </template> -->
 </template>
