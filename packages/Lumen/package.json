@@ -4,7 +4,7 @@
   "description": "用于 VitePress 主题美化和集成 Vue 功能组件",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Theo-Messi/tools",
+    "url": "https://github.com/Theo-Messi/tools",
     "directory": "packages/Lumen"
   },
   "bugs": {
@@ -23,7 +23,10 @@
     "typescript",
     "vitepress",
     "vitepress-plugin",
-    "vitepress-theme"
+    "vitepress-theme",
+    "ui",
+    "comment",
+    "twikoo"
   ],
   "main": "components/index.ts",
   "style": "theme/all.scss",
