@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import { videoDomains } from './videoDomains'
 
 /**
  * 组件的 props 类型定义。
@@ -17,14 +16,6 @@ const props = defineProps<{
   href: string
   name: string
 }>()
-
-/**
- * 计算属性，判断 `href` 是否属于视频域名。
- * @type {ComputedRef<boolean>}
- */
-const isVideo = computed(() => {
-  return videoDomains.some((domain) => props.href.startsWith(domain))
-})
 
 /**
  * 视频播放状态，初始为关闭状态。
@@ -49,11 +40,11 @@ const toggleVideo = () => {
   <div class="mp" @click="toggleVideo">
     <div class="cta" :title="props.name">
       <div class="name-container">
-        <i v-if="isVideo" class="fas fa-video"></i>
+        <i v-if="props.href" class="fas fa-video"></i>
         <div class="name">{{ props.name }}</div>
       </div>
       <i
-        v-if="isVideo"
+        v-if="props.href"
         :class="{
           'fas fa-chevron-up': isVideoOpen,
           'fas fa-chevron-down': !isVideoOpen
@@ -61,7 +52,7 @@ const toggleVideo = () => {
       ></i>
     </div>
     <transition name="slide">
-      <div v-show="isVideo && isVideoOpen" class="video-embed">
+      <div v-show="props.href && isVideoOpen" class="video-embed">
         <div class="iframe-container">
           <iframe
             loading="lazy"

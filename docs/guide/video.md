@@ -18,10 +18,6 @@ export default {
 }
 ```
 
-::: tip
-点击查看[目前支持的链接](https://github.com/Theo-Messi/tools/blob/main/packages/Lumen/components/videoDomains.ts),如有补充欢迎提交!
-:::
-
 ## 示例
 
 **输入**
