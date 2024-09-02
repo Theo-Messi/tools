@@ -19,7 +19,7 @@
     "format:cheak": "prettier --check ."
   },
   "devDependencies": {
-    "lint-staged": "^15.2.9",
+    "lint-staged": "^15.2.10",
     "prettier": "3.3.3",
     "sass-embedded": "^1.77.8",
     "simple-git-hooks": "^2.11.1"
