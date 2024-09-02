@@ -1,13 +1,15 @@
 import { defineConfig } from 'vitepress'
 import { getPosts } from '@theojs/solis/utils'
 
+const posts = { posts: await getPosts(6) }
+
 export default defineConfig({
   title: 'Solis',
   description: '',
   ignoreDeadLinks: true,
   cleanUrls: true,
   themeConfig: {
-    posts: await getPosts(6),
+    ...posts,
     logo: { src: 'https://i.theojs.cn/docs/202405101119004.png' },
     nav: [
       { text: '主页', link: '/' },
