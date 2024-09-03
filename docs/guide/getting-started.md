@@ -76,7 +76,7 @@ yarn add @theojs/lumen
     {
       name: 'Twikoo 评论',
       link: 'DocTwikoo',
-      icon: 'fas fa-comment-dots',
+      icon: 'fas fa-comments',
       color: '#3498db'
     }
   ]"
