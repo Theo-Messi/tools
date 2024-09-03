@@ -11,7 +11,8 @@ import {
   DocAsideLogo,
   HomeUnderline,
   HomeFooter,
-  Twikoo
+  Twikoo,
+  ShareButton
 } from '@theojs/lumen'
 import { Aside_Data, Footer_Data, Twikoo_Data } from '../data'
 
@@ -21,6 +22,7 @@ export default {
     return h(DefaultTheme.Layout, null, {
       'home-hero-info-before': () => h(Announcement),
       'aside-ads-before': () => h(DocAsideLogo, { Aside_Data }),
+      'aside-outline-before': () => h(ShareButton),
       'layout-bottom': () => h(HomeFooter, { Footer_Data }),
       'doc-after': () => h(Twikoo, { Twikoo_Data })
     })

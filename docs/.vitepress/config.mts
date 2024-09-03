@@ -163,27 +163,31 @@ export default defineConfig({
               },
               {
                 text: '<i class="fas fa-bullhorn" style="margin-right:0.5rem;color: #e74c3c;"></i>首页公告栏',
-                link: 'prelink'
+                link: 'Announcement'
               },
               {
                 text: '<i class="fas fa-underline" style="margin-right:0.5rem;color: #3498db;"></i>首页下划线',
-                link: 'underline'
+                link: 'HomeUnderline'
               },
               {
                 text: '<i class="fas fa-cogs" style="margin-right:0.5rem;color: #2ecc71;"></i>页脚配置',
-                link: 'footer'
+                link: 'HomeFooter'
               },
               {
                 text: '<i class="fas fa-th-list" style="margin-right:0.5rem;color: #9b59b6;"></i>侧边栏链接',
-                link: 'aside'
+                link: 'DocAsideLogo'
               },
               {
                 text: '<i class="fas fa-video" style="margin-right:0.5rem;color: #e67e22;"></i>视频组件',
-                link: 'video'
+                link: 'DocVideoLink'
               },
               {
                 text: '<i class="fas fa-id-card" style="margin-right:0.5rem;color: #1abc9c;"></i>链接卡片',
-                link: 'links'
+                link: 'LinkCard'
+              },
+              {
+                text: '<i class="fas fa-share-alt" style="margin-right:0.5rem;color: #3498db;"></i>页面分享按钮',
+                link: 'ShareButton'
               },
               {
                 text: '<i class="fas fa-image" style="margin-right:0.5rem;color: #2ecc71;"></i>图片描述',
@@ -191,7 +195,7 @@ export default defineConfig({
               },
               {
                 text: '<i class="fas fa-comment-dots" style="margin-right:0.5rem;color: #3498db;"></i>Twikoo 评论',
-                link: 'twikoo'
+                link: 'DocTwikoo'
               }
             ]
           }
