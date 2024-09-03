@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount, watch } from 'vue'
+import { ref, onMounted, onBeforeUnmount, watch, nextTick } from 'vue'
 import { useRoute } from 'vitepress' // VitePress 的路由钩子
 
 const props = defineProps<{
@@ -8,28 +8,41 @@ const props = defineProps<{
   }
 }>()
 
-// 使用时间戳作为唯一 key
-const key = ref(Date.now())
-
 // 初始化 Twikoo 评论系统
 async function initTwikoo() {
-  const twikoo = await import('twikoo')
-  twikoo.init({
-    envId: props.Twikoo_Data.envId,
-    el: '#twikoo'
-  })
+  try {
+    const twikoo = await import('twikoo')
+    console.log('Twikoo 加载成功')
+    if (typeof window !== 'undefined') {
+      // 确保 DOM 元素存在后再进行初始化
+      nextTick(() => {
+        const twikooElement = document.querySelector('#twikoo')
+        if (twikooElement) {
+          // console.log('Twikoo 元素已找到')
+          twikoo.init({
+            envId: props.Twikoo_Data.envId,
+            el: '#twikoo'
+          })
+        } else {
+          console.error('未找到 Twikoo 元素。')
+        }
+      })
+    }
+  } catch (error) {
+    console.error('初始化 Twikoo 失败：', error)
+  }
 }
 
 // 重新加载 Twikoo 评论系统
 function reloadTwikoo() {
-  if (typeof window !== 'undefined') {
-    initTwikoo()
-  }
+  initTwikoo()
 }
 
 // 组件挂载时初始化
 onMounted(() => {
-  reloadTwikoo()
+  nextTick(() => {
+    reloadTwikoo()
+  })
 })
 
 // 在组件卸载时清理
@@ -48,17 +61,14 @@ const route = useRoute()
 watch(
   () => route.path,
   () => {
-    // 通过更新时间戳来强制重新渲染组件
-    key.value = Date.now()
-
     // 延迟重新初始化 Twikoo，以确保新页面内容加载完毕
-    setTimeout(reloadTwikoo, 500)
+    nextTick(() => {
+      setTimeout(reloadTwikoo, 500)
+    })
   }
 )
 </script>
 
 <template>
-  <div class="comment-container vp-raw">
-    <div :key="key" id="twikoo"></div>
-  </div>
+  <div class="comment-container vp-raw" id="twikoo"></div>
 </template>
