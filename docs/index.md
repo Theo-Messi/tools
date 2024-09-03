@@ -17,6 +17,9 @@ hero:
     - theme: brand
       text: 快速开始
       link: /guide/getting-started
+    - theme: brand
+      text: 博客主题
+      link: /solis
     - theme: alt
       text: 账号合租
       link: https://doc.theojs.cn/serve/sharing/Account-sharing-guide

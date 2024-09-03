@@ -1,6 +1,6 @@
 ## 演示站点
 
-https://tools.theojs.cn/
+https://share.theojs.cn/
 
 ## 前置条件
 
@@ -10,19 +10,19 @@ https://tools.theojs.cn/
 ## 安装
 
 ```sh [pnpm]
-pnpm add @theojs/lumen
+pnpm add @theojs/solis
 ```
 
 ```sh [npm]
-npm install @theojs/lumen
+npm install @theojs/solis
 ```
 
 ```sh [yarn]
-yarn add @theojs/lumen
+yarn add @theojs/solis
 ```
 
-## [查看详细文档](https://tools.theojs.cn/guide/getting-started)
+## [查看详细文档](https://tools.theojs.cn/solis/getting-started)
 
 ## License
 
-[MIT](https://github.com/Theo-Messi/tools/blob/main/packages/Lumen/License)
+[MIT](https://github.com/Theo-Messi/tools/blob/main/packages/Solis/License)

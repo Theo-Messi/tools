@@ -3,11 +3,12 @@ import { imgSize } from '@mdit/plugin-img-size'
 import { figure } from '@mdit/plugin-figure'
 
 import Lumenpkg from '../../packages/Lumen/package.json'
-
-const version = `Lumen@` + Lumenpkg.version
+import Solispkg from '../../packages/Solis/package.json'
+const Lumenversion = `Lumen@` + Lumenpkg.version
+const Solisversion = `Solis@` + Solispkg.version
 
 export default defineConfig({
-  title: 'Lumen',
+  title: 'TheoJS',
   description: '用于VitePress主题美化和集成Vue功能组件',
   lang: 'zh-CN',
   cleanUrls: true,
@@ -27,8 +28,8 @@ export default defineConfig({
     ],
     ['meta', { name: 'og:type', content: 'website' }],
     ['meta', { name: 'og:locale', content: 'zh-CN' }],
-    ['meta', { name: 'og:site_name', content: 'Lumen' }],
-    ['meta', { name: 'og:title', content: 'Lumen' }],
+    ['meta', { name: 'og:site_name', content: 'TheoJS' }],
+    ['meta', { name: 'og:title', content: 'TheoJS' }],
     ['meta', { name: 'og:url', content: 'https://tools.theojs.cn/' }],
     [
       'meta',
@@ -43,7 +44,7 @@ export default defineConfig({
     ],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
     ['meta', { name: 'twitter:site', content: '@TheoMessi_' }],
-    ['meta', { name: 'twitter:title', content: 'Lumen' }],
+    ['meta', { name: 'twitter:title', content: 'TheoJS' }],
     [
       'meta',
       {
@@ -66,7 +67,7 @@ export default defineConfig({
           '@context': 'https://schema.org',
           '@type': 'WebSite',
           url: 'https://tools.theojs.cn/',
-          name: 'Lumen',
+          name: 'TheoJS',
           description: '用于VitePress主题美化和集成Vue功能组件',
           author: {
             '@type': 'Person',
@@ -127,18 +128,31 @@ export default defineConfig({
     langMenuLabel: '切换语言',
     nav: [
       {
-        text: '<i class="fas fa-book" style="margin-right:0.25rem; color:#4CAF50" alt="book"></i> 指南',
-        link: '/guide/getting-started'
+        text: '<span style="display: inline-flex; align-items: center;"><img src="/TM-FELogo.png" alt="logo" style="margin-right: 0.25rem;width:1em; height:1em; "/>Lumen</span>',
+        link: '/',
+        activeMatch: '^/guide/'
+      },
+      {
+        text: '<span style="display: inline-flex; align-items: center;"><img src="https://i.theojs.cn/docs/202405101119004.png" alt="logo" style="margin-right: 0.25rem;width:1em; height:1em; "/>Solis</span>',
+        link: '/solis',
+        activeMatch: '^/solis/'
       },
       {
         text: '<i class="fas fa-bug" style="margin-right:0.25rem;color:#FF4500" alt="bug"></i>提交反馈',
         link: 'https://github.com/Theo-Messi/tools/issues'
       },
       {
-        text:
-          '<i class="fas fa-clipboard-list" style="margin-right:0.25rem; color:#FF6347" alt="clipboard-list"></i>' +
-          version,
-        link: 'https://github.com/Theo-Messi/tools/releases/latest'
+        text: '<i class="fas fa-clipboard-list" style="margin-right:0.25rem; color:#FF6347" alt="clipboard-list"></i>变更日志',
+        items: [
+          {
+            text: Lumenversion,
+            link: 'https://github.com/Theo-Messi/tools/releases/latest'
+          },
+          {
+            text: Solisversion,
+            link: 'https://github.com/Theo-Messi/tools/releases/latest'
+          }
+        ]
       }
     ],
     sidebar: {
@@ -194,7 +208,42 @@ export default defineConfig({
                 link: 'Image-description'
               },
               {
-                text: '<i class="fas fa-comment-dots" style="margin-right:0.5rem;color: #3498db;"></i>Twikoo 评论',
+                text: '<i class="fas fa-comments" style="margin-right:0.5rem;color: #3498db;"></i>Twikoo 评论',
+                link: 'DocTwikoo'
+              }
+            ]
+          }
+        ]
+      },
+      solis: {
+        base: '/solis/',
+        items: [
+          {
+            // text: '快速开始',
+            items: [
+              {
+                text: '<i class="fas fa-bolt" style="margin-right:0.5rem;color: #63E6BE;"></i>快速开始',
+                link: 'getting-started'
+              }
+            ]
+          },
+          {
+            text: '配置',
+            items: [
+              {
+                text: '<i class="fas fa-sitemap" style="margin-right:0.5rem;color: #f39c12;"></i>项目结构',
+                link: 'project-structure'
+              },
+              {
+                text: '<i class="fas fa-cogs" style="margin-right:0.5rem;color: #e74c3c;"></i>配置VitePress',
+                link: 'configure-vitepress'
+              },
+              {
+                text: '<i class="fas fa-newspaper" style="margin-right:0.5rem;color: #1abc9c;"></i>文章配置',
+                link: 'posts-settings'
+              },
+              {
+                text: '<i class="fas fa-comments" style="margin-right:0.5rem;color: #3498db;"></i>Twikoo 评论',
                 link: 'DocTwikoo'
               }
             ]
