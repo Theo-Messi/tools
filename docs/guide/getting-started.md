@@ -37,29 +37,35 @@ yarn add @theojs/lumen
     },
     {
       name: '首页公告栏',
-      link: 'prelink',
+      link: 'Announcement',
       icon: 'fas fa-bullhorn',
       color: '#e74c3c'
     },
     {
       name: '首页下划线',
-      link: 'underline',
+      link: 'HomeUnderline',
       icon: 'fas fa-underline',
       color: '#3498db'
     },
-    { name: '页脚配置', link: 'footer', icon: 'fas fa-cogs', color: '#2ecc71' },
+    { name: '页脚配置', link: 'HomeFooter', icon: 'fas fa-cogs', color: '#2ecc71' },
     {
       name: '侧边栏链接',
-      link: 'aside',
+      link: 'DocAsideLogo',
       icon: 'fas fa-th-list',
       color: '#9b59b6'
     },
-    { name: '视频组件', link: 'video', icon: 'fas fa-video', color: '#e67e22' },
+    { name: '视频组件', link: 'DocVideoLink', icon: 'fas fa-video', color: '#e67e22' },
     {
       name: '链接卡片',
-      link: 'links',
+      link: 'LinkCard',
       icon: 'fas fa-id-card',
       color: '#1abc9c'
+    },
+        {
+      name: '页面分享按钮',
+      link: 'ShareButton',
+      icon: 'fas fa-share-alt',
+      color: '#3498db'
     },
     {
       name: '图片描述',
@@ -69,7 +75,7 @@ yarn add @theojs/lumen
     },
     {
       name: 'Twikoo 评论',
-      link: 'twikoo',
+      link: 'DocTwikoo',
       icon: 'fas fa-comment-dots',
       color: '#3498db'
     }
