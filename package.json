@@ -24,6 +24,10 @@
     "sass-embedded": "^1.78.0",
     "simple-git-hooks": "^2.11.1"
   },
+  "dependencies": {
+    "sass-embedded-darwin-x64": "^1.78.0",
+    "sass-embedded-linux-x64": "^1.78.0"
+  },
   "prettier": {
     "semi": false,
     "singleQuote": true,
