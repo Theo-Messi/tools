@@ -8,21 +8,16 @@ import { useData } from 'vitepress'
  */
 const { frontmatter: fm } = useData()
 
-/**
- * 在组件挂载后，移动指定的 DOM 元素。
- * 将 `#hero-text` 元素移动到 `.VPHero .text` 元素内部。
- */
+// 组件挂载后移动 DOM 元素
 onMounted(() => {
   const p = document.querySelector('.VPHero .text') as HTMLElement | null
   const s = document.querySelector('#hero-text') as HTMLElement | null
 
-  if (!p || !s) return
-
-  // 移除 `.VPHero .text` 元素下的所有子节点
-  while (p.lastChild) p.lastChild.remove()
-
-  // 将 `#hero-text` 元素追加到 `.VPHero .text` 元素中
-  p.append(s)
+  if (p && s) {
+    // 清空目标元素的内容并将 #hero-text 移入其中
+    p.innerHTML = ''
+    p.appendChild(s)
+  }
 })
 </script>
 
