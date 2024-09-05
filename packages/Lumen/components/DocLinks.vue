@@ -1,8 +1,8 @@
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, PropType } from 'vue'
 
 /**
- * 定义 `Item` 接口，用于描述每个链接项的结构。
+ * `Item` 接口定义了一个链接项的结构。
  * @interface Item
  * @property {string} name - 链接项的名称。
  * @property {string} link - 链接项的链接。
@@ -33,30 +33,27 @@ export default defineComponent({
      * @type {Array<Item>}
      */
     items: {
-      type: Array as () => Item[],
+      type: Array as PropType<Item[]>,
       required: true
     }
   },
-  methods: {
+  setup() {
     /**
      * 判断给定的 URL 是否为图像文件。
      * @param {string} url - 要判断的 URL。
      * @returns {boolean} 如果 URL 是图像文件，则返回 `true`，否则返回 `false`。
      */
-    isImage(url: string): boolean {
-      return (
-        typeof url === 'string' &&
-        /\.(png|jpe?g|gif|svg|webp|bmp|tif?f|tiff|ico|avif)(\?.*)?$/.test(url)
-      )
-    },
+    const isImage = (url: string): boolean =>
+      /\.(png|jpe?g|gif|svg|webp|bmp|tif?f|tiff|ico|avif)(\?.*)?$/.test(url)
+
     /**
      * 判断给定的链接是否是外部链接。
      * @param {string} link - 要判断的链接。
      * @returns {boolean} 如果链接是外部链接，则返回 `true`，否则返回 `false`。
      */
-    isExternalLink(link: string): boolean {
-      return /^https?:\/\//.test(link)
-    }
+    const isExternalLink = (link: string): boolean => /^https?:\/\//.test(link)
+
+    return { isImage, isExternalLink }
   }
 })
 </script>

@@ -23,13 +23,14 @@ const props = defineProps<{
  */
 const isVideoOpen = ref(false)
 
-// 动态计算 iframe 的 src
-const videoSrc = computed(() => {
-  return isVideoOpen.value ? props.href : ''
-})
+/**
+ * 动态计算 iframe 的 src 地址。只有在视频打开时，src 才会被设置为 props.href。
+ * @type {ComputedRef<string>}
+ */
+const videoSrc = computed(() => (isVideoOpen.value ? props.href : ''))
 
 /**
- * 切换视频播放状态。
+ * 切换视频播放状态。切换时会根据当前状态更新 videoSrc 的值。
  */
 const toggleVideo = () => {
   isVideoOpen.value = !isVideoOpen.value
@@ -52,7 +53,7 @@ const toggleVideo = () => {
       ></i>
     </div>
     <transition name="slide">
-      <div v-show="props.href && isVideoOpen" class="video-embed">
+      <div v-if="props.href && isVideoOpen" class="video-embed">
         <div class="iframe-container">
           <iframe
             loading="lazy"
