@@ -1,22 +1,23 @@
-<script setup>
+<script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useRouter } from 'vitepress'
+import type { PropType } from 'vue'
 
 const props = defineProps({
   buttonIcon: {
-    type: String,
+    type: String as PropType<string>,
     default: 'fas fa-share-alt'
   },
   buttonText: {
-    type: String,
+    type: String as PropType<string>,
     default: '分享此页面'
   },
   copiedIcon: {
-    type: String,
+    type: String as PropType<string>,
     default: 'fas fa-thumbs-up'
   },
   copiedText: {
-    type: String,
+    type: String as PropType<string>,
     default: '链接已复制!'
   }
 })
@@ -26,7 +27,7 @@ const copied = ref(false)
 
 const shareLink = computed(() => {
   const currentPath = router.route.path
-  return window.location.origin + currentPath.replace(/^\/[a-z]{2}\//, '/')
+  return `${window.location.origin}${currentPath.replace(/^\/[a-z]{2}\//, '/')}`
 })
 
 const copyLink = async () => {
@@ -38,6 +39,8 @@ const copyLink = async () => {
     }, 2000)
   } catch (err) {
     console.error('Failed to copy: ', err)
+    // 用户反馈
+    alert('复制链接失败，请手动复制。')
   }
 }
 </script>
@@ -93,6 +96,11 @@ const copyLink = async () => {
 
     &:hover {
       border: 1px solid var(--vp-c-brand-3);
+    }
+
+    &:focus {
+      outline: 2px solid var(--vp-c-brand-2);
+      outline-offset: 2px;
     }
 
     &.copied {

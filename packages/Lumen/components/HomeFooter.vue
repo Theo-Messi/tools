@@ -1,57 +1,64 @@
-<script lang="ts">
-import { defineComponent, ref, onMounted, onUnmounted } from 'vue'
+<script setup lang="ts">
+import { ref, onMounted, onUnmounted, computed } from 'vue'
 
-export default defineComponent({
-  name: 'Footer',
-  props: {
-    Footer_Data: {
-      type: Object,
-      required: true
+// 定义组件的 props 类型
+const props = defineProps<{
+  Footer_Data: {
+    group: Array<{
+      icon?: string
+      title: string
+      internal: boolean
+      links: Array<{
+        icon?: string
+        name: string
+        href: string
+      }>
+    }>
+    beian?: {
+      icp?: string
+      police?: string
     }
-  },
-  setup(props) {
-    // 使用传入的 Footer_Data
-    const Footer_Data = props.Footer_Data
-
-    // 当前打开的 section 索引
-    const openSectionIndex = ref<number | null>(null)
-
-    // 当前窗口宽度
-    const windowWidth = ref<number | null>(null)
-
-    /**
-     * 切换 section 的显示状态
-     * @param index - 要切换的 section 的索引
-     */
-    const toggleSection = (index: number) => {
-      openSectionIndex.value = openSectionIndex.value === index ? null : index
+    author?: {
+      name?: string
+      time?: string
+      link?: string
     }
+  }
+}>()
 
-    /**
-     * 更新窗口宽度
-     */
-    const updateWindowWidth = () => {
-      windowWidth.value = window.innerWidth
-    }
+// 当前打开的 section 索引
+const openSectionIndex = ref<number | null>(null)
 
-    // 组件挂载时添加 resize 事件监听器
-    onMounted(() => {
-      if (typeof window !== 'undefined') {
-        windowWidth.value = window.innerWidth
-        window.addEventListener('resize', updateWindowWidth)
-      }
-    })
+// 当前窗口宽度
+const windowWidth = ref<number | null>(null)
 
-    // 组件卸载时移除 resize 事件监听器
-    onUnmounted(() => {
-      if (typeof window !== 'undefined') {
-        window.removeEventListener('resize', updateWindowWidth)
-      }
-    })
+// 切换 section 的显示状态
+const toggleSection = (index: number) => {
+  openSectionIndex.value = openSectionIndex.value === index ? null : index
+}
 
-    return { Footer_Data, openSectionIndex, toggleSection, windowWidth }
+// 更新窗口宽度
+const updateWindowWidth = () => {
+  windowWidth.value = window.innerWidth
+}
+
+// 组件挂载时添加 resize 事件监听器
+onMounted(() => {
+  if (typeof window !== 'undefined') {
+    windowWidth.value = window.innerWidth
+    window.addEventListener('resize', updateWindowWidth)
   }
 })
+
+// 组件卸载时移除 resize 事件监听器
+onUnmounted(() => {
+  if (typeof window !== 'undefined') {
+    window.removeEventListener('resize', updateWindowWidth)
+  }
+})
+
+// 计算当前窗口是否为大屏幕
+const isLargeScreen = computed(() => windowWidth.value > 768)
 </script>
 
 <template>
@@ -59,7 +66,7 @@ export default defineComponent({
     <div class="ff">
       <div
         class="sc"
-        v-for="(section, index) in Footer_Data.group"
+        v-for="(section, index) in props.Footer_Data.group"
         :key="index"
       >
         <div class="st" @click="toggleSection(index)">
@@ -69,7 +76,7 @@ export default defineComponent({
             {{ openSectionIndex === index ? '−' : '+' }}
           </button>
         </div>
-        <ul v-if="openSectionIndex === index || windowWidth > 768">
+        <ul v-if="openSectionIndex === index || isLargeScreen">
           <li v-for="(link, idx) in section.links" :key="idx">
             <i v-if="link.icon" :class="link.icon"></i>
             <a
@@ -90,9 +97,9 @@ export default defineComponent({
     <!-- 底部信息栏 -->
     <div
       class="flex"
-      v-if="Footer_Data.beian?.icp || Footer_Data.beian?.police"
+      v-if="props.Footer_Data.beian?.icp || props.Footer_Data.beian?.police"
     >
-      <span v-if="Footer_Data.beian?.icp">
+      <span v-if="props.Footer_Data.beian?.icp">
         <i class="fas fa-earth-americas"></i>
         <a
           target="_blank"
@@ -100,10 +107,10 @@ export default defineComponent({
           href="https://beian.miit.gov.cn/"
           title="ICP备案"
         >
-          {{ Footer_Data.beian.icp }}
+          {{ props.Footer_Data.beian.icp }}
         </a>
       </span>
-      <span v-if="Footer_Data.beian?.police">
+      <span v-if="props.Footer_Data.beian?.police">
         <i class="fas fa-shield"></i>
         <a
           target="_blank"
@@ -111,22 +118,23 @@ export default defineComponent({
           href="https://beian.mps.gov.cn/"
           title="公安备案"
         >
-          {{ Footer_Data.beian.police }}
+          {{ props.Footer_Data.beian.police }}
         </a>
       </span>
     </div>
-    <div class="flex" v-if="Footer_Data.author?.name">
+    <div class="flex" v-if="props.Footer_Data.author?.name">
       <span>
-        Copyright<i class="far fa-copyright"></i
-        >{{ Footer_Data.author?.time }} -
+        Copyright<i class="far fa-copyright"></i>
+        {{ props.Footer_Data.author?.time }} -
         {{ new Date().getFullYear() }}
         <a
           target="_blank"
           rel="noopener"
           title="GitHub"
-          :href="Footer_Data.author?.link"
-          >{{ Footer_Data.author?.name }}</a
-        >. All Rights Reserved
+          :href="props.Footer_Data.author?.link"
+          >{{ props.Footer_Data.author?.name }}</a
+        >
+        . All Rights Reserved
       </span>
     </div>
   </footer>

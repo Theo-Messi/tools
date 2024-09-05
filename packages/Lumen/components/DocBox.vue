@@ -1,8 +1,9 @@
 <script lang="ts">
 /**
- * 导入 Vue 的 `defineComponent` 方法，用于定义组件。
+ * 导入 Vue 的 `defineComponent` 和 `PropType` 方法。
+ * `defineComponent` 用于定义组件，`PropType` 用于定义 props 的类型。
  */
-import { defineComponent } from 'vue'
+import { defineComponent, PropType } from 'vue'
 
 /**
  * `Item` 接口定义了一个链接项的结构。
@@ -39,30 +40,27 @@ export default defineComponent({
      * @type {Array<Item>}
      */
     items: {
-      type: Array as () => Item[],
+      type: Array as PropType<Item[]>,
       required: true
     }
   },
-  methods: {
+  setup() {
     /**
      * 检查给定的 URL 是否为图片链接。
      * @param {string} url - 要检查的 URL。
      * @returns {boolean} - 如果 URL 是图片链接则返回 `true`，否则返回 `false`。
      */
-    isImage(url: string): boolean {
-      return (
-        typeof url === 'string' &&
-        /\.(png|jpe?g|gif|svg|webp|bmp|tif?f|tiff|ico)(\?.*)?$/.test(url)
-      )
-    },
+    const isImage = (url: string): boolean =>
+      /\.(png|jpe?g|gif|svg|webp|bmp|tif?f|tiff|ico|avif)(\?.*)?$/.test(url)
+
     /**
      * 判断给定的链接是否是外部链接。
      * @param {string} link - 要判断的链接。
-     * @returns {boolean} 如果链接是外部链接，则返回 `true`，否则返回 `false`。
+     * @returns {boolean} - 如果链接是外部链接，则返回 `true`，否则返回 `false`。
      */
-    isExternalLink(link: string): boolean {
-      return /^https?:\/\//.test(link)
-    }
+    const isExternalLink = (link: string): boolean => /^https?:\/\//.test(link)
+
+    return { isImage, isExternalLink }
   }
 })
 </script>
@@ -72,10 +70,9 @@ export default defineComponent({
   <div class="box-container">
     <!-- 遍历 `items` 数组并渲染每个链接项 -->
     <a
-      v-for="(item, index) in items"
-      :key="index"
+      v-for="item in items"
+      :key="item.link"
       :href="item.link"
-      :name="item.name"
       :title="item.name"
       class="box"
       :target="isExternalLink(item.link) ? '_blank' : '_self'"
@@ -114,6 +111,9 @@ export default defineComponent({
 </template>
 
 <style lang="scss" scoped>
+/**
+ * 处理不同模式下的图标显示：暗色模式下隐藏浅色图标，浅色模式下隐藏暗色图标。
+ */
 :root:not(.dark) .dark-only,
 :root:is(.dark) .light-only {
   display: none;
@@ -135,7 +135,7 @@ export default defineComponent({
   height: 3.5rem;
   display: flex;
   text-decoration: none !important;
-  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: border-color 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 
   &:hover {
     border-color: var(--vp-c-brand-1);
