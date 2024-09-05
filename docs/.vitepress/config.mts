@@ -146,11 +146,11 @@ export default defineConfig({
         items: [
           {
             text: Lumenversion,
-            link: 'https://github.com/Theo-Messi/tools/releases/latest'
+            link: `https://github.com/Theo-Messi/tools/releases/tag/${Lumenversion}`
           },
           {
             text: Solisversion,
-            link: 'https://github.com/Theo-Messi/tools/releases/latest'
+            link: `https://github.com/Theo-Messi/tools/releases/tag/${Solisversion}`
           }
         ]
       }
