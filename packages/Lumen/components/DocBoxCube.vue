@@ -1,16 +1,6 @@
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
-
+<script setup lang="ts">
 /**
  * 定义 `Item` 接口，用于描述项目的结构。
- * @interface Item
- * @property {string} icon - 图标的 URL 或类名。
- * @property {string} name - 项目的名称。
- * @property {string} link - 项目的链接。
- * @property {string} [desc] - 项目的描述（可选）。
- * @property {string} [color] - 图标的颜色（可选）。
- * @property {string} [light] - 浅色模式下的图标 URL（可选）。
- * @property {string} [dark] - 深色模式下的图标 URL（可选）。
  */
 interface Item {
   icon: string
@@ -23,41 +13,26 @@ interface Item {
 }
 
 /**
- * 定义并导出 `BoxCube` 组件。
- * @component
- * @description 渲染一个包含图标和描述的盒子组件。
+ * 定义 `items` 属性，类型为 `Item` 数组，是组件的必需属性。
  */
-export default defineComponent({
-  name: 'BoxCube',
-  props: {
-    /**
-     * 项目数组，包含若干 `Item` 对象，是组件的必需属性。
-     * @type {Array<Item>}
-     */
-    items: {
-      type: Array as PropType<Item[]>,
-      required: true
-    }
-  },
-  setup() {
-    /**
-     * 判断给定的 URL 是否为图像文件。
-     * @param {string} url - 要判断的 URL。
-     * @returns {boolean} 如果 URL 是图像文件，则返回 `true`，否则返回 `false`。
-     */
-    const isImage = (url: string): boolean =>
-      /\.(png|jpe?g|gif|svg|webp|bmp|tif?f|tiff|ico|avif)(\?.*)?$/.test(url)
+const props = defineProps<{
+  items: Item[]
+}>()
 
-    /**
-     * 判断给定的链接是否是外部链接。
-     * @param {string} link - 要判断的链接。
-     * @returns {boolean} 如果链接是外部链接，则返回 `true`，否则返回 `false`。
-     */
-    const isExternalLink = (link: string): boolean => /^https?:\/\//.test(link)
+/**
+ * 判断给定的 URL 是否为图像文件。
+ * @param {string} url - 要判断的 URL。
+ * @returns {boolean} 如果 URL 是图像文件，则返回 `true`，否则返回 `false`。
+ */
+const isImage = (url: string): boolean =>
+  /\.(png|jpe?g|gif|svg|webp|bmp|tif?f|tiff|ico|avif)(\?.*)?$/.test(url)
 
-    return { isImage, isExternalLink }
-  }
-})
+/**
+ * 判断给定的链接是否是外部链接。
+ * @param {string} link - 要判断的链接。
+ * @returns {boolean} 如果链接是外部链接，则返回 `true`，否则返回 `false`。
+ */
+const isExternalLink = (link: string): boolean => /^https?:\/\//.test(link)
 </script>
 
 <template>

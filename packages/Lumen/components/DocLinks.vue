@@ -1,15 +1,6 @@
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
-
+<script setup lang="ts">
 /**
  * `Item` 接口定义了一个链接项的结构。
- * @interface Item
- * @property {string} name - 链接项的名称。
- * @property {string} link - 链接项的链接。
- * @property {string} [color] - 图标的颜色（可选）。
- * @property {string} [icon] - 图标的 URL 或类名（可选）。
- * @property {string} [light] - 浅色模式下的图标 URL（可选）。
- * @property {string} [dark] - 深色模式下的图标 URL（可选）。
  */
 interface Item {
   name: string
@@ -21,41 +12,26 @@ interface Item {
 }
 
 /**
- * 定义并导出 `Links` 组件。
- * @component
- * @description 渲染一组链接项，每项包括图标和名称。
+ * 定义 `items` 属性，类型为 `Item` 数组，是组件的必需属性。
  */
-export default defineComponent({
-  name: 'Links',
-  props: {
-    /**
-     * 链接项数组，包含若干 `Item` 对象，是组件的必需属性。
-     * @type {Array<Item>}
-     */
-    items: {
-      type: Array as PropType<Item[]>,
-      required: true
-    }
-  },
-  setup() {
-    /**
-     * 判断给定的 URL 是否为图像文件。
-     * @param {string} url - 要判断的 URL。
-     * @returns {boolean} 如果 URL 是图像文件，则返回 `true`，否则返回 `false`。
-     */
-    const isImage = (url: string): boolean =>
-      /\.(png|jpe?g|gif|svg|webp|bmp|tif?f|tiff|ico|avif)(\?.*)?$/.test(url)
+const props = defineProps<{
+  items: Item[]
+}>()
 
-    /**
-     * 判断给定的链接是否是外部链接。
-     * @param {string} link - 要判断的链接。
-     * @returns {boolean} 如果链接是外部链接，则返回 `true`，否则返回 `false`。
-     */
-    const isExternalLink = (link: string): boolean => /^https?:\/\//.test(link)
+/**
+ * 判断给定的 URL 是否为图像文件。
+ * @param {string} url - 要判断的 URL。
+ * @returns {boolean} 如果 URL 是图像文件，则返回 `true`，否则返回 `false`。
+ */
+const isImage = (url: string): boolean =>
+  /\.(png|jpe?g|gif|svg|webp|bmp|tif?f|tiff|ico|avif)(\?.*)?$/.test(url)
 
-    return { isImage, isExternalLink }
-  }
-})
+/**
+ * 判断给定的链接是否是外部链接。
+ * @param {string} link - 要判断的链接。
+ * @returns {boolean} 如果链接是外部链接，则返回 `true`，否则返回 `false`。
+ */
+const isExternalLink = (link: string): boolean => /^https?:\/\//.test(link)
 </script>
 
 <template>
@@ -67,40 +43,43 @@ export default defineComponent({
       :key="item.name"
       class="link"
       :href="item.link"
-      :name="item.name"
       :title="item.name"
       :target="isExternalLink(item.link) ? '_blank' : '_self'"
       rel="noopener"
     >
       <!-- 渲染图标 -->
       <span class="box">
-        <img
-          v-if="item.icon && isImage(item.icon)"
-          :src="item.icon"
-          alt="Icon"
-          class="icon"
-        />
-        <i
-          v-else-if="item.icon"
-          :class="item.icon + ' fa-2xl icon'"
-          :style="{ color: item.color }"
-        ></i>
-        <i
-          v-else-if="!item.light && !item.dark"
-          class="fas fa-arrow-up-right-from-square fa-lg fa-icon"
-        ></i>
-        <img
-          v-if="item.light"
-          :src="item.light"
-          alt="icon"
-          class="icon light-only"
-        />
-        <img
-          v-if="item.dark"
-          :src="item.dark"
-          alt="icon"
-          class="icon dark-only"
-        />
+        <template v-if="item.icon">
+          <img
+            v-if="isImage(item.icon)"
+            :src="item.icon"
+            alt="Icon"
+            class="icon"
+          />
+          <i
+            v-else
+            :class="item.icon + ' fa-2xl icon'"
+            :style="{ color: item.color }"
+          ></i>
+        </template>
+        <template v-else>
+          <img
+            v-if="item.light"
+            :src="item.light"
+            alt="Icon"
+            class="icon light-only"
+          />
+          <img
+            v-if="item.dark"
+            :src="item.dark"
+            alt="Icon"
+            class="icon dark-only"
+          />
+          <i
+            v-if="!item.light && !item.dark"
+            class="fas fa-arrow-up-right-from-square fa-lg fa-icon"
+          ></i>
+        </template>
       </span>
 
       <!-- 渲染链接项的名称 -->

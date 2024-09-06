@@ -1,20 +1,6 @@
-<script lang="ts">
-/**
- * 导入 Vue 的 `defineComponent` 和 `PropType` 方法。
- * `defineComponent` 用于定义组件，`PropType` 用于定义 props 的类型。
- */
-import { defineComponent, PropType } from 'vue'
-
+<script setup lang="ts">
 /**
  * `Item` 接口定义了一个链接项的结构。
- * @interface Item
- * @property {string} link - 链接地址。
- * @property {string} icon - 图标的 URL 或类名。
- * @property {string} name - 名称。
- * @property {string} [tag] - 标签（可选）。
- * @property {string} [light] - 浅色模式下的图标 URL（可选）。
- * @property {string} [dark] - 深色模式下的图标 URL（可选）。
- * @property {string} [color] - 图标的颜色（可选）。
  */
 interface Item {
   link: string
@@ -27,42 +13,26 @@ interface Item {
 }
 
 /**
- * 定义并导出 `Box` 组件。
- * @component
- * @name Box
- * @description 渲染一个包含链接和图标的盒子组件。
+ * 定义 `items` 属性，类型为 `Item` 数组，且为必需属性。
  */
-export default defineComponent({
-  name: 'Box',
-  props: {
-    /**
-     * `items` 属性，类型为 `Item` 数组，且为必需属性。
-     * @type {Array<Item>}
-     */
-    items: {
-      type: Array as PropType<Item[]>,
-      required: true
-    }
-  },
-  setup() {
-    /**
-     * 检查给定的 URL 是否为图片链接。
-     * @param {string} url - 要检查的 URL。
-     * @returns {boolean} - 如果 URL 是图片链接则返回 `true`，否则返回 `false`。
-     */
-    const isImage = (url: string): boolean =>
-      /\.(png|jpe?g|gif|svg|webp|bmp|tif?f|tiff|ico|avif)(\?.*)?$/.test(url)
+const props = defineProps<{
+  items: Item[]
+}>()
 
-    /**
-     * 判断给定的链接是否是外部链接。
-     * @param {string} link - 要判断的链接。
-     * @returns {boolean} - 如果链接是外部链接，则返回 `true`，否则返回 `false`。
-     */
-    const isExternalLink = (link: string): boolean => /^https?:\/\//.test(link)
+/**
+ * 检查给定的 URL 是否为图片链接。
+ * @param {string} url - 要检查的 URL。
+ * @returns {boolean} - 如果 URL 是图片链接则返回 `true`，否则返回 `false`。
+ */
+const isImage = (url: string): boolean =>
+  /\.(png|jpe?g|gif|svg|webp|bmp|tif?f|tiff|ico|avif)(\?.*)?$/.test(url)
 
-    return { isImage, isExternalLink }
-  }
-})
+/**
+ * 判断给定的链接是否是外部链接。
+ * @param {string} link - 要判断的链接。
+ * @returns {boolean} - 如果链接是外部链接，则返回 `true`，否则返回 `false`。
+ */
+const isExternalLink = (link: string): boolean => /^https?:\/\//.test(link)
 </script>
 
 <template>
