@@ -1,6 +1,14 @@
 <script setup lang="ts">
 /**
- * `Item` 接口定义了一个链接项的结构。
+ * 定义 `Item` 接口，用于描述链接项的结构。
+ *
+ * @interface Item
+ * @property {string} name - 链接项的名称。
+ * @property {string} link - 链接项的 URL。
+ * @property {string} [color] - 图标的颜色（可选）。
+ * @property {string} [icon] - 图标的 URL 或类名（可选）。
+ * @property {string} [light] - 浅色模式下的图标 URL（可选）。
+ * @property {string} [dark] - 深色模式下的图标 URL（可选）。
  */
 interface Item {
   name: string
@@ -13,6 +21,8 @@ interface Item {
 
 /**
  * 定义 `items` 属性，类型为 `Item` 数组，是组件的必需属性。
+ *
+ * @property {Item[]} items - 链接项数组，每项遵循 `Item` 接口。
  */
 const props = defineProps<{
   items: Item[]
@@ -20,16 +30,18 @@ const props = defineProps<{
 
 /**
  * 判断给定的 URL 是否为图像文件。
+ *
  * @param {string} url - 要判断的 URL。
- * @returns {boolean} 如果 URL 是图像文件，则返回 `true`，否则返回 `false`。
+ * @returns {boolean} - 如果 URL 是图像文件，则返回 `true`，否则返回 `false`。
  */
 const isImage = (url: string): boolean =>
   /\.(png|jpe?g|gif|svg|webp|bmp|tif?f|tiff|ico|avif)(\?.*)?$/.test(url)
 
 /**
  * 判断给定的链接是否是外部链接。
+ *
  * @param {string} link - 要判断的链接。
- * @returns {boolean} 如果链接是外部链接，则返回 `true`，否则返回 `false`。
+ * @returns {boolean} - 如果链接是外部链接，则返回 `true`，否则返回 `false`。
  */
 const isExternalLink = (link: string): boolean => /^https?:\/\//.test(link)
 </script>

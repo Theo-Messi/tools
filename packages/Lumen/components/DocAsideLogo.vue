@@ -10,21 +10,21 @@ interface AsideItem {
   info2?: string
 }
 
+/**
+ * 组件的属性定义。
+ *
+ * 包含以下属性：
+ * - `Aside_Data` (必需): 一个对象数组，每个对象代表一个横幅。
+ *   - `link` (string): 横幅的链接地址。
+ *   - `icon` (string): 横幅的图标地址。
+ *   - `name` (string, 可选): 横幅的名称。
+ *   - `Activity` (string, 可选): 活动信息。
+ *   - `hide1` (string, 可选): 隐藏信息1。
+ *   - `info1` (string, 可选): 信息1。
+ *   - `hide2` (string, 可选): 隐藏信息2。
+ *   - `info2` (string, 可选): 信息2。
+ */
 const props = defineProps<{
-  /**
-   * `Aside_Data` 属性的类型定义。
-   * 包含一个对象数组，每个对象代表一个横幅，具体字段如下：
-   * - `link`: 链接地址
-   * - `icon`: 图标地址
-   * - `name` (可选): 名称
-   * - `Activity` (可选): 活动信息
-   * - `hide1` (可选): 隐藏信息1
-   * - `info1` (可选): 信息1
-   * - `hide2` (可选): 隐藏信息2
-   * - `info2` (可选): 信息2
-   *
-   * 该属性为必需的。
-   */
   Aside_Data: Array<AsideItem>
 }>()
 </script>

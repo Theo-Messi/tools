@@ -3,13 +3,19 @@ import { computed } from 'vue'
 import { useData } from 'vitepress'
 
 /**
- * 使用 `useData` 直接解构 `frontmatter`。
+ * 从 `useData` 获取 `frontmatter`，用于访问文档的前置信息。
+ *
+ * `frontmatter` 是一个包含文档前置信息的对象，通常包括标题、描述、作者等元数据。
  */
 const { frontmatter } = useData()
 
 /**
- * 优化计算属性 `prelink`。
- * 当 `frontmatter` 发生变化时自动重新计算，使用简洁的箭头函数。
+ * 计算属性 `prelink`。
+ *
+ * 该属性从 `frontmatter` 中获取 `hero` 对象的 `prelink` 属性值。
+ * 当 `frontmatter` 发生变化时，`prelink` 会自动重新计算。
+ *
+ * @returns {string | undefined} 返回 `frontmatter` 中 `hero` 对象的 `prelink` 属性值，如果不存在则为 `undefined`。
  */
 const prelink = computed(() => frontmatter.value.hero?.prelink)
 </script>
