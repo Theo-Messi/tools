@@ -4,6 +4,7 @@ import { useRoute } from 'vitepress'
 
 /**
  * 组件的 props 类型定义。
+ *
  * @typedef {Object} Props
  * @property {Object} Twikoo_Data - Twikoo 配置数据。
  * @property {string} Twikoo_Data.envId - Twikoo 的环境 ID。
@@ -16,7 +17,12 @@ const props = defineProps<{
 
 /**
  * 初始化 Twikoo 评论系统。
- * 异步函数，动态导入 Twikoo 并初始化。
+ *
+ * 异步函数，动态导入 Twikoo 并进行初始化。
+ *
+ * @async
+ * @function
+ * @returns {Promise<void>} - 无返回值的 Promise。
  */
 async function initTwikoo() {
   try {
@@ -42,6 +48,8 @@ async function initTwikoo() {
 
 /**
  * 重新加载 Twikoo 评论系统。
+ *
+ * 该函数会调用 `initTwikoo` 来重新初始化评论系统。
  */
 function reloadTwikoo() {
   initTwikoo()

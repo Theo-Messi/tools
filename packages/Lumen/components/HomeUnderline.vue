@@ -3,18 +3,21 @@ import { onMounted } from 'vue'
 import { useData } from 'vitepress'
 
 /**
- * 获取当前页面的数据，包括前言和其它信息。
- * @returns {Object} 包含前言（frontmatter）等数据。
+ * 从 VitePress 的 `useData` 钩子获取当前页面的前言数据。
+ *
+ * @returns {Object} 包含页面的前言数据（frontmatter）。
  */
 const { frontmatter: fm } = useData()
 
 // 组件挂载后移动 DOM 元素
 onMounted(() => {
+  // 获取需要移动的元素
   const p = document.querySelector('.VPHero .text') as HTMLElement | null
   const s = document.querySelector('#hero-text') as HTMLElement | null
 
+  // 如果目标元素和源元素都存在
   if (p && s) {
-    // 清空目标元素的内容并将 #hero-text 移入其中
+    // 清空目标元素的内容，并将源元素移入目标元素中
     p.innerHTML = ''
     p.appendChild(s)
   }
