@@ -3,33 +3,70 @@ import { ref, computed } from 'vue'
 import { useRouter } from 'vitepress'
 import type { PropType } from 'vue'
 
+// 定义组件的 props 类型
 const props = defineProps({
+  /**
+   * 按钮图标的类名。
+   * @type {string}
+   * @default 'fas fa-share-alt'
+   */
   buttonIcon: {
     type: String as PropType<string>,
     default: 'fas fa-share-alt'
   },
+
+  /**
+   * 按钮显示的文本。
+   * @type {string}
+   * @default '分享此页面'
+   */
   buttonText: {
     type: String as PropType<string>,
     default: '分享此页面'
   },
+
+  /**
+   * 复制成功后显示的图标的类名。
+   * @type {string}
+   * @default 'fas fa-thumbs-up'
+   */
   copiedIcon: {
     type: String as PropType<string>,
     default: 'fas fa-thumbs-up'
   },
+
+  /**
+   * 复制成功后显示的文本。
+   * @type {string}
+   * @default '链接已复制!'
+   */
   copiedText: {
     type: String as PropType<string>,
     default: '链接已复制!'
   }
 })
 
+// 获取 VitePress 路由对象
 const router = useRouter()
+
+// 记录链接是否已被复制
 const copied = ref(false)
 
+/**
+ * 计算当前页面的分享链接。
+ * @type {ComputedRef<string>}
+ * @returns {string} 当前页面的完整分享链接。
+ */
 const shareLink = computed(() => {
   const currentPath = router.route.path
   return `${window.location.origin}${currentPath.replace(/^\/[a-z]{2}\//, '/')}`
 })
 
+/**
+ * 复制分享链接到剪贴板。
+ * 如果复制成功，显示“链接已复制！”的提示。
+ * 如果失败，显示用户反馈提示。
+ */
 const copyLink = async () => {
   try {
     await navigator.clipboard.writeText(shareLink.value)

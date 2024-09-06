@@ -3,6 +3,7 @@ import { computed, ref } from 'vue'
 
 /**
  * 组件的 props 类型定义。
+ *
  * @typedef {Object} Props
  * @property {string} href - 视频链接或目标 URL。
  * @property {string} name - 按钮或链接的显示名称。
@@ -10,6 +11,7 @@ import { computed, ref } from 'vue'
 
 /**
  * 获取组件的 props。
+ *
  * @type {Props}
  */
 const props = defineProps<{
@@ -19,18 +21,22 @@ const props = defineProps<{
 
 /**
  * 视频播放状态，初始为关闭状态。
+ *
  * @type {Ref<boolean>}
  */
 const isVideoOpen = ref(false)
 
 /**
  * 动态计算 iframe 的 src 地址。只有在视频打开时，src 才会被设置为 props.href。
+ *
  * @type {ComputedRef<string>}
  */
 const videoSrc = computed(() => (isVideoOpen.value ? props.href : ''))
 
 /**
  * 切换视频播放状态。切换时会根据当前状态更新 videoSrc 的值。
+ *
+ * @function
  */
 const toggleVideo = () => {
   isVideoOpen.value = !isVideoOpen.value

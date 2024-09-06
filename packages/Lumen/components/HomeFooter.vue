@@ -1,7 +1,27 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed } from 'vue'
 
-// 定义组件的 props 类型
+/**
+ * 组件的 props 类型定义。
+ *
+ * @typedef {Object} Props
+ * @property {Object} Footer_Data - 页脚数据。
+ * @property {Array<Object>} Footer_Data.group - 分组数据，每个分组包含以下属性：
+ * @property {string} [icon] - 图标（可选）。
+ * @property {string} title - 标题。
+ * @property {boolean} internal - 是否为内部链接。
+ * @property {Array<Object>} links - 链接列表，每个链接包含以下属性：
+ * @property {string} [icon] - 图标（可选）。
+ * @property {string} name - 链接名称。
+ * @property {string} href - 链接地址。
+ * @property {Object} [beian] - 备案信息（可选）。
+ * @property {string} [beian.icp] - ICP 备案号。
+ * @property {string} [beian.police] - 公安备案号。
+ * @property {Object} [author] - 作者信息（可选）。
+ * @property {string} [author.name] - 作者姓名。
+ * @property {string} [author.time] - 发布时间。
+ * @property {string} [author.link] - 作者链接。
+ */
 const props = defineProps<{
   Footer_Data: {
     group: Array<{
@@ -26,18 +46,32 @@ const props = defineProps<{
   }
 }>()
 
-// 当前打开的 section 索引
+/**
+ * 当前打开的 section 索引，`null` 表示没有 section 被打开。
+ *
+ * @type {Ref<number | null>}
+ */
 const openSectionIndex = ref<number | null>(null)
 
-// 当前窗口宽度
+/**
+ * 当前窗口宽度。
+ *
+ * @type {Ref<number | null>}
+ */
 const windowWidth = ref<number | null>(null)
 
-// 切换 section 的显示状态
+/**
+ * 切换 section 的显示状态。
+ *
+ * @param {number} index - 要切换的 section 的索引。
+ */
 const toggleSection = (index: number) => {
   openSectionIndex.value = openSectionIndex.value === index ? null : index
 }
 
-// 更新窗口宽度
+/**
+ * 更新当前窗口宽度。
+ */
 const updateWindowWidth = () => {
   windowWidth.value = window.innerWidth
 }
@@ -57,7 +91,11 @@ onUnmounted(() => {
   }
 })
 
-// 计算当前窗口是否为大屏幕
+/**
+ * 计算当前窗口是否为大屏幕，宽度大于 768px 时为大屏幕。
+ *
+ * @type {ComputedRef<boolean>}
+ */
 const isLargeScreen = computed(() => windowWidth.value > 768)
 </script>
 
