@@ -12,7 +12,7 @@ updates:
       timezone: 'Asia/Shanghai'
       time: '09:00'
     groups:
-      all-dependencies:
+      all:
         patterns:
           - '*'
     commit-message:
