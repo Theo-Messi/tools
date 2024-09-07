@@ -15,6 +15,7 @@ import {
   ShareButton
 } from '@theojs/lumen'
 import { Aside_Data, Footer_Data, Twikoo_Data } from '../data'
+import 'virtual:group-icons.css'
 
 export default {
   extends: DefaultTheme,

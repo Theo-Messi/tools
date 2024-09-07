@@ -1,6 +1,10 @@
 import { defineConfig } from 'vitepress'
 import { imgSize } from '@mdit/plugin-img-size'
 import { figure } from '@mdit/plugin-figure'
+import {
+  groupIconMdPlugin,
+  groupIconVitePlugin
+} from 'vitepress-plugin-group-icons'
 
 import Lumenpkg from '../../packages/Lumen/package.json'
 import Solispkg from '../../packages/Solis/package.json'
@@ -81,11 +85,25 @@ export default defineConfig({
     image: { lazyLoading: true },
     config: (md) => {
       md.use(imgSize)
+      md.use(groupIconMdPlugin)
       md.use(figure, {
         figcaption: 'alt',
         copyAttrs: '^class$'
       })
     }
+  },
+  vite: {
+    plugins: [
+      groupIconVitePlugin({
+        customIcon: {
+          scss: 'vscode-icons:file-type-scss2',
+          css: 'vscode-icons:file-type-css',
+          所有主题: 'logos:typescript-icon',
+          部分主题: 'logos:typescript-icon',
+          单独导入: 'logos:typescript-icon'
+        }
+      })
+    ]
   },
   themeConfig: {
     logo: { src: '/TM-FELogo.png', width: 24, height: 24 },
