@@ -31,11 +31,13 @@ blog/
 
 ## pages
 
-此页面用来设置博客布局结构
+设置博客布局结构
 
-### archives.md
+`pages`文件夹下创建 `archives.md` `category.md` `tags.md`
 
-```md
+::: code-group
+
+```md[archives.md]
 ---
 page: true
 title: 归档
@@ -46,9 +48,7 @@ aside: false
 <Archives/>
 ```
 
-### category.md
-
-```md
+```md[category.md]
 ---
 page: true
 title: 分类
@@ -59,9 +59,7 @@ aside: false
 <Category/>
 ```
 
-### tags.md
-
-```md
+```md[tags.md]
 ---
 page: true
 title: 标签
@@ -73,6 +71,8 @@ aside: false
 <Tags/>
 </ClientOnly>
 ```
+
+:::
 
 ## posts
 
