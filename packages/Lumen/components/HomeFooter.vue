@@ -9,7 +9,7 @@ import { ref, onMounted, onUnmounted, computed } from 'vue'
  * @property {Array<Object>} Footer_Data.group - 分组数据，每个分组包含以下属性：
  * @property {string} [icon] - 图标（可选）。
  * @property {string} title - 标题。
- * @property {boolean} internal - 是否为内部链接。
+ * @property {boolean} internal - 是否为内部链接。默认为`false`(可选)
  * @property {Array<Object>} links - 链接列表，每个链接包含以下属性：
  * @property {string} [icon] - 图标（可选）。
  * @property {string} name - 链接名称。
@@ -27,7 +27,7 @@ const props = defineProps<{
     group: Array<{
       icon?: string
       title: string
-      internal: boolean
+      internal?: boolean
       links: Array<{
         icon?: string
         name: string
