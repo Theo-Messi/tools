@@ -1,11 +1,13 @@
 export const Aside_Data = [
-  // {
-  //   link: 'https://fbinv01.fbaff.cc/auth/register?code=RZP3',
-  //   icon: 'https://flyingbirdlimo.com/wp-content/uploads/2022/03/Flying-Bird-Logo-cropped.png',
-  //   Activity: 'FlyingBird 618活动来了',
-  //   info1: '月付 85折 优惠码  2461885',
-  //   info2: '年付 64折 优惠码  2461880'
-  // },
+  {
+    link: 'https://fbinv02.fbaff.cc/auth/register?code=RZP3',
+    icon: 'https://flyingbirdlimo.com/wp-content/uploads/2022/03/Flying-Bird-Logo-cropped.png',
+    Activity: 'FlyingBird 庆中秋 人团圆',
+    info1:
+      '月付 85折 优惠码 <span style="color: var(--vp-c-brand-3)"> 24ZQ85 </span>',
+    info2:
+      '年付 64折 优惠码 <span style="color: var(--vp-c-brand-3)"> 24ZQ80 </span>'
+  },
   // {
   //   link: 'https://ivt01.qytaff.cc/register?aff=jjgD79Jd',
   //   icon: 'https://www.qingyunti.cc/images/qytlogo-144-49.png',
