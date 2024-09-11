@@ -1,7 +1,7 @@
 export const Aside_Data = [
   {
     link: 'https://fbinv02.fbaff.cc/auth/register?code=RZP3',
-    icon: 'https://flyingbirdlimo.com/wp-content/uploads/2022/03/Flying-Bird-Logo-cropped.png',
+    icon: 'https://i.theojs.cn/docs/202409111237242.png',
     Activity: 'FlyingBird 庆中秋 人团圆',
     info1:
       '月付 85折 优惠码 <span style="color: var(--vp-c-brand-3)"> 24ZQ85 </span>',
