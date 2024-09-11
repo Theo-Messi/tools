@@ -22,7 +22,7 @@ jobs:
         name: Install pnpm
 
       - name: Install dependencies
-        run: pnpm add axios ts-node typescript -w
+        run: pnpm add axios ts-node typescript@5.5.4 -w
 
       - name: Run TypeScript script
         env:
