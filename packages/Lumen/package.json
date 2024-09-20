@@ -42,7 +42,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.6.0",
     "bumpp": "^9.5.2",
-    "sass": "^1.79.1",
+    "sass": "^1.79.2",
     "twikoo": "^1.6.39",
     "vue": "^3.5.6"
   },
