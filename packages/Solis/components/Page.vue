@@ -24,11 +24,23 @@
       <p class="describe" v-html="article.frontMatter.description"></p>
     </a>
     <div class="post-info">
+      <i
+        class="fa-solid fa-calendar-week"
+        style="margin-right: 0.25rem; color: var(--vp-c-brand-1)"
+      ></i>
       {{ article.frontMatter.date }}
-      <span v-for="item in article.frontMatter.tags" :key="item">
-        <a :href="withBase(`/pages/tags.html?tag=${item}`)">
-          {{ item }}
-        </a>
+      <span>
+        <span v-for="(item, index) in article.frontMatter.tags" :key="item">
+          <i
+            v-if="index === 0"
+            class="fa-solid fa-tags"
+            style="margin-right: 0.25rem; color: var(--vp-c-brand-1)"
+          ></i>
+          <a :href="withBase(`/pages/tags.html?tag=${item}`)">
+            {{ item
+            }}<span v-if="index < article.frontMatter.tags.length - 1"></span>
+          </a>
+        </span>
       </span>
     </div>
   </div>
@@ -74,8 +86,8 @@ const sortedPosts = computed(() => {
 
 <style lang="scss" scoped>
 .post-list {
-  border-bottom: 1px dashed var(--vp-c-brand-soft);
-  padding: 14px 0;
+  // border-bottom: 1px dashed var(--vp-c-brand-soft);
+  padding: 20px 0;
 }
 
 .post-header {
@@ -86,21 +98,26 @@ const sortedPosts = computed(() => {
 
 .post-title {
   font-size: 1.125rem;
-  font-weight: 500;
   margin: 0.1rem 0;
+  a {
+    color: var(--vp-c-text-1);
+    &:hover {
+      color: var(--vp-c-text-1);
+    }
+  }
 }
 
 .describe {
-  font-size: 0.9375rem;
+  font-size: 0.9rem;
   color: var(--vp-c-text-2);
-  margin: 5px 0;
+  margin: 0.5rem 0;
   line-height: 1.5rem;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-weight: 400;
+  font-weight: 450;
 }
 
 .pagination {
@@ -111,26 +128,17 @@ const sortedPosts = computed(() => {
 
 .link {
   display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 500 !important;
   width: 24px;
   text-align: center;
   border-right: none;
 
   &.active {
-    color: var(--vp-c-text-1);
+    color: var(--vp-c-text-1) !important;
     &:hover {
-      color: var(--vp-c-brand-3);
+      color: var(--vp-c-brand-3) !important;
     }
-  }
-
-  &:first-child {
-    border-bottom-left-radius: 2px;
-    border-top-left-radius: 2px;
-  }
-
-  &:last-child {
-    border-bottom-right-radius: 2px;
-    border-top-right-radius: 2px;
-    border-right: 1px solid var(--vp-c-divider-light);
   }
 }
 </style>
