@@ -1,3 +1,5 @@
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+
 :root {
   --vp-c-brand: var(--vp-c-brand-1) !important;
   --li-dot-color: var(--vp-c-brand);
@@ -9,8 +11,7 @@
 }
 
 .vp-doc a {
-  color: var(--vp-c-brand-1);
-  font-weight: 500;
+  font-weight: 900 !important;
   text-decoration: none !important;
 }
 
@@ -18,7 +19,9 @@
   a[rel~='noreferrer']:link,
   a[rel~='noreferrer']:visited {
     color: var(--vp-c-brand);
-    border-bottom: 1px solid var(--vp-c-brand);
+    font-weight: 500 !important;
+    font-size: 1rem;
+    text-decoration: underline solid !important;
   }
 }
 
@@ -85,19 +88,25 @@
 
 .date {
   font-size: 0.875rem;
+  font-weight: 500;
   color: var(--date-color);
 }
 .post-info {
-  font-size: 12px;
+  display: flex;
+  align-items: center;
+  margin-right: 1em;
+  font-size: 0.75rem;
+  color: var(--vp-c-brand-1);
 
   span {
     display: inline-block;
-    padding: 0 8px;
-    background-color: var(--vp-c-bg-alt);
-    margin-right: 10px;
+    margin-left: 0.25rem;
     transition: 0.4s;
-    border-radius: 2px;
-    color: var(--vp-c-text-1);
+    a {
+      font-size: 0.8rem;
+      font-weight: 500 !important;
+      color: var(--vp-c-brand-1) !important;
+    }
   }
 }
 @media (min-width: 768px) {
