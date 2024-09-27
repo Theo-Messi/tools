@@ -50,7 +50,7 @@ importers:
   packages/Lumen:
     dependencies:
       '@fortawesome/fontawesome-free':
-        specifier: ^6.6.0
+        specifier: ^6.5.0
         version: 6.6.0
       bumpp:
         specifier: ^9.5.2
@@ -81,7 +81,7 @@ importers:
   packages/Solis:
     dependencies:
       '@fortawesome/fontawesome-free':
-        specifier: ^6.6.0
+        specifier: ^6.5.0
         version: 6.6.0
       bumpp:
         specifier: ^9.5.2
