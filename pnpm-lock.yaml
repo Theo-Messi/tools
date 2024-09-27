@@ -50,8 +50,8 @@ importers:
   packages/Lumen:
     dependencies:
       '@fortawesome/fontawesome-free':
-        specifier: ^6.5.0
-        version: 6.6.0
+        specifier: 6.5.0
+        version: 6.5.0
       bumpp:
         specifier: ^9.5.2
         version: 9.5.2
@@ -81,8 +81,8 @@ importers:
   packages/Solis:
     dependencies:
       '@fortawesome/fontawesome-free':
-        specifier: ^6.5.0
-        version: 6.6.0
+        specifier: 6.5.0
+        version: 6.5.0
       bumpp:
         specifier: ^9.5.2
         version: 9.5.2
@@ -388,8 +388,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@fortawesome/fontawesome-free@6.6.0':
-    resolution: {integrity: sha512-60G28ke/sXdtS9KZCpZSHHkCbdsOGEhIUGlwq6yhY74UpTiToIh8np7A8yphhM4BWsvNFtIvLpi4co+h9Mr9Ow==}
+  '@fortawesome/fontawesome-free@6.5.0':
+    resolution: {integrity: sha512-npV8sIYN4tQmLkzkWU6Q2Ot8L3XqBzLpS+rGTl96nFM7qbMWIoFqcdp0YrcWlfRDQx5G+gA2sn8uSFNRAYTrrA==}
     engines: {node: '>=6'}
 
   '@iconify-json/logos@1.2.0':
@@ -1839,7 +1839,7 @@ snapshots:
   '@esbuild/win32-x64@0.21.5':
     optional: true
 
-  '@fortawesome/fontawesome-free@6.6.0': {}
+  '@fortawesome/fontawesome-free@6.5.0': {}
 
   '@iconify-json/logos@1.2.0':
     dependencies:
