@@ -38,7 +38,7 @@
           ></i>
           <a :href="withBase(`/pages/tags.html?tag=${item}`)">
             {{ item
-            }}<span v-if="index < article.frontMatter.tags.length - 1"></span>
+            }}<span v-if="index < article.frontMatter.tags.length - 1">,</span>
           </a>
         </span>
       </span>
@@ -46,15 +46,52 @@
   </div>
 
   <div class="pagination">
+    <a class="link" :href="withBase('/index.html')" v-if="pageCurrent > 1"
+      ><i class="fa-solid fa-angles-left"></i
+    ></a>
     <a
       class="link"
-      :class="{ active: pageCurrent === i }"
-      v-for="i in pagesNum"
-      :key="i"
-      :href="withBase(i === 1 ? '/index.html' : `/page_${i}.html`)"
+      :class="{ active: pageCurrent === 1 }"
+      :href="
+        withBase(
+          pageCurrent > 1 ? `/page_${pageCurrent - 1}.html` : '/index.html'
+        )
+      "
+      v-if="pageCurrent > 1"
     >
-      {{ i }}
+      <i class="fa-solid fa-angle-left"></i>
     </a>
+
+    <template v-for="i in displayPages" :key="i">
+      <a
+        class="link"
+        :class="{ active: pageCurrent === i }"
+        :href="withBase(i === 1 ? '/index.html' : `/page_${i}.html`)"
+      >
+        {{ i }}
+      </a>
+    </template>
+
+    <a
+      class="link"
+      :class="{ active: pageCurrent === pagesNum }"
+      :href="
+        withBase(
+          pageCurrent < pagesNum
+            ? `/page_${pageCurrent + 1}.html`
+            : `/page_${pagesNum}.html`
+        )
+      "
+      v-if="pageCurrent < pagesNum"
+    >
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+    <a
+      class="link"
+      :href="withBase(`/page_${pagesNum}.html`)"
+      v-if="pageCurrent < pagesNum"
+      ><i class="fa-solid fa-angles-right"></i
+    ></a>
   </div>
 </template>
 
@@ -81,6 +118,27 @@ const sortedPosts = computed(() => {
     if (b.frontMatter.top) return 1
     return 0
   })
+})
+
+const displayPages = computed(() => {
+  const maxPagesToShow = 6
+  const half = Math.floor(maxPagesToShow / 2)
+  let start = Math.max(1, props.pageCurrent - half)
+  let end = Math.min(props.pagesNum, start + maxPagesToShow - 1)
+
+  if (end - start < maxPagesToShow - 1) {
+    start = Math.max(1, end - maxPagesToShow + 1)
+  }
+
+  return Array.from({ length: end - start + 1 }, (_, index) => start + index)
+})
+
+const shouldShowEllipsisLeft = computed(() => {
+  return displayPages.value[0] > 1
+})
+
+const shouldShowEllipsisRight = computed(() => {
+  return displayPages.value[displayPages.value.length - 1] < props.pagesNum
 })
 </script>
 
@@ -132,13 +190,20 @@ const sortedPosts = computed(() => {
   font-weight: 500 !important;
   width: 24px;
   text-align: center;
-  border-right: none;
+  border-radius: 4px;
+  color: var(--vp-c-text-1);
+  margin: 0 4px;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 
   &.active {
     color: var(--vp-c-text-1) !important;
-    &:hover {
-      color: var(--vp-c-brand-3) !important;
-    }
+    background-color: var(--vp-c-bg-alt);
+  }
+
+  &:hover {
+    background-color: var(--vp-c-bg-soft);
   }
 }
 </style>
