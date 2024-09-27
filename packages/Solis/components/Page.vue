@@ -86,7 +86,7 @@ const sortedPosts = computed(() => {
 
 <style lang="scss" scoped>
 .post-list {
-  // border-bottom: 1px dashed var(--vp-c-brand-soft);
+  border-bottom: 1px dashed var(--vp-c-gray-3);
   padding: 20px 0;
 }
 
