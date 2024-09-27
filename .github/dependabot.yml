@@ -11,9 +11,5 @@ updates:
       interval: 'daily'
       timezone: 'Asia/Shanghai'
       time: '09:00'
-    groups:
-      all:
-        patterns:
-          - '*'
     commit-message:
       prefix: 'fix(Dependabot)'
