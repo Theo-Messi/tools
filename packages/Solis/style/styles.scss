@@ -16,6 +16,14 @@
     text-decoration: none !important;
   }
 
+  a[rel~='noreferrer']:link,
+  a[rel~='noreferrer']:visited {
+    color: var(--vp-c-brand-1);
+    font-weight: 500 !important;
+    font-size: 1rem;
+    text-decoration: underline solid !important;
+  }
+
   h1,
   h2,
   h3 {
@@ -44,16 +52,6 @@
 .VPFooter {
   transition: none !important;
   border: none !important;
-}
-
-.content {
-  a[rel~='noreferrer']:link,
-  a[rel~='noreferrer']:visited {
-    color: var(--vp-c-brand);
-    font-weight: 500 !important;
-    font-size: 1rem;
-    text-decoration: underline solid !important;
-  }
 }
 
 .aside {
