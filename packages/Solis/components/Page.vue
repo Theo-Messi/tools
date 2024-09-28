@@ -46,9 +46,9 @@
   </div>
 
   <div class="pagination">
-    <a class="link" :href="withBase('/index.html')" v-if="pageCurrent > 1"
-      ><i class="fa-solid fa-angles-left"></i
-    ></a>
+    <a class="link" :href="withBase('/index.html')" v-if="pageCurrent > 1">
+      <i class="fa-solid fa-angles-left"></i>
+    </a>
     <a
       class="link"
       :class="{ active: pageCurrent === 1 }"
@@ -90,8 +90,9 @@
       class="link"
       :href="withBase(`/page_${pagesNum}.html`)"
       v-if="pageCurrent < pagesNum"
-      ><i class="fa-solid fa-angles-right"></i
-    ></a>
+    >
+      <i class="fa-solid fa-angles-right"></i>
+    </a>
   </div>
 </template>
 
@@ -102,8 +103,8 @@ import { Post } from '../types/functions'
 
 const props = defineProps({
   posts: Array as PropType<Post[]>,
-  pageCurrent: Number,
-  pagesNum: Number
+  pageCurrent: { type: Number, default: 1 },
+  pagesNum: { type: Number, default: 1 }
 })
 
 const sortedPosts = computed(() => {
@@ -131,14 +132,6 @@ const displayPages = computed(() => {
   }
 
   return Array.from({ length: end - start + 1 }, (_, index) => start + index)
-})
-
-const shouldShowEllipsisLeft = computed(() => {
-  return displayPages.value[0] > 1
-})
-
-const shouldShowEllipsisRight = computed(() => {
-  return displayPages.value[displayPages.value.length - 1] < props.pagesNum
 })
 </script>
 
