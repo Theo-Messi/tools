@@ -44,7 +44,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.6.0",
-    "bumpp": "^9.5.2",
+    "bumpp": "^9.6.0",
     "fs-extra": "^11.2.0",
     "globby": "^14.0.2",
     "gray-matter": "^4.0.3",
