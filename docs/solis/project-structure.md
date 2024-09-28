@@ -39,37 +39,46 @@ blog/
 
 ```md[archives.md]
 ---
-page: true
+layout: doc
 title: 归档
 description: Archive
 aside: false
+lastUpdated: false
+editLink: false
 ---
 
 <Archives/>
+
 ```
 
 ```md[category.md]
 ---
-page: true
+layout: doc
 title: 分类
 description: Category
 aside: false
+lastUpdated: false
+editLink: false
 ---
 
 <Category/>
+
 ```
 
 ```md[tags.md]
 ---
-page: true
+layout: doc
 title: 标签
 description: Tags
 aside: false
+lastUpdated: false
+editLink: false
 ---
 
 <ClientOnly>
 <Tags/>
 </ClientOnly>
+
 ```
 
 :::

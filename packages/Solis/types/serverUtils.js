@@ -42,8 +42,10 @@ async function generatePaginationPages(total, pageSize) {
     for (let i = 1; i <= pagesNum; i++) {
       const page = `
 ---
-page: true
+layout: doc
 aside: false
+lastUpdated: false
+editLink: false
 ---
 <script setup>
 import { Page } from "@theojs/solis";
