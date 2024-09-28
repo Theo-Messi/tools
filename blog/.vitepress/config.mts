@@ -23,6 +23,18 @@ export default defineConfig({
     footer: {
       message: '基于 MIT 许可发布',
       copyright: `版权所有 © 2019-${new Date().getFullYear()} Theo-Messi`
+    },
+    editLink: {
+      pattern: 'https://github.com/Theo-Messi/tools/edit/main/blog/:path',
+      text: '为此页提供修改建议'
+    },
+    // 上次更新
+    lastUpdated: {
+      text: '最后更新于'
+    },
+    docFooter: {
+      prev: '上一篇',
+      next: '下一篇'
     }
   }
 })
