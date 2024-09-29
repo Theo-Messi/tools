@@ -155,7 +155,7 @@ const displayPages = computed(() => {
 
   a {
     font-size: 0.9rem;
-    color: var(--vp-c-text-2);
+    color: var(--vp-c-text-2) !important;
     font-weight: 450 !important;
   }
 }
