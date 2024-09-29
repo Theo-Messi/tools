@@ -108,6 +108,7 @@
 
   .top-label {
     margin-right: 6px;
+    color: rgba(255, 87, 51, 1);
   }
 }
 
@@ -131,6 +132,9 @@
       font-size: 0.8rem;
       font-weight: 500 !important;
       color: var(--vp-c-brand-1) !important;
+      &:hover {
+        color: var(--vp-c-brand-3) !important;
+      }
     }
   }
 }
