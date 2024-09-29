@@ -53,8 +53,8 @@ importers:
         specifier: ^6.6.0
         version: 6.6.0
       bumpp:
-        specifier: ^9.6.0
-        version: 9.6.0
+        specifier: ^9.6.1
+        version: 9.6.1
       sass:
         specifier: ^1.79.4
         version: 1.79.4
@@ -84,8 +84,8 @@ importers:
         specifier: ^6.6.0
         version: 6.6.0
       bumpp:
-        specifier: ^9.6.0
-        version: 9.6.0
+        specifier: ^9.6.1
+        version: 9.6.1
       fs-extra:
         specifier: ^11.2.0
         version: 11.2.0
@@ -729,8 +729,8 @@ packages:
   buffer-builder@0.2.0:
     resolution: {integrity: sha512-7VPMEPuYznPSoR21NE1zvd2Xna6c/CloiZCfcMXR1Jny6PjX0N4Nsa38zcBFo/FMK+BlA+FLKbJCQ0i2yxp+Xg==}
 
-  bumpp@9.6.0:
-    resolution: {integrity: sha512-6excO/Xzlci8tu69J0ih6IhH/K70AF4lI0FvqqQ7BkZowDU/x9M/6+u5hXOHPP8oS44Fs/shs5cMXY5ORQ3ckg==}
+  bumpp@9.6.1:
+    resolution: {integrity: sha512-lQlPfyS0GrO5FaOODK+OHQxfCT+6/xWfd3Zt8dzsmzm69RWQfh5fAU9igmeZWOzK/s+4vL+gQLo3yw474ntBZw==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -2193,7 +2193,7 @@ snapshots:
   buffer-builder@0.2.0:
     optional: true
 
-  bumpp@9.6.0:
+  bumpp@9.6.1:
     dependencies:
       '@jsdevtools/ez-spawn': 3.0.4
       c12: 1.11.2
