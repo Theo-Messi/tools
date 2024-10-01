@@ -135,7 +135,7 @@ interface FooterData {
     /**
      * 版权年份。
      */
-    time?: string
+    time?: number
 
     /**
      * 作者的链接。

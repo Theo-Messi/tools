@@ -19,7 +19,7 @@ import { ref, onMounted, onUnmounted, computed } from 'vue'
  * @property {string} [beian.police] - 公安备案号。
  * @property {Object} [author] - 作者信息（可选）。
  * @property {string} [author.name] - 作者姓名。
- * @property {string} [author.time] - 发布时间。
+ * @property {number} [author.time] - 发布时间，年份格式，如 2019。
  * @property {string} [author.link] - 作者链接。
  */
 const props = defineProps<{
@@ -40,7 +40,7 @@ const props = defineProps<{
     }
     author?: {
       name?: string
-      time?: string
+      time?: number
       link?: string
     }
   }
