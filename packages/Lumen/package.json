@@ -68,5 +68,5 @@
     "./Footer": "./components/HomeFooter.vue",
     "./package.json": "./package.json"
   },
-  "packageManager": "pnpm@9.10.0"
+  "packageManager": "pnpm@9.12.0"
 }

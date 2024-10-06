@@ -11,5 +11,5 @@
   "dependencies": {
     "@theojs/solis": "workspace:*"
   },
-  "packageManager": "pnpm@9.10.0"
+  "packageManager": "pnpm@9.12.0"
 }
