@@ -13,8 +13,8 @@
   <a
     v-if="selectTag"
     :href="withBase(article.regularPath)"
-    v-for="(article, index) in data[selectTag]"
-    :key="index"
+    v-for="article in data[selectTag]"
+    :key="article.regularPath"
     class="posts"
   >
     <div class="post-container">
@@ -31,35 +31,45 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, ref } from 'vue'
+import { computed, ref, onMounted } from 'vue'
 import { useData, withBase } from 'vitepress'
 import { initTags, Post } from '../types/functions'
 
-const { theme } = useData()
+const { theme } = useData<{ posts: Post[] }>()
 
-// 对文章数据进行排序，置顶的文章会优先显示
+// 排序函数，置顶的文章优先
+const sortPosts = (posts: Post[]): Post[] => {
+  return posts.slice().sort((a, b) => {
+    if (a.frontMatter.top && b.frontMatter.top) {
+      return (
+        new Date(b.frontMatter.date).getTime() -
+        new Date(a.frontMatter.date).getTime()
+      )
+    }
+    if (a.frontMatter.top) return -1
+    if (b.frontMatter.top) return 1
+    return 0
+  })
+}
+
+// 对文章数据进行分类并排序
 const data = computed<Record<string, Post[]>>(() => {
   const tagData = initTags(theme.value.posts)
   const sortedTagData: Record<string, Post[]> = {}
 
   for (const key in tagData) {
-    sortedTagData[key] = tagData[key].slice().sort((a, b) => {
-      if (a.frontMatter.top && b.frontMatter.top) {
-        return (
-          new Date(b.frontMatter.date).getTime() -
-          new Date(a.frontMatter.date).getTime()
-        )
-      }
-      if (a.frontMatter.top) return -1
-      if (b.frontMatter.top) return 1
-      return 0
-    })
+    sortedTagData[key] = sortPosts(tagData[key])
   }
 
   return sortedTagData
 })
 
-const selectTag = ref(new URLSearchParams(location.search).get('tag') || '')
+const selectTag = ref('')
+
+// 在组件挂载时从 URL 中获取初始 tag
+onMounted(() => {
+  selectTag.value = new URLSearchParams(location.search).get('tag') || ''
+})
 
 const toggleTag = (tag: string) => {
   selectTag.value = tag

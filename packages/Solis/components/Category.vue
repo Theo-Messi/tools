@@ -1,9 +1,9 @@
 <template>
-  <div v-for="(posts, key) in sortedData" :key="key">
-    <div class="category">{{ key }}</div>
+  <div v-for="(posts, category) in sortedData" :key="category">
+    <div class="category">{{ category }}</div>
     <a
-      v-for="(article, index) in posts"
-      :key="index"
+      v-for="article in posts"
+      :key="article.regularPath"
       :href="withBase(article.regularPath)"
       class="posts"
     >
@@ -16,7 +16,7 @@
           {{ article.frontMatter.title }}
         </div>
       </div>
-      <div class="date">{{ article.frontMatter.date }}</div>
+      <div class="date">{{ article.formattedDate }}</div>
     </a>
   </div>
 </template>
@@ -26,24 +26,33 @@ import { useData, withBase } from 'vitepress'
 import { computed } from 'vue'
 import { initCategory, Post } from '../types/functions'
 
+interface Article extends Post {
+  formattedDate: string
+}
+
 const { theme } = useData<{ posts: Post[] }>()
 
 const sortedData = computed(() => {
   const categoryData = initCategory(theme.value.posts)
-  const sortedCategoryData: Record<string, Post[]> = {}
+  const sortedCategoryData: Record<string, Article[]> = {}
 
   for (const key in categoryData) {
-    sortedCategoryData[key] = categoryData[key].slice().sort((a, b) => {
-      if (a.frontMatter.top && b.frontMatter.top) {
-        return (
-          new Date(b.frontMatter.date).getTime() -
-          new Date(a.frontMatter.date).getTime()
-        )
-      }
-      if (a.frontMatter.top) return -1
-      if (b.frontMatter.top) return 1
-      return 0
-    })
+    sortedCategoryData[key] = categoryData[key]
+      .map((article) => ({
+        ...article,
+        formattedDate: article.frontMatter.date.slice(0, 10) // 提前格式化日期
+      }))
+      .sort((a, b) => {
+        if (a.frontMatter.top && b.frontMatter.top) {
+          return (
+            new Date(b.frontMatter.date).getTime() -
+            new Date(a.frontMatter.date).getTime()
+          )
+        }
+        if (a.frontMatter.top) return -1
+        if (b.frontMatter.top) return 1
+        return 0
+      })
   }
 
   return sortedCategoryData
