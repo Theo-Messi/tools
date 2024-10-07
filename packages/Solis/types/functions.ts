@@ -5,9 +5,9 @@ export type Post = {
     category: string
     tags: string[]
     description: string
-    top?: boolean
+    top?: boolean // 置顶文章的标志
   }
-  regularPath: string
+  regularPath: string // 文章的路径
 }
 
 /**
@@ -20,12 +20,13 @@ export function initTags(posts: Post[]): Record<string, Post[]> {
 
   posts.forEach((post) => {
     const tags = post.frontMatter.tags
+    // 如果文章有标签，进行分类
     if (tags) {
       tags.forEach((tag) => {
         if (!data[tag]) {
           data[tag] = []
         }
-        data[tag].push(post)
+        data[tag].push(post) // 将文章添加到对应标签组
       })
     }
   })
@@ -43,11 +44,12 @@ export function initCategory(posts: Post[]): Record<string, Post[]> {
 
   posts.forEach((post) => {
     const category = post.frontMatter.category
+    // 如果文章有分类，进行分类
     if (category) {
       if (!data[category]) {
         data[category] = []
       }
-      data[category].push(post)
+      data[category].push(post) // 将文章添加到对应分类组
     }
   })
 
@@ -65,17 +67,17 @@ export function useYearSort(posts: Post[]): Post[][] {
   let index = -1
 
   posts.forEach((post) => {
-    const postYear = post.frontMatter.date.split('-')[0]
+    const postYear = post.frontMatter.date.split('-')[0] // 提取文章的年份
 
     // 如果当前年份与文章年份不同，创建一个新分组
     if (postYear !== currentYear) {
       currentYear = postYear
-      data[++index] = []
+      data[++index] = [] // 创建一个新年份组
     }
 
     // 将文章放入对应年份的分组中，置顶文章放在当前年份组的最前面
     if (post.frontMatter.top) {
-      data[index].unshift(post)
+      data[index].unshift(post) // 置顶文章优先
     } else {
       data[index].push(post)
     }

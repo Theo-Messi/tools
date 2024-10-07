@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, onBeforeUnmount, watch, ref } from 'vue'
+import { onMounted, onBeforeUnmount, watch, ref, nextTick } from 'vue'
 import { useRoute } from 'vitepress'
 
 // 接受 Twikoo_Data 作为 prop
@@ -11,9 +11,7 @@ const props = defineProps<{
 
 const route = useRoute()
 const isPostPage = ref(route.path.startsWith('/posts/'))
-
-// 使用时间戳作为唯一 key
-const key = ref(Date.now())
+const key = ref(Date.now()) // 作为唯一的重新渲染标识
 
 // 初始化 Twikoo
 async function initTwikoo() {
@@ -35,7 +33,9 @@ async function initTwikoo() {
 // 重新加载 Twikoo
 function reloadTwikoo() {
   if (typeof window !== 'undefined' && isPostPage.value) {
-    initTwikoo()
+    nextTick(() => {
+      initTwikoo()
+    })
   }
 }
 
@@ -57,13 +57,17 @@ watch(
   () => route.path,
   (newPath) => {
     isPostPage.value = newPath.startsWith('/posts/')
-    key.value = Date.now() // 更新 key 以强制重新渲染
 
     if (isPostPage.value) {
-      setTimeout(reloadTwikoo, 500) // 延迟重新加载 Twikoo
+      key.value = Date.now() // 仅在满足条件时更新 key
+      nextTick(() => {
+        reloadTwikoo()
+      })
     } else {
       const twikooEl = document.getElementById('twikoo')
-      if (twikooEl) twikooEl.innerHTML = '' // 清空评论组件的内容
+      if (twikooEl) {
+        twikooEl.innerHTML = '' // 清空评论组件的内容
+      }
     }
   }
 )

@@ -1,5 +1,9 @@
 <template>
-  <div v-for="(article, index) in sortedPosts" :key="index" class="post-list">
+  <div
+    v-for="article in sortedPosts"
+    :key="article.regularPath"
+    class="post-list"
+  >
     <div class="post-title">
       <span v-if="article.frontMatter.top" class="top-label">
         <i class="fa-solid fa-fire-flame-simple"></i>
@@ -22,14 +26,14 @@
       ></i>
       {{ article.frontMatter.date }}
       <span>
-        <span v-for="(item, index) in article.frontMatter.tags" :key="item">
+        <span v-for="(tag, index) in article.frontMatter.tags" :key="tag">
           <i
             v-if="index === 0"
             class="fa-solid fa-tags"
             style="margin-right: 0.25rem; color: var(--vp-c-brand-1)"
           ></i>
-          <a :href="withBase(`/pages/tags.html?tag=${item}`)">
-            {{ item
+          <a :href="withBase(`/pages/tags.html?tag=${tag}`)">
+            {{ tag
             }}<span v-if="index < article.frontMatter.tags.length - 1">,</span>
           </a>
         </span>
