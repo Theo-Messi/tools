@@ -10,9 +10,9 @@ hero:
     src: '/TM-FELogo.png'
     alt: Theme
   prelink:
-    title: '<i class="fa-solid fa-bolt" style="color: #63E6BE;"></i> 快速开始<div style="text-align: right; font-weight: bold;"><i class="fas fa-pnpm" style="color: #FFD43B;"></i>pnpm add @theojs/lumen</div>'
-    link: /guide/getting-started
-    # target: _blank
+    title: '🎉 活动不停歇，国庆大狂欢！飞鸟国庆活动开始啦！<div><i class="fa-regular fa-hourglass-half" style="color: var(--vp-c-brand-3)"></i> 活动时间: 即日起至 <span style="color: var(--vp-c-brand-3);font-weight: bold;">2024年10月15日23点59分</span></div>'
+    link: https://fbinv02.fbaff.cc/auth/register?code=RZP3
+    target: _blank
   actions:
     - theme: brand
       text: 快速开始
