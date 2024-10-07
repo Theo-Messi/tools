@@ -13,3 +13,12 @@ updates:
       time: '09:00'
     commit-message:
       prefix: 'fix(Dependabot)'
+
+  - package-ecosystem: 'github-actions'
+    directory: /
+    schedule:
+      interval: daily
+      timezone: 'Asia/Shanghai'
+      time: '09:00'
+    commit-message:
+      prefix: 'fix(Dependabot)'
