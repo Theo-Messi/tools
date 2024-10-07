@@ -28,9 +28,25 @@ yarn add @theojs/solis
 :::
 
 :::details 弃用警告: `The legacy JS API is deprecated and will be removed in Dart Sass 2.0.0.`
-在项目根目录创建 `vite.config.js`
 
-```js
+::: code-group
+
+```ts [config.ts]
+import { defineConfig } from 'vitepress'
+export default defineConfig({
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern'
+        }
+      }
+    }
+  }
+})
+```
+
+```js [vite.config.js]
 export default {
   css: {
     preprocessorOptions: {

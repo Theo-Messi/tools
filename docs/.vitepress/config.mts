@@ -103,7 +103,14 @@ export default defineConfig({
           单独导入: 'logos:typescript-icon'
         }
       })
-    ]
+    ],
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern'
+        }
+      }
+    }
   },
   themeConfig: {
     logo: { src: '/TM-FELogo.png', width: 24, height: 24 },
