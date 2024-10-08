@@ -82,7 +82,7 @@ const toggleVideo = () => {
   position: relative;
   padding: 1rem 1.25rem;
   border-radius: 0.8rem;
-  border: 1px dotted var(--vp-c-bg-alt);
+  border: 1px solid var(--vp-c-bg-alt);
   background-color: var(--vp-c-bg-alt);
   transition: border-color 0.3s;
 
