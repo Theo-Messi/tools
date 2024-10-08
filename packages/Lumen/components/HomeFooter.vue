@@ -1,46 +1,98 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed } from 'vue'
 
-/**
- * 组件的 props 类型定义。
- *
- * @typedef {Object} Props
- * @property {Object} Footer_Data - 页脚数据。
- * @property {Array<Object>} Footer_Data.group - 分组数据，每个分组包含以下属性：
- * @property {string} [icon] - 图标（可选）。
- * @property {string} title - 标题。
- * @property {boolean} internal - 是否为内部链接。默认为`false`(可选)
- * @property {Array<Object>} links - 链接列表，每个链接包含以下属性：
- * @property {string} [icon] - 图标（可选）。
- * @property {string} name - 链接名称。
- * @property {string} href - 链接地址。
- * @property {Object} [beian] - 备案信息（可选）。
- * @property {string} [beian.icp] - ICP 备案号。
- * @property {string} [beian.police] - 公安备案号。
- * @property {Object} [author] - 作者信息（可选）。
- * @property {string} [author.name] - 作者姓名。
- * @property {number} [author.time] - 发布时间，年份格式，如 2019。
- * @property {string} [author.link] - 作者链接。
- */
 const props = defineProps<{
+  /**
+   * 页脚数据对象。
+   */
   Footer_Data: {
+    /**
+     * 分组数据，每个分组包含以下属性。
+     */
     group: Array<{
+      /**
+       * 图标（可选）。
+       */
       icon?: string
+
+      /**
+       * 图标样式（可选）。
+       */
+      style?: string
+
+      /**
+       * 分组标题。
+       */
       title: string
+
+      /**
+       * 该组是否为内部链接，默认为 `false`（可选）。
+       */
       internal?: boolean
+
+      /**
+       * 该分组下的链接列表。
+       */
       links: Array<{
+        /**
+         * 链接图标（可选）。
+         */
         icon?: string
+
+        /**
+         * 链接样式（可选）。
+         */
+        style?: string
+
+        /**
+         * 链接名称。
+         */
         name: string
+
+        /**
+         * 链接地址。
+         */
         href: string
+
+        /**
+         * 是否为内部链接，默认为 `false`（可选）。
+         */
+        internal?: boolean
       }>
     }>
+
+    /**
+     * 备案信息（可选）。
+     */
     beian?: {
+      /**
+       * ICP 备案号（可选）。
+       */
       icp?: string
+
+      /**
+       * 公安备案号（可选）。
+       */
       police?: string
     }
+
+    /**
+     * 作者信息（可选）。
+     */
     author?: {
+      /**
+       * 作者姓名（可选）。
+       */
       name?: string
+
+      /**
+       * 发布时间，年份格式，如 2019（可选）。
+       */
       time?: number
+
+      /**
+       * 作者链接（可选）。
+       */
       link?: string
     }
   }
@@ -108,7 +160,11 @@ const isLargeScreen = computed(() => windowWidth.value > 768)
         :key="index"
       >
         <div class="st" @click="toggleSection(index)">
-          <i v-if="section.icon" :class="section.icon"></i>
+          <i
+            v-if="section.icon"
+            :class="section.icon"
+            :style="section.style"
+          ></i>
           {{ section.title }}
           <button class="toggle-button">
             {{ openSectionIndex === index ? '−' : '+' }}
@@ -116,10 +172,10 @@ const isLargeScreen = computed(() => windowWidth.value > 768)
         </div>
         <ul v-if="openSectionIndex === index || isLargeScreen">
           <li v-for="(link, idx) in section.links" :key="idx">
-            <i v-if="link.icon" :class="link.icon"></i>
+            <i v-if="link.icon" :class="link.icon" :style="link.style"></i>
             <a
-              :class="{ 'external-link': !section.internal }"
-              :target="section.internal ? '_self' : '_blank'"
+              :class="{ 'external-link': !link.internal && !section.internal }"
+              :target="link.internal || section.internal ? '_self' : '_blank'"
               rel="noopener"
               :name="link.name"
               :title="link.name"
@@ -228,7 +284,7 @@ i {
 
 .ba {
   background: var(--vp-c-bg-alt);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   text-align: center;
   margin: 0 auto;
 }
@@ -251,7 +307,7 @@ i {
 .st {
   margin-bottom: 0.5rem;
   font-weight: 600;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 
   .toggle-button {
     background: none;

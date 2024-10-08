@@ -40,7 +40,9 @@ export const Footer_Data = {
       icon: 'fas fa-handshake',
       links: [
         {
-          name: '🔥 青云梯',
+          name: '青云梯',
+          icon: 'fab fa-gripfire',
+          style: 'color: rgba(255, 87, 51, 1)',
           href: 'https://qytcc01.qingyunti.pro/register?aff=jjgD79Jd'
         },
         { name: '银河录像局', href: 'https://nf.video/kaIuE' },

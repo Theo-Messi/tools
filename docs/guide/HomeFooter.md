@@ -18,6 +18,7 @@ export const Footer_Data = {
     {
       title: '外部链接',
       icon: 'fas fa-link', // Font Awesome 图标类名 具体查看:https://fontawesome.com/
+      style: 'color: rgba(255, 87, 51, 1)',
       links: [
         { name: '示例1', href: 'https://' },
         { name: '示例2', href: 'https://' }
@@ -27,6 +28,7 @@ export const Footer_Data = {
       title: '内部链接',
       internal: true, // `internal`默认为 false , 为 true 时不显示外部链接图标
       icon: 'fas fa-link',
+      style: 'color: rgba(255, 87, 51, 1)',
       links: [
         { name: '示例1', icon: 'fas fa-book', href: '/docs' },
         { name: '示例2', href: '/page' }
@@ -64,83 +66,98 @@ export default {
 ## 数据接口说明
 
 ```ts
-/**
- * Footer 的数据对象。
- */
-interface FooterData {
   /**
-   * 各个 section 的数据。
+   * 页脚数据对象。
    */
-  group: Array<{
+  Footer_Data: {
     /**
-     * Section 的标题。
+     * 分组数据，每个分组包含以下属性。
      */
-    title: string
-
-    /**
-     * 图标的类名（Font Awesome 图标类名）。
-     */
-    icon?: string
-
-    /**
-     * 该 section 下的链接。
-     */
-    links: Array<{
+    group: Array<{
       /**
-       * 链接文本。
-       */
-      name: string
-
-      /**
-       * 链接的图标类名（Font Awesome 图标类名）。
+       * 图标（可选）。
        */
       icon?: string
 
       /**
-       * 链接地址。
+       * 图标样式（可选）。
        */
-      href: string
+      style?: string
 
       /**
-       * 链接是否为内部链接。
+       * 分组标题。
        */
-      internal: boolean
+      title: string
+
+      /**
+       * 该组是否为内部链接，默认为 `false`（可选）。
+       */
+      internal?: boolean
+
+      /**
+       * 该分组下的链接列表。
+       */
+      links: Array<{
+        /**
+         * 链接图标（可选）。
+         */
+        icon?: string
+
+        /**
+         * 链接样式（可选）。
+         */
+        style?: string
+
+        /**
+         * 链接名称。
+         */
+        name: string
+
+        /**
+         * 链接地址。
+         */
+        href: string
+
+        /**
+         * 是否为内部链接，默认为 `false`（可选）。
+         */
+        internal?: boolean
+      }>
     }>
-  }>
-
-  /**
-   * 备案信息。
-   */
-  beian?: {
-    /**
-     * ICP 备案号。
-     */
-    icp?: string
 
     /**
-     * 公安备案号。
+     * 备案信息（可选）。
      */
-    police?: string
+    beian?: {
+      /**
+       * ICP 备案号（可选）。
+       */
+      icp?: string
+
+      /**
+       * 公安备案号（可选）。
+       */
+      police?: string
+    }
+
+    /**
+     * 作者信息（可选）。
+     */
+    author?: {
+      /**
+       * 作者姓名（可选）。
+       */
+      name?: string
+
+      /**
+       * 发布时间，年份格式，如 2019（可选）。
+       */
+      time?: number
+
+      /**
+       * 作者链接（可选）。
+       */
+      link?: string
+    }
   }
-
-  /**
-   * 作者信息。
-   */
-  author?: {
-    /**
-     * 作者名称。
-     */
-    name?: string
-
-    /**
-     * 版权年份。
-     */
-    time?: number
-
-    /**
-     * 作者的链接。
-     */
-    link?: string
-  }
-}
 ```
