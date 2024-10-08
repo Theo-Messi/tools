@@ -86,11 +86,6 @@ const props = defineProps<{
       name?: string
 
       /**
-       * 发布时间，年份格式，如 2019（可选）。
-       */
-      time?: number
-
-      /**
        * 作者链接（可选）。
        */
       link?: string
@@ -218,17 +213,14 @@ const isLargeScreen = computed(() => windowWidth.value > 768)
     </div>
     <div class="flex" v-if="props.Footer_Data.author?.name">
       <span>
-        Copyright<i class="far fa-copyright"></i>
-        {{ props.Footer_Data.author?.time }} -
-        {{ new Date().getFullYear() }}
+        <i class="far fa-copyright"></i>{{ new Date().getFullYear() }}
         <a
           target="_blank"
           rel="noopener"
           title="GitHub"
           :href="props.Footer_Data.author?.link"
           >{{ props.Footer_Data.author?.name }}</a
-        >
-        . All Rights Reserved
+        >. All Rights Reserved.
       </span>
     </div>
   </footer>
