@@ -241,8 +241,9 @@ footer {
   a {
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     &:hover {
-      -webkit-text-decoration: underline dotted;
-      text-decoration: underline dotted;
+      -webkit-text-decoration: underline solid;
+      text-decoration: underline solid;
+      text-underline-offset: 4px;
       color: var(--vp-c-brand-1);
     }
   }
