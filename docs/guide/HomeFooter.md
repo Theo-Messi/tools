@@ -13,7 +13,7 @@ title: 页脚配置
 
 export const Footer_Data = {
   beian: { icp: '备案号', police: '公网安备号' },
-  author: { name: 'Theo', link: 'https://', time: '2019' },
+  author: { name: 'Theo', link: 'https://' },
   group: [
     {
       title: '外部链接',
@@ -148,11 +148,6 @@ export default {
        * 作者姓名（可选）。
        */
       name?: string
-
-      /**
-       * 发布时间，年份格式，如 2019（可选）。
-       */
-      time?: number
 
       /**
        * 作者链接（可选）。
