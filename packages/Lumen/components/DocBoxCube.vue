@@ -105,7 +105,7 @@ const isExternalLink = (link: string): boolean => /^https?:\/\//.test(link)
 .link {
   width: 8.2rem;
   height: 8.2rem;
-  border: 1px dotted var(--vp-c-bg-alt);
+  border: 1px solid var(--vp-c-bg-alt);
   background-color: var(--vp-c-bg-alt);
   border-radius: 0.8rem;
   display: flex;
