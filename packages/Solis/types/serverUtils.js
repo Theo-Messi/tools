@@ -72,13 +72,9 @@ const posts = theme.value.posts.slice(${pageSize * (i - 1)},${pageSize * i});
     await Promise.all(writePromises)
 
     // 将 page_1.md 重命名为 index.md 用作首页
-    await fs.move(
-      resolve(basePath, 'page_1.md'),
-      resolve(basePath, 'index.md'),
-      {
-        overwrite: true
-      }
-    )
+    await fs.move(resolve(basePath, 'page_1.md'), resolve(basePath, 'index.md'), {
+      overwrite: true
+    })
   }
 }
 

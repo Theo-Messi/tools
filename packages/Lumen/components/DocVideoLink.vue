@@ -50,13 +50,7 @@ const toggleVideo = () => {
         <i v-if="props.href" class="fas fa-video"></i>
         <div class="name">{{ props.name }}</div>
       </div>
-      <i
-        v-if="props.href"
-        :class="{
-          'fas fa-chevron-up': isVideoOpen,
-          'fas fa-chevron-down': !isVideoOpen
-        }"
-      ></i>
+      <i v-if="props.href" :class="{ 'fas fa-chevron-up': isVideoOpen, 'fas fa-chevron-down': !isVideoOpen }"></i>
     </div>
     <transition name="slide">
       <div v-if="props.href && isVideoOpen" class="video-embed">

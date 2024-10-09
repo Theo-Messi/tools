@@ -38,10 +38,7 @@ declare module '@theojs/solis/utils' {
    * @param pageSize 每页文章的数量
    * @returns 返回一个 Promise，表示生成分页操作完成
    */
-  export function generatePaginationPages(
-    total: number,
-    pageSize: number
-  ): Promise<void>
+  export function generatePaginationPages(total: number, pageSize: number): Promise<void>
 
   /**
    * 将日期字符串转换为 YYYY-MM-DD 格式。

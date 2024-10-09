@@ -42,12 +42,7 @@ const props = defineProps<{
       target="_blank"
       rel="noopener"
     >
-      <img
-        :src="banner.icon"
-        width="22"
-        height="22"
-        :alt="banner.Activity || banner.name"
-      />
+      <img :src="banner.icon" width="22" height="22" :alt="banner.Activity || banner.name" />
       <span>
         <template v-if="banner.Activity">
           <p class="Activity" v-html="banner.Activity"></p>
@@ -127,12 +122,7 @@ const props = defineProps<{
   }
 
   .name {
-    background-image: linear-gradient(
-      292deg,
-      var(--vp-c-brand-3) 16%,
-      var(--vp-c-brand-2),
-      var(--vp-c-brand-1)
-    );
+    background-image: linear-gradient(292deg, var(--vp-c-brand-3) 16%, var(--vp-c-brand-2), var(--vp-c-brand-1));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

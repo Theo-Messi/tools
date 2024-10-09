@@ -3,12 +3,7 @@
     <div class="year">
       {{ yearList[0].year }}
     </div>
-    <a
-      :href="withBase(article.regularPath)"
-      v-for="article in yearList"
-      :key="article.regularPath"
-      class="posts"
-    >
+    <a :href="withBase(article.regularPath)" v-for="article in yearList" :key="article.regularPath" class="posts">
       <div class="post-container">
         <div class="post-dot"></div>
         <div class="post-title">
@@ -54,10 +49,7 @@ const sortedData = computed(() => {
       }))
       .sort((a, b) => {
         if (a.frontMatter.top && b.frontMatter.top) {
-          return (
-            new Date(b.frontMatter.date).getTime() -
-            new Date(a.frontMatter.date).getTime()
-          )
+          return new Date(b.frontMatter.date).getTime() - new Date(a.frontMatter.date).getTime()
         }
         if (a.frontMatter.top) return -1
         if (b.frontMatter.top) return 1

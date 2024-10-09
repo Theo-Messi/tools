@@ -85,12 +85,8 @@ const copyLink = async () => {
 <template>
   <div class="share-link-container">
     <button @click="copyLink" class="share-link-button" :class="{ copied }">
-      <span v-if="!copied">
-        <i :class="props.buttonIcon"></i> {{ props.buttonText }}
-      </span>
-      <span v-else>
-        <i :class="props.copiedIcon"></i> {{ props.copiedText }}
-      </span>
+      <span v-if="!copied"> <i :class="props.buttonIcon"></i> {{ props.buttonText }} </span>
+      <span v-else> <i :class="props.copiedIcon"></i> {{ props.copiedText }} </span>
     </button>
   </div>
 </template>

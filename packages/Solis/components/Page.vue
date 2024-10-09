@@ -1,9 +1,5 @@
 <template>
-  <div
-    v-for="article in sortedPosts"
-    :key="article.regularPath"
-    class="post-list"
-  >
+  <div v-for="article in sortedPosts" :key="article.regularPath" class="post-list">
     <div class="post-title">
       <span v-if="article.frontMatter.top" class="top-label">
         <i class="fa-solid fa-fire-flame-simple"></i>
@@ -20,21 +16,13 @@
     </div>
 
     <div class="post-info">
-      <i
-        class="fa-solid fa-calendar-week"
-        style="margin-right: 0.25rem; color: var(--vp-c-brand-1)"
-      ></i>
+      <i class="fa-solid fa-calendar-week" style="margin-right: 0.25rem; color: var(--vp-c-brand-1)"></i>
       {{ article.frontMatter.date }}
       <span>
         <span v-for="(tag, index) in article.frontMatter.tags" :key="tag">
-          <i
-            v-if="index === 0"
-            class="fa-solid fa-tags"
-            style="margin-right: 0.25rem; color: var(--vp-c-brand-1)"
-          ></i>
+          <i v-if="index === 0" class="fa-solid fa-tags" style="margin-right: 0.25rem; color: var(--vp-c-brand-1)"></i>
           <a :href="withBase(`/pages/tags.html?tag=${tag}`)">
-            {{ tag
-            }}<span v-if="index < article.frontMatter.tags.length - 1">,</span>
+            {{ tag }}<span v-if="index < article.frontMatter.tags.length - 1">,</span>
           </a>
         </span>
       </span>
@@ -48,11 +36,7 @@
     <a
       class="link"
       :class="{ active: pageCurrent === 1 }"
-      :href="
-        withBase(
-          pageCurrent > 1 ? `/page_${pageCurrent - 1}.html` : '/index.html'
-        )
-      "
+      :href="withBase(pageCurrent > 1 ? `/page_${pageCurrent - 1}.html` : '/index.html')"
       v-if="pageCurrent > 1"
     >
       <i class="fa-solid fa-angle-left"></i>
@@ -71,22 +55,12 @@
     <a
       class="link"
       :class="{ active: pageCurrent === pagesNum }"
-      :href="
-        withBase(
-          pageCurrent < pagesNum
-            ? `/page_${pageCurrent + 1}.html`
-            : `/page_${pagesNum}.html`
-        )
-      "
+      :href="withBase(pageCurrent < pagesNum ? `/page_${pageCurrent + 1}.html` : `/page_${pagesNum}.html`)"
       v-if="pageCurrent < pagesNum"
     >
       <i class="fa-solid fa-angle-right"></i>
     </a>
-    <a
-      class="link"
-      :href="withBase(`/page_${pagesNum}.html`)"
-      v-if="pageCurrent < pagesNum"
-    >
+    <a class="link" :href="withBase(`/page_${pagesNum}.html`)" v-if="pageCurrent < pagesNum">
       <i class="fa-solid fa-angles-right"></i>
     </a>
   </div>
@@ -106,10 +80,7 @@ const props = defineProps({
 const sortedPosts = computed(() => {
   return (props.posts ?? []).slice().sort((a, b) => {
     if (a.frontMatter.top && b.frontMatter.top) {
-      return (
-        new Date(b.frontMatter.date).getTime() -
-        new Date(a.frontMatter.date).getTime()
-      )
+      return new Date(b.frontMatter.date).getTime() - new Date(a.frontMatter.date).getTime()
     }
     if (a.frontMatter.top) return -1
     if (b.frontMatter.top) return 1

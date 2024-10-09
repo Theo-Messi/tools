@@ -34,8 +34,7 @@ const props = defineProps<{
  * @param {string} url - 要判断的 URL。
  * @returns {boolean} - 如果 URL 是图像文件，则返回 `true`，否则返回 `false`。
  */
-const isImage = (url: string): boolean =>
-  /\.(png|jpe?g|gif|svg|webp|bmp|tif?f|tiff|ico|avif)(\?.*)?$/.test(url)
+const isImage = (url: string): boolean => /\.(png|jpe?g|gif|svg|webp|bmp|tif?f|tiff|ico|avif)(\?.*)?$/.test(url)
 
 /**
  * 判断给定的链接是否是外部链接。
@@ -62,35 +61,13 @@ const isExternalLink = (link: string): boolean => /^https?:\/\//.test(link)
       <!-- 渲染图标 -->
       <span class="box">
         <template v-if="item.icon">
-          <img
-            v-if="isImage(item.icon)"
-            :src="item.icon"
-            alt="Icon"
-            class="icon"
-          />
-          <i
-            v-else
-            :class="item.icon + ' fa-2xl icon'"
-            :style="{ color: item.color }"
-          ></i>
+          <img v-if="isImage(item.icon)" :src="item.icon" alt="Icon" class="icon" />
+          <i v-else :class="item.icon + ' fa-2xl icon'" :style="{ color: item.color }"></i>
         </template>
         <template v-else>
-          <img
-            v-if="item.light"
-            :src="item.light"
-            alt="Icon"
-            class="icon light-only"
-          />
-          <img
-            v-if="item.dark"
-            :src="item.dark"
-            alt="Icon"
-            class="icon dark-only"
-          />
-          <i
-            v-if="!item.light && !item.dark"
-            class="fas fa-arrow-up-right-from-square fa-lg fa-icon"
-          ></i>
+          <img v-if="item.light" :src="item.light" alt="Icon" class="icon light-only" />
+          <img v-if="item.dark" :src="item.dark" alt="Icon" class="icon dark-only" />
+          <i v-if="!item.light && !item.dark" class="fas fa-arrow-up-right-from-square fa-lg fa-icon"></i>
         </template>
       </span>
 

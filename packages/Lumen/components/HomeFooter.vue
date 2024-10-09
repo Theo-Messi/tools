@@ -149,17 +149,9 @@ const isLargeScreen = computed(() => windowWidth.value > 768)
 <template>
   <footer class="ba">
     <div class="ff">
-      <div
-        class="sc"
-        v-for="(section, index) in props.Footer_Data.group"
-        :key="index"
-      >
+      <div class="sc" v-for="(section, index) in props.Footer_Data.group" :key="index">
         <div class="st" @click="toggleSection(index)">
-          <i
-            v-if="section.icon"
-            :class="section.icon"
-            :style="section.style"
-          ></i>
+          <i v-if="section.icon" :class="section.icon" :style="section.style"></i>
           {{ section.title }}
           <button class="toggle-button">
             {{ openSectionIndex === index ? '−' : '+' }}
@@ -184,29 +176,16 @@ const isLargeScreen = computed(() => windowWidth.value > 768)
     </div>
 
     <!-- 底部信息栏 -->
-    <div
-      class="flex"
-      v-if="props.Footer_Data.beian?.icp || props.Footer_Data.beian?.police"
-    >
+    <div class="flex" v-if="props.Footer_Data.beian?.icp || props.Footer_Data.beian?.police">
       <span v-if="props.Footer_Data.beian?.icp">
         <i class="fas fa-earth-americas"></i>
-        <a
-          target="_blank"
-          rel="noopener"
-          href="https://beian.miit.gov.cn/"
-          title="ICP备案"
-        >
+        <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/" title="ICP备案">
           {{ props.Footer_Data.beian.icp }}
         </a>
       </span>
       <span v-if="props.Footer_Data.beian?.police">
         <i class="fas fa-shield"></i>
-        <a
-          target="_blank"
-          rel="noopener"
-          href="https://beian.mps.gov.cn/"
-          title="公安备案"
-        >
+        <a target="_blank" rel="noopener" href="https://beian.mps.gov.cn/" title="公安备案">
           {{ props.Footer_Data.beian.police }}
         </a>
       </span>
@@ -214,12 +193,8 @@ const isLargeScreen = computed(() => windowWidth.value > 768)
     <div class="flex" v-if="props.Footer_Data.author?.name">
       <span>
         <i class="far fa-copyright"></i>{{ new Date().getFullYear() }}
-        <a
-          target="_blank"
-          rel="noopener"
-          title="GitHub"
-          :href="props.Footer_Data.author?.link"
-          >{{ props.Footer_Data.author?.name }}</a
+        <a target="_blank" rel="noopener" title="GitHub" :href="props.Footer_Data.author?.link">
+          {{ props.Footer_Data.author?.name }}</a
         >. All Rights Reserved.
       </span>
     </div>

@@ -1,11 +1,6 @@
 <template>
   <div class="tags">
-    <span
-      @click="toggleTag(key)"
-      v-for="(item, key) in data"
-      :key="key"
-      class="tag"
-    >
+    <span @click="toggleTag(key)" v-for="(item, key) in data" :key="key" class="tag">
       {{ key }} <strong>{{ data[key].length }}</strong>
     </span>
   </div>
@@ -41,10 +36,7 @@ const { theme } = useData<{ posts: Post[] }>()
 const sortPosts = (posts: Post[]): Post[] => {
   return posts.slice().sort((a, b) => {
     if (a.frontMatter.top && b.frontMatter.top) {
-      return (
-        new Date(b.frontMatter.date).getTime() -
-        new Date(a.frontMatter.date).getTime()
-      )
+      return new Date(b.frontMatter.date).getTime() - new Date(a.frontMatter.date).getTime()
     }
     if (a.frontMatter.top) return -1
     if (b.frontMatter.top) return 1
