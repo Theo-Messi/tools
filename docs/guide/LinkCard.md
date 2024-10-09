@@ -87,17 +87,15 @@ export default {
 ### 参数说明
 
 ```ts
-/**
- * Item 接口定义了一个链接项的结构。
- * @interface Item
- * @property {string} link - 链接地址。
- * @property {string} icon - 图标的 URL 或类名。
- * @property {string} name - 名称。
- * @property {string} [tag] - 标签（可选）。
- * @property {string} [light] - 浅色模式下的图标 URL（可选）。
- * @property {string} [dark] - 深色模式下的图标 URL（可选）。
- * @property {string} [color] - 图标的颜色（可选）。
- */
+items: Array<{
+  link: string /* 链接项的链接地址。 */
+  icon: string /* 链接项的图标地址或类名。 */
+  name: string /* 链接项的名称。 */
+  tag?: string /* 链接项的标签（可选）。 */
+  light?: string /* 浅色模式下的图标 URL（可选）。 */
+  dark?: string /* 深色模式下的图标 URL（可选）。 */
+  color?: string /* 图标的颜色（可选）。 */
+}>
 ```
 
 ## Links
@@ -151,16 +149,14 @@ export default {
 ### 参数说明
 
 ```ts
-/**
- * Item 接口定义了一个链接项的结构。
- * @interface Item
- * @property {string} name - 链接项的名称。
- * @property {string} link - 链接项的链接。
- * @property {string} [color] - 图标的颜色（可选）。
- * @property {string} [icon] - 图标的 URL 或类名（可选）。
- * @property {string} [light] - 浅色模式下的图标 URL（可选）。
- * @property {string} [dark] - 深色模式下的图标 URL（可选）。
- */
+items: Array<{
+  name: string /* 链接项的名称。 */
+  link: string /* 链接项的 URL。 */
+  color?: string /*  图标的颜色（可选）。 */
+  icon?: string /* 图标的 URL 或类名（可选）。 */
+  light?: string /* 浅色模式下的图标 URL（可选）。 */
+  dark?: string /* 深色模式下的图标 URL（可选）。 */
+}>
 ```
 
 ## BoxCube
@@ -212,15 +208,13 @@ export default {
 ## 参数说明
 
 ```ts
-/**
- * Item 接口定义了一个项目的结构。
- * @interface Item
- * @property {string} icon - 图标的 URL 或类名。
- * @property {string} name - 项目的名称。
- * @property {string} link - 项目的链接。
- * @property {string} [desc] - 项目的描述（可选）。
- * @property {string} [color] - 图标的颜色（可选）。
- * @property {string} [light] - 浅色模式下的图标 URL（可选）。
- * @property {string} [dark] - 深色模式下的图标 URL（可选）。
- */
+items: Array<{
+  icon: string /*图标的 URL 或类名。  */
+  name: string /* 项目的名称。 */
+  link: string /* 项目的链接。 */
+  desc?: string /* 项目的描述（可选）。 */
+  color?: string /* 图标的颜色（可选）。 */
+  light?: string /* 浅色模式下的图标 URL（可选）。 */
+  dark?: string /* 深色模式下的图标 URL（可选）。 */
+}>
 ```

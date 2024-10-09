@@ -1,31 +1,13 @@
 <script setup lang="ts">
-/**
- * 定义 `Item` 接口，用于描述链接项的结构。
- *
- * @interface Item
- * @property {string} name - 链接项的名称。
- * @property {string} link - 链接项的 URL。
- * @property {string} [color] - 图标的颜色（可选）。
- * @property {string} [icon] - 图标的 URL 或类名（可选）。
- * @property {string} [light] - 浅色模式下的图标 URL（可选）。
- * @property {string} [dark] - 深色模式下的图标 URL（可选）。
- */
-interface Item {
-  name: string
-  link: string
-  color?: string
-  icon?: string
-  light?: string
-  dark?: string
-}
-
-/**
- * 定义 `items` 属性，类型为 `Item` 数组，是组件的必需属性。
- *
- * @property {Item[]} items - 链接项数组，每项遵循 `Item` 接口。
- */
 const props = defineProps<{
-  items: Item[]
+  items: Array<{
+    name: string /* 链接项的名称。 */
+    link: string /* 链接项的 URL。 */
+    color?: string /*  图标的颜色（可选）。 */
+    icon?: string /* 图标的 URL 或类名（可选）。 */
+    light?: string /* 浅色模式下的图标 URL（可选）。 */
+    dark?: string /* 深色模式下的图标 URL（可选）。 */
+  }>
 }>()
 
 /**
@@ -50,7 +32,7 @@ const isExternalLink = (link: string): boolean => /^https?:\/\//.test(link)
   <div class="container">
     <!-- 遍历 `items` 数组，渲染每个链接项 -->
     <a
-      v-for="item in items"
+      v-for="item in props.items"
       :key="item.name"
       class="link"
       :href="item.link"
