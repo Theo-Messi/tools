@@ -62,67 +62,14 @@ export default {
 ## 数据接口说明
 
 ```ts
-/**
- * `Aside_Data` 属性的类型定义。
- *
- * 该属性包含一个对象数组，每个对象代表一个横幅。具体字段如下：
- *
- * - `link` (string): 链接地址。
- * - `icon` (string): 图标地址。
- * - `name` (string, 可选): 名称。
- * - `Activity` (string, 可选): 活动信息。
- * - `hide1` (string, 可选): 隐藏信息1。
- * - `info1` (string, 可选): 信息1。
- * - `hide2` (string, 可选): 隐藏信息2。
- * - `info2` (string, 可选): 信息2。
- *
- * 该属性为必需的。
- */
-Aside_Data: {
-  type: Array as PropType<
-    Array<{
-      /**
-       * 链接地址。
-       */
-      link: string
-
-      /**
-       * 图标地址。
-       */
-      icon: string
-
-      /**
-       * 名称。
-       */
-      name?: string
-
-      /**
-       * 活动信息。
-       */
-      Activity?: string
-
-      /**
-       * 隐藏信息1。
-       */
-      hide1?: string
-
-      /**
-       * 信息1。
-       */
-      info1?: string
-
-      /**
-       * 隐藏信息2。
-       */
-      hide2?: string
-
-      /**
-       * 信息2。
-       */
-      info2?: string
-    }>
-  >,
-  required: true
-}
-
+Aside_Data: Array<{
+  link: string /* 链接地址。 */
+  icon: string /* 图标地址。 */
+  name?: string /* 名称。 */
+  Activity?: string /* 活动名称 */
+  hide1?: string /* 隐藏信息1。（可选） */
+  info1?: string /* 信息1。（可选） */
+  hide2?: string /* 隐藏信息2。（可选） */
+  info2?: string /* 信息2。（可选） */
+}>
 ```

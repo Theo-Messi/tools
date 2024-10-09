@@ -1,34 +1,14 @@
 <script setup lang="ts">
-/**
- * `Item` 接口定义了项目的结构。
- *
- * @interface Item
- * @property {string} icon - 图标的 URL 或类名。
- * @property {string} name - 项目的名称。
- * @property {string} link - 项目的链接。
- * @property {string} [desc] - 项目的描述（可选）。
- * @property {string} [color] - 图标的颜色（可选）。
- * @property {string} [light] - 浅色模式下的图标 URL（可选）。
- * @property {string} [dark] - 深色模式下的图标 URL（可选）。
- */
-interface Item {
-  icon: string
-  name: string
-  link: string
-  desc?: string
-  color?: string
-  light?: string
-  dark?: string
-}
-
-/**
- * 定义组件的 `props`。
- *
- * @property {Item[]} items - 包含多个 `Item` 对象的数组。
- * 该属性为必需的。
- */
 const props = defineProps<{
-  items: Item[]
+  items: Array<{
+    icon: string /*图标的 URL 或类名。  */
+    name: string /* 项目的名称。 */
+    link: string /* 项目的链接。 */
+    desc?: string /* 项目的描述（可选）。 */
+    color?: string /* 图标的颜色（可选）。 */
+    light?: string /* 浅色模式下的图标 URL（可选）。 */
+    dark?: string /* 深色模式下的图标 URL（可选）。 */
+  }>
 }>()
 
 /**
@@ -51,9 +31,9 @@ const isExternalLink = (link: string): boolean => /^https?:\/\//.test(link)
 <template>
   <!-- 渲染包含多个链接项的容器 -->
   <div class="container">
-    <!-- 遍历 `items` 数组，渲染每个项目 -->
+    <!-- 遍历 `props.items` 数组，渲染每个项目 -->
     <a
-      v-for="(item, index) in items"
+      v-for="(item, index) in props.items"
       :key="item.name + index"
       class="link"
       :href="item.link"

@@ -1,31 +1,15 @@
 <script setup lang="ts">
-interface AsideItem {
-  link: string
-  icon: string
-  name?: string
-  Activity?: string
-  hide1?: string
-  info1?: string
-  hide2?: string
-  info2?: string
-}
-
-/**
- * 组件的属性定义。
- *
- * 包含以下属性：
- * - `Aside_Data` (必需): 一个对象数组，每个对象代表一个横幅。
- *   - `link` (string): 横幅的链接地址。
- *   - `icon` (string): 横幅的图标地址。
- *   - `name` (string, 可选): 横幅的名称。
- *   - `Activity` (string, 可选): 活动信息。
- *   - `hide1` (string, 可选): 隐藏信息1。
- *   - `info1` (string, 可选): 信息1。
- *   - `hide2` (string, 可选): 隐藏信息2。
- *   - `info2` (string, 可选): 信息2。
- */
 const props = defineProps<{
-  Aside_Data: Array<AsideItem>
+  Aside_Data: Array<{
+    link: string /* 链接地址。 */
+    icon: string /* 图标地址。 */
+    name?: string /* 名称。 */
+    Activity?: string /* 活动名称 */
+    hide1?: string /* 隐藏信息1。（可选） */
+    info1?: string /* 信息1。（可选） */
+    hide2?: string /* 隐藏信息2。（可选） */
+    info2?: string /* 信息2。（可选） */
+  }>
 }>()
 </script>
 
@@ -33,7 +17,7 @@ const props = defineProps<{
   <div>
     <!-- 遍历 Aside_Data 数组并渲染 -->
     <a
-      v-for="(banner, index) in Aside_Data"
+      v-for="(banner, index) in props.Aside_Data"
       :key="index"
       :href="banner.link"
       :class="{ 'has-activity': banner.Activity, 'has-name': banner.name }"
