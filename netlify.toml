@@ -15,9 +15,3 @@ from = "https://tools.theovan.cn/*"
 to = "https://tools.theojs.cn/:splat"
 status = 301
 force = true
-
-[[redirects]]
-from = "https://tools.theovan.wiki/*"
-to = "https://tools.theojs.cn/:splat"
-status = 301
-force = true
