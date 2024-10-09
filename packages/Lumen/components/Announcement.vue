@@ -21,13 +21,7 @@ const prelink = computed(() => frontmatter.value.hero?.prelink)
 </script>
 
 <template>
-  <a
-    v-if="prelink"
-    :href="prelink.link"
-    :target="prelink.target"
-    rel="noopener"
-    class="prelink"
-  >
+  <a v-if="prelink" :href="prelink.link" :target="prelink.target" rel="noopener" class="prelink">
     <span v-html="prelink.title"></span>
   </a>
 </template>

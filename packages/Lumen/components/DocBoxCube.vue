@@ -37,8 +37,7 @@ const props = defineProps<{
  * @param {string} url - 要检查的 URL。
  * @returns {boolean} - 如果 URL 是图像文件，则返回 `true`，否则返回 `false`。
  */
-const isImage = (url: string): boolean =>
-  /\.(png|jpe?g|gif|svg|webp|bmp|tif?f|tiff|ico|avif)(\?.*)?$/.test(url)
+const isImage = (url: string): boolean => /\.(png|jpe?g|gif|svg|webp|bmp|tif?f|tiff|ico|avif)(\?.*)?$/.test(url)
 
 /**
  * 判断给定的链接是否是外部链接。
@@ -71,12 +70,7 @@ const isExternalLink = (link: string): boolean => /^https?:\/\//.test(link)
         <i :class="item.icon + ' fa-2xl'" :style="{ color: item.color }"></i>
       </span>
       <!-- 显示浅色模式下的图标 -->
-      <img
-        v-if="item.light"
-        :src="item.light"
-        alt="icon"
-        class="img light-only"
-      />
+      <img v-if="item.light" :src="item.light" alt="icon" class="img light-only" />
       <!-- 显示深色模式下的图标 -->
       <img v-if="item.dark" :src="item.dark" alt="icon" class="img dark-only" />
       <!-- 显示项目名称 -->

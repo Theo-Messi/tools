@@ -1,10 +1,7 @@
 import { defineConfig } from 'vitepress'
 import { imgSize } from '@mdit/plugin-img-size'
 import { figure } from '@mdit/plugin-figure'
-import {
-  groupIconMdPlugin,
-  groupIconVitePlugin
-} from 'vitepress-plugin-group-icons'
+import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 
 import Lumenpkg from '../../packages/Lumen/package.json'
 import Solispkg from '../../packages/Solis/package.json'
@@ -26,43 +23,19 @@ export default defineConfig({
     ['meta', { name: 'copyright', content: 'Theo-Messi' }],
     ['meta', { name: 'robots', content: 'index, follow' }],
     ['meta', { name: 'evisit-after', content: '1 day' }],
-    [
-      'meta',
-      { name: 'description', content: '用于VitePress主题美化和集成Vue功能组件' }
-    ],
+    ['meta', { name: 'description', content: '用于VitePress主题美化和集成Vue功能组件' }],
     ['meta', { name: 'og:type', content: 'website' }],
     ['meta', { name: 'og:locale', content: 'zh-CN' }],
     ['meta', { name: 'og:site_name', content: 'TheoJS' }],
     ['meta', { name: 'og:title', content: 'TheoJS' }],
     ['meta', { name: 'og:url', content: 'https://tools.theojs.cn/' }],
-    [
-      'meta',
-      { name: 'og:image', content: 'https://tools.theojs.cn/TM-FELogo.png' }
-    ],
-    [
-      'meta',
-      {
-        name: 'og:description',
-        content: '用于VitePress主题美化和集成Vue功能组件'
-      }
-    ],
+    ['meta', { name: 'og:image', content: 'https://tools.theojs.cn/TM-FELogo.png' }],
+    ['meta', { name: 'og:description', content: '用于VitePress主题美化和集成Vue功能组件' }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
     ['meta', { name: 'twitter:site', content: '@TheoMessi_' }],
     ['meta', { name: 'twitter:title', content: 'TheoJS' }],
-    [
-      'meta',
-      {
-        name: 'twitter:description',
-        content: '用于VitePress主题美化和集成Vue功能组件'
-      }
-    ],
-    [
-      'meta',
-      {
-        name: 'twitter:image',
-        content: 'https://tools.theojs.cn/TM-FELogo.png'
-      }
-    ],
+    ['meta', { name: 'twitter:description', content: '用于VitePress主题美化和集成Vue功能组件' }],
+    ['meta', { name: 'twitter:image', content: 'https://tools.theojs.cn/TM-FELogo.png' }],
     [
       'script',
       {
@@ -73,10 +46,7 @@ export default defineConfig({
           url: 'https://tools.theojs.cn/',
           name: 'TheoJS',
           description: '用于VitePress主题美化和集成Vue功能组件',
-          author: {
-            '@type': 'Person',
-            name: 'Theo-Messi'
-          }
+          author: { '@type': 'Person', name: 'Theo-Messi' }
         })
       }
     ]
@@ -86,10 +56,7 @@ export default defineConfig({
     config: (md) => {
       md.use(imgSize)
       md.use(groupIconMdPlugin)
-      md.use(figure, {
-        figcaption: 'alt',
-        copyAttrs: '^class$'
-      })
+      md.use(figure, { figcaption: 'alt', copyAttrs: '^class$' })
     }
   },
   vite: {
@@ -104,37 +71,21 @@ export default defineConfig({
         }
       })
     ],
-    css: {
-      preprocessorOptions: {
-        scss: {
-          api: 'modern'
-        }
-      }
-    }
+    css: { preprocessorOptions: { scss: { api: 'modern' } } }
   },
   themeConfig: {
     logo: { src: '/TM-FELogo.png', width: 24, height: 24 },
-    editLink: {
-      pattern: 'https://github.com/Theo-Messi/tools/edit/main/docs/:path',
-      text: '为此页提供修改建议'
-    },
+    editLink: { pattern: 'https://github.com/Theo-Messi/tools/edit/main/docs/:path', text: '为此页提供修改建议' },
     // 目录设置
     outline: 'deep', // 索引级别
     outlineTitle: '本页目录', // 目录文本
     // 上次更新
     lastUpdated: {
       text: '最后更新于',
-      formatOptions: {
-        dateStyle: 'full',
-        timeStyle: 'full',
-        hourCycle: 'h24'
-      }
+      formatOptions: { dateStyle: 'full', timeStyle: 'full', hourCycle: 'h24' }
     },
     // 文章翻页
-    docFooter: {
-      prev: '上一篇',
-      next: '下一篇'
-    },
+    docFooter: { prev: '上一篇', next: '下一篇' },
 
     // 移动端 - 返回顶部
     returnToTopLabel: '返回顶部',

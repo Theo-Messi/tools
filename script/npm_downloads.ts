@@ -29,15 +29,10 @@ async function main() {
     const downloads = await getNpmDownloads(packageName)
 
     // 计算当月的总下载量
-    const totalDownloads = downloads.reduce(
-      (sum, download) => sum + download.downloads,
-      0
-    )
+    const totalDownloads = downloads.reduce((sum, download) => sum + download.downloads, 0)
 
     const body =
-      totalDownloads > 0
-        ? `${packageName} 包当月的总下载量是 ${totalDownloads}`
-        : `${packageName} 包本月没有下载量数据`
+      totalDownloads > 0 ? `${packageName} 包当月的总下载量是 ${totalDownloads}` : `${packageName} 包本月没有下载量数据`
 
     const curlCommand = `curl -X "POST" "${barkUrl}" \
       -H 'Content-Type: application/json; charset=utf-8' \
@@ -55,10 +50,7 @@ async function main() {
       execSync(curlCommand)
       console.log(`Notification sent to Bark for ${packageName}`)
     } catch (error) {
-      console.error(
-        `Error sending notification to Bark for ${packageName}:`,
-        error
-      )
+      console.error(`Error sending notification to Bark for ${packageName}:`, error)
     }
   }
 }
