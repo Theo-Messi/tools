@@ -1,34 +1,14 @@
 <script setup lang="ts">
-/**
- * `Item` 接口定义了一个链接项的结构。
- *
- * @interface Item
- * @property {string} link - 链接项的链接地址。
- * @property {string} icon - 链接项的图标地址或类名。
- * @property {string} name - 链接项的名称。
- * @property {string} [tag] - 链接项的标签（可选）。
- * @property {string} [light] - 浅色模式下的图标 URL（可选）。
- * @property {string} [dark] - 深色模式下的图标 URL（可选）。
- * @property {string} [color] - 图标的颜色（可选）。
- */
-interface Item {
-  link: string
-  icon: string
-  name: string
-  tag?: string
-  light?: string
-  dark?: string
-  color?: string
-}
-
-/**
- * 定义组件的 `props`。
- *
- * @property {Item[]} items - 链接项数组，每个对象符合 `Item` 接口。
- * 该属性为必需的。
- */
 const props = defineProps<{
-  items: Item[]
+  items: Array<{
+    link: string /* 链接项的链接地址。 */
+    icon: string /* 链接项的图标地址或类名。 */
+    name: string /* 链接项的名称。 */
+    tag?: string /* 链接项的标签（可选）。 */
+    light?: string /* 浅色模式下的图标 URL（可选）。 */
+    dark?: string /* 深色模式下的图标 URL（可选）。 */
+    color?: string /* 图标的颜色（可选）。 */
+  }>
 }>()
 
 /**
@@ -51,9 +31,9 @@ const isExternalLink = (link: string): boolean => /^https?:\/\//.test(link)
 <template>
   <!-- 渲染盒子容器，包含多个链接项 -->
   <div class="box-container">
-    <!-- 遍历 `items` 数组并渲染每个链接项 -->
+    <!-- 遍历 `props.items` 数组并渲染每个链接项 -->
     <a
-      v-for="item in items"
+      v-for="item in props.items"
       :key="item.link"
       :href="item.link"
       :title="item.name"

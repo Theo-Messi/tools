@@ -2,93 +2,27 @@
 import { ref, onMounted, onUnmounted, computed } from 'vue'
 
 const props = defineProps<{
-  /**
-   * 页脚数据对象。
-   */
   Footer_Data: {
-    /**
-     * 分组数据，每个分组包含以下属性。
-     */
     group: Array<{
-      /**
-       * 图标（可选）。
-       */
-      icon?: string
-
-      /**
-       * 图标样式（可选）。
-       */
-      style?: string
-
-      /**
-       * 分组标题。
-       */
-      title: string
-
-      /**
-       * 该组是否为内部链接，默认为 `false`（可选）。
-       */
-      internal?: boolean
-
-      /**
-       * 该分组下的链接列表。
-       */
+      icon?: string /* 图标（可选）。 */
+      style?: string /* 图标样式（可选）。 */
+      title: string /* 分组标题。 */
+      internal?: boolean /* 该组是否为内部链接，默认为 `false`（可选）。 */
       links: Array<{
-        /**
-         * 链接图标（可选）。
-         */
-        icon?: string
-
-        /**
-         * 链接样式（可选）。
-         */
-        style?: string
-
-        /**
-         * 链接名称。
-         */
-        name: string
-
-        /**
-         * 链接地址。
-         */
-        href: string
-
-        /**
-         * 是否为内部链接，默认为 `false`（可选）。
-         */
-        internal?: boolean
+        icon?: string /* 链接图标（可选）。 */
+        style?: string /* 链接样式（可选）。 */
+        name: string /* 链接名称。 */
+        href: string /* 链接地址。 */
+        internal?: boolean /* 是否为内部链接，默认为 `false`（可选）。 */
       }>
     }>
-
-    /**
-     * 备案信息（可选）。
-     */
     beian?: {
-      /**
-       * ICP 备案号（可选）。
-       */
-      icp?: string
-
-      /**
-       * 公安备案号（可选）。
-       */
-      police?: string
+      icp?: string /* ICP 备案号（可选）。 */
+      police?: string /* 公安备案号（可选）。 */
     }
-
-    /**
-     * 作者信息（可选）。
-     */
     author?: {
-      /**
-       * 作者姓名（可选）。
-       */
-      name?: string
-
-      /**
-       * 作者链接（可选）。
-       */
-      link?: string
+      name?: string /* 作者姓名（可选）。 */
+      link?: string /* 作者链接（可选）。 */
     }
   }
 }>()
