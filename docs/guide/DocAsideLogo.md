@@ -18,22 +18,22 @@ title: 侧边栏链接
 
 export const Aside_Data = [
   {
-    link: 'https://fbinv01.fbaff.cc/auth/register?code=RZP3',
-    icon: 'https://flyingbirdlimo.com/wp-content/uploads/2022/03/Flying-Bird-Logo-cropped.png',
-    Activity: 'FlyingBird 618活动来了',
-    info1: '月付 85折 优惠码  2461885',
-    info2: '年付 64折 优惠码  2461880'
+    link: 'https://example.com/',
+    icon: 'https://example.com/icon.png',
+    Activity: '活动标题',
+    info1: '简介1',
+    info2: '简介2' // info1/2 支持 `v-html`语法
   },
   {
-    link: 'https://xx.theojs.cn/',
-    icon: 'https://i.theojs.cn/avatar.png',
-    name: '玄学宝典',
-    hide1: '传世经典著作',
-    hide2: '山医命相卜'
+    link: 'https://example.com/',
+    icon: 'https://example.com/icon.png',
+    name: '标题',
+    hide1: '隐藏信息1',
+    hide2: '隐藏信息2' // hide1/2 支持 `v-html`语法
   },
   {
-    link: 'https://github.com/sponsors/Theo-Messi',
-    icon: 'https://doc.theojs.cn/爱心.png',
+    link: 'https://example.com/',
+    icon: 'https://example.com/icon.png',
     name: '为我赞助'
   }
 ]
