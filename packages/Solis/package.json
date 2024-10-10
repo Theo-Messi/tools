@@ -34,7 +34,7 @@
   "main": "types/theme.ts",
   "style": "style/styles.scss",
   "scripts": {
-    "release": "bumpp && pnpm -r publish --registry=https://registry.npmjs.org"
+    "release": "bumpp --sign && pnpm publish --registry=https://registry.npmjs.org"
   },
   "devDependencies": {
     "@types/node": "^22.7.5",
