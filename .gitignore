@@ -6,10 +6,7 @@ dist
 .DS_Store
 .AppleDouble
 .LSOverride
-/scss
-/vue
-/theme
-/components
+
 # macOS缓存文件
 *.swp
 *.swo
@@ -50,3 +47,5 @@ tmp/
 # 覆盖率报告文件
 coverage/
 *.lcov
+
+packages/Solis/types/serverUtils.js

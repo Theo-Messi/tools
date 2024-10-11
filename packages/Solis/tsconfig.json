@@ -1,11 +1,15 @@
 {
   "compilerOptions": {
+    "module": "ESNext",
+    "target": "ESNext",
     "types": ["vite/client", "vue", "vitepress"],
+    "moduleResolution": "node",
     "esModuleInterop": true,
-    "baseUrl": ".",
-    "paths": {
-      "@theojs/solis/utils": ["types/solis"]
-    }
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "declaration": true,
+    "baseUrl": "."
   },
-  "include": ["types/**/*.d.ts", "types/**/*.ts"]
+  "include": ["types/serverUtils.ts"]
 }
