@@ -34,7 +34,8 @@
   "main": "types/theme.ts",
   "style": "style/styles.scss",
   "scripts": {
-    "release": "bumpp --sign && pnpm publish --registry=https://registry.npmjs.org"
+    "release": "bumpp --sign && pnpm publish --registry=https://registry.npmjs.org",
+    "build": "npx tsc --project tsconfig.json"
   },
   "devDependencies": {
     "@types/node": "^22.7.5",
@@ -64,7 +65,7 @@
     ".": "./types/theme.ts",
     "./utils": {
       "import": "./types/serverUtils.js",
-      "types": "./types/solis.d.ts"
+      "types": "./types/serverUtils.d.ts"
     },
     "./functions": "./types/functions.ts",
     "./package.json": "./package.json"
