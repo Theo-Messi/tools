@@ -3,14 +3,27 @@ import matter from 'gray-matter'
 import fs from 'fs-extra'
 import { resolve } from 'path'
 
-export async function getPosts(pageSize) {
+// 定义 FrontMatter 的类型
+interface FrontMatter {
+  date: string
+  top?: boolean
+  [key: string]: any
+}
+
+// 定义 Post 的类型
+interface Post {
+  frontMatter: FrontMatter
+  regularPath: string
+}
+
+export async function getPosts(pageSize: number): Promise<Post[]> {
   const paths = await globby(['posts/**.md'])
 
-  const posts = await Promise.all(
+  const posts: Post[] = await Promise.all(
     paths.map(async (item) => {
       const content = await fs.readFile(item, 'utf-8')
       const { data } = matter(content)
-      const frontMatter = { ...data, date: _convertDate(data.date) }
+      const frontMatter: FrontMatter = { ...data, date: _convertDate(data.date) }
       return {
         frontMatter,
         regularPath: `/${item.replace('.md', '.html')}`
@@ -21,7 +34,7 @@ export async function getPosts(pageSize) {
   posts.sort(_compareDate)
 
   // 分离置顶文章和普通文章
-  const [topPosts, regularPosts] = posts.reduce(
+  const [topPosts, regularPosts]: [Post[], Post[]] = posts.reduce(
     ([top, regular], post) => {
       if (post.frontMatter.top) {
         top.push(post)
@@ -30,7 +43,7 @@ export async function getPosts(pageSize) {
       }
       return [top, regular]
     },
-    [[], []]
+    [[], []] as [Post[], Post[]]
   )
 
   // 将置顶文章放到普通文章的前面
@@ -42,12 +55,12 @@ export async function getPosts(pageSize) {
   return allPosts
 }
 
-async function generatePaginationPages(total, pageSize) {
+async function generatePaginationPages(total: number, pageSize: number): Promise<void> {
   const pagesNum = Math.ceil(total / pageSize)
   const basePath = resolve('./')
 
   if (total > 0) {
-    const writePromises = []
+    const writePromises: Promise<void>[] = []
     for (let i = 1; i <= pagesNum; i++) {
       const pageContent = `
 ---
@@ -78,11 +91,11 @@ const posts = theme.value.posts.slice(${pageSize * (i - 1)},${pageSize * i});
   }
 }
 
-function _convertDate(date = new Date().toString()) {
+function _convertDate(date: string = new Date().toString()): string {
   return new Date(date).toISOString().split('T')[0]
 }
 
-function _compareDate(postA, postB) {
+function _compareDate(postA: Post, postB: Post): number {
   if (postA.frontMatter.top && !postB.frontMatter.top) return -1
   if (!postA.frontMatter.top && postB.frontMatter.top) return 1
   return postA.frontMatter.date < postB.frontMatter.date ? 1 : -1
