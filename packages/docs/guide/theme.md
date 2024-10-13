@@ -21,6 +21,7 @@ import '@theojs/lumen/doc-blocks' /* 容器样式 */
 import '@theojs/lumen/home' /* 首页样式 */
 import '@theojs/lumen/home-blocks' /* 首页按钮 */
 import '@theojs/lumen/pic' /* 图片样式 */
+import '@theojs/lumen/badge' /* 徽章样式 */
 ```
 
 :::
