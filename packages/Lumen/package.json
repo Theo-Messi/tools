@@ -64,6 +64,7 @@
     "./home": "./theme/home.scss",
     "./home-blocks": "./theme/home-links.scss",
     "./pic": "./theme/picture.scss",
+    "./badge": "./theme/badge.scss",
     "./components": "./components/index.ts",
     "./Footer": "./components/HomeFooter.vue",
     "./package.json": "./package.json"
