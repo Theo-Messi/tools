@@ -1,6 +1,6 @@
 import DefaultTheme from 'vitepress/theme'
 import { h } from 'vue'
-import '@theojs/lumen/theme'
+import googleAnalytics from 'vitepress-plugin-google-analytics'
 
 import {
   DocBox,
@@ -16,6 +16,7 @@ import {
 } from '@theojs/lumen'
 import { Aside_Data, Footer_Data, Twikoo_Data } from '../data'
 import 'virtual:group-icons.css'
+import '@theojs/lumen/theme'
 
 export default {
   extends: DefaultTheme,
@@ -29,6 +30,7 @@ export default {
     })
   },
   enhanceApp: ({ app }) => {
+    googleAnalytics({ id: 'G-DMPNK5Q8CL' })
     app.component('Box', DocBox)
     app.component('Links', DocLinks)
     app.component('BoxCube', DocBoxCube)
