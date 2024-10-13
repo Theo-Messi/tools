@@ -10,7 +10,7 @@ updates:
       timezone: 'Asia/Shanghai'
       time: '09:00'
     commit-message:
-      prefix: 'fix(Dependabot)'
+      prefix: 'build(Dependabot)'
 
   - package-ecosystem: 'github-actions'
     directory: /
@@ -19,4 +19,4 @@ updates:
       timezone: 'Asia/Shanghai'
       time: '09:00'
     commit-message:
-      prefix: 'fix(Dependabot)'
+      prefix: 'build(Dependabot)'
