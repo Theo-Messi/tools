@@ -5,8 +5,6 @@ updates:
     directories:
       - '/'
       - '/packages/*'
-      - '/docs'
-      - '/blog'
     schedule:
       interval: 'daily'
       timezone: 'Asia/Shanghai'

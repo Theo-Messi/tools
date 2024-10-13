@@ -19,8 +19,11 @@ yarn-error.log
 .pnpm-debug.log
 
 # Vitepress生成的文件
-docs/.vitepress/dist
-docs/.vitepress/cache
+packages/docs/.vitepress/dist
+packages/docs/.vitepress/cache
+packages/blog/.vitepress/dist
+packages/blog/.vitepress/cache
+packages/Solis/types/serverUtils.js
 
 # Vite缓存文件
 dist/
@@ -47,5 +50,3 @@ tmp/
 # 覆盖率报告文件
 coverage/
 *.lcov
-
-packages/Solis/types/serverUtils.js
