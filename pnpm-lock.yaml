@@ -46,8 +46,8 @@ importers:
         specifier: ^5.4.8
         version: 5.4.8(@types/node@22.7.5)(sass-embedded@1.79.4)(sass@1.79.5)
       vitepress:
-        specifier: ^1.4.0
-        version: 1.4.0(@algolia/client-search@5.7.0)(@types/node@22.7.5)(postcss@8.4.47)(sass-embedded@1.79.4)(sass@1.79.5)(search-insights@2.17.2)(typescript@5.6.3)
+        specifier: ^1.4.1
+        version: 1.4.1(@algolia/client-search@5.7.0)(@types/node@22.7.5)(postcss@8.4.47)(sass-embedded@1.79.4)(sass@1.79.5)(search-insights@2.17.2)(typescript@5.6.3)
 
   packages/Solis:
     dependencies:
@@ -86,8 +86,8 @@ importers:
         specifier: ^5.4.8
         version: 5.4.8(@types/node@22.7.5)(sass-embedded@1.79.4)(sass@1.79.5)
       vitepress:
-        specifier: ^1.4.0
-        version: 1.4.0(@algolia/client-search@5.7.0)(@types/node@22.7.5)(postcss@8.4.47)(sass-embedded@1.79.4)(sass@1.79.5)(search-insights@2.17.2)(typescript@5.6.3)
+        specifier: ^1.4.1
+        version: 1.4.1(@algolia/client-search@5.7.0)(@types/node@22.7.5)(postcss@8.4.47)(sass-embedded@1.79.4)(sass@1.79.5)(search-insights@2.17.2)(typescript@5.6.3)
 
   packages/blog:
     dependencies:
@@ -99,8 +99,8 @@ importers:
         version: 3.5.12(typescript@5.6.3)
     devDependencies:
       vitepress:
-        specifier: ^1.4.0
-        version: 1.4.0(@algolia/client-search@5.7.0)(@types/node@22.7.5)(postcss@8.4.47)(sass-embedded@1.79.4)(sass@1.79.5)(search-insights@2.17.2)(typescript@5.6.3)
+        specifier: ^1.4.1
+        version: 1.4.1(@algolia/client-search@5.7.0)(@types/node@22.7.5)(postcss@8.4.47)(sass-embedded@1.79.4)(sass@1.79.5)(search-insights@2.17.2)(typescript@5.6.3)
 
   packages/docs:
     dependencies:
@@ -121,8 +121,8 @@ importers:
         version: 3.5.12(typescript@5.6.3)
     devDependencies:
       vitepress:
-        specifier: ^1.4.0
-        version: 1.4.0(@algolia/client-search@5.7.0)(@types/node@22.7.5)(postcss@8.4.47)(sass-embedded@1.79.4)(sass@1.79.5)(search-insights@2.17.2)(typescript@5.6.3)
+        specifier: ^1.4.1
+        version: 1.4.1(@algolia/client-search@5.7.0)(@types/node@22.7.5)(postcss@8.4.47)(sass-embedded@1.79.4)(sass@1.79.5)(search-insights@2.17.2)(typescript@5.6.3)
       vitepress-plugin-google-analytics:
         specifier: ^1.0.2
         version: 1.0.2
@@ -703,9 +703,6 @@ packages:
     resolution: {integrity: sha512-I3QoeDDeEPZm8yR28JtY+rk880Oqmj43hreIBVTicisFTx/Dl7JpG72g/X7YF8hnQD3IFhkky5i2bPonwrTVPg==}
     peerDependencies:
       vue: 3.5.12
-
-  '@vue/shared@3.5.11':
-    resolution: {integrity: sha512-W8GgysJVnFo81FthhzurdRAWP/byq3q2qIw70e0JWblzVhjgOMiC2GyovXrZTFQJnFVryYaKGP3Tc9vYzYm6PQ==}
 
   '@vue/shared@3.5.12':
     resolution: {integrity: sha512-L2RPSAwUFbgZH20etwrXyVyCBu9OxRSi8T/38QsvnkJyvq2LufW2lDCOzm7t/U9C1mkhJGWYfCuFBCmIuNivrg==}
@@ -1684,8 +1681,8 @@ packages:
   vitepress-plugin-group-icons@1.2.4:
     resolution: {integrity: sha512-pxYzphvRy0Jhpgl3lHszH9Z8Qaj83v4bVr0b8Oi4zSIOQW/uuqGAZ8SaYwkZ1f/8a6ckIeIwZiLfLHA6ySCScQ==}
 
-  vitepress@1.4.0:
-    resolution: {integrity: sha512-JXCv4EsKTDyAFb6C/UjZr7nsGAzZ6mafVk2rx7rG5o8N+B/4QstIk+iEOe/9dKoU6V624UIC6g1pZ+K63rxhlw==}
+  vitepress@1.4.1:
+    resolution: {integrity: sha512-C2rQ7PMlDVqgsaHOa0uJtgGGWaGv74QMaGL62lxKbtFkYtosJB5HAfZ8+pEbfzzvLemYaYwaiQdFLBlexK2sFw==}
     hasBin: true
     peerDependencies:
       markdown-it-mathjax3: ^4
@@ -2276,8 +2273,6 @@ snapshots:
       '@vue/compiler-ssr': 3.5.12
       '@vue/shared': 3.5.12
       vue: 3.5.12(typescript@5.6.3)
-
-  '@vue/shared@3.5.11': {}
 
   '@vue/shared@3.5.12': {}
 
@@ -3226,7 +3221,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  vitepress@1.4.0(@algolia/client-search@5.7.0)(@types/node@22.7.5)(postcss@8.4.47)(sass-embedded@1.79.4)(sass@1.79.5)(search-insights@2.17.2)(typescript@5.6.3):
+  vitepress@1.4.1(@algolia/client-search@5.7.0)(@types/node@22.7.5)(postcss@8.4.47)(sass-embedded@1.79.4)(sass@1.79.5)(search-insights@2.17.2)(typescript@5.6.3):
     dependencies:
       '@docsearch/css': 3.6.2
       '@docsearch/js': 3.6.2(@algolia/client-search@5.7.0)(search-insights@2.17.2)
@@ -3236,7 +3231,7 @@ snapshots:
       '@types/markdown-it': 14.1.2
       '@vitejs/plugin-vue': 5.1.4(vite@5.4.8(@types/node@22.7.5)(sass-embedded@1.79.4)(sass@1.79.5))(vue@3.5.12(typescript@5.6.3))
       '@vue/devtools-api': 7.4.6
-      '@vue/shared': 3.5.11
+      '@vue/shared': 3.5.12
       '@vueuse/core': 11.1.0(vue@3.5.12(typescript@5.6.3))
       '@vueuse/integrations': 11.1.0(focus-trap@7.6.0)(vue@3.5.12(typescript@5.6.3))
       focus-trap: 7.6.0
