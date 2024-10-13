@@ -1,11 +1,18 @@
-## 演示站点
+# @theojs/lumen
 
-https://tools.theojs.cn/
-
-## 前置条件
-
-- [vitepress](https://vitepress.dev/) 1.3.2及以上版本
-- 完成 [所有步骤](https://vitepress.dev/zh/guide/getting-started#installation) 并且成功启动运行
+<div align="center">
+    <p>
+        <img src="https://tools.theojs.cn/Logo.png" alt="@theojs/lumen">
+    </p>
+    <p>
+        <img src="https://img.shields.io/npm/v/@theojs/lumen?style=flat&colorA=080f12&colorB=1fa669" alt="release">
+        <img src="https://img.shields.io/npm/dt/@theojs/lumen?style=flat&colorA=080f12&colorB=1fa669" alt="downloads">
+        <img src="https://img.shields.io/npm/l/@theojs/lumen?style=flat&colorA=080f12&colorB=1fa669" alt="license">
+    </p>
+    <p>
+        <a href="https://tools.theojs.cn/">演示站点</a>
+    </p>
+</div>
 
 ## 安装
 
@@ -21,8 +28,4 @@ npm install @theojs/lumen
 yarn add @theojs/lumen
 ```
 
-## [查看详细文档](https://tools.theojs.cn/guide/getting-started)
-
-## License
-
-[MIT](https://github.com/Theo-Messi/tools/blob/main/packages/Lumen/License)
+### [查看文档](https://tools.theojs.cn/)

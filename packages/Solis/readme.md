@@ -1,11 +1,18 @@
-## 演示站点
+# @theojs/solis
 
-https://share.theojs.cn/
-
-## 前置条件
-
-- [vitepress](https://vitepress.dev/) 1.3.2及以上版本
-- 完成 [所有步骤](https://vitepress.dev/zh/guide/getting-started#installation) 并且成功启动运行
+<div align="center">
+    <p>
+        <img src="https://i.theojs.cn/docs/202405101119004.png" alt="@theojs/solis">
+    </p>
+    <p>
+        <img src="https://img.shields.io/npm/v/@theojs/solis?style=flat&colorA=080f12&colorB=1fa669" alt="release">
+        <img src="https://img.shields.io/npm/dt/@theojs/solis?style=flat&colorA=080f12&colorB=1fa669" alt="downloads">
+        <img src="https://img.shields.io/npm/l/@theojs/solis?style=flat&colorA=080f12&colorB=1fa669" alt="license">
+    </p>
+    <p>
+        <a href="https://share.theojs.cn/">演示站点</a>
+    </p>
+</div>
 
 ## 安装
 
@@ -21,8 +28,4 @@ npm install @theojs/solis
 yarn add @theojs/solis
 ```
 
-## [查看详细文档](https://tools.theojs.cn/solis/getting-started)
-
-## License
-
-[MIT](https://github.com/Theo-Messi/tools/blob/main/packages/Solis/License)
+### [查看文档](https://tools.theojs.cn/solis/)
