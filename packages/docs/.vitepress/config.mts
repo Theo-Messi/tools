@@ -3,8 +3,8 @@ import { imgSize } from '@mdit/plugin-img-size'
 import { figure } from '@mdit/plugin-figure'
 import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 
-import Lumenpkg from '../../packages/Lumen/package.json'
-import Solispkg from '../../packages/Solis/package.json'
+import Lumenpkg from '../../Lumen/package.json'
+import Solispkg from '../../Solis/package.json'
 const Lumenversion = `Lumen@` + Lumenpkg.version
 const Solisversion = `Solis@` + Solispkg.version
 
@@ -16,7 +16,7 @@ export default defineConfig({
   lastUpdated: true,
   sitemap: { hostname: 'https://tools.theojs.cn' },
   head: [
-    ['link', { rel: 'icon', type: 'icon', href: '/TM-FELogo.png' }],
+    ['link', { rel: 'icon', type: 'icon', href: '/Logo.png' }],
     ['meta', { name: 'msapplication-TileColor', content: '#da532c' }],
     ['meta', { name: 'theme-color', content: '#ffffff' }],
     ['meta', { name: 'author', content: 'Theo-Messi' }],
@@ -29,13 +29,13 @@ export default defineConfig({
     ['meta', { name: 'og:site_name', content: 'TheoJS' }],
     ['meta', { name: 'og:title', content: 'TheoJS' }],
     ['meta', { name: 'og:url', content: 'https://tools.theojs.cn/' }],
-    ['meta', { name: 'og:image', content: 'https://tools.theojs.cn/TM-FELogo.png' }],
+    ['meta', { name: 'og:image', content: 'https://tools.theojs.cn/Logo.png' }],
     ['meta', { name: 'og:description', content: '用于VitePress主题美化和集成Vue功能组件' }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
     ['meta', { name: 'twitter:site', content: '@TheoMessi_' }],
     ['meta', { name: 'twitter:title', content: 'TheoJS' }],
     ['meta', { name: 'twitter:description', content: '用于VitePress主题美化和集成Vue功能组件' }],
-    ['meta', { name: 'twitter:image', content: 'https://tools.theojs.cn/TM-FELogo.png' }],
+    ['meta', { name: 'twitter:image', content: 'https://tools.theojs.cn/Logo.png' }],
     [
       'script',
       {
@@ -74,8 +74,11 @@ export default defineConfig({
     css: { preprocessorOptions: { scss: { api: 'modern' } } }
   },
   themeConfig: {
-    logo: { src: '/TM-FELogo.png', width: 24, height: 24 },
-    editLink: { pattern: 'https://github.com/Theo-Messi/tools/edit/main/docs/:path', text: '为此页提供修改建议' },
+    logo: { src: '/Logo.png', width: 24, height: 24 },
+    editLink: {
+      pattern: 'https://github.com/Theo-Messi/tools/edit/main/packages/docs/:path',
+      text: '为此页提供修改建议'
+    },
     // 目录设置
     outline: 'deep', // 索引级别
     outlineTitle: '本页目录', // 目录文本
@@ -104,7 +107,7 @@ export default defineConfig({
     langMenuLabel: '切换语言',
     nav: [
       {
-        text: '<span style="display: inline-flex; align-items: center;"><img src="/TM-FELogo.png" alt="logo" style="margin-right: 0.25rem;width:1em; height:1em; "/>Lumen</span>',
+        text: '<span style="display: inline-flex; align-items: center;"><img src="/Logo.png" alt="logo" style="margin-right: 0.25rem;width:1em; height:1em; "/>Lumen</span>',
         link: '/',
         activeMatch: '^/guide/'
       },

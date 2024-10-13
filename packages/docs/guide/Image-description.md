@@ -2,7 +2,7 @@
 title: 图片描述
 ---
 
-![效果图](/TM-FELogo.png)
+![效果图](/Logo.png)
 
 ## 安装 @mdit/plugin-figure 插件
 
@@ -116,7 +116,7 @@ figure figcaption a {
 ## 使用
 
 ```md
-![效果图](/TM-FELogo.png)
+![效果图](/Logo.png)
 ```
 
-![效果图](/TM-FELogo.png)
+![效果图](/Logo.png)

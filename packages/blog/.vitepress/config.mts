@@ -34,7 +34,7 @@ export default defineConfig({
       copyright: `版权所有 © 2019-${new Date().getFullYear()} Theo-Messi`
     },
     editLink: {
-      pattern: 'https://github.com/Theo-Messi/tools/edit/main/blog/:path',
+      pattern: 'https://github.com/Theo-Messi/tools/edit/main/packages/blog/:path',
       text: '为此页提供修改建议'
     },
     // 上次更新

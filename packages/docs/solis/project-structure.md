@@ -5,7 +5,7 @@ title: 项目结构
 ## 项目结构
 
 ::: tip
-按照 [此仓库](https://github.com/Theo-Messi/tools/tree/main/blog) 设置项目结构
+按照 [此仓库](https://github.com/Theo-Messi/tools/tree/main/packages/blog) 设置项目结构
 
 在项目根目录创建 `.gitignore` 文件
 
