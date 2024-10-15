@@ -76,8 +76,13 @@ figure {
   align-items: center;
   text-align: center;
 
+  img {
+    border-radius: 0.5rem;
+  }
+
   figcaption {
-    margin-top: 0.875rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
     color: var(--vp-c-text-3);
     font-size: 0.875rem;
     font-weight: 400;
@@ -99,8 +104,13 @@ figure {
   text-align: center;
 }
 
+figure img {
+  border-radius: 0.5rem;
+}
+
 figure figcaption {
-  margin-top: 0.875rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   color: var(--vp-c-text-3);
   font-size: 0.875rem;
   font-weight: 400;
