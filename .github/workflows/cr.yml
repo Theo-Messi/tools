@@ -29,5 +29,8 @@ jobs:
       - name: Install
         run: pnpm install
 
+      - name: build
+        run: pnpm run package:solis
+
       - name: Release
         run: pnpm dlx pkg-pr-new publish --compact --pnpm './packages/*'
