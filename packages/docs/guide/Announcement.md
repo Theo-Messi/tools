@@ -38,7 +38,7 @@ hero:
   text: 'Enhanced '
   tagline: 用于VitePress主题美化和集成Vue功能组件
   prelink:// [!code ++]
-    title: '<i class="fa-solid fa-bolt" style="color: #63E6BE;"></i> 快速开始<div style="text-align: right; font-weight: bold;"><i class="fas fa-pnpm" style="color: #FFD43B;"></i>pnpm add @theojs/lumen</div>'// [!code ++]
+    title: '<i class="fas fa-bolt" style="color: #63E6BE;"></i> 快速开始 <p>pnpm add @theojs/lumen</p>'// [!code ++]
     link: /guide/getting-started// [!code ++]
     target: _blank// [!code ++]
 ---

@@ -5,33 +5,43 @@ layout: home
 hero:
   name: Solis
   text: 'VitePress Blog '
-  tagline: ✨ vitepress 的博客主题
+  textsuffix: 'Theme'
+  tagline: ✨ VitePress 的博客主题
+
   image:
     src: 'https://i.theojs.cn/docs/202405101119004.png'
-    alt: Theme
+    alt: '@theojs/solis'
+
   prelink:
-    title: '<i class="fa-solid fa-bolt" style="color: #63E6BE;"></i> 快速开始<div style="text-align: right; font-weight: bold;"><i class="fas fa-pnpm" style="color: #FFD43B;"></i>pnpm add @theojs/solis</div>'
+    title: '<i class="fas fa-bolt" style="color: #63E6BE;"></i> 快速开始 <p>pnpm add @theojs/solis</p>'
     link: /solis/getting-started
     # target: _blank
+
   actions:
     - theme: brand
       text: 快速开始
       link: /solis/getting-started
+
     - theme: brand
       text: 演示站点
       link: https://share.theojs.cn/
+
     - theme: alt
       text: 账号合租
       link: https://doc.theojs.cn/serve/sharing/Account-sharing-guide
+
     - theme: alt
       text: 机场推荐
       link: https://doc.theojs.cn/serve/airport/qingyunti
+
     - theme: sponsor
       text: ✨ 成为赞助商
       link: https://github.com/sponsors/Theo-Messi
+
     - theme: cta pan
       text: 云盘资源
       link: https://share.theojs.cn/
+
     - theme: cta xx
       text: 玄学宝典
       link: https://xx.theojs.cn
