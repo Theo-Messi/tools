@@ -20,7 +20,7 @@ export default {
       'home-hero-info-before': () => h(Announcement) // [!code ++]
     }) // [!code ++]
   } // [!code ++]
-  ... //其他代码
+  ...
 }
 ```
 
@@ -30,16 +30,16 @@ export default {
 
 ```md
 ---
-# https://vitepress.dev/reference/default-theme-home-page
 layout: home
 
 hero:
-  name: 'Lumen'
+  name: Lumen
   text: 'Enhanced '
-  tagline: 用于VitePress主题美化和集成Vue功能组件
-  prelink:// [!code ++]
-    title: '<i class="fas fa-bolt" style="color: #63E6BE;"></i> 快速开始 <p>pnpm add @theojs/lumen</p>'// [!code ++]
-    link: /guide/getting-started// [!code ++]
-    target: _blank// [!code ++]
+  textsuffix: 'Theme'
+  tagline: ✨ 集成 Vue 功能组件和主题美化的 VitePress 插件
+  prelink: // [!code ++]
+    title: '<i class="fas fa-bolt" style="color: #63E6BE;"></i> 快速开始 <p>pnpm add @theojs/lumen</p>' // [!code ++]
+    link: /guide/getting-started // [!code ++]
+    target: _blank // [!code ++]
 ---
 ```

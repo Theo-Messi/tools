@@ -17,7 +17,7 @@ export default {
   enhanceApp: ({ app }) => {    // [!code ++]
     app.component('Home', HomeUnderline) // [!code ++]
   } // [!code ++]
- ...//其他代码
+ ...
 }
 ```
 
@@ -34,5 +34,5 @@ hero:
   tagline: ✨ 集成 Vue 功能组件和主题美化的 VitePress 插件
 ---
 
-<Home />
+<Home /> // [!code ++]
 ```
