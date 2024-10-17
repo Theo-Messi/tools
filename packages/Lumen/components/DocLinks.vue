@@ -1,14 +1,16 @@
 <script setup lang="ts">
-const props = defineProps<{
-  items: Array<{
-    name: string /* 链接项的名称。 */
-    link: string /* 链接项的 URL。 */
-    color?: string /*  图标的颜色（可选）。 */
-    icon?: string /* 图标的 URL 或类名（可选）。 */
-    light?: string /* 浅色模式下的图标 URL（可选）。 */
-    dark?: string /* 深色模式下的图标 URL（可选）。 */
-  }>
-}>()
+// 定义链接项类型
+interface LinkItem {
+  name: string // 链接项的名称。
+  link: string // 链接项的 URL。
+  color?: string // 图标的颜色（可选）。
+  icon?: string // 图标的 URL 或类名（可选）。
+  light?: string // 浅色模式下的图标 URL（可选）。
+  dark?: string // 深色模式下的图标 URL（可选）。
+}
+
+// 使用 defineProps 定义属性
+const props = defineProps<{ items: LinkItem[] }>()
 
 /**
  * 判断给定的 URL 是否为图像文件。

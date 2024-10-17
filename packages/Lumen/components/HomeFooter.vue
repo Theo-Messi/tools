@@ -1,31 +1,45 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed } from 'vue'
 
-const props = defineProps<{
-  Footer_Data: {
-    group?: Array<{
-      icon?: string /* 图标（可选）。 */
-      style?: string /* 图标样式（可选）。 */
-      title: string /* 分组标题。 */
-      internal?: boolean /* 该组是否为内部链接，默认为 `false`（可选）。 */
-      links: Array<{
-        icon?: string /* 链接图标（可选）。 */
-        style?: string /* 链接样式（可选）。 */
-        name: string /* 链接名称。 */
-        href: string /* 链接地址。 */
-        internal?: boolean /* 是否为内部链接，默认为 `false`（可选）。 */
-      }>
-    }>
-    beian?: {
-      icp?: string /* ICP 备案号（可选）。 */
-      police?: string /* 公安备案号（可选）。 */
-    }
-    author?: {
-      name?: string /* 作者姓名（可选）。 */
-      link?: string /* 作者链接（可选）。 */
-    }
-  }
-}>()
+// 定义链接类型
+interface Link {
+  icon?: string // 链接图标（可选）
+  style?: string // 链接样式（可选）
+  name: string // 链接名称
+  href: string // 链接地址
+  internal?: boolean // 是否为内部链接（默认 false，可选）
+}
+
+// 定义分组类型
+interface Group {
+  icon?: string // 图标（可选）
+  style?: string // 图标样式（可选）
+  title: string // 分组标题
+  internal?: boolean // 是否为内部链接（默认 false，可选）
+  links: Link[] // 链接数组
+}
+
+// 定义备案类型
+interface Beian {
+  icp?: string // ICP 备案号（可选）
+  police?: string // 公安备案号（可选）
+}
+
+// 定义作者类型
+interface Author {
+  name?: string // 作者姓名（可选）
+  link?: string // 作者链接（可选）
+}
+
+// 定义 Footer_Data 类型
+interface FooterData {
+  group?: Group[] // 分组数组（可选）
+  beian?: Beian // 备案信息（可选）
+  author?: Author // 作者信息（可选）
+}
+
+// 使用 defineProps 定义属性
+const props = defineProps<{ Footer_Data: FooterData }>()
 
 /**
  * 当前打开的 section 索引，`null` 表示没有 section 被打开。
