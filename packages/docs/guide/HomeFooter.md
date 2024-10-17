@@ -67,7 +67,7 @@ export default {
 
 | 字段                                 | 类型    | 描述                                                              |
 | ------------------------------------ | ------- | ----------------------------------------------------------------- |
-| **group**                            | Array   | 链接分组列表。                                                    |
+| **group**?                           | Array   | <Badge type="tip" text="可选" /> 链接分组列表。                   |
 | ├─ icon?                             | string  | <Badge type="tip" text="可选" /> 图标                             |
 | ├─ style?                            | string  | <Badge type="tip" text="可选" /> 图标样式                         |
 | ├─ title                             | string  | 分组标题。                                                        |

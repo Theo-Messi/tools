@@ -3,7 +3,7 @@ import { ref, onMounted, onUnmounted, computed } from 'vue'
 
 const props = defineProps<{
   Footer_Data: {
-    group: Array<{
+    group?: Array<{
       icon?: string /* 图标（可选）。 */
       style?: string /* 图标样式（可选）。 */
       title: string /* 分组标题。 */
@@ -83,7 +83,7 @@ const isLargeScreen = computed(() => windowWidth.value > 768)
 <template>
   <footer class="ba">
     <div class="ff">
-      <div class="sc" v-for="(section, index) in props.Footer_Data.group" :key="index">
+      <div class="sc" v-for="(section, index) in props.Footer_Data.group || []" :key="index">
         <div class="st" @click="toggleSection(index)">
           <i v-if="section.icon" :class="section.icon" :style="section.style"></i>
           {{ section.title }}
