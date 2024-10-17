@@ -2,14 +2,7 @@
 title: Twikoo 评论
 ---
 
-<Links
-  :items="[
-    {
-      name: '如何部署请查看 Twikoo 文档',
-      link: 'https://twikoo.js.org/quick-start.html'
-    }
-  ]"
-/>
+<Links :items="[{ name: '如何部署请查看 Twikoo 文档', link: 'https://twikoo.js.org/quick-start.html' }]" />
 
 ## 创建数据
 

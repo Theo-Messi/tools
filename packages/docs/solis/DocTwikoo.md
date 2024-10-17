@@ -2,6 +2,8 @@
 title: 配置VitePress
 ---
 
+<Links :items="[{ name: '如何部署请查看 Twikoo 文档', link: 'https://twikoo.js.org/quick-start.html' }]" />
+
 ## 创建数据
 
 在`.vitepress`目录下新建`data/Twikoo.ts`文件，并添加以下内容：
@@ -35,6 +37,6 @@ export default {
       'doc-after': () => h(Twikoo, { Twikoo_Data })// [!code ++]
     })// [!code ++]
   }// [!code ++]
-  ...// 其他代码
+  ...
 }
 ```

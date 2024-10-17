@@ -22,16 +22,10 @@ export default {
 
 **输入**
 
-```vue-html
-<VideoLink
-  href="//player.bilibili.com/player.html?aid=1205847484"
-  name="【MV】HELP!! - 可波·卡娜埃露"
-/>
+```vue
+<VideoLink href="//player.bilibili.com/player.html?aid=1205847484" name="【MV】HELP!! - 可波·卡娜埃露" />
 ```
 
 **输出**
 
-<VideoLink
-  href="//player.bilibili.com/player.html?aid=1205847484"
-  name="【MV】HELP!! - 可波·卡娜埃露"
-/>
+<VideoLink href="//player.bilibili.com/player.html?aid=1205847484" name="【MV】HELP!! - 可波·卡娜埃露" />

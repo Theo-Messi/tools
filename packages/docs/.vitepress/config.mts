@@ -57,7 +57,7 @@ export default defineConfig({
     config: (md) => {
       md.use(imgSize)
       md.use(groupIconMdPlugin)
-      md.use(figure, { figcaption: 'alt', copyAttrs: '^class$' })
+      md.use(figure, { figcaption: 'alt', copyAttrs: '^class$', lazy: true })
     }
   },
   vite: {

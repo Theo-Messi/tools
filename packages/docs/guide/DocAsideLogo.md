@@ -7,11 +7,6 @@ title: 侧边栏链接
 ## 创建数据
 
 在`.vitepress`目录下新建`data/AsideData.ts`文件，并添加以下内容：
-::: tip
-`Aside_Data`数组中，`link`为链接地址，`icon`为图标地址，`Activity`为活动名称
-
-自行替换下方数据
-:::
 
 ```ts
 // .vitepress/data/AsideData.ts

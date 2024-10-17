@@ -33,7 +33,7 @@ blog/
 
 设置博客布局结构
 
-`pages`文件夹下创建 `archives.md` `category.md` `tags.md`
+`pages`文件夹下创建 `archives.md` `category.md` `tags.md` 文件并写入以下内容
 
 ::: code-group
 

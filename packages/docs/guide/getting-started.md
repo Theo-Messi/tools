@@ -2,11 +2,6 @@
 title: 快速开始
 ---
 
-## 前置条件
-
-- [vitepress](https://vitepress.dev/) 1.3.2及以上版本
-- 完成 [所有步骤](https://vitepress.dev/zh/guide/getting-started#installation) 并且成功启动运行
-
 ## 安装
 
 ::: code-group
@@ -32,27 +27,19 @@ yarn add @theojs/lumen
 ```ts [config.ts]
 import { defineConfig } from 'vitepress'
 export default defineConfig({
-  vite: {
-    css: {
-      preprocessorOptions: {
-        scss: {
-          api: 'modern'
-        }
-      }
-    }
-  }
+  vite: {// [!code ++]
+    css: { preprocessorOptions: { scss: { api: 'modern' } } }// [!code ++]
+  }// [!code ++]
+  ...
 })
 ```
 
 ```js [vite.config.js]
 export default {
-  css: {
-    preprocessorOptions: {
-      scss: {
-        api: 'modern'
-      }
-    }
-  }
+  css: { // [!code ++]
+    preprocessorOptions: { scss: { api: 'modern' } }// [!code ++]
+  }// [!code ++]
+  ...
 }
 ```
 
@@ -94,7 +81,7 @@ export default {
       icon: 'fas fa-id-card',
       color: '#1abc9c'
     },
-        {
+    {
       name: '页面分享按钮',
       link: 'ShareButton',
       icon: 'fas fa-share-alt',

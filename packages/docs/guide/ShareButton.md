@@ -18,7 +18,7 @@ export default {
       'aside-outline-before': () => h(ShareButton),// [!code ++]
     })// [!code ++]
   },// [!code ++]
- ...//其他代码
+ ...
 }
 ```
 
