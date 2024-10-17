@@ -11,7 +11,7 @@ import DefaultTheme from 'vitepress/theme'
 import { DocVideoLink } from '@theojs/lumen' // [!code ++]
 
 export default {
-  ... //其他代码
+  ...
   enhanceApp: ({ app }) => { // [!code ++]
     app.component('VideoLink', DocVideoLink) // [!code ++]
   } // [!code ++]

@@ -50,7 +50,7 @@ export default {
       'aside-ads-before': () => h(DocAsideLogo, { Aside_Data }) // [!code ++]
     })// [!code ++]
   }// [!code ++]
- ... //其他代码
+ ...
 }
 ```
 

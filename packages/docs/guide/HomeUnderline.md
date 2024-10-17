@@ -17,7 +17,7 @@ export default {
   enhanceApp: ({ app }) => {    // [!code ++]
     app.component('Home', HomeUnderline) // [!code ++]
   } // [!code ++]
- ...//其他代码
+ ...
 }
 ```
 

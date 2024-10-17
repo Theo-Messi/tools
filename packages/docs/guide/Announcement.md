@@ -20,7 +20,7 @@ export default {
       'home-hero-info-before': () => h(Announcement) // [!code ++]
     }) // [!code ++]
   } // [!code ++]
-  ... //其他代码
+  ...
 }
 ```
 

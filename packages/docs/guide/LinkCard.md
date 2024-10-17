@@ -15,7 +15,7 @@ export default {
     app.component('Links', DocLinks)// [!code ++]
     app.component('BoxCube', DocBoxCube)// [!code ++]
   }// [!code ++]
-  ...//其他代码
+  ...
 }
 
 ```
