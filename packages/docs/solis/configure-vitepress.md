@@ -9,7 +9,7 @@ title: 配置VitePress
 import { defineConfig } from 'vitepress'
 import { getPosts } from '@theojs/solis/utils' // [!code ++]
 
-const posts = { posts: await getPosts(6) } // [!code ++]
+const posts = { posts: await getPosts(6) } //代表一页有6篇文章 // [!code ++]
 
 export default defineConfig({
   themeConfig: {
@@ -21,13 +21,9 @@ export default defineConfig({
       { text: '标签', link: '/pages/tags' } // [!code ++]
     ] // [!code ++]
   }
-   ...// 其他代码
+   ...
 })
 ```
-
-::: tip
-`posts: await getPosts(6)` 代表一页有6篇文章
-:::
 
 ## 注册页面布局组件
 
@@ -38,7 +34,7 @@ import DefaultTheme from 'vitepress/theme'
 import { Archives, Category, Tags, Page } from '@theojs/solis' // [!code ++]
 
 export default {
-    ...// 其他代码
+ ...
   enhanceApp: ({ app }) => {// [!code ++]
     app.component('Tags', Tags)// [!code ++]
     app.component('Category', Category)// [!code ++]

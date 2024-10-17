@@ -7,11 +7,6 @@ title: 侧边栏链接
 ## 创建数据
 
 在`.vitepress`目录下新建`data/AsideData.ts`文件，并添加以下内容：
-::: tip
-`Aside_Data`数组中，`link`为链接地址，`icon`为图标地址，`Activity`为活动名称
-
-自行替换下方数据
-:::
 
 ```ts
 // .vitepress/data/AsideData.ts
@@ -55,21 +50,19 @@ export default {
       'aside-ads-before': () => h(DocAsideLogo, { Aside_Data }) // [!code ++]
     })// [!code ++]
   }// [!code ++]
- ... //其他代码
+ ...
 }
 ```
 
 ## 数据接口说明
 
-```ts
-Aside_Data: Array<{
-  link: string /* 链接地址。 */
-  icon: string /* 图标地址。 */
-  name?: string /* 名称。 */
-  Activity?: string /* 活动名称 */
-  hide1?: string /* 隐藏信息1。（可选） */
-  info1?: string /* 信息1。（可选） */
-  hide2?: string /* 隐藏信息2。（可选） */
-  info2?: string /* 信息2。（可选） */
-}>
-```
+| 字段          | 类型   | 描述                                       |
+| ------------- | ------ | ------------------------------------------ |
+| **link**      | string | 链接地址                                   |
+| **icon**      | string | 图标地址                                   |
+| **name?**     | string | <Badge type="tip" text="可选" /> 名称      |
+| **Activity?** | string | <Badge type="tip" text="可选" /> 活动名称  |
+| **hide1?**    | string | <Badge type="tip" text="可选" /> 隐藏信息1 |
+| **info1?**    | string | <Badge type="tip" text="可选" /> 信息1     |
+| **hide2?**    | string | <Badge type="tip" text="可选" /> 隐藏信息2 |
+| **info2?**    | string | <Badge type="tip" text="可选" /> 信息2     |

@@ -4,11 +4,6 @@ title: 快速开始
 
 <Box :items="[ { name: '演示站点', link: 'https://share.theojs.cn/', icon: 'https://i.theojs.cn/docs/202405101119004.png'}, ]"/>
 
-## 前置条件
-
-- [vitepress](https://vitepress.dev/) 1.3.2及以上版本
-- 完成 [所有步骤](https://vitepress.dev/zh/guide/getting-started#installation) 并且成功启动运行
-
 ## 安装
 
 ::: code-group
@@ -34,27 +29,19 @@ yarn add @theojs/solis
 ```ts [config.ts]
 import { defineConfig } from 'vitepress'
 export default defineConfig({
-  vite: {
-    css: {
-      preprocessorOptions: {
-        scss: {
-          api: 'modern'
-        }
-      }
-    }
-  }
+  vite: {// [!code ++]
+    css: { preprocessorOptions: { scss: { api: 'modern' } } }// [!code ++]
+  }// [!code ++]
+  ...
 })
 ```
 
 ```js [vite.config.js]
 export default {
-  css: {
-    preprocessorOptions: {
-      scss: {
-        api: 'modern'
-      }
-    }
-  }
+  css: { // [!code ++]
+    preprocessorOptions: { scss: { api: 'modern' } }// [!code ++]
+  }// [!code ++]
+  ...
 }
 ```
 

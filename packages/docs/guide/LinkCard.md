@@ -15,7 +15,7 @@ export default {
     app.component('Links', DocLinks)// [!code ++]
     app.component('BoxCube', DocBoxCube)// [!code ++]
   }// [!code ++]
-  ...//其他代码
+  ...
 }
 
 ```
@@ -26,7 +26,7 @@ export default {
 
 **输入**
 
-```vue-html
+```vue
 <Box
   :items="[
     //使用FontAwesome图标 + 颜色
@@ -34,12 +34,30 @@ export default {
     //使用FontAwesome图标 + 标签
     { name: 'GitHub', link: '', icon: 'fab fa-github', tag: 'Github' },
     //使用FontAwesome图标 + 标签 + 颜色
-    { name: '支付宝', link: 'https://i.theojs.cn/docs/202405201752089.jpg', icon: 'fab fa-alipay', color: '#00a1e9', tag: '打赏' },
-    { name: '微信', link: 'https://i.theojs.cn/docs/202405201752087.jpg', icon: 'fab fa-weixin', color: '#2ca83c', tag: '打赏' },
+    {
+      name: '支付宝',
+      link: 'https://i.theojs.cn/docs/202405201752089.jpg',
+      icon: 'fab fa-alipay',
+      color: '#00a1e9',
+      tag: '打赏'
+    },
+    {
+      name: '微信',
+      link: 'https://i.theojs.cn/docs/202405201752087.jpg',
+      icon: 'fab fa-weixin',
+      color: '#2ca83c',
+      tag: '打赏'
+    },
     //使用自定义图标 + 标签
     { name: 'GitHub', link: '', icon: 'https://i.theojs.cn/logo/github.svg', tag: 'Github' },
     //使用自定义图标 + 深浅模式 + 标签
-    { name: 'GitHub', link: '', light: 'https://i.theojs.cn/logo/github.svg', dark: 'https://i.theojs.cn/logo/github-dark.svg', tag: 'Github' }
+    {
+      name: 'GitHub',
+      link: '',
+      light: 'https://i.theojs.cn/logo/github.svg',
+      dark: 'https://i.theojs.cn/logo/github-dark.svg',
+      tag: 'Github'
+    }
   ]"
 />
 ```
@@ -86,17 +104,15 @@ export default {
 
 ### 参数说明
 
-```ts
-items: Array<{
-  link: string /* 链接项的链接地址。 */
-  icon: string /* 链接项的图标地址或类名。 */
-  name: string /* 链接项的名称。 */
-  tag?: string /* 链接项的标签（可选）。 */
-  light?: string /* 浅色模式下的图标 URL（可选）。 */
-  dark?: string /* 深色模式下的图标 URL（可选）。 */
-  color?: string /* 图标的颜色（可选）。 */
-}>
-```
+| 字段       | 类型   | 描述                                                    |
+| ---------- | ------ | ------------------------------------------------------- |
+| **link**   | string | 链接项的链接地址。                                      |
+| **icon**   | string | 链接项的图标地址或类名。                                |
+| **name**   | string | 链接项的名称。                                          |
+| **tag?**   | string | <Badge type="tip" text="可选" /> 链接项的标签。         |
+| **light?** | string | <Badge type="tip" text="可选" /> 浅色模式下的图标 URL。 |
+| **dark?**  | string | <Badge type="tip" text="可选" /> 深色模式下的图标 URL。 |
+| **color?** | string | <Badge type="tip" text="可选" /> 图标的颜色。           |
 
 ## Links
 
@@ -104,13 +120,22 @@ items: Array<{
 
 **输入**
 
-```vue-html
+```vue
 <Links
   :items="[
+    //使用FontAwesome图标 + 颜色
     { name: '支付宝', link: 'https://www.alipay.com', icon: 'fab fa-alipay', color: '#00a1e9' },
     { name: '微信支付', link: 'https://pay.weixin.qq.com', icon: 'fab fa-weixin', color: '#2ca83c' },
+    //使用自定义图标
     { name: '支付宝', link: 'https://www.alipay.com', icon: 'https://i.theojs.cn/logo/github.svg' },
-    { name: '支付宝', link: 'https://www.alipay.com', light: 'https://i.theojs.cn/logo/github.svg', dark: 'https://i.theojs.cn/logo/github-dark.svg' },
+    //使用自定义图标 + 深浅模式
+    {
+      name: '支付宝',
+      link: 'https://www.alipay.com',
+      light: 'https://i.theojs.cn/logo/github.svg',
+      dark: 'https://i.theojs.cn/logo/github-dark.svg'
+    },
+    //不使用图标
     { name: '支付宝', link: 'https://www.alipay.com' }
   ]"
 />
@@ -148,16 +173,14 @@ items: Array<{
 
 ### 参数说明
 
-```ts
-items: Array<{
-  name: string /* 链接项的名称。 */
-  link: string /* 链接项的 URL。 */
-  color?: string /*  图标的颜色（可选）。 */
-  icon?: string /* 图标的 URL 或类名（可选）。 */
-  light?: string /* 浅色模式下的图标 URL（可选）。 */
-  dark?: string /* 深色模式下的图标 URL（可选）。 */
-}>
-```
+| 字段       | 类型   | 描述                                                    |
+| ---------- | ------ | ------------------------------------------------------- |
+| **name**   | string | 链接项的名称。                                          |
+| **link**   | string | 链接项的 URL。                                          |
+| **color?** | string | <Badge type="tip" text="可选" /> 图标的颜色。           |
+| **icon?**  | string | <Badge type="tip" text="可选" /> 图标的 URL 或类名。    |
+| **light?** | string | <Badge type="tip" text="可选" /> 浅色模式下的图标 URL。 |
+| **dark?**  | string | <Badge type="tip" text="可选" /> 深色模式下的图标 URL。 |
 
 ## BoxCube
 
@@ -165,7 +188,7 @@ items: Array<{
 
 **输入**
 
-```vue-html
+```vue
 <BoxCube
   :items="[
     //使用FontAwesome图标
@@ -175,7 +198,13 @@ items: Array<{
     //使用自定义图标+副标题
     { name: 'Node.js', link: '', icon: 'https://i.theojs.cn/logo/nodejs.svg', desc: 'v20.15.0' },
     //使用自定义图标+深浅模式+副标题
-    { name: 'Github', link: '', light: 'https://i.theojs.cn/logo/github.svg', dark: 'https://i.theojs.cn/logo/github-dark.svg', desc: 'v20.15.0' }
+    {
+      name: 'Github',
+      link: '',
+      light: 'https://i.theojs.cn/logo/github.svg',
+      dark: 'https://i.theojs.cn/logo/github-dark.svg',
+      desc: 'v20.15.0'
+    }
   ]"
 />
 ```
@@ -207,14 +236,12 @@ items: Array<{
 
 ## 参数说明
 
-```ts
-items: Array<{
-  icon: string /*图标的 URL 或类名。  */
-  name: string /* 项目的名称。 */
-  link: string /* 项目的链接。 */
-  desc?: string /* 项目的描述（可选）。 */
-  color?: string /* 图标的颜色（可选）。 */
-  light?: string /* 浅色模式下的图标 URL（可选）。 */
-  dark?: string /* 深色模式下的图标 URL（可选）。 */
-}>
-```
+| 字段       | 类型   | 描述                                                    |
+| ---------- | ------ | ------------------------------------------------------- |
+| **icon**   | string | 图标的 URL 或类名。                                     |
+| **name**   | string | 项目的名称。                                            |
+| **link**   | string | 项目的链接。                                            |
+| **desc?**  | string | <Badge type="tip" text="可选" /> 项目的描述。           |
+| **color?** | string | <Badge type="tip" text="可选" /> 图标的颜色。           |
+| **light?** | string | <Badge type="tip" text="可选" /> 浅色模式下的图标 URL。 |
+| **dark?**  | string | <Badge type="tip" text="可选" /> 深色模式下的图标 URL。 |

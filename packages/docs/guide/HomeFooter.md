@@ -65,28 +65,22 @@ export default {
 
 ## 数据接口说明
 
-```ts
-Footer_Data: {
-  group: Array<{
-    icon?: string /* 图标（可选）。 */
-    style?: string /* 图标样式（可选）。 */
-    title: string /* 分组标题。 */
-    internal?: boolean /* 该组是否为内部链接，默认为 `false`（可选）。 */
-    links: Array<{
-      icon?: string /* 链接图标（可选）。 */
-      style?: string /* 链接样式（可选）。 */
-      name: string /* 链接名称。 */
-      href: string /* 链接地址。 */
-      internal?: boolean /* 是否为内部链接，默认为 `false`（可选）。 */
-    }>
-  }>
-  beian?: {
-    icp?: string /* ICP 备案号（可选）。 */
-    police?: string /* 公安备案号（可选）。 */
-  }
-  author?: {
-    name?: string /* 作者姓名（可选）。 */
-    link?: string /* 作者链接（可选）。 */
-  }
-}
-```
+| 字段                                 | 类型    | 描述                                                              |
+| ------------------------------------ | ------- | ----------------------------------------------------------------- |
+| **group**                            | Array   | 链接分组列表。                                                    |
+| ├─ icon?                             | string  | <Badge type="tip" text="可选" /> 图标                             |
+| ├─ style?                            | string  | <Badge type="tip" text="可选" /> 图标样式                         |
+| ├─ title                             | string  | 分组标题。                                                        |
+| ├─ internal?                         | boolean | <Badge type="tip" text="可选" /> 该组是否为内部链接，默认 `false` |
+| └─ links                             | Array   | 分组中的链接列表。                                                |
+| &nbsp;&nbsp;&nbsp;&nbsp;├─ icon?     | string  | <Badge type="tip" text="可选" /> 链接图标                         |
+| &nbsp;&nbsp;&nbsp;&nbsp;├─ style?    | string  | <Badge type="tip" text="可选" /> 链接样式                         |
+| &nbsp;&nbsp;&nbsp;&nbsp;├─ name      | string  | 链接名称。                                                        |
+| &nbsp;&nbsp;&nbsp;&nbsp;├─ href      | string  | 链接地址。                                                        |
+| &nbsp;&nbsp;&nbsp;&nbsp;└─ internal? | boolean | <Badge type="tip" text="可选" /> 是否为内部链接，默认 `false`     |
+| **beian**?                           | object  | <Badge type="tip" text="可选" /> 备案信息                         |
+| ├─ icp?                              | string  | <Badge type="tip" text="可选" /> ICP 备案号                       |
+| └─ police?                           | string  | <Badge type="tip" text="可选" /> 公安备案号                       |
+| **author**?                          | object  | <Badge type="tip" text="可选" /> 作者信息                         |
+| ├─ name?                             | string  | <Badge type="tip" text="可选" /> 作者姓名                         |
+| └─ link?                             | string  | <Badge type="tip" text="可选" /> 作者链接                         |
