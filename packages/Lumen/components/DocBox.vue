@@ -90,10 +90,12 @@ const isExternalLink = (link: string): boolean => /^https?:\/\//.test(link)
   height: 3.5rem;
   display: flex;
   text-decoration: none !important;
-  transition: border-color 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 
   &:hover {
     border-color: var(--vp-c-brand-1);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
   @media (max-width: 1024px) {
@@ -148,7 +150,7 @@ const isExternalLink = (link: string): boolean => /^https?:\/\//.test(link)
 
 .name {
   margin-left: 1rem;
-  font-size: 0.87rem;
+  font-size: 0.875rem;
   line-height: 1;
   letter-spacing: -0.02em;
   display: flex;

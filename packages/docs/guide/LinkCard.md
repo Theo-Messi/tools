@@ -123,20 +123,21 @@ export default {
 ```vue
 <Links
   :items="[
-    //使用FontAwesome图标 + 颜色
+    // 使用FontAwesome图标 + 颜色
     { name: '支付宝', link: 'https://www.alipay.com', icon: 'fab fa-alipay', color: '#00a1e9' },
     { name: '微信支付', link: 'https://pay.weixin.qq.com', icon: 'fab fa-weixin', color: '#2ca83c' },
-    //使用自定义图标
-    { name: '支付宝', link: 'https://www.alipay.com', icon: 'https://i.theojs.cn/logo/github.svg' },
-    //使用自定义图标 + 深浅模式
+    // 使用自定义图标
+    { name: 'GitHub', link: 'https://github.com', icon: 'https://i.theojs.cn/logo/github.svg' },
+    // 使用自定义图标 + 深浅模式
     {
-      name: '支付宝',
-      link: 'https://www.alipay.com',
+      name: 'GitHub',
+      link: 'https://github.com',
       light: 'https://i.theojs.cn/logo/github.svg',
-      dark: 'https://i.theojs.cn/logo/github-dark.svg'
+      dark: 'https://i.theojs.cn/logo/github-dark.svg',
+      desc: '支持深浅模式切换'
     },
-    //不使用图标
-    { name: '支付宝', link: 'https://www.alipay.com' }
+    // 不使用图标 + 描述
+    { name: 'Google', link: 'https://www.google.com', desc: '全球最大的搜索引擎' }
   ]"
 />
 ```
@@ -144,30 +145,21 @@ export default {
 **输出**
 <Links
   :items="[
+    // 使用FontAwesome图标 + 颜色
+    { name: '支付宝', link: 'https://www.alipay.com', icon: 'fab fa-alipay', color: '#00a1e9' },
+    { name: '微信支付', link: 'https://pay.weixin.qq.com', icon: 'fab fa-weixin', color: '#2ca83c' },
+    // 使用自定义图标
+    { name: 'GitHub', link: 'https://github.com', icon: 'https://i.theojs.cn/logo/github.svg' },
+    // 使用自定义图标 + 深浅模式
     {
-      name: '支付宝',
-      link: '',
-      icon: 'fab fa-alipay',
-      color: '#00a1e9'
-    },
-    {
-      name: '微信支付',
-      link: 'https://pay.weixin.qq.com',
-      icon: 'fab fa-weixin',
-      color: '#2ca83c'
-    },
-    {
-      name: '支付宝',
-      link: '',
-      icon: 'https://i.theojs.cn/logo/github.svg'
-    },
-    {
-      name: '支付宝',
-      link: 'https://www.alipay.com',
+      name: 'GitHub',
+      link: 'https://github.com',
       light: 'https://i.theojs.cn/logo/github.svg',
-      dark: 'https://i.theojs.cn/logo/github-dark.svg'
+      dark: 'https://i.theojs.cn/logo/github-dark.svg',
+      desc: '支持深浅模式切换'
     },
-    { name: '支付宝', link: 'https://www.alipay.com' }
+    // 不使用图标 + 描述
+    { name: 'Google', link: 'https://www.google.com', desc: '全球最大的搜索引擎' }
   ]"
 />
 
@@ -181,6 +173,7 @@ export default {
 | **icon?**  | string | <Badge type="tip" text="可选" /> 图标的 URL 或类名。    |
 | **light?** | string | <Badge type="tip" text="可选" /> 浅色模式下的图标 URL。 |
 | **dark?**  | string | <Badge type="tip" text="可选" /> 深色模式下的图标 URL。 |
+| **desc?**  | string | <Badge type="tip" text="可选" /> 链接项的描述信息。     |
 
 ## BoxCube
 

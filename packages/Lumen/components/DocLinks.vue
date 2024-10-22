@@ -2,6 +2,7 @@
 // 定义链接项类型
 interface LinkItem {
   name: string // 链接项的名称。
+  desc?: string // 链接项的描述（可选）。
   link: string // 链接项的 URL。
   color?: string // 图标的颜色（可选）。
   icon?: string // 图标的 URL 或类名（可选）。
@@ -46,17 +47,20 @@ const isExternalLink = (link: string): boolean => /^https?:\/\//.test(link)
       <span class="box">
         <template v-if="item.icon">
           <img v-if="isImage(item.icon)" :src="item.icon" alt="Icon" class="icon" />
-          <i v-else :class="item.icon + ' fa-2xl icon'" :style="{ color: item.color }"></i>
+          <i v-else :class="item.icon + ' icon'" :style="{ color: item.color }"></i>
         </template>
         <template v-else>
           <img v-if="item.light" :src="item.light" alt="Icon" class="icon light-only" />
           <img v-if="item.dark" :src="item.dark" alt="Icon" class="icon dark-only" />
-          <i v-if="!item.light && !item.dark" class="fas fa-arrow-up-right-from-square fa-lg fa-icon"></i>
+          <i v-if="!item.light && !item.dark" class="fas fa-arrow-up-right-from-square fa-icon"></i>
         </template>
       </span>
 
-      <!-- 渲染链接项的名称 -->
-      <span class="name">{{ item.name }}</span>
+      <!-- 渲染链接项的名称和描述 -->
+      <div class="text-content">
+        <span class="name">{{ item.name }}</span>
+        <span v-if="item.desc" class="desc">{{ item.desc }}</span>
+      </div>
     </a>
   </div>
 </template>
@@ -75,7 +79,7 @@ const isExternalLink = (link: string): boolean => /^https?:\/\//.test(link)
 
 .link {
   width: 100%;
-  height: 3rem;
+  height: 6rem; /* 调整高度以适应新增的描述 */
   border: 1px solid var(--vp-c-bg-alt);
   background-color: var(--vp-c-bg-alt);
   border-radius: 0.8rem;
@@ -87,37 +91,42 @@ const isExternalLink = (link: string): boolean => /^https?:\/\//.test(link)
 
   &:hover {
     border-color: var(--vp-c-brand-1);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 }
 
 .box {
   position: relative;
-
-  &:hover .icon,
-  .name {
-    color: var(--vp-c-brand-1);
-  }
-}
-
-.icon-only {
-  width: 2rem;
-  margin-left: 1.5rem;
-  margin-top: -1.5rem;
 }
 
 .icon {
-  width: 2rem;
+  width: 2.5rem;
+  font-size: 2.5em;
   margin-left: 1.5rem;
 }
-
 .fa-icon {
   width: 2rem;
-  margin-left: 1.5rem;
-  margin-top: -1.5rem;
+  font-size: 1.5em;
+  margin-left: 2rem;
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* 将名称放在上方 */
+  margin-left: 1rem;
 }
 
 .name {
-  font-size: 0.87rem;
-  margin-left: 1rem;
+  font-size: 1rem;
+  font-weight: 900;
+  // margin-left: 1rem;
+}
+
+.desc {
+  font-size: 0.8125rem;
+  color: var(--vp-c-text-3);
+  margin-top: 0.25rem;
 }
 </style>
