@@ -88,7 +88,13 @@ const isExternalLink = (link: string): boolean => /^https?:\/\//.test(link)
   align-items: center;
   justify-content: center;
   position: relative;
-  transition: border-color 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  &:hover {
+    border-color: var(--vp-c-brand-1);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
 
   @media (max-width: 1024px) {
     flex: 1 1 calc(25% - 0.5rem);
@@ -98,10 +104,6 @@ const isExternalLink = (link: string): boolean => /^https?:\/\//.test(link)
   @media (max-width: 768px) {
     flex: 1 1 calc(33.33% - 0.5rem);
     max-width: calc(33.33% - 0.5rem);
-  }
-
-  &:hover {
-    border-color: var(--vp-c-brand-1);
   }
 
   .icon {
