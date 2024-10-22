@@ -2,7 +2,16 @@
 title: 快速开始
 ---
 
-<Box :items="[ { name: '演示站点', link: 'https://share.theojs.cn/', icon: 'https://i.theojs.cn/docs/202405101119004.png'}, ]"/>
+<Links
+  :items="[
+    {
+      name: '演示站点',
+      icon: 'https://i.theojs.cn/docs/202405101119004.png',
+      desc: 'VitePress的博客主题',
+      link: 'https://share.theojs.cn/'
+    }
+  ]"
+/>
 
 ## 安装
 
