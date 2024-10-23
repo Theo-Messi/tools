@@ -1,13 +1,14 @@
 import DefaultTheme from 'vitepress/theme'
 import { h } from 'vue'
 
-import { Archives, Category, Tags, Page, Twikoo } from '@theojs/solis'
+import { Archives, Category, Tags, Page, Twikoo, Info } from '@theojs/solis'
 import { Twikoo_Data } from '../data'
 
 export default {
   Layout() {
     return h(DefaultTheme.Layout, null, {
-      'doc-after': () => h(Twikoo, { Twikoo_Data })
+      'doc-after': () => h(Twikoo, { Twikoo_Data }),
+      'doc-before': () => h(Info)
     })
   },
   enhanceApp: ({ app }) => {

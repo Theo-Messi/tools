@@ -31,10 +31,14 @@ export default defineConfig({
 // .vitepress/theme/index.ts
 import DefaultTheme from 'vitepress/theme'
 
-import { Archives, Category, Tags, Page } from '@theojs/solis' // [!code ++]
+import { Archives, Category, Tags, Page, Twikoo, Info } from '@theojs/solis' // [!code ++]
 
 export default {
- ...
+  Layout() {// [!code ++]
+    return h(DefaultTheme.Layout, null, {// [!code ++]
+      'doc-before': () => h(Info)// [!code ++]
+    })// [!code ++]
+  },// [!code ++]
   enhanceApp: ({ app }) => {// [!code ++]
     app.component('Tags', Tags)// [!code ++]
     app.component('Category', Category)// [!code ++]
@@ -42,4 +46,5 @@ export default {
     app.component('Page', Page)// [!code ++]
   }// [!code ++]
 }
+  ...
 ```
