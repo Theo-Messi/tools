@@ -50,5 +50,6 @@ const formattedDate = computed(() => {
 .info {
   border-bottom: 1px solid var(--vp-c-divider);
   padding: 0 0 14px;
+  margin-bottom: 1rem;
 }
 </style>
