@@ -17,7 +17,7 @@
 
     <div class="post-info">
       <i class="fa-solid fa-calendar-week" style="margin-right: 0.25rem; color: var(--vp-c-brand-1)"></i>
-      {{ article.frontMatter.date }}
+      {{ article.frontMatter.date }} &nbsp;&nbsp;
       <span>
         <span v-for="(tag, index) in article.frontMatter.tags" :key="tag">
           <i v-if="index === 0" class="fa-solid fa-tags" style="margin-right: 0.25rem; color: var(--vp-c-brand-1)"></i>
