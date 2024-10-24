@@ -7,8 +7,8 @@ export default {
   ...Solistheme,
   Layout() {
     return h(DefaultTheme.Layout, null, {
-      'doc-before': () => h(Info),
-      'doc-after': () => h(Twikoo, { Twikoo_Data })
+      'doc-after': () => h(Twikoo, { Twikoo_Data }),
+      'doc-before': () => h(Info)
     })
   }
 }
