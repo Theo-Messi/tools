@@ -117,7 +117,8 @@
   font-weight: 500;
   color: var(--date-color);
 }
-.post-info {
+.post-info,
+.post-author {
   display: flex;
   align-items: center;
   margin-right: 1em;
@@ -138,6 +139,7 @@
     }
   }
 }
+
 @media (min-width: 768px) {
   .VPNavBar {
     &:not(.has-sidebar) {
