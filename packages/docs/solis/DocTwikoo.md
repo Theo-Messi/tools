@@ -40,7 +40,7 @@ import { Twikoo } from '@theojs/solis' // [!code ++]
 import { Twikoo_Data } from '../data' // [!code ++]
 
 export default {
-  extends: DefaultTheme,
+  extends: Solistheme,// [!code ++]
   Layout() {// [!code ++]
     return h(DefaultTheme.Layout, null, {// [!code ++]
       'doc-after': () => h(Twikoo, { Twikoo_Data })// [!code ++]

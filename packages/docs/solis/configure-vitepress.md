@@ -25,26 +25,21 @@ export default defineConfig({
 })
 ```
 
-## 注册页面布局组件
+## 引入页面布局组件
 
 ```ts
 // .vitepress/theme/index.ts
 import DefaultTheme from 'vitepress/theme'
 
-import { Archives, Category, Tags, Page, Twikoo, Info } from '@theojs/solis' // [!code ++]
+import Solistheme, { Twikoo, Info } from '@theojs/solis' // [!code ++]
 
 export default {
+  extends: Solistheme, // [!code ++]
   Layout() {// [!code ++]
     return h(DefaultTheme.Layout, null, {// [!code ++]
       'doc-before': () => h(Info)// [!code ++]
     })// [!code ++]
   },// [!code ++]
-  enhanceApp: ({ app }) => {// [!code ++]
-    app.component('Tags', Tags)// [!code ++]
-    app.component('Category', Category)// [!code ++]
-    app.component('Archives', Archives)// [!code ++]
-    app.component('Page', Page)// [!code ++]
-  }// [!code ++]
 }
   ...
 ```
