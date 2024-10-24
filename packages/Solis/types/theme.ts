@@ -6,3 +6,20 @@ export { default as Twikoo } from '../components/Twikoo.vue'
 export { default as Info } from '../components/DocInfo.vue'
 
 import '../style/styles.scss'
+
+import type { Theme } from 'vitepress'
+import DefaultTheme from 'vitepress/theme'
+import { Archives, Category, Tags, Page } from '@theojs/solis'
+
+const Solistheme: Theme = {
+  extends: DefaultTheme,
+
+  enhanceApp: ({ app }) => {
+    app.component('Tags', Tags)
+    app.component('Category', Category)
+    app.component('Archives', Archives)
+    app.component('Page', Page)
+  }
+}
+
+export default Solistheme
