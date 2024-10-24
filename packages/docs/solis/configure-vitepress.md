@@ -34,7 +34,7 @@ import DefaultTheme from 'vitepress/theme'
 import Solistheme, { Twikoo, Info } from '@theojs/solis' // [!code ++]
 
 export default {
-  ...Solistheme, // [!code ++]
+  extends: Solistheme, // [!code ++]
   Layout() {// [!code ++]
     return h(DefaultTheme.Layout, null, {// [!code ++]
       'doc-before': () => h(Info)// [!code ++]
