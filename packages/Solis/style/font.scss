@@ -9,19 +9,19 @@
 /* 全局设置 */
 :root {
   --vp-font-family-base: 'SN Pro', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-    'Segoe UI Symbol', 'Noto Color Emoji';
-  --vp-font-family-mono: ui-monospace, 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
-  font-optical-sizing: auto;
+    'Segoe UI Symbol', 'Noto Color Emoji' !important;
+  --vp-font-family-mono: ui-monospace, 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace !important;
+  font-optical-sizing: auto !important;
 }
 
 :root:where(:lang(zh)) {
   /* 中文字体使用 SN Pro */
   --vp-font-family-base: 'SN Pro', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-    'Segoe UI Symbol', 'Noto Color Emoji';
+    'Segoe UI Symbol', 'Noto Color Emoji' !important;
 }
 
 /* 可选：应用字体到全局 */
 body,
 .markdown-content {
-  font-family: var(--vp-font-family-base);
+  font-family: var(--vp-font-family-base) !important;
 }
