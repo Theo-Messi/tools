@@ -106,6 +106,10 @@ onMounted(() => {
 
 const toggleTag = (tag: string) => {
   selectTag.value = tag
+  // 更新 URL，添加查询参数
+  const url = new URL(window.location.href)
+  url.searchParams.set('tag', tag)
+  window.history.pushState({}, '', url.toString())
 }
 </script>
 
