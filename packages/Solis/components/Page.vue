@@ -109,7 +109,7 @@
 <script lang="ts" setup>
 import { withBase } from 'vitepress'
 import { computed, PropType } from 'vue'
-import { Post } from '../types/functions'
+import { Post, sortPosts, getDisplayPages } from '../types/functions'
 
 const props = defineProps({
   posts: Array as PropType<Post[]>,
@@ -118,27 +118,11 @@ const props = defineProps({
 })
 
 const sortedPosts = computed(() => {
-  return (props.posts ?? []).slice().sort((a, b) => {
-    if (a.frontMatter.top && b.frontMatter.top) {
-      return new Date(b.frontMatter.date).getTime() - new Date(a.frontMatter.date).getTime()
-    }
-    if (a.frontMatter.top) return -1
-    if (b.frontMatter.top) return 1
-    return 0
-  })
+  return sortPosts(props.posts ?? [])
 })
 
 const displayPages = computed(() => {
-  const maxPagesToShow = 6
-  const half = Math.floor(maxPagesToShow / 2)
-  let start = Math.max(1, props.pageCurrent - half)
-  let end = Math.min(props.pagesNum, start + maxPagesToShow - 1)
-
-  if (end - start < maxPagesToShow - 1) {
-    start = Math.max(1, end - maxPagesToShow + 1)
-  }
-
-  return Array.from({ length: end - start + 1 }, (_, index) => start + index)
+  return getDisplayPages(props.pageCurrent, props.pagesNum)
 })
 </script>
 

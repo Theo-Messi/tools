@@ -69,21 +69,9 @@
 <script lang="ts" setup>
 import { computed, ref, onMounted } from 'vue'
 import { useData, withBase } from 'vitepress'
-import { initTags, Post } from '../types/functions'
+import { initTags, Post, sortPosts } from '../types/functions'
 
 const { theme } = useData<{ posts: Post[] }>()
-
-// 排序函数，置顶的文章优先
-const sortPosts = (posts: Post[]): Post[] => {
-  return posts.slice().sort((a, b) => {
-    if (a.frontMatter.top && b.frontMatter.top) {
-      return new Date(b.frontMatter.date).getTime() - new Date(a.frontMatter.date).getTime()
-    }
-    if (a.frontMatter.top) return -1
-    if (b.frontMatter.top) return 1
-    return 0
-  })
-}
 
 // 对文章数据进行分类并排序
 const data = computed<Record<string, Post[]>>(() => {
