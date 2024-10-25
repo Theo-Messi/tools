@@ -69,21 +69,9 @@
 <script lang="ts" setup>
 import { computed, ref, onMounted } from 'vue'
 import { useData, withBase } from 'vitepress'
-import { initCategory, Post } from '../types/functions'
+import { initCategory, Post, getCategoryFromUrl, updateCategoryInUrl, sortPosts } from '../types/functions'
 
 const { theme } = useData<{ posts: Post[] }>()
-
-// 排序函数，置顶的文章优先
-const sortPosts = (posts: Post[]): Post[] => {
-  return posts.slice().sort((a, b) => {
-    if (a.frontMatter.top && b.frontMatter.top) {
-      return new Date(b.frontMatter.date).getTime() - new Date(a.frontMatter.date).getTime()
-    }
-    if (a.frontMatter.top) return -1
-    if (b.frontMatter.top) return 1
-    return 0
-  })
-}
 
 // 对文章数据进行分类并排序
 const data = computed<Record<string, Post[]>>(() => {
@@ -101,15 +89,13 @@ const selectCategory = ref('')
 
 // 在组件挂载时从 URL 中获取初始 category
 onMounted(() => {
-  selectCategory.value = new URLSearchParams(location.search).get('category') || ''
+  selectCategory.value = getCategoryFromUrl()
 })
 
 const toggleCategory = (category: string) => {
   selectCategory.value = category
   // 更新 URL，添加查询参数
-  const url = new URL(window.location.href)
-  url.searchParams.set('category', category)
-  window.history.pushState({}, '', url.toString())
+  updateCategoryInUrl(category)
 }
 </script>
 

@@ -106,24 +106,15 @@
 
 <script lang="ts" setup>
 import { onMounted, ref, computed } from 'vue'
-import axios from 'axios'
 import { withBase, useRoute, useData } from 'vitepress'
+import { convertDate, fetchGitHubUserNames } from '../types/functions'
 
-// 获取 frontmatter
 const { frontmatter } = useData()
 const route = useRoute()
 const isPostsPath = computed(() => route.path.startsWith('/posts/'))
 
-// 转换日期的函数
-function convertDate(date: string = new Date().toString()): string {
-  return new Date(date).toISOString().split('T')[0]
-}
-
 // 计算 formattedDate
-const formattedDate = computed(() => {
-  // 使用 frontmatter.date 如果存在，否则使用今天的日期
-  return convertDate(frontmatter.value.date)
-})
+const formattedDate = computed(() => convertDate(frontmatter.value.date))
 
 // 定义作者名称的响应式对象
 const authorName = ref<{ [key: string]: string }>({})
@@ -136,17 +127,7 @@ const authors = computed(() => {
 
 // 获取 GitHub 用户信息
 onMounted(async () => {
-  const requests = authors.value.map((author) =>
-    axios
-      .get(`https://api.github.com/users/${author}`)
-      .then((response) => {
-        authorName.value[author] = response.data.name // 获取 GitHub 自定义名称
-      })
-      .catch((error) => {
-        console.error('Error fetching GitHub user:', error)
-      })
-  )
-  await Promise.all(requests) // 等待所有请求完成
+  authorName.value = await fetchGitHubUserNames(authors.value)
 })
 </script>
 
