@@ -56,6 +56,5 @@ const sortedData = computed(() => {
   padding: 14px 0 8px;
   font-size: 1.25rem;
   font-weight: 500;
-  font-family: var(--date-font-family);
 }
 </style>
