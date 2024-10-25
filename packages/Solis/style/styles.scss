@@ -109,7 +109,6 @@
 
   .top-label {
     margin-right: 6px;
-    color: rgba(255, 87, 51, 1);
   }
 }
 
@@ -124,6 +123,7 @@
   align-items: center;
   margin-right: 1em;
   font-size: 0.75rem;
+  font-weight: 600;
   color: var(--vp-c-brand-1);
 
   span {

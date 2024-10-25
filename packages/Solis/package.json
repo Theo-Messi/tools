@@ -32,7 +32,7 @@
     "blog-theme"
   ],
   "main": "types/theme.ts",
-  "style": "style/styles.scss",
+  "style": "style/idnex.scss",
   "scripts": {
     "release": "pnpm run build && bumpp --sign && pnpm publish --registry=https://registry.npmjs.org",
     "build": "npx tsc --project tsconfig.json"
