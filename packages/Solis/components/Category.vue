@@ -1,7 +1,7 @@
 <template>
   <div class="categories">
     <span @click="toggleCategory(key)" v-for="(item, key) in data" :key="key" class="category">
-      <i class="fa-solid fa-layer-group" style="color: var(--vp-c-brand-1)"></i> {{ key }}
+      {{ key }}
       <strong>{{ data[key].length }}</strong>
     </span>
   </div>

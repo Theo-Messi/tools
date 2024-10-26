@@ -1,7 +1,7 @@
 <template>
   <div class="tags">
     <span @click="toggleTag(key)" v-for="(item, key) in data" :key="key" class="tag">
-      <i class="fat fa-hashtag" style="color: var(--vp-c-brand-1)"></i> {{ key }}
+      {{ key }}
       <strong>{{ data[key].length }}</strong>
     </span>
   </div>
