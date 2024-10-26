@@ -55,17 +55,8 @@
       </a>
     </div>
 
-    <div class="post-info">
-      <i class="far fa-clock" style="margin-right: 0.25rem; color: var(--vp-c-brand-1)"></i>
-      {{ article.frontMatter.date }} &nbsp;&nbsp;
-      <span>
-        <span v-for="(tag, index) in article.frontMatter.tags" :key="tag">
-          <i class="fat fa-hashtag" style="margin-right: 0.25rem; color: var(--vp-c-brand-1)"></i>
-          <a :href="withBase(`/pages/tags.html?tag=${tag}`)">
-            {{ tag }}<span v-if="index < article.frontMatter.tags.length - 1"></span>
-          </a>
-        </span>
-      </span>
+    <div>
+      <PostInfo :post="article" :showAuthors="false" />
     </div>
   </div>
 
@@ -109,6 +100,7 @@
 <script lang="ts" setup>
 import { withBase } from 'vitepress'
 import { computed, PropType } from 'vue'
+import PostInfo from './InfoList.vue'
 import { Post, sortPosts, getDisplayPages } from '../types/functions'
 
 const props = defineProps({
