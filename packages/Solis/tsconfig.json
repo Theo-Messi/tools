@@ -11,5 +11,5 @@
     "declaration": true,
     "baseUrl": "."
   },
-  "include": ["types/serverUtils.ts"]
+  "include": ["types/serverUtils.ts", "components/**.vue"]
 }

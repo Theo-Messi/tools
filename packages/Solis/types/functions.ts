@@ -2,16 +2,17 @@
 import axios from 'axios'
 
 // Post 类型定义
-export type Post = {
+export interface Post {
   frontMatter: {
     date: string
     title: string
     category: string
     tags: string[]
     description: string
-    top?: boolean // 置顶文章的标志
+    author: string | string[]
+    top?: boolean
   }
-  regularPath: string // 文章的路径
+  regularPath: string
 }
 
 // 标签相关函数

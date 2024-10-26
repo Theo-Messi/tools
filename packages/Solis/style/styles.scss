@@ -131,11 +131,13 @@
     margin-left: 0.25rem;
     transition: 0.4s;
     a {
-      font-size: 0.8rem;
+      font-size: 0.75rem !important;
       font-weight: 500 !important;
       color: var(--vp-c-brand-1) !important;
+      text-decoration: none !important;
       &:hover {
         color: var(--vp-c-brand-3) !important;
+        text-decoration: none !important;
       }
     }
   }
