@@ -2,16 +2,17 @@
 import axios from 'axios'
 
 // Post 类型定义
-export type Post = {
+export interface Post {
   frontMatter: {
     date: string
     title: string
     category: string
     tags: string[]
     description: string
-    top?: boolean // 置顶文章的标志
+    author: string | string[]
+    top?: boolean
   }
-  regularPath: string // 文章的路径
+  regularPath: string
 }
 
 // 标签相关函数
@@ -241,4 +242,9 @@ export function clearTwikoo(): void {
   if (el) {
     el.innerHTML = '' // 清空评论组件的内容
   }
+}
+
+// 格式化日期的函数
+export const formatDate = (dateString: string): string => {
+  return new Date(dateString).toLocaleDateString()
 }

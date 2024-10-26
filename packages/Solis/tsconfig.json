@@ -9,7 +9,8 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "declaration": true,
-    "baseUrl": "."
+    "baseUrl": ".",
+    "strict": true
   },
-  "include": ["types/serverUtils.ts"]
+  "include": ["types/serverUtils.ts", "components/**.vue"]
 }
