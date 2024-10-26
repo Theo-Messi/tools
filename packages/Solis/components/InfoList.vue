@@ -96,17 +96,3 @@ onMounted(async () => {
   authorName.value = await fetchGitHubUserNames(authors.value)
 })
 </script>
-<style lang="scss" scoped>
-.post-author {
-  a {
-    font-size: 0.75rem !important;
-    font-weight: 500 !important;
-    color: var(--vp-c-brand-1) !important;
-    text-decoration: none !important;
-    &:hover {
-      color: var(--vp-c-brand-3) !important;
-      text-decoration: none !important;
-    }
-  }
-}
-</style>
