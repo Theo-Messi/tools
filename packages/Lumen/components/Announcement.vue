@@ -15,7 +15,7 @@ const prelink: Prelink | undefined = usePrelink()
   display: inline-flex;
   border-radius: 0.8rem;
   padding: 0.3rem 1.5rem;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 600;
   margin-bottom: 1rem;
   background-color: var(--vp-button-alt-bg);
