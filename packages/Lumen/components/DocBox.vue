@@ -84,7 +84,6 @@ const props = defineProps<{ items: BoxItem[] }>()
 }
 
 .box-content {
-  line-height: 1;
   letter-spacing: -0.02em;
   display: flex;
   align-items: center;
@@ -94,6 +93,7 @@ const props = defineProps<{ items: BoxItem[] }>()
 }
 
 .tag {
+  line-height: 1;
   position: absolute;
   top: 0;
   right: 0;
@@ -106,7 +106,7 @@ const props = defineProps<{ items: BoxItem[] }>()
 }
 
 .icon-container {
-  height: 2em;
+  width: 1.8em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -114,10 +114,9 @@ const props = defineProps<{ items: BoxItem[] }>()
 
 .icon {
   display: inline-block;
-  height: 2em;
+  font-size: 0.9rem;
   justify-content: center;
   align-items: center;
-  margin-top: 1rem;
   color: var(--vp-c-text-1);
 }
 
