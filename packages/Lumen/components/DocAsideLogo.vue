@@ -1,17 +1,6 @@
 <script setup lang="ts">
-// 定义侧边栏项类型
-interface AsideItem {
-  link: string // 链接地址。
-  icon: string // 图标地址。
-  name?: string // 名称（可选）。
-  Activity?: string // 活动名称（可选）。
-  hide1?: string // 隐藏信息1（可选）。
-  info1?: string // 信息1（可选）。
-  hide2?: string // 隐藏信息2（可选）。
-  info2?: string // 信息2（可选）。
-}
+import { AsideItem } from '../types'
 
-// 使用 defineProps 定义属性
 const props = defineProps<{ Aside_Data: AsideItem[] }>()
 </script>
 

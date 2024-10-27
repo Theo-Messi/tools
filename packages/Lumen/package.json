@@ -28,7 +28,7 @@
     "comment",
     "twikoo"
   ],
-  "main": "components/index.ts",
+  "main": "types/index.ts",
   "style": "theme/all.scss",
   "scripts": {
     "release": "bumpp --sign && pnpm publish --registry=https://registry.npmjs.org"
@@ -48,13 +48,14 @@
   },
   "files": [
     "theme/",
+    "types/",
     "components/",
     "tsconfig.json",
     "readme.md",
     "License"
   ],
   "exports": {
-    ".": "./components/index.ts",
+    ".": "./types/index.ts",
     "./theme": "./theme/all.scss",
     "./icon": "./theme/icon.scss",
     "./button": "./theme/button.scss",
@@ -65,8 +66,6 @@
     "./home-blocks": "./theme/home-links.scss",
     "./pic": "./theme/picture.scss",
     "./badge": "./theme/badge.scss",
-    "./components": "./components/index.ts",
-    "./Footer": "./components/HomeFooter.vue",
     "./package.json": "./package.json"
   },
   "packageManager": "pnpm@9.12.2"

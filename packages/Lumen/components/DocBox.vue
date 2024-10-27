@@ -1,33 +1,7 @@
 <script setup lang="ts">
-// 定义链接项类型
-interface Item {
-  link: string // 链接项的链接地址。
-  icon: string // 链接项的图标地址或类名。
-  name: string // 链接项的名称。
-  tag?: string // 链接项的标签（可选）。
-  light?: string // 浅色模式下的图标 URL（可选）。
-  dark?: string // 深色模式下的图标 URL（可选）。
-  color?: string // 图标的颜色（可选）。
-}
+import { BoxItem, isImage, isExternalLink } from '../types'
 
-// 使用 defineProps 定义属性
-const props = defineProps<{ items: Item[] }>()
-
-/**
- * 检查给定的 URL 是否为图片链接。
- *
- * @param {string} url - 要检查的 URL。
- * @returns {boolean} - 如果 URL 是图片链接，则返回 `true`，否则返回 `false`。
- */
-const isImage = (url: string): boolean => /\.(png|jpe?g|gif|svg|webp|bmp|tif?f|tiff|ico|avif)(\?.*)?$/.test(url)
-
-/**
- * 判断给定的链接是否是外部链接。
- *
- * @param {string} link - 要判断的链接。
- * @returns {boolean} - 如果链接是外部链接，则返回 `true`，否则返回 `false`。
- */
-const isExternalLink = (link: string): boolean => /^https?:\/\//.test(link)
+const props = defineProps<{ items: BoxItem[] }>()
 </script>
 
 <template>
