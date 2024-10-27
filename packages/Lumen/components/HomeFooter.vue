@@ -191,7 +191,7 @@ i {
   }
 
   .st {
-    font-size: 0.9rem;
+    font-size: 0.875rem;
     display: flex;
     justify-content: space-between;
     align-items: center;

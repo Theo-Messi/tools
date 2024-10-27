@@ -26,7 +26,7 @@ const videoSrc = computed(() => (isVideoOpen.value ? props.href : ''))
         <i v-if="props.href" class="fas fa-video"></i>
         <div class="name">{{ props.name }}</div>
       </div>
-      <i v-if="props.href" :class="{ 'fas fa-chevron-up': isVideoOpen, 'fas fa-chevron-down': !isVideoOpen }"></i>
+      <i v-if="props.href" :class="{ 'fas fa-caret-up': isVideoOpen, 'fas fa-caret-down': !isVideoOpen }"></i>
     </div>
     <transition name="slide">
       <div v-if="props.href && isVideoOpen" class="video-embed">
@@ -72,19 +72,23 @@ const videoSrc = computed(() => (isVideoOpen.value ? props.href : ''))
 
       .fa-video {
         margin-right: 0.5rem;
+        font-size: 1.2em;
         color: var(--vp-c-brand-1);
       }
 
       .name {
         font-weight: 600;
+        font-size: 0.875rem;
         transition: color 0.3s;
+
         color: var(--vp-c-brand-1);
       }
     }
 
-    .fa-chevron-up,
-    .fa-chevron-down {
+    .fa-caret-up,
+    .fa-caret-down {
       color: var(--vp-c-brand-1);
+      font-size: 1.2em;
     }
   }
 
