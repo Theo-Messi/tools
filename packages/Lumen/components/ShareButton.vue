@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps, computed, PropType } from 'vue'
+import { computed, PropType } from 'vue'
 import { useCopyLink } from '../types'
 
 import { useRouter } from 'vitepress'

@@ -1,5 +1,3 @@
-import type { PropType } from 'vue'
-
 // DocLinks
 export interface LinkItem {
   name: string // 链接项的名称
