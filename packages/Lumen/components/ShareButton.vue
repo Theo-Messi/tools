@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { computed, PropType } from 'vue'
+import { useCopyLink } from '../types'
+
 import { useRouter } from 'vitepress'
-import type { PropType } from 'vue'
 
 // 定义组件的 props 类型
 const props = defineProps({
@@ -48,43 +49,17 @@ const props = defineProps({
 
 // 获取 VitePress 路由对象
 const router = useRouter()
+const { copied, copyLink } = useCopyLink()
 
-// 记录链接是否已被复制
-const copied = ref(false)
-
-/**
- * 计算当前页面的分享链接。
- * @type {ComputedRef<string>}
- * @returns {string} 当前页面的完整分享链接。
- */
 const shareLink = computed(() => {
   const currentPath = router.route.path
   return `${window.location.origin}${currentPath.replace(/^\/[a-z]{2}\//, '/')}`
 })
-
-/**
- * 复制分享链接到剪贴板。
- * 如果复制成功，显示“链接已复制！”的提示。
- * 如果失败，显示用户反馈提示。
- */
-const copyLink = async () => {
-  try {
-    await navigator.clipboard.writeText(shareLink.value)
-    copied.value = true
-    setTimeout(() => {
-      copied.value = false
-    }, 2000)
-  } catch (err) {
-    console.error('Failed to copy: ', err)
-    // 用户反馈
-    alert('复制链接失败，请手动复制。')
-  }
-}
 </script>
 
 <template>
   <div class="share-link-container">
-    <button @click="copyLink" class="share-link-button" :class="{ copied }">
+    <button @click="copyLink(shareLink)" class="share-link-button" :class="{ copied }">
       <span v-if="!copied"> <i :class="props.buttonIcon"></i> {{ props.buttonText }} </span>
       <span v-else> <i :class="props.copiedIcon"></i> {{ props.copiedText }} </span>
     </button>
