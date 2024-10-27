@@ -37,24 +37,22 @@ const isExternalLink = (link: string): boolean => /^https?:\/\//.test(link)
     <a
       v-for="item in props.items"
       :key="item.name"
-      class="link"
       :href="item.link"
       :title="item.name"
       :target="isExternalLink(item.link) ? '_blank' : '_self'"
+      class="link"
       rel="noopener"
     >
       <!-- 渲染图标 -->
-      <span class="box">
-        <template v-if="item.icon">
-          <img v-if="isImage(item.icon)" :src="item.icon" alt="Icon" class="icon" />
-          <i v-else :class="item.icon + ' icon'" :style="{ color: item.color }"></i>
-        </template>
-        <template v-else>
-          <img v-if="item.light" :src="item.light" alt="Icon" class="icon light-only" />
-          <img v-if="item.dark" :src="item.dark" alt="Icon" class="icon dark-only" />
-          <i v-if="!item.light && !item.dark" class="fas fa-arrow-up-right-from-square fa-icon"></i>
-        </template>
-      </span>
+      <template v-if="item.icon">
+        <img v-if="isImage(item.icon)" :src="item.icon" alt="Icon" class="icon" />
+        <i v-else :class="item.icon + ' icon'" :style="{ color: item.color }"></i>
+      </template>
+      <template v-else>
+        <img v-if="item.light" :src="item.light" alt="Icon" class="icon light-only" />
+        <img v-if="item.dark" :src="item.dark" alt="Icon" class="icon dark-only" />
+        <i v-if="!item.light && !item.dark" class="fas fa-arrow-up-right-from-square fa-icon"></i>
+      </template>
 
       <!-- 渲染链接项的名称和描述 -->
       <div class="text-content">
@@ -79,7 +77,7 @@ const isExternalLink = (link: string): boolean => /^https?:\/\//.test(link)
 
 .link {
   width: 100%;
-  height: 6rem; /* 调整高度以适应新增的描述 */
+  height: 5rem;
   border: 1px solid var(--vp-c-bg-alt);
   background-color: var(--vp-c-bg-alt);
   border-radius: 0.8rem;
@@ -96,10 +94,6 @@ const isExternalLink = (link: string): boolean => /^https?:\/\//.test(link)
   }
 }
 
-.box {
-  position: relative;
-}
-
 .icon {
   width: 2.5rem;
   font-size: 2.5em;
@@ -114,19 +108,21 @@ const isExternalLink = (link: string): boolean => /^https?:\/\//.test(link)
 .text-content {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* 将名称放在上方 */
+  justify-content: flex-start;
   margin-left: 1rem;
 }
 
 .name {
-  font-size: 1rem;
-  font-weight: 900;
-  // margin-left: 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.2;
 }
 
 .desc {
-  font-size: 0.8125rem;
-  color: var(--vp-c-text-3);
+  font-size: 0.75rem;
+  color: var(--vp-c-text-2);
+  font-weight: 500;
   margin-top: 0.25rem;
+  line-height: 1.4;
 }
 </style>

@@ -55,7 +55,7 @@ const props = defineProps<{ Aside_Data: AsideItem[] }>()
   padding: 0.25rem 0;
   border-radius: 0.8rem;
   position: relative;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   font-weight: 900;
   line-height: 1.1rem;
   display: flex;
@@ -96,14 +96,15 @@ const props = defineProps<{ Aside_Data: AsideItem[] }>()
   .hide {
     color: var(--vp-c-text-2);
     opacity: 0;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     padding-left: 0.1rem;
+    font-weight: 600;
     transition: opacity 0.5s;
   }
 
   .info {
     color: var(--vp-c-text-2);
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     padding-left: 0.1rem;
   }
 
