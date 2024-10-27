@@ -1,59 +1,15 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, computed } from 'vue'
-
-// 定义链接类型
-interface Link {
-  icon?: string // 链接图标（可选）
-  style?: string // 链接样式（可选）
-  name: string // 链接名称
-  href: string // 链接地址
-  internal?: boolean // 是否为内部链接（默认 false，可选）
-}
-
-// 定义分组类型
-interface Group {
-  icon?: string // 图标（可选）
-  style?: string // 图标样式（可选）
-  title: string // 分组标题
-  internal?: boolean // 是否为内部链接（默认 false，可选）
-  links: Link[] // 链接数组
-}
-
-// 定义备案类型
-interface Beian {
-  icp?: string // ICP 备案号（可选）
-  police?: string // 公安备案号（可选）
-}
-
-// 定义作者类型
-interface Author {
-  name?: string // 作者姓名（可选）
-  link?: string // 作者链接（可选）
-}
-
-// 定义 Footer_Data 类型
-interface FooterData {
-  group?: Group[] // 分组数组（可选）
-  beian?: Beian // 备案信息（可选）
-  author?: Author // 作者信息（可选）
-}
+import { ref, computed } from 'vue'
+import { FooterData, useWindowWidth } from '../types'
 
 // 使用 defineProps 定义属性
 const props = defineProps<{ Footer_Data: FooterData }>()
 
-/**
- * 当前打开的 section 索引，`null` 表示没有 section 被打开。
- *
- * @type {Ref<number | null>}
- */
+// 当前打开的 section 索引
 const openSectionIndex = ref<number | null>(null)
 
-/**
- * 当前窗口宽度。
- *
- * @type {Ref<number | null>}
- */
-const windowWidth = ref<number | null>(null)
+// 使用自定义钩子获取窗口宽度
+const windowWidth = useWindowWidth()
 
 /**
  * 切换 section 的显示状态。
@@ -65,33 +21,11 @@ const toggleSection = (index: number) => {
 }
 
 /**
- * 更新当前窗口宽度。
- */
-const updateWindowWidth = () => {
-  windowWidth.value = window.innerWidth
-}
-
-// 组件挂载时添加 resize 事件监听器
-onMounted(() => {
-  if (typeof window !== 'undefined') {
-    windowWidth.value = window.innerWidth
-    window.addEventListener('resize', updateWindowWidth)
-  }
-})
-
-// 组件卸载时移除 resize 事件监听器
-onUnmounted(() => {
-  if (typeof window !== 'undefined') {
-    window.removeEventListener('resize', updateWindowWidth)
-  }
-})
-
-/**
  * 计算当前窗口是否为大屏幕，宽度大于 768px 时为大屏幕。
  *
  * @type {ComputedRef<boolean>}
  */
-const isLargeScreen = computed(() => windowWidth.value > 768)
+const isLargeScreen = computed(() => windowWidth.value! > 768)
 </script>
 
 <template>
