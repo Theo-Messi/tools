@@ -119,7 +119,7 @@ const isExternalLink = (link: string): boolean => /^https?:\/\//.test(link)
 
   .name {
     position: absolute;
-    font-size: 0.87rem;
+    font-size: 0.875rem;
     bottom: 1.25rem;
   }
 
