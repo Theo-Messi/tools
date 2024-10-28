@@ -106,7 +106,7 @@ const props = defineProps<{ items: BoxItem[] }>()
 }
 
 .icon-container {
-  height: 2em;
+  width: 1.8em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -114,10 +114,9 @@ const props = defineProps<{ items: BoxItem[] }>()
 
 .icon {
   display: inline-block;
-  height: 2em;
+  font-size: 0.9rem;
   justify-content: center;
   align-items: center;
-  margin-top: 1rem;
   color: var(--vp-c-text-1);
 }
 
