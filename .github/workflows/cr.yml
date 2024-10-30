@@ -2,15 +2,25 @@ name: Publish Any Commit
 
 on:
   pull_request:
+    paths:
+      - 'packages/Lumen/'
+      - 'packages/Solis/'
   push:
     branches:
       - '**'
     tags:
       - '!**'
+    paths:
+      - 'packages/Lumen/'
+      - 'packages/Solis/'
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: >
+      github.event_name == 'push' &&
+      github.event.head_commit != null && 
+      startsWith(github.event.head_commit.message, 'release:') == false
 
     steps:
       - name: Checkout code
