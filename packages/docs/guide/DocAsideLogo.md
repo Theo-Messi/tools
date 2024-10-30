@@ -11,7 +11,9 @@ title: 侧边栏链接
 ```ts
 // .vitepress/data/AsideData.ts
 
-export const Aside_Data = [
+import type { AsideItem } from '@theojs/lumen'
+
+export const Aside_Data: AsideItem[] = [
   {
     link: 'https://example.com/',
     icon: 'https://example.com/icon.png',

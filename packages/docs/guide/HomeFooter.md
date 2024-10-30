@@ -11,7 +11,9 @@ title: 页脚配置
 ```ts
 // .vitepress/data/footerData.ts
 
-export const Footer_Data = {
+import type { FooterData } from '@theojs/lumen'
+
+export const Footer_Data: FooterData = {
   beian: { icp: '备案号', police: '公网安备号' },
   author: { name: 'Theo', link: 'https://' },
   group: [

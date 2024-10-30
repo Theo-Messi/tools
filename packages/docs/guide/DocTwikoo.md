@@ -20,7 +20,9 @@ title: Twikoo 评论
 ```ts
 // .vitepress/data/Twikoo.ts
 
-export const Twikoo_Data = {
+import type { TwikooData } from '@theojs/lumen'
+
+export const Twikoo_Data: TwikooData = {
   envId: 'https://xxxxxx' // 修改成部署的Twikoo地址
 }
 ```
