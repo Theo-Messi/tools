@@ -26,7 +26,7 @@ const props = defineProps<{ items: BoxItem[] }>()
         </span>
         <!-- 如果图标不是图片，则显示 Font Awesome 图标 -->
         <span v-else class="icon">
-          <i :class="item.icon + ' fa-2xl'" :style="{ color: item.color }"></i>
+          <i :class="item.icon" :style="{ color: item.color }"></i>
         </span>
         <!-- 如果有浅色模式图标，则显示 -->
         <img v-if="item.light" :src="item.light" alt="icon" class="icon-container light-only" />
@@ -58,7 +58,7 @@ const props = defineProps<{ items: BoxItem[] }>()
   position: relative;
   border: 1px solid var(--vp-c-bg-alt);
   background-color: var(--vp-c-bg-alt);
-  padding: 0.8rem 1.6rem;
+  padding: 0 1.6rem;
   border-radius: 0.8rem;
   width: 14rem;
   height: 3.5rem;
@@ -106,7 +106,8 @@ const props = defineProps<{ items: BoxItem[] }>()
 }
 
 .icon-container {
-  width: 1.8em;
+  width: 2em;
+  height: 2em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -114,7 +115,7 @@ const props = defineProps<{ items: BoxItem[] }>()
 
 .icon {
   display: inline-block;
-  font-size: 0.9rem;
+  font-size: 2em;
   justify-content: center;
   align-items: center;
   color: var(--vp-c-text-1);

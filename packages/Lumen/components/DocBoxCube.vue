@@ -23,7 +23,7 @@ const props = defineProps<{ items: BoxCubeItem[] }>()
       </span>
       <!-- 如果图标不是图片，显示 Font Awesome 图标 -->
       <span v-else class="icon">
-        <i :class="item.icon + ' fa-2xl'" :style="{ color: item.color }"></i>
+        <i :class="item.icon" :style="{ color: item.color }"></i>
       </span>
       <!-- 显示浅色模式下的图标 -->
       <img v-if="item.light" :src="item.light" alt="icon" class="img light-only" />
@@ -82,7 +82,7 @@ const props = defineProps<{ items: BoxCubeItem[] }>()
 
   .icon {
     margin-top: -1rem;
-    font-size: 1.2rem;
+    font-size: 2.5em;
     color: var(--vp-c-text-1);
   }
 
