@@ -66,6 +66,7 @@
     "./home-blocks": "./theme/home-links.scss",
     "./pic": "./theme/picture.scss",
     "./badge": "./theme/badge.scss",
+    "./doc-blocks-border": "./theme/doc-blocks-border.scss",
     "./package.json": "./package.json"
   },
   "packageManager": "pnpm@9.12.3"

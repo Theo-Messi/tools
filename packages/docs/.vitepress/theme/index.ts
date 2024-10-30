@@ -17,6 +17,7 @@ import {
 import { Aside_Data, Footer_Data, Twikoo_Data } from '../data'
 import 'virtual:group-icons.css'
 import '@theojs/lumen/theme'
+// import '@theojs/lumen/doc-blocks-border'
 
 export default {
   extends: DefaultTheme,
