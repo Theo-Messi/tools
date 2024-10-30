@@ -17,7 +17,8 @@ import '@theojs/lumen/icon' /* 图标 */
 import '@theojs/lumen/button' /* 按钮 */
 import '@theojs/lumen/colors' /* 配色 */
 import '@theojs/lumen/doc' /* 文档样式 */
-import '@theojs/lumen/doc-blocks' /* 容器样式 */
+import '@theojs/lumen/doc-blocks' /* 容器样式 默认左侧阴影模式 */
+import '@theojs/lumen/doc-blocks-border' /* 容器样式 边框 */
 import '@theojs/lumen/home' /* 首页样式 */
 import '@theojs/lumen/home-blocks' /* 首页按钮 */
 import '@theojs/lumen/pic' /* 图片样式 */
@@ -34,49 +35,75 @@ import '@theojs/lumen/badge' /* 徽章样式 */
 
 ### 容器
 
+::: tip
+容器有两种样式 左侧阴影模式(默认) 和 边框模式
+
+如果需要边框模式 可以在 `theme/index.ts` 中引入 `@theojs/lumen/doc-blocks-border`
+
+:::
 **输入**
 
 ```md
 ::: info
 [这是一个链接](https://doc.theojs.cn/)
+
+这是一段文字
 :::
 
 ::: tip
 [这是一个链接](https://doc.theojs.cn/)
+
+这是一段文字
 :::
 
 ::: warning
 [这是一个链接](https://doc.theojs.cn/)
+
+这是一段文字
 :::
 
 ::: danger
 [这是一个链接](https://doc.theojs.cn/)
+
+这是一段文字
 :::
 
 ::: details
 [这是一个链接](https://doc.theojs.cn/)
+
+这是一段文字
 :::
 ```
 
 **输出**
 ::: info
 [这是一个链接](https://doc.theojs.cn/)
+
+这是一段文字
 :::
 
 ::: tip
 [这是一个链接](https://doc.theojs.cn/)
+
+这是一段文字
 :::
 
 ::: warning
 [这是一个链接](https://doc.theojs.cn/)
+
+这是一段文字
 :::
 
 ::: danger
 [这是一个链接](https://doc.theojs.cn/)
+
+这是一段文字
 :::
 
 ::: details
 [这是一个链接](https://doc.theojs.cn/)
+
+这是一段文字
 :::
 
 ### 自定义容器
@@ -130,37 +157,67 @@ console.log('Hello, VitePress!')
 
 ```md
 > [!NOTE]
-> Highlights information that users should take into account, even when skimming.
+>
+> [这是一个链接](https://doc.theojs.cn/)
+>
+> 这是一段文字
 
 > [!TIP]
-> Optional information to help a user be more successful.
+>
+> [这是一个链接](https://doc.theojs.cn/)
+>
+> 这是一段文字
 
 > [!IMPORTANT]
-> Crucial information necessary for users to succeed.
+>
+> [这是一个链接](https://doc.theojs.cn/)
+>
+> 这是一段文字
 
 > [!WARNING]
-> Critical content demanding immediate user attention due to potential risks.
+>
+> [这是一个链接](https://doc.theojs.cn/)
+>
+> 这是一段文字
 
 > [!CAUTION]
-> Negative potential consequences of an action.
+>
+> [这是一个链接](https://doc.theojs.cn/)
+>
+> 这是一段文字
 ```
 
 **输出**
 
 > [!NOTE]
-> Highlights information that users should take into account, even when skimming.
+>
+> [这是一个链接](https://doc.theojs.cn/)
+>
+> 这是一段文字
 
 > [!TIP]
-> Optional information to help a user be more successful.
+>
+> [这是一个链接](https://doc.theojs.cn/)
+>
+> 这是一段文字
 
 > [!IMPORTANT]
-> Crucial information necessary for users to succeed.
+>
+> [这是一个链接](https://doc.theojs.cn/)
+>
+> 这是一段文字
 
 > [!WARNING]
-> Critical content demanding immediate user attention due to potential risks.
+>
+> [这是一个链接](https://doc.theojs.cn/)
+>
+> 这是一段文字
 
 > [!CAUTION]
-> Negative potential consequences of an action.
+>
+> [这是一个链接](https://doc.theojs.cn/)
+>
+> 这是一段文字
 
 ### 图片浅色与深色模式
 

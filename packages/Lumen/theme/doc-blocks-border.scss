@@ -3,7 +3,7 @@
  * -------------------------------------------------------------------------- */
 
 .vp-doc .custom-block {
-  border-left: 6px solid;
+  border: 1px solid;
 
   p:first-child {
     margin: 0 0 0 1.25rem;
@@ -33,7 +33,7 @@
   }
 
   &.details {
-    border-left-color: var(--vp-c-text-2);
+    border-color: var(--vp-c-text-2);
     p {
       color: var(--vp-c-text-2);
     }
@@ -41,7 +41,7 @@
 
   &.info,
   &.note {
-    border-left-color: var(--vp-c-text-2);
+    border-color: var(--vp-c-text-2);
     color: var(--vp-c-text-2);
     .custom-block-title,
     &:before {
@@ -50,7 +50,7 @@
   }
 
   &.tip {
-    border-left-color: var(--vp-c-green-1);
+    border-color: var(--vp-c-green-1);
     color: var(--vp-c-green-2);
     background-color: var(--vp-c-green-soft);
     .custom-block-title,
@@ -67,7 +67,7 @@
   }
 
   &.warning {
-    border-left-color: var(--vp-c-warning-1);
+    border-color: var(--vp-c-warning-1);
     color: var(--vp-c-warning-2);
     .custom-block-title,
     &:before {
@@ -77,7 +77,7 @@
 
   &.danger,
   &.caution {
-    border-left-color: var(--vp-c-danger-1);
+    border-color: var(--vp-c-danger-1);
     color: var(--vp-c-danger-2);
     .custom-block-title,
     &:before {
@@ -86,7 +86,7 @@
   }
 
   &.important {
-    border-left-color: var(--vp-c-important-1);
+    border-color: var(--vp-c-important-1);
     color: var(--vp-c-important-2);
     .custom-block-title,
     &:before {
