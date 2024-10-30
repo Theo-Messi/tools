@@ -17,24 +17,16 @@ const props = defineProps<{ items: BoxItem[] }>()
       :target="isExternalLink(item.link) ? '_blank' : '_self'"
       rel="noopener"
     >
-      <div class="box-content">
-        <!-- 如果有标签，则显示标签 -->
-        <span v-if="item.tag" class="tag">{{ item.tag }}</span>
-        <!-- 如果图标是图片，则显示图片 -->
-        <span v-if="isImage(item.icon)">
-          <img :src="item.icon" alt="icon" class="icon-container" />
-        </span>
-        <!-- 如果图标不是图片，则显示 Font Awesome 图标 -->
-        <span v-else class="icon">
-          <i :class="item.icon" :style="{ color: item.color }"></i>
-        </span>
-        <!-- 如果有浅色模式图标，则显示 -->
-        <img v-if="item.light" :src="item.light" alt="icon" class="icon-container light-only" />
-        <!-- 如果有深色模式图标，则显示 -->
-        <img v-if="item.dark" :src="item.dark" alt="icon" class="icon-container dark-only" />
-        <!-- 显示名称 -->
-        <p class="name">{{ item.name }}</p>
-      </div>
+      <template v-if="item.icon">
+        <img v-if="isImage(item.icon)" :src="item.icon" alt="Icon" class="icon" />
+        <i v-else :class="item.icon + ' icon'" :style="{ color: item.color }" alt="Icon"></i>
+      </template>
+      <template v-else>
+        <img v-if="item.light" :src="item.light" alt="Icon" class="icon light-only" />
+        <img v-if="item.dark" :src="item.dark" alt="Icon" class="icon dark-only" />
+      </template>
+      <span class="name">{{ item.name }}</span>
+      <span v-if="item.tag" class="tag">{{ item.tag }}</span>
     </a>
   </div>
 </template>
@@ -64,6 +56,10 @@ const props = defineProps<{ items: BoxItem[] }>()
   height: 3.5rem;
   display: flex;
   text-decoration: none !important;
+  letter-spacing: -0.02em;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
   transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 
   &:hover {
@@ -83,15 +79,6 @@ const props = defineProps<{ items: BoxItem[] }>()
   }
 }
 
-.box-content {
-  letter-spacing: -0.02em;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
 .tag {
   line-height: 1;
   position: absolute;
@@ -105,17 +92,10 @@ const props = defineProps<{ items: BoxItem[] }>()
   z-index: 1;
 }
 
-.icon-container {
-  width: 2em;
-  height: 2em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .icon {
-  display: inline-block;
+  height: 1em;
   font-size: 2em;
+  display: flex;
   justify-content: center;
   align-items: center;
   color: var(--vp-c-text-1);

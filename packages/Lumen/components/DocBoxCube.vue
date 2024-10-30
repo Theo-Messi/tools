@@ -17,21 +17,15 @@ const props = defineProps<{ items: BoxCubeItem[] }>()
       :target="isExternalLink(item.link) ? '_blank' : '_self'"
       rel="noopener"
     >
-      <!-- 如果图标是图片，显示图片 -->
-      <span v-if="isImage(item.icon)">
-        <img :src="item.icon" alt="icon" class="img" />
-      </span>
-      <!-- 如果图标不是图片，显示 Font Awesome 图标 -->
-      <span v-else class="icon">
-        <i :class="item.icon" :style="{ color: item.color }"></i>
-      </span>
-      <!-- 显示浅色模式下的图标 -->
-      <img v-if="item.light" :src="item.light" alt="icon" class="img light-only" />
-      <!-- 显示深色模式下的图标 -->
-      <img v-if="item.dark" :src="item.dark" alt="icon" class="img dark-only" />
-      <!-- 显示项目名称 -->
+      <template v-if="item.icon">
+        <img v-if="isImage(item.icon)" :src="item.icon" alt="Icon" class="icon" />
+        <i v-else :class="item.icon + ' icon'" :style="{ color: item.color }" alt="Icon"></i>
+      </template>
+      <template v-else>
+        <img v-if="item.light" :src="item.light" alt="Icon" class="icon light-only" />
+        <img v-if="item.dark" :src="item.dark" alt="Icon" class="icon dark-only" />
+      </template>
       <span class="name">{{ item.name }}</span>
-      <!-- 显示项目描述 -->
       <span class="desc">{{ item.desc }}</span>
     </a>
   </div>
@@ -62,6 +56,8 @@ const props = defineProps<{ items: BoxCubeItem[] }>()
   align-items: center;
   justify-content: center;
   position: relative;
+  -webkit-text-decoration: none !important;
+  text-decoration: none !important;
   transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 
   &:hover {
@@ -83,12 +79,8 @@ const props = defineProps<{ items: BoxCubeItem[] }>()
   .icon {
     margin-top: -1rem;
     font-size: 2.5em;
-    color: var(--vp-c-text-1);
-  }
-
-  .img {
     width: 2.5rem;
-    margin-top: -1rem;
+    color: var(--vp-c-text-1);
   }
 
   .name {

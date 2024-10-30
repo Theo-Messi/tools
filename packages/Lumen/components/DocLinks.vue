@@ -25,7 +25,7 @@ const props = defineProps<{ items: LinkItem[] }>()
       <template v-else>
         <img v-if="item.light" :src="item.light" alt="Icon" class="icon light-only" />
         <img v-if="item.dark" :src="item.dark" alt="Icon" class="icon dark-only" />
-        <i v-if="!item.light && !item.dark" class="fas fa-arrow-up-right-from-square fa-icon"></i>
+        <i v-if="!item.light && !item.dark" class="fas fa-arrow-up-right-from-square fa-icon" alt="Icon"></i>
       </template>
 
       <!-- 渲染链接项的名称和描述 -->
