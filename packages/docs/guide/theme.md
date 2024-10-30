@@ -17,7 +17,8 @@ import '@theojs/lumen/icon' /* 图标 */
 import '@theojs/lumen/button' /* 按钮 */
 import '@theojs/lumen/colors' /* 配色 */
 import '@theojs/lumen/doc' /* 文档样式 */
-import '@theojs/lumen/doc-blocks' /* 容器样式 */
+import '@theojs/lumen/doc-blocks' /* 容器(默认):左侧阴影样式 */
+import '@theojs/lumen/doc-blocks-border' /* 容器:边框样式 */
 import '@theojs/lumen/home' /* 首页样式 */
 import '@theojs/lumen/home-blocks' /* 首页按钮 */
 import '@theojs/lumen/pic' /* 图片样式 */
@@ -34,49 +35,82 @@ import '@theojs/lumen/badge' /* 徽章样式 */
 
 ### 容器
 
+::: info 容器分为 `左侧阴影样式(默认)` 和 `边框样式`
+
+**如需切换至边框样式**，可以在 `theme/index.ts` 中按以下顺序引入
+
+```ts
+// theme/index.ts
+import '@theojs/lumen/theme'
+import '@theojs/lumen/doc-blocks-border' // [!code ++]
+```
+
+**注意**: 引入 `doc-blocks-border` 时要放在 `@theojs/lumen/theme` 之后，以确保边框样式覆盖默认样式。**如果放在上方，可能会导致样式融合，不同效果相互影响**。
+
+:::
 **输入**
 
 ```md
 ::: info
 [这是一个链接](https://doc.theojs.cn/)
+
+这是一段文字
 :::
 
 ::: tip
 [这是一个链接](https://doc.theojs.cn/)
+
+这是一段文字
 :::
 
 ::: warning
 [这是一个链接](https://doc.theojs.cn/)
+
+这是一段文字
 :::
 
 ::: danger
 [这是一个链接](https://doc.theojs.cn/)
+
+这是一段文字
 :::
 
 ::: details
 [这是一个链接](https://doc.theojs.cn/)
+
+这是一段文字
 :::
 ```
 
 **输出**
 ::: info
 [这是一个链接](https://doc.theojs.cn/)
+
+这是一段文字
 :::
 
 ::: tip
 [这是一个链接](https://doc.theojs.cn/)
+
+这是一段文字
 :::
 
 ::: warning
 [这是一个链接](https://doc.theojs.cn/)
+
+这是一段文字
 :::
 
 ::: danger
 [这是一个链接](https://doc.theojs.cn/)
+
+这是一段文字
 :::
 
 ::: details
 [这是一个链接](https://doc.theojs.cn/)
+
+这是一段文字
 :::
 
 ### 自定义容器
@@ -130,37 +164,67 @@ console.log('Hello, VitePress!')
 
 ```md
 > [!NOTE]
-> Highlights information that users should take into account, even when skimming.
+>
+> [这是一个链接](https://doc.theojs.cn/)
+>
+> 这是一段文字
 
 > [!TIP]
-> Optional information to help a user be more successful.
+>
+> [这是一个链接](https://doc.theojs.cn/)
+>
+> 这是一段文字
 
 > [!IMPORTANT]
-> Crucial information necessary for users to succeed.
+>
+> [这是一个链接](https://doc.theojs.cn/)
+>
+> 这是一段文字
 
 > [!WARNING]
-> Critical content demanding immediate user attention due to potential risks.
+>
+> [这是一个链接](https://doc.theojs.cn/)
+>
+> 这是一段文字
 
 > [!CAUTION]
-> Negative potential consequences of an action.
+>
+> [这是一个链接](https://doc.theojs.cn/)
+>
+> 这是一段文字
 ```
 
 **输出**
 
 > [!NOTE]
-> Highlights information that users should take into account, even when skimming.
+>
+> [这是一个链接](https://doc.theojs.cn/)
+>
+> 这是一段文字
 
 > [!TIP]
-> Optional information to help a user be more successful.
+>
+> [这是一个链接](https://doc.theojs.cn/)
+>
+> 这是一段文字
 
 > [!IMPORTANT]
-> Crucial information necessary for users to succeed.
+>
+> [这是一个链接](https://doc.theojs.cn/)
+>
+> 这是一段文字
 
 > [!WARNING]
-> Critical content demanding immediate user attention due to potential risks.
+>
+> [这是一个链接](https://doc.theojs.cn/)
+>
+> 这是一段文字
 
 > [!CAUTION]
-> Negative potential consequences of an action.
+>
+> [这是一个链接](https://doc.theojs.cn/)
+>
+> 这是一段文字
 
 ### 图片浅色与深色模式
 
