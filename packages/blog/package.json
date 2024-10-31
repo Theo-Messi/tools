@@ -7,7 +7,7 @@
     "preview": "vitepress preview"
   },
   "devDependencies": {
-    "vitepress": "^1.4.2"
+    "vitepress": "^1.4.3"
   },
   "dependencies": {
     "@theojs/solis": "workspace:*",
