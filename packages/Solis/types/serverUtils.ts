@@ -1,7 +1,7 @@
 import { globby } from 'globby'
 import matter from 'gray-matter'
-import fs from 'fs-extra'
-import { resolve } from 'path'
+import fs from 'node:fs/promises'
+import { resolve } from 'node:path'
 
 // 定义 FrontMatter 的类型
 interface FrontMatter {
@@ -31,38 +31,21 @@ export async function getPosts(pageSize: number): Promise<Post[]> {
     })
   )
 
+  // 根据置顶标记和日期排序文章
   posts.sort(_compareDate)
 
-  // 分离置顶文章和普通文章
-  const [topPosts, regularPosts]: [Post[], Post[]] = posts.reduce(
-    ([top, regular], post) => {
-      if (post.frontMatter.top) {
-        top.push(post)
-      } else {
-        regular.push(post)
-      }
-      return [top, regular]
-    },
-    [[], []] as [Post[], Post[]]
-  )
-
-  // 将置顶文章放到普通文章的前面
-  const allPosts = [...topPosts, ...regularPosts]
-
   // 生成分页页面的 markdown 文件
-  await generatePaginationPages(allPosts.length, pageSize)
+  await generatePaginationPages(posts, pageSize)
 
-  return allPosts
+  return posts
 }
 
-async function generatePaginationPages(total: number, pageSize: number): Promise<void> {
-  const pagesNum = Math.ceil(total / pageSize)
+async function generatePaginationPages(posts: Post[], pageSize: number): Promise<void> {
+  const pagesNum = Math.ceil(posts.length / pageSize)
   const basePath = resolve('./')
 
-  if (total > 0) {
-    const writePromises: Promise<void>[] = []
-    for (let i = 1; i <= pagesNum; i++) {
-      const pageContent = `
+  const writePromises = Array.from({ length: pagesNum }, (_, i) => {
+    const pageContent = `
 ---
 layout: doc
 aside: false
@@ -73,22 +56,19 @@ editLink: false
 import { Page } from "@theojs/solis";
 import { useData } from "vitepress";
 const { theme } = useData();
-const posts = theme.value.posts.slice(${pageSize * (i - 1)},${pageSize * i});
+const posts = theme.value.posts.slice(${pageSize * i}, ${pageSize * (i + 1)});
 </script>
-<Page :posts="posts" :pageCurrent="${i}" :pagesNum="${pagesNum}" />
-      `.trim()
+<Page :posts="posts" :pageCurrent="${i + 1}" :pagesNum="${pagesNum}" />
+    `.trim()
 
-      const filePath = resolve(basePath, `page_${i}.md`)
-      writePromises.push(fs.writeFile(filePath, pageContent))
-    }
+    const filePath = resolve(basePath, `page_${i + 1}.md`)
+    return fs.writeFile(filePath, pageContent)
+  })
 
-    await Promise.all(writePromises)
+  await Promise.all(writePromises)
 
-    // 将 page_1.md 重命名为 index.md 用作首页
-    await fs.move(resolve(basePath, 'page_1.md'), resolve(basePath, 'index.md'), {
-      overwrite: true
-    })
-  }
+  // 将 page_1.md 重命名为 index.md 作为首页
+  await fs.rename(resolve(basePath, 'page_1.md'), resolve(basePath, 'index.md'))
 }
 
 function _convertDate(date: string = new Date().toString()): string {
@@ -96,7 +76,8 @@ function _convertDate(date: string = new Date().toString()): string {
 }
 
 function _compareDate(postA: Post, postB: Post): number {
-  if (postA.frontMatter.top && !postB.frontMatter.top) return -1
-  if (!postA.frontMatter.top && postB.frontMatter.top) return 1
-  return postA.frontMatter.date < postB.frontMatter.date ? 1 : -1
+  return (
+    (postB.frontMatter.top ? 1 : 0) - (postA.frontMatter.top ? 1 : 0) ||
+    (postA.frontMatter.date < postB.frontMatter.date ? 1 : -1)
+  )
 }
