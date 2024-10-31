@@ -15,9 +15,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     if: >
-      github.event_name == 'push' &&
+      (github.event_name == 'push' && 
       github.event.head_commit != null && 
-      startsWith(github.event.head_commit.message, 'release:') == false
+      startsWith(github.event.head_commit.message, 'release:') == false) ||
+      github.event_name == 'pull_request'
 
     steps:
       - name: Checkout code
