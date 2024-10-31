@@ -2,9 +2,6 @@ name: Publish Any Commit
 
 on:
   pull_request:
-    paths:
-      - 'packages/Lumen/**'
-      - 'packages/Solis/**'
   push:
     branches:
       - '**'
