@@ -1,13 +1,11 @@
 <script setup lang="ts">
 import { onMounted, onBeforeUnmount, watch, ref, nextTick } from 'vue'
 import { useRoute } from 'vitepress'
-import { initTwikoo, clearTwikoo } from '../types/functions'
+import { initTwikoo, clearTwikoo, TwikooData } from '../types/functions'
 
 // 接受 Twikoo_Data 作为 prop
 const props = defineProps<{
-  Twikoo_Data: {
-    envId: string
-  }
+  Twikoo_Data: TwikooData
 }>()
 
 const route = useRoute()

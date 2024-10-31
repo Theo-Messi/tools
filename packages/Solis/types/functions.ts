@@ -174,7 +174,11 @@ export function sortArticlesByTop(articles: Article[]): Article[] {
 
 // 转换日期的函数
 export function convertDate(date: string = new Date().toString()): string {
-  return new Date(date).toISOString().split('T')[0]
+  let parsedDate = new Date(date)
+  if (isNaN(parsedDate.getTime())) {
+    parsedDate = new Date() // 无效日期时使用当前日期
+  }
+  return parsedDate.toISOString().split('T')[0]
 }
 
 // 获取 GitHub 用户信息的函数
@@ -242,4 +246,9 @@ export function clearTwikoo(): void {
   if (el) {
     el.innerHTML = '' // 清空评论组件的内容
   }
+}
+
+// Twikoo 配置数据类型定义
+export interface TwikooData {
+  envId: string // Twikoo 的环境 ID
 }
