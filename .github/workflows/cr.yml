@@ -14,6 +14,10 @@ on:
       - 'packages/Lumen/**'
       - 'packages/Solis/**'
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.number }}
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
