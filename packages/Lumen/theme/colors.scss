@@ -12,8 +12,6 @@
   --c-white-dark: rgba(248, 248, 248, 1);
   --c-black-darker: rgba(13, 18, 27, 1);
   --c-black: rgba(17, 24, 39, 1);
-  --c-black-light: rgba(22, 31, 50, 1);
-  --c-black-lighter: rgba(38, 42, 68, 1);
 
   --c-green-1: rgba(61, 214, 140, 1);
   --c-green-2: rgba(48, 164, 108, 1);
@@ -27,11 +25,7 @@
   --vp-c-brand-soft: var(--vp-c-green-soft);
 
   --c-text-dark-1: rgba(217, 230, 235, 1);
-  --c-text-dark-2: rgba(196, 221, 230, 1);
-  --c-text-dark-3: rgba(171, 196, 204, 1);
   --c-text-light-1: rgba(44, 62, 80, 1);
-  --c-text-light-2: rgba(71, 101, 130, 1);
-  --c-text-light-3: rgba(144, 164, 183, 1);
 
   --vp-c-brand-text: var(--c-text-light-1);
   --c-bg-accent: var(--c-white-dark);
@@ -45,12 +39,10 @@ html.dark:root {
 
   --vp-c-text-1: var(--c-text-dark-1);
   --vp-c-brand-text: var(--c-text-light-1);
-  --c-text-light: var(--c-text-dark-2);
-  --c-text-lighter: var(--c-text-dark-3);
-  --c-bg-accent: var(--c-black-light);
+  --c-bg-accent: var(--vp-c-bg-soft);
 
   --vp-c-bg: var(--c-black);
-  --vp-c-bg-soft: var(--c-black-light);
+  --vp-c-bg-soft: rgba(22, 31, 50, 1);
   --vp-c-bg-alt: rgba(13, 18, 27, 1);
   --vp-c-bg-elv: var(--vp-c-bg-soft);
 }
