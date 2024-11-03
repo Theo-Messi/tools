@@ -46,8 +46,8 @@ importers:
         specifier: ^5.4.10
         version: 5.4.10(@types/node@22.8.7)(sass-embedded@1.79.4)(sass@1.80.6)
       vitepress:
-        specifier: ^1.4.3
-        version: 1.4.3(@algolia/client-search@5.7.0)(@types/node@22.8.7)(axios@1.7.7)(postcss@8.4.47)(sass-embedded@1.79.4)(sass@1.80.6)(search-insights@2.17.2)(typescript@5.6.3)
+        specifier: ^1.4.4
+        version: 1.4.4(@algolia/client-search@5.7.0)(@types/node@22.8.7)(axios@1.7.7)(postcss@8.4.47)(sass-embedded@1.79.4)(sass@1.80.6)(search-insights@2.17.2)(typescript@5.6.3)
 
   packages/Solis:
     dependencies:
@@ -86,8 +86,8 @@ importers:
         specifier: ^5.4.10
         version: 5.4.10(@types/node@22.8.7)(sass-embedded@1.79.4)(sass@1.80.6)
       vitepress:
-        specifier: ^1.4.3
-        version: 1.4.3(@algolia/client-search@5.7.0)(@types/node@22.8.7)(axios@1.7.7)(postcss@8.4.47)(sass-embedded@1.79.4)(sass@1.80.6)(search-insights@2.17.2)(typescript@5.6.3)
+        specifier: ^1.4.4
+        version: 1.4.4(@algolia/client-search@5.7.0)(@types/node@22.8.7)(axios@1.7.7)(postcss@8.4.47)(sass-embedded@1.79.4)(sass@1.80.6)(search-insights@2.17.2)(typescript@5.6.3)
 
   packages/blog:
     dependencies:
@@ -99,8 +99,8 @@ importers:
         version: 3.5.12(typescript@5.6.3)
     devDependencies:
       vitepress:
-        specifier: ^1.4.3
-        version: 1.4.3(@algolia/client-search@5.7.0)(@types/node@22.8.7)(axios@1.7.7)(postcss@8.4.47)(sass-embedded@1.79.4)(sass@1.80.6)(search-insights@2.17.2)(typescript@5.6.3)
+        specifier: ^1.4.4
+        version: 1.4.4(@algolia/client-search@5.7.0)(@types/node@22.8.7)(axios@1.7.7)(postcss@8.4.47)(sass-embedded@1.79.4)(sass@1.80.6)(search-insights@2.17.2)(typescript@5.6.3)
 
   packages/docs:
     dependencies:
@@ -121,8 +121,8 @@ importers:
         version: 3.5.12(typescript@5.6.3)
     devDependencies:
       vitepress:
-        specifier: ^1.4.3
-        version: 1.4.3(@algolia/client-search@5.7.0)(@types/node@22.8.7)(axios@1.7.7)(postcss@8.4.47)(sass-embedded@1.79.4)(sass@1.80.6)(search-insights@2.17.2)(typescript@5.6.3)
+        specifier: ^1.4.4
+        version: 1.4.4(@algolia/client-search@5.7.0)(@types/node@22.8.7)(axios@1.7.7)(postcss@8.4.47)(sass-embedded@1.79.4)(sass@1.80.6)(search-insights@2.17.2)(typescript@5.6.3)
       vitepress-plugin-google-analytics:
         specifier: ^1.0.2
         version: 1.0.2
@@ -1721,8 +1721,8 @@ packages:
   vitepress-plugin-group-icons@1.3.0:
     resolution: {integrity: sha512-E6Up5HyWh0gxmy2v1v1VVzQpL9UOZuHgoqOmSNBMTRv2rSwg6nk8MeIiJD0tJ0xtWrY5dwG69ENZPyFoD+fVoA==}
 
-  vitepress@1.4.3:
-    resolution: {integrity: sha512-956c2K2Mr0ubY9bTc2lCJD3g0mgo0mARB1iJC/BqUt4s0AM8Wl60wSU4zbFnzV7X2miFK1XJDKzGZnuEN90umw==}
+  vitepress@1.4.4:
+    resolution: {integrity: sha512-ba0Ttkxh1LXwL9n9ReK+/UNUJpIB2Wu8ktcex17zzQkg2Le0wIiMb5ATMYCZKfzINxJWSUk/nilVjz9EtGGDLg==}
     hasBin: true
     peerDependencies:
       markdown-it-mathjax3: ^4
@@ -3293,7 +3293,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  vitepress@1.4.3(@algolia/client-search@5.7.0)(@types/node@22.8.7)(axios@1.7.7)(postcss@8.4.47)(sass-embedded@1.79.4)(sass@1.80.6)(search-insights@2.17.2)(typescript@5.6.3):
+  vitepress@1.4.4(@algolia/client-search@5.7.0)(@types/node@22.8.7)(axios@1.7.7)(postcss@8.4.47)(sass-embedded@1.79.4)(sass@1.80.6)(search-insights@2.17.2)(typescript@5.6.3):
     dependencies:
       '@docsearch/css': 3.6.2
       '@docsearch/js': 3.6.2(@algolia/client-search@5.7.0)(search-insights@2.17.2)
