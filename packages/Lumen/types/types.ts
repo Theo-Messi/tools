@@ -22,13 +22,12 @@ export interface BoxCubeItem {
 
 // DocBox
 export interface BoxItem {
-  link: string // 链接项的链接地址。
-  icon: string // 链接项的图标地址或类名。
-  name: string // 链接项的名称。
-  tag?: string // 链接项的标签（可选）。
-  light?: string // 浅色模式下的图标 URL（可选）。
-  dark?: string // 深色模式下的图标 URL（可选）。
-  color?: string // 图标的颜色（可选）。
+  name: string
+  link: string
+  tag?: string
+  color?: string
+  icon?: string // 对于 `iconify` 图标，可以是字符串
+  img?: string | { light: string; dark: string } // 支持单一图片地址或包含 light 和 dark 两种模式的对象
 }
 
 // DocAsideLogo

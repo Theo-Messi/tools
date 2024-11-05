@@ -1,7 +1,10 @@
 <script setup lang="ts">
-import { BoxItem, isImage, isExternalLink } from '../types'
-
+import { BoxItem, isExternalLink } from '../types'
+import { Icon } from '@iconify/vue'
 const props = defineProps<{ items: BoxItem[] }>()
+
+// 用于检查是否为 Iconify 图标格式的辅助函数
+const isIconifyIcon = (icon: string) => icon.includes(':')
 </script>
 
 <template>
@@ -18,12 +21,13 @@ const props = defineProps<{ items: BoxItem[] }>()
       rel="noopener"
     >
       <template v-if="item.icon">
-        <img v-if="isImage(item.icon)" :src="item.icon" alt="Icon" class="icon" />
+        <Icon v-if="isIconifyIcon(item.icon)" :icon="item.icon" class="icon" :style="{ color: item.color }" />
         <i v-else :class="item.icon + ' icon'" :style="{ color: item.color }" alt="Icon"></i>
       </template>
-      <template v-else>
-        <img v-if="item.light" :src="item.light" alt="Icon" class="icon light-only" />
-        <img v-if="item.dark" :src="item.dark" alt="Icon" class="icon dark-only" />
+      <template v-else-if="item.img">
+        <img v-if="typeof item.img === 'object'" :src="item.img.light" alt="Icon" class="icon light-only" />
+        <img v-if="typeof item.img === 'object'" :src="item.img.dark" alt="Icon" class="icon dark-only" />
+        <img v-else :src="item.img" alt="Icon" class="icon" />
       </template>
       <span class="name">{{ item.name }}</span>
       <span v-if="item.tag" class="tag">{{ item.tag }}</span>

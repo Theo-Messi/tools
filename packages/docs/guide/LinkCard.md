@@ -63,8 +63,15 @@ export default {
 ```
 
 **输出**
+
 <Box
-  :items="[
+:items="[
+    {
+    name: 'Home',
+    link: '/home',
+    icon: 'mdi:home',
+    color: '#4caf50',
+  },
     //使用FontAwesome图标 + 颜色
     { name: 'Vue.js', link: '', icon: 'fab fa-vuejs', color: '#4FC08D' },
     //使用FontAwesome图标 + 标签
@@ -88,18 +95,17 @@ export default {
     {
       name: 'GitHub',
       link: '',
-      icon: 'https://i.theojs.cn/logo/github.svg',
+      img: 'https://i.theojs.cn/logo/github.svg',
       tag: 'Github'
     },
     //使用自定义图标 + 深浅模式 + 标签
     {
       name: 'GitHub',
       link: '',
-      light: 'https://i.theojs.cn/logo/github.svg',
-      dark: 'https://i.theojs.cn/logo/github-dark.svg',
+      img: { light: 'https://i.theojs.cn/logo/github.svg', dark: 'https://i.theojs.cn/logo/github-dark.svg' },
       tag: 'Github'
     }
-  ]"
+]"
 />
 
 ### 参数说明
