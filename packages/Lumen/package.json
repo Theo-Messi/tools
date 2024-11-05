@@ -1,6 +1,6 @@
 {
   "name": "@theojs/lumen",
-  "version": "3.6.0",
+  "version": "4.0.0",
   "description": "用于 VitePress 主题美化和集成 Vue 功能组件",
   "repository": {
     "type": "git",
