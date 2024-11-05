@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BoxItem, isImage, isExternalLink } from '../types'
+import { BoxItem, isExternalLink, isIconifyIcon, Icon } from '../types'
 
 const props = defineProps<{ items: BoxItem[] }>()
 </script>
@@ -18,12 +18,13 @@ const props = defineProps<{ items: BoxItem[] }>()
       rel="noopener"
     >
       <template v-if="item.icon">
-        <img v-if="isImage(item.icon)" :src="item.icon" alt="Icon" class="icon" />
+        <Icon v-if="isIconifyIcon(item.icon)" :icon="item.icon" class="iconify" :style="{ color: item.color }" />
         <i v-else :class="item.icon + ' icon'" :style="{ color: item.color }" alt="Icon"></i>
       </template>
-      <template v-else>
-        <img v-if="item.light" :src="item.light" alt="Icon" class="icon light-only" />
-        <img v-if="item.dark" :src="item.dark" alt="Icon" class="icon dark-only" />
+      <template v-else-if="item.image">
+        <img v-if="typeof item.image === 'object'" :src="item.image.light" alt="Icon" class="icon light-only" />
+        <img v-if="typeof item.image === 'object'" :src="item.image.dark" alt="Icon" class="icon dark-only" />
+        <img v-else :src="item.image" alt="Icon" class="icon" />
       </template>
       <span class="name">{{ item.name }}</span>
       <span v-if="item.tag" class="tag">{{ item.tag }}</span>
@@ -95,6 +96,15 @@ const props = defineProps<{ items: BoxItem[] }>()
 .icon {
   height: 1em;
   font-size: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--vp-c-text-1);
+}
+
+.iconify {
+  font-size: 2.4em;
+  margin: 0 -0.1em 0 -0.1em;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -6,7 +6,7 @@ title: 快速开始
   :items="[
     {
       name: '演示站点',
-      icon: 'https://i.theojs.cn/docs/202405101119004.png',
+      image: 'https://i.theojs.cn/docs/202405101119004.png',
       desc: 'VitePress的博客主题',
       link: 'https://share.theojs.cn/'
     }

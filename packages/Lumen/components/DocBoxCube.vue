@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BoxCubeItem, isImage, isExternalLink } from '../types'
+import { BoxCubeItem, isExternalLink, isIconifyIcon, Icon } from '../types'
 
 const props = defineProps<{ items: BoxCubeItem[] }>()
 </script>
@@ -18,12 +18,13 @@ const props = defineProps<{ items: BoxCubeItem[] }>()
       rel="noopener"
     >
       <template v-if="item.icon">
-        <img v-if="isImage(item.icon)" :src="item.icon" alt="Icon" class="icon" />
+        <Icon v-if="isIconifyIcon(item.icon)" :icon="item.icon" class="iconify" :style="{ color: item.color }" />
         <i v-else :class="item.icon + ' icon'" :style="{ color: item.color }" alt="Icon"></i>
       </template>
-      <template v-else>
-        <img v-if="item.light" :src="item.light" alt="Icon" class="icon light-only" />
-        <img v-if="item.dark" :src="item.dark" alt="Icon" class="icon dark-only" />
+      <template v-else-if="item.image">
+        <img v-if="typeof item.image === 'object'" :src="item.image.light" alt="Icon" class="icon light-only" />
+        <img v-if="typeof item.image === 'object'" :src="item.image.dark" alt="Icon" class="icon dark-only" />
+        <img v-else :src="item.image" alt="Icon" class="icon" />
       </template>
       <span class="name">{{ item.name }}</span>
       <span class="desc">{{ item.desc }}</span>
@@ -79,7 +80,13 @@ const props = defineProps<{ items: BoxCubeItem[] }>()
   .icon {
     margin-top: -1rem;
     font-size: 2.5em;
-    width: 2.5rem;
+    height: 2.5rem;
+    color: var(--vp-c-text-1);
+  }
+
+  .iconify {
+    margin-top: -1rem;
+    font-size: 3em;
     color: var(--vp-c-text-1);
   }
 

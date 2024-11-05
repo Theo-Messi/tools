@@ -6,7 +6,7 @@ title: Twikoo 评论
   :items="[
     {
       name: '如何部署请查看 Twikoo 文档',
-      icon: 'https://twikoo.js.org/twikoo-logo-home.png',
+      image: 'https://twikoo.js.org/twikoo-logo-home.png',
       desc: '一个简洁、安全、免费的静态网站评论系统。',
       link: 'https://twikoo.js.org/quick-start.html'
     }
