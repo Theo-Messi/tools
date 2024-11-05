@@ -72,6 +72,7 @@ export interface Group {
 export interface Beian {
   icp?: string // ICP 备案号（可选）
   police?: string // 公安备案号（可选）
+  showIcon?: boolean // 图标（可选）
 }
 
 export interface Author {
