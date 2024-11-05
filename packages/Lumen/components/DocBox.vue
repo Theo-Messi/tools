@@ -1,10 +1,7 @@
 <script setup lang="ts">
-import { BoxItem, isExternalLink } from '../types'
-import { Icon } from '@iconify/vue'
-const props = defineProps<{ items: BoxItem[] }>()
+import { BoxItem, isExternalLink, isIconifyIcon, Icon } from '../types'
 
-// 用于检查是否为 Iconify 图标格式的辅助函数
-const isIconifyIcon = (icon: string) => icon.includes(':')
+const props = defineProps<{ items: BoxItem[] }>()
 </script>
 
 <template>
@@ -21,13 +18,13 @@ const isIconifyIcon = (icon: string) => icon.includes(':')
       rel="noopener"
     >
       <template v-if="item.icon">
-        <Icon v-if="isIconifyIcon(item.icon)" :icon="item.icon" class="icon" :style="{ color: item.color }" />
+        <Icon v-if="isIconifyIcon(item.icon)" :icon="item.icon" class="iconify" :style="{ color: item.color }" />
         <i v-else :class="item.icon + ' icon'" :style="{ color: item.color }" alt="Icon"></i>
       </template>
-      <template v-else-if="item.img">
-        <img v-if="typeof item.img === 'object'" :src="item.img.light" alt="Icon" class="icon light-only" />
-        <img v-if="typeof item.img === 'object'" :src="item.img.dark" alt="Icon" class="icon dark-only" />
-        <img v-else :src="item.img" alt="Icon" class="icon" />
+      <template v-else-if="item.image">
+        <img v-if="typeof item.image === 'object'" :src="item.image.light" alt="Icon" class="icon light-only" />
+        <img v-if="typeof item.image === 'object'" :src="item.image.dark" alt="Icon" class="icon dark-only" />
+        <img v-else :src="item.image" alt="Icon" class="icon" />
       </template>
       <span class="name">{{ item.name }}</span>
       <span v-if="item.tag" class="tag">{{ item.tag }}</span>
@@ -99,6 +96,15 @@ const isIconifyIcon = (icon: string) => icon.includes(':')
 .icon {
   height: 1em;
   font-size: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--vp-c-text-1);
+}
+
+.iconify {
+  font-size: 2.4em;
+  margin: 0 -0.1em 0 -0.1em;
   display: flex;
   justify-content: center;
   align-items: center;

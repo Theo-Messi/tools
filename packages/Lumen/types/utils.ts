@@ -13,23 +13,13 @@ export const usePrelink = (): Prelink | undefined => {
 }
 
 /**
- * 判断给定的 URL 是否为图像文件。
+ * 检查给定的图标字符串是否为 Iconify 格式。
+ * Iconify 图标通常包含一个冒号（例如 "mdi:home"）。
  *
- * @param {string} url - 要判断的 URL。
- * @returns {boolean} - 如果 URL 是图像文件，则返回 `true`，否则返回 `false`。
- *
- * 该函数首先检查 URL 是否以 `http` 或 `https` 开头，并且是否包含有效的图像文件后缀（如 png, jpeg, gif 等）。
- * 如果 URL 没有后缀，但以 `http` 或 `https` 开头，则也视为有效的图像链接。
+ * @param icon - 要检查的图标字符串。
+ * @returns 如果图标是 Iconify 格式，则返回 `true`，否则返回 `false`。
  */
-export const isImage = (url: string): boolean => {
-  // 检查 URL 是否包含合法的图像文件后缀
-  const hasValidExtension = /\.(png|jpe?g|gif|svg|webp|bmp|tif?f|tiff|ico|avif)(\?.*)?$/i.test(url)
-  // 检查 URL 是否以 http 或 https 开头
-  const isHttpOrHttps = /^https?:\/\//i.test(url)
-
-  // 如果包含有效后缀，或没有后缀但以 http 或 https 开头，则返回 true
-  return hasValidExtension || (isHttpOrHttps && !/\.(\w+)$/.test(url))
-}
+export const isIconifyIcon = (icon: string): boolean => icon.includes(':')
 
 /**
  * 判断给定的链接是否是外部链接。

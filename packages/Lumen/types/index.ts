@@ -9,6 +9,7 @@ export { default as HomeUnderline } from '../components/HomeUnderline.vue'
 export { default as Twikoo } from '../components/DocTwikoo.vue'
 export { default as ShareButton } from '../components/ShareButton.vue'
 
+export { Icon } from '@iconify/vue'
 export * from './types'
 export * from './utils'
 

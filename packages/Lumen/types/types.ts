@@ -4,20 +4,18 @@ export interface LinkItem {
   desc?: string // 链接项的描述（可选）
   link: string // 链接项的 URL
   color?: string | null // 图标的颜色（可选）
-  icon?: string | null // 图标的 URL 或类名（可选）
-  light?: string | null // 浅色模式下的图标 URL（可选）
-  dark?: string | null // 深色模式下的图标 URL（可选）
+  icon?: string | null // 对于 `iconify`或者 `fortawesome` 图标
+  image?: string | { light: string; dark: string } // 支持单一图片地址或包含 light 和 dark 两种模式的对象
 }
 
 //  DocBoxCube
 export interface BoxCubeItem {
-  icon: string // 图标的 URL 或类名。
   name: string // 项目的名称。
   link: string // 项目的链接。
   desc?: string // 项目的描述（可选）。
   color?: string // 图标的颜色（可选）。
-  light?: string // 浅色模式下的图标 URL（可选）。
-  dark?: string // 深色模式下的图标 URL（可选）。
+  icon?: string | null // 对于 `iconify`或者 `fortawesome` 图标
+  image?: string | { light: string; dark: string } // 支持单一图片地址或包含 light 和 dark 两种模式的对象
 }
 
 // DocBox
@@ -26,8 +24,8 @@ export interface BoxItem {
   link: string
   tag?: string
   color?: string
-  icon?: string // 对于 `iconify` 图标，可以是字符串
-  img?: string | { light: string; dark: string } // 支持单一图片地址或包含 light 和 dark 两种模式的对象
+  icon?: string // 对于 `iconify`或者 `fortawesome` 图标
+  image?: string | { light: string; dark: string } // 支持单一图片地址或包含 light 和 dark 两种模式的对象
 }
 
 // DocAsideLogo

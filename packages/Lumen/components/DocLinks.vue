@@ -1,13 +1,11 @@
 <script setup lang="ts">
-import { LinkItem, isImage, isExternalLink } from '../types'
+import { LinkItem, isExternalLink, isIconifyIcon, Icon } from '../types'
 
 const props = defineProps<{ items: LinkItem[] }>()
 </script>
 
 <template>
-  <!-- 渲染包含多个链接项的容器 -->
   <div class="container">
-    <!-- 遍历 `items` 数组，渲染每个链接项 -->
     <a
       v-for="item in props.items"
       :key="item.name"
@@ -17,18 +15,18 @@ const props = defineProps<{ items: LinkItem[] }>()
       class="link"
       rel="noopener"
     >
-      <!-- 渲染图标 -->
       <template v-if="item.icon">
-        <img v-if="isImage(item.icon)" :src="item.icon" alt="Icon" class="icon" />
+        <Icon v-if="isIconifyIcon(item.icon)" :icon="item.icon" class="iconify" :style="{ color: item.color }" />
         <i v-else :class="item.icon + ' icon'" :style="{ color: item.color }"></i>
       </template>
-      <template v-else>
-        <img v-if="item.light" :src="item.light" alt="Icon" class="icon light-only" />
-        <img v-if="item.dark" :src="item.dark" alt="Icon" class="icon dark-only" />
-        <i v-if="!item.light && !item.dark" class="fas fa-arrow-up-right-from-square fa-icon" alt="Icon"></i>
+      <template v-else-if="item.image">
+        <img v-if="typeof item.image === 'object'" :src="item.image.light" alt="Icon" class="icon light-only" />
+        <img v-if="typeof item.image === 'object'" :src="item.image.dark" alt="Icon" class="icon dark-only" />
+        <img v-else :src="item.image" alt="Icon" class="icon" />
       </template>
-
-      <!-- 渲染链接项的名称和描述 -->
+      <template v-else>
+        <i class="fas fa-arrow-up-right-from-square fa-icon" alt="Icon"></i>
+      </template>
       <div class="text-content">
         <span class="name">{{ item.name }}</span>
         <span v-if="item.desc" class="desc">{{ item.desc }}</span>
@@ -68,11 +66,13 @@ const props = defineProps<{ items: LinkItem[] }>()
   }
 }
 
-.icon {
+.icon,
+.iconify {
   width: 2.5rem;
   font-size: 2.5em;
   margin-left: 1.5rem;
 }
+
 .fa-icon {
   width: 2rem;
   font-size: 1.5em;
