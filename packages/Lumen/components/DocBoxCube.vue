@@ -5,29 +5,32 @@ const props = defineProps<{ items: BoxCubeItem[] }>()
 </script>
 
 <template>
-  <!-- 渲染包含多个链接项的容器 -->
   <div class="container">
-    <!-- 遍历 `props.items` 数组，渲染每个项目 -->
     <a
-      v-for="(item, index) in props.items"
-      :key="item.name + index"
+      v-for="(boxcube, index) in props.items"
+      :key="boxcube.name + index"
       class="link"
-      :href="item.link"
-      :title="item.name"
-      :target="isExternalLink(item.link) ? '_blank' : '_self'"
+      :href="boxcube.link"
+      :title="boxcube.name"
+      :target="isExternalLink(boxcube.link) ? '_blank' : '_self'"
       rel="noopener"
     >
-      <template v-if="item.icon">
-        <Icon v-if="isIconifyIcon(item.icon)" :icon="item.icon" class="iconify" :style="{ color: item.color }" />
-        <i v-else :class="item.icon + ' icon'" :style="{ color: item.color }" alt="Icon"></i>
+      <template v-if="boxcube.icon">
+        <Icon
+          v-if="isIconifyIcon(boxcube.icon)"
+          :icon="boxcube.icon"
+          class="iconify"
+          :style="{ color: boxcube.color }"
+        />
+        <i v-else :class="boxcube.icon + ' icon'" :style="{ color: boxcube.color }" alt="Icon"></i>
       </template>
-      <template v-else-if="item.image">
-        <img v-if="typeof item.image === 'object'" :src="item.image.light" alt="Icon" class="icon light-only" />
-        <img v-if="typeof item.image === 'object'" :src="item.image.dark" alt="Icon" class="icon dark-only" />
-        <img v-else :src="item.image" alt="Icon" class="icon" />
+      <template v-else-if="boxcube.image">
+        <img v-if="typeof boxcube.image === 'object'" :src="boxcube.image.light" alt="Icon" class="icon light-only" />
+        <img v-if="typeof boxcube.image === 'object'" :src="boxcube.image.dark" alt="Icon" class="icon dark-only" />
+        <img v-else :src="boxcube.image" alt="Icon" class="icon" />
       </template>
-      <span class="name">{{ item.name }}</span>
-      <span class="desc">{{ item.desc }}</span>
+      <span class="name">{{ boxcube.name }}</span>
+      <span class="desc">{{ boxcube.desc }}</span>
     </a>
   </div>
 </template>
