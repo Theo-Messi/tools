@@ -75,13 +75,13 @@ export default {
 | ├─ icon?                           | string  | <Badge type="tip" text="可选" /> [iconify](https://icon-sets.iconify.design/) 或者 [fortawesome](https://fontawesome.com/search?o=r&m=free) 图标 |
 | ├─ style?                          | string  | <Badge type="tip" text="可选" /> 图标样式                                                                                                        |
 | ├─ title                           | string  | 分组标题。                                                                                                                                       |
-| ├─ target?                         | boolean | <Badge type="tip" text="可选" /> 该组链接打开方式 默认 `_blank` 为 `_self` 时不会显示外部链接图标                                                |
+| ├─ target?                         | string  | <Badge type="tip" text="可选" /> 该组链接打开方式 默认 `_blank` 为 `_self` 时不会显示外部链接图标                                                |
 | └─ links                           | Array   | 分组中的链接列表。                                                                                                                               |
 | &nbsp;&nbsp;&nbsp;&nbsp;├─ icon?   | string  | <Badge type="tip" text="可选" /> [iconify](https://icon-sets.iconify.design/) 或者 [fortawesome](https://fontawesome.com/search?o=r&m=free) 图标 |
 | &nbsp;&nbsp;&nbsp;&nbsp;├─ style?  | string  | <Badge type="tip" text="可选" /> 图标样式                                                                                                        |
 | &nbsp;&nbsp;&nbsp;&nbsp;├─ name    | string  | 链接名称。                                                                                                                                       |
 | &nbsp;&nbsp;&nbsp;&nbsp;├─ href    | string  | 链接地址。                                                                                                                                       |
-| &nbsp;&nbsp;&nbsp;&nbsp;└─ target? | boolean | <Badge type="tip" text="可选" /> 链接打开方式 默认 `_blank` 为 `_self` 时不会显示外部链接图标                                                    |
+| &nbsp;&nbsp;&nbsp;&nbsp;└─ target? | string  | <Badge type="tip" text="可选" /> 链接打开方式 默认 `_blank` 为 `_self` 时不会显示外部链接图标                                                    |
 | **beian**?                         | object  | <Badge type="tip" text="可选" /> 备案信息                                                                                                        |
 | ├─ icp?                            | string  | <Badge type="tip" text="可选" /> ICP 备案号                                                                                                      |
 | ├─ police?                         | string  | <Badge type="tip" text="可选" /> 公安备案号                                                                                                      |

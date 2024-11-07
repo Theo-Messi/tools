@@ -1,3 +1,5 @@
+import { S } from 'vite/dist/node/types.d-aGj9QkWt'
+
 // DocLinks
 export interface LinkItem {
   name: string // 链接项的名称
