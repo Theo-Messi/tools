@@ -5,29 +5,27 @@ const props = defineProps<{ items: BoxItem[] }>()
 </script>
 
 <template>
-  <!-- 渲染盒子容器，包含多个链接项 -->
   <div class="box-container">
-    <!-- 遍历 `props.items` 数组并渲染每个链接项 -->
     <a
-      v-for="item in props.items"
-      :key="item.link"
-      :href="item.link"
-      :title="item.name"
+      v-for="box in props.items"
+      :key="box.link"
+      :href="box.link"
+      :title="box.name"
       class="box"
-      :target="isExternalLink(item.link) ? '_blank' : '_self'"
+      :target="isExternalLink(box.link) ? '_blank' : '_self'"
       rel="noopener"
     >
-      <template v-if="item.icon">
-        <Icon v-if="isIconifyIcon(item.icon)" :icon="item.icon" class="iconify" :style="{ color: item.color }" />
-        <i v-else :class="item.icon + ' icon'" :style="{ color: item.color }" alt="Icon"></i>
+      <template v-if="box.icon">
+        <Icon v-if="isIconifyIcon(box.icon)" :icon="box.icon" class="iconify" :style="{ color: box.color }" />
+        <i v-else :class="box.icon + ' icon'" :style="{ color: box.color }" alt="Icon"></i>
       </template>
-      <template v-else-if="item.image">
-        <img v-if="typeof item.image === 'object'" :src="item.image.light" alt="Icon" class="icon light-only" />
-        <img v-if="typeof item.image === 'object'" :src="item.image.dark" alt="Icon" class="icon dark-only" />
-        <img v-else :src="item.image" alt="Icon" class="icon" />
+      <template v-else-if="box.image">
+        <img v-if="typeof box.image === 'object'" :src="box.image.light" alt="Icon" class="icon light-only" />
+        <img v-if="typeof box.image === 'object'" :src="box.image.dark" alt="Icon" class="icon dark-only" />
+        <img v-else :src="box.image" alt="Icon" class="icon" />
       </template>
-      <span class="name">{{ item.name }}</span>
-      <span v-if="item.tag" class="tag">{{ item.tag }}</span>
+      <span class="name">{{ box.name }}</span>
+      <span v-if="box.tag" class="tag">{{ box.tag }}</span>
     </a>
   </div>
 </template>

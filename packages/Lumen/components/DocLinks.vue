@@ -7,29 +7,29 @@ const props = defineProps<{ items: LinkItem[] }>()
 <template>
   <div class="container">
     <a
-      v-for="item in props.items"
-      :key="item.name"
-      :href="item.link"
-      :title="item.name"
-      :target="isExternalLink(item.link) ? '_blank' : '_self'"
+      v-for="link in props.items"
+      :key="link.name"
+      :href="link.link"
+      :title="link.name"
+      :target="isExternalLink(link.link) ? '_blank' : '_self'"
       class="link"
       rel="noopener"
     >
-      <template v-if="item.icon">
-        <Icon v-if="isIconifyIcon(item.icon)" :icon="item.icon" class="iconify" :style="{ color: item.color }" />
-        <i v-else :class="item.icon + ' icon'" :style="{ color: item.color }"></i>
+      <template v-if="link.icon">
+        <Icon v-if="isIconifyIcon(link.icon)" :icon="link.icon" class="iconify" :style="{ color: link.color }" />
+        <i v-else :class="link.icon + ' icon'" :style="{ color: link.color }"></i>
       </template>
-      <template v-else-if="item.image">
-        <img v-if="typeof item.image === 'object'" :src="item.image.light" alt="Icon" class="icon light-only" />
-        <img v-if="typeof item.image === 'object'" :src="item.image.dark" alt="Icon" class="icon dark-only" />
-        <img v-else :src="item.image" alt="Icon" class="icon" />
+      <template v-else-if="link.image">
+        <img v-if="typeof link.image === 'object'" :src="link.image.light" alt="Icon" class="icon light-only" />
+        <img v-if="typeof link.image === 'object'" :src="link.image.dark" alt="Icon" class="icon dark-only" />
+        <img v-else :src="link.image" alt="Icon" class="icon" />
       </template>
       <template v-else>
         <i class="fas fa-arrow-up-right-from-square fa-icon" alt="Icon"></i>
       </template>
       <div class="text-content">
-        <span class="name">{{ item.name }}</span>
-        <span v-if="item.desc" class="desc">{{ item.desc }}</span>
+        <span class="name">{{ link.name }}</span>
+        <span v-if="link.desc" class="desc">{{ link.desc }}</span>
       </div>
     </a>
   </div>

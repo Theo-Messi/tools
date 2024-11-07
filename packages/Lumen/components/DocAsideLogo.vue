@@ -6,32 +6,31 @@ const props = defineProps<{ Aside_Data: AsideItem[] }>()
 
 <template>
   <div>
-    <!-- 遍历 Aside_Data 数组并渲染 -->
     <a
-      v-for="(banner, index) in props.Aside_Data"
+      v-for="(aside, index) in props.Aside_Data"
       :key="index"
-      :href="banner.link"
-      :class="{ 'has-activity': banner.Activity, 'has-name': banner.name }"
-      :title="banner.Activity || banner.name"
-      class="banner"
+      :href="aside.link"
+      :class="{ 'has-activity': aside.Activity, 'has-name': aside.name }"
+      :title="aside.Activity || aside.name"
+      class="aside-class"
       target="_blank"
       rel="noopener"
     >
-      <img :src="banner.icon" width="22" height="22" :alt="banner.Activity || banner.name" />
+      <img :src="aside.icon" width="22" height="22" :alt="aside.Activity || aside.name" />
       <span>
-        <template v-if="banner.Activity">
-          <p class="Activity" v-html="banner.Activity"></p>
+        <template v-if="aside.Activity">
+          <p class="Activity" v-html="aside.Activity"></p>
         </template>
-        <template v-if="banner.hide1 || banner.info1">
-          <p v-if="banner.hide1" class="hide" v-html="banner.hide1"></p>
-          <p v-if="banner.info1" class="info" v-html="banner.info1"></p>
+        <template v-if="aside.hide1 || aside.info1">
+          <p v-if="aside.hide1" class="hide" v-html="aside.hide1"></p>
+          <p v-if="aside.info1" class="info" v-html="aside.info1"></p>
         </template>
-        <template v-if="banner.name">
-          <p class="name" v-html="banner.name"></p>
+        <template v-if="aside.name">
+          <p class="name" v-html="aside.name"></p>
         </template>
-        <template v-if="banner.hide2 || banner.info2">
-          <p v-if="banner.hide2" class="hide" v-html="banner.hide2"></p>
-          <p v-if="banner.info2" class="info" v-html="banner.info2"></p>
+        <template v-if="aside.hide2 || aside.info2">
+          <p v-if="aside.hide2" class="hide" v-html="aside.hide2"></p>
+          <p v-if="aside.info2" class="info" v-html="aside.info2"></p>
         </template>
       </span>
     </a>
@@ -39,7 +38,7 @@ const props = defineProps<{ Aside_Data: AsideItem[] }>()
 </template>
 
 <style lang="scss" scoped>
-.banner {
+.aside-class {
   margin: 0.25rem 0;
   padding: 0.25rem 0;
   border-radius: 0.8rem;
