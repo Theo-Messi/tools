@@ -29,7 +29,7 @@ const footer = props.Footer_Data
               <Icon v-if="isIconifyIcon(link.icon)" :icon="link.icon" :style="{ color: link.style }" />
             </template>
             <a
-              :target="link.internal || section.internal ? '_self' : '_blank'"
+              :target="link.target || section.target || '_blank'"
               rel="noopener"
               :name="link.name"
               :title="link.name"
@@ -37,7 +37,7 @@ const footer = props.Footer_Data
             >
               {{ link.name }}
               <Icon
-                v-if="!link.internal && !section.internal"
+                v-if="(link.target || section.target || '_blank') === '_blank'"
                 icon="heroicons-outline:arrow-sm-up"
                 style="color: var(--vp-c-text-3); transform: rotate(45deg)"
               />
