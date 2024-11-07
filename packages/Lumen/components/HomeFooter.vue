@@ -111,7 +111,6 @@ const props = defineProps<{ Footer_Data: FooterData }>()
 }
 
 .list-link {
-  margin-bottom: 0.5rem;
   margin: 0 0.5rem;
   line-height: 1.7rem;
   opacity: 0.9;
