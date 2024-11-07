@@ -1,30 +1,15 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import { FooterData, useWindowWidth, isIconifyIcon, Icon } from '../types'
+import { FooterData, isIconifyIcon, Icon } from '../types'
 
 // 使用 defineProps 定义属性
 const props = defineProps<{ Footer_Data: FooterData }>()
-
-// 当前打开的 section 索引
-const openSectionIndex = ref<number | null>(null)
-
-// 使用自定义钩子获取窗口宽度
-const windowWidth = useWindowWidth()
-
-// 切换 section 的显示状态
-const toggleSection = (index: number) => {
-  openSectionIndex.value = openSectionIndex.value === index ? null : index
-}
-
-// 计算当前窗口是否为大屏幕，宽度大于 768px 时为大屏幕
-const isLargeScreen = computed(() => windowWidth.value! > 768)
 </script>
 
 <template>
   <footer class="footer">
-    <div class="list-containe">
+    <div class="list-containe" v-if="props.Footer_Data.group">
       <div class="list-content" v-for="(section, index) in props.Footer_Data.group || []" :key="index">
-        <div class="list-title" @click="toggleSection(index)">
+        <div class="list-title">
           <template v-if="section.icon">
             <i v-if="section.icon" :class="section.icon" :style="{ color: section.style }"></i>
             <Icon
@@ -35,11 +20,8 @@ const isLargeScreen = computed(() => windowWidth.value! > 768)
             /> </template
           >&nbsp;&nbsp;
           {{ section.title }}
-          <button class="toggle-button">
-            {{ openSectionIndex === index ? '−' : '+' }}
-          </button>
         </div>
-        <ul class="list-link" v-if="openSectionIndex === index || isLargeScreen">
+        <ul class="list-link">
           <li v-for="(link, idx) in section.links" :key="idx">
             <template v-if="link.icon">
               <i v-if="link.icon" :class="link.icon" :style="{ color: link.style }"></i>
@@ -56,7 +38,7 @@ const isLargeScreen = computed(() => windowWidth.value! > 768)
               <Icon
                 v-if="!link.internal && !section.internal"
                 icon="heroicons-outline:arrow-sm-up"
-                style="font-size: 1em; color: var(--vp-c-text-3); transform: rotate(45deg)"
+                style="color: var(--vp-c-text-3); transform: rotate(45deg)"
               />
             </a>
           </li>
@@ -114,11 +96,9 @@ const isLargeScreen = computed(() => windowWidth.value! > 768)
 }
 
 .list-containe {
-  margin: 1.25rem;
+  margin: 1.25rem 10% 1.25rem 18%;
   display: flex;
   justify-content: space-evenly;
-  margin-left: 20%;
-  margin-right: 10%;
 }
 
 .list-content {
@@ -128,40 +108,13 @@ const isLargeScreen = computed(() => windowWidth.value! > 768)
 .list-title {
   margin-bottom: 0.5rem;
   font-weight: 600;
-
-  .toggle-button {
-    background: none;
-    border: none;
-    font-size: 1rem;
-    cursor: pointer;
-    padding: 0;
-
-    @media (min-width: 769px) {
-      display: none;
-    }
-  }
 }
 
 .list-link {
   margin-bottom: 0.5rem;
+  margin: 0 0.5rem;
   line-height: 1.7rem;
   opacity: 0.9;
-}
-
-.external-link {
-  position: relative;
-  display: inline-block;
-
-  &::after {
-    content: '\f061';
-    font-family: 'Font Awesome 6 Free';
-    font-weight: 900;
-    margin-left: 0.25rem;
-    font-size: 0.5rem;
-    position: absolute;
-    color: var(--vp-c-text-3);
-    transform: rotate(-45deg);
-  }
 }
 
 .iconify {
@@ -172,7 +125,7 @@ const isLargeScreen = computed(() => windowWidth.value! > 768)
 
 .info-containe {
   text-align: center;
-  margin-bottom: 1.25rem;
+  margin: 1.25rem 0 1.25rem 0;
 }
 
 .info-content {
@@ -185,32 +138,13 @@ const isLargeScreen = computed(() => windowWidth.value! > 768)
 
 @media (max-width: 768px) {
   .list-containe {
-    flex-direction: column;
-    align-items: flex-start;
-    margin: 2rem 3.5rem;
-  }
-
-  .list-content {
-    width: 100%;
-  }
-
-  .list-link {
-    text-align: left;
-    margin-left: 20%;
-    margin-right: 10%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 
   .list-title {
     font-size: 0.875rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    padding: 0.5rem 0;
-
-    .iconify {
-      margin-left: -5.5rem;
-    }
   }
 }
 </style>

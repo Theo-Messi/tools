@@ -74,36 +74,6 @@ export const useVideoToggle = () => {
   return [isVideoOpen, toggleVideo] as const
 }
 
-/**
- * 自定义钩子，管理窗口宽度和更新逻辑。
- *
- * @returns { [Ref<number | null>, () => void] } 返回窗口宽度和更新函数。
- */
-export const useWindowWidth = () => {
-  const windowWidth = ref<number | null>(null)
-
-  const updateWindowWidth = () => {
-    windowWidth.value = window.innerWidth
-  }
-
-  // 组件挂载时添加 resize 事件监听器
-  onMounted(() => {
-    if (typeof window !== 'undefined') {
-      windowWidth.value = window.innerWidth
-      window.addEventListener('resize', updateWindowWidth)
-    }
-  })
-
-  // 组件卸载时移除 resize 事件监听器
-  onUnmounted(() => {
-    if (typeof window !== 'undefined') {
-      window.removeEventListener('resize', updateWindowWidth)
-    }
-  })
-
-  return windowWidth
-}
-
 export function moveDomElements() {
   onMounted(() => {
     const targetElement = document.querySelector('.VPHero .text') as HTMLElement | null
