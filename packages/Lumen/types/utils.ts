@@ -1,4 +1,4 @@
-import { computed, nextTick, ref, onMounted, onUnmounted } from 'vue'
+import { computed, nextTick, ref, onMounted } from 'vue'
 import { useData } from 'vitepress'
 import { Prelink } from './types'
 
