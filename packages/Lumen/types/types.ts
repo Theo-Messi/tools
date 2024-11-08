@@ -1,87 +1,161 @@
-// DocLinks
-export interface LinkItem {
-  name: string // 链接项的名称
-  desc?: string // 链接项的描述（可选）
-  link: string // 链接项的 URL
-  color?: string | null // 图标的颜色（可选）
-  icon?: string | null // 对于 `iconify`或者 `fortawesome` 图标
-  image?: string | { light: string; dark: string } // 支持单一图片地址或包含 light 和 dark 两种模式的对象
-}
-
-//  DocBoxCube
-export interface BoxCubeItem {
-  name: string // 项目的名称。
-  link: string // 项目的链接。
-  desc?: string // 项目的描述（可选）。
-  color?: string // 图标的颜色（可选）。
-  icon?: string | null // 对于 `iconify`或者 `fortawesome` 图标
-  image?: string | { light: string; dark: string } // 支持单一图片地址或包含 light 和 dark 两种模式的对象
-}
-
-// DocBox
+/**
+ * DocBox 接口
+ */
 export interface BoxItem {
+  /** DocBox 名称。 */
   name: string
+  /** DocBox 链接。 */
   link: string
+  /** DocBox 标签。 */
   tag?: string
+  /** 图标的颜色。 */
   color?: string
-  icon?: string // 对于 `iconify`或者 `fortawesome` 图标
-  image?: string | { light: string; dark: string } // 支持单一图片地址或包含 light 和 dark 两种模式的对象
+  /** 图标名称，支持 `iconify` 或 `fortawesome`。 */
+  icon?: string
+  /** 图片地址或包含 light 和 dark 模式的对象。 */
+  image?: string | { light: string; dark: string }
 }
 
-// DocAsideLogo
+/**
+ * DocLinks 接口
+ */
+export interface LinkItem {
+  /** DocLinks 名称。 */
+  name: string
+  /** DocLinks 描述。 */
+  desc?: string
+  /** DocLinks 链接。 */
+  link: string
+  /** 图标的颜色。 */
+  color?: string | null
+  /** 图标名称，支持 `iconify` 或 `fortawesome`。 */
+  icon?: string | null
+  /** 支持单一图片地址或包含 light 和 dark 模式的对象。 */
+  image?: string | { light: string; dark: string }
+}
+
+/**
+ * BoxCube 接口
+ */
+export interface BoxCubeItem {
+  /** BoxCube 名称。 */
+  name: string
+  /** BoxCube 链接。 */
+  link: string
+  /** BoxCube 描述。 */
+  desc?: string
+  /** 图标的颜色。 */
+  color?: string
+  /** 图标名称，支持 `iconify` 或 `fortawesome`。 */
+  icon?: string | null
+  /** 图片地址或包含 light 和 dark 模式的对象。 */
+  image?: string | { light: string; dark: string }
+}
+
+/**
+ * DocAsideLogo 接口
+ */
 export interface AsideItem {
-  link: string // 链接地址。
-  icon: string // 图标地址。
-  name?: string // 名称（可选）。
-  Activity?: string // 活动名称（可选）。
-  hide1?: string // 隐藏信息1（可选）。
-  info1?: string // 信息1（可选）。
-  hide2?: string // 隐藏信息2（可选）。
-  info2?: string // 信息2（可选）。
+  /** 链接地址。 */
+  link: string
+  /** 图标地址。 */
+  icon: string
+  /** 名称。 */
+  name?: string
+  /** 活动名称。 */
+  activity?: string
+  /** 隐藏信息 1。 */
+  hide1?: string
+  /** 信息 1。 */
+  info1?: string
+  /** 隐藏信息 2。 */
+  hide2?: string
+  /** 信息 2。 */
+  info2?: string
 }
 
-// Announcement.vue
+/**
+ * Announcement 接口
+ */
 export interface Prelink {
-  link: string // 链接的 URL
-  target?: string // 链接的目标（可选）
-  title: string // 链接的标题
+  /** 链接的 URL。 */
+  link: string
+  /** 链接的目标。 */
+  target?: string
+  /** 链接的标题。 */
+  title: string
 }
 
-// Twikoo 配置数据类型定义
+/**
+ * Twikoo 配置数据类型接口。
+ */
 export interface TwikooData {
-  envId: string // Twikoo 的环境 ID
+  /** Twikoo 的环境 ID。 */
+  envId: string
 }
 
-// HomeFooter
-export interface Link {
-  icon?: string // 链接图标（可选）
-  style?: string // 链接样式（可选）
-  name: string // 链接名称
-  href: string // 链接地址
-  target?: string // 链接打开方式 默认 '_blank'
-}
-
-export interface Group {
-  icon?: string // 图标（可选）
-  style?: string // 图标样式（可选）
-  title: string // 分组标题
-  target?: string // 链接打开方式 默认 '_blank'
-  links: Link[] // 链接数组
-}
-
-export interface Beian {
-  icp?: string // ICP 备案号（可选）
-  police?: string // 公安备案号（可选）
-  showIcon?: boolean // 图标（可选）
-}
-
-export interface Author {
-  name?: string // 作者姓名（可选）
-  link?: string // 作者链接（可选）
-}
-
+/**
+ * HomeFooter 接口
+ */
 export interface FooterData {
-  group?: Group[] // 分组数组（可选）
-  beian?: Beian // 备案信息（可选）
-  author?: Author // 作者信息（可选）
+  /** 链接分组数组。 */
+  group?: Group[]
+  /** 备案信息。 */
+  beian?: Beian
+  /** 作者信息。 */
+  author?: Author
+}
+
+/**
+ * HomeFooter Group 接口
+ */
+export interface Group {
+  /** 图标。 */
+  icon?: string
+  /** 图标样式。 */
+  style?: string
+  /** 分组标题。 */
+  title: string
+  /** 链接打开方式，默认 '_blank'。 */
+  target?: string
+  /** 链接数组。 */
+  links: Link[]
+}
+
+/**
+ * HomeFooter Beian 接口
+ */
+export interface Beian {
+  /** ICP 备案号。 */
+  icp?: string
+  /** 公安备案号。 */
+  police?: string
+  /** 是否显示图标。 */
+  showIcon?: boolean
+}
+
+/**
+ * HomeFooter Author 接口
+ */
+export interface Author {
+  /** 作者姓名。 */
+  name?: string
+  /** 作者链接。 */
+  link?: string
+}
+
+/**
+ * HomeFooter Link 接口
+ */
+export interface Link {
+  /** 链接图标。 */
+  icon?: string
+  /** 链接样式。 */
+  style?: string
+  /** 链接名称。 */
+  name: string
+  /** 链接地址。 */
+  href: string
+  /** 链接打开方式，默认 '_blank'。 */
+  target?: string
 }

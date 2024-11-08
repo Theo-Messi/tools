@@ -3,9 +3,9 @@ import { useData } from 'vitepress'
 import { Prelink } from './types'
 
 /**
- * 从 `frontmatter` 获取 `prelink`。
+ * 从 `frontmatter` 中提取 `prelink` 信息。
  *
- * @returns {Prelink | undefined} 返回 `frontmatter` 中 `hero` 对象的 `prelink` 属性值，如果不存在则为 `undefined`。
+ * @returns 返回 `frontmatter` 中 `hero` 对象的 `prelink` 属性值，如果不存在则返回 `undefined`。
  */
 export const usePrelink = (): Prelink | undefined => {
   const { frontmatter } = useData()
@@ -13,8 +13,7 @@ export const usePrelink = (): Prelink | undefined => {
 }
 
 /**
- * 检查给定的图标字符串是否为 Iconify 格式。
- * Iconify 图标通常包含一个冒号（例如 "mdi:home"）。
+ * 判断给定图标字符串是否符合 Iconify 格式。
  *
  * @param icon - 要检查的图标字符串。
  * @returns 如果图标是 Iconify 格式，则返回 `true`，否则返回 `false`。
@@ -22,27 +21,26 @@ export const usePrelink = (): Prelink | undefined => {
 export const isIconifyIcon = (icon: string): boolean => icon.includes(':')
 
 /**
- * 判断给定的链接是否是外部链接。
+ * 检查链接是否为外部链接。
  *
- * @param {string} link - 要判断的链接。
- * @returns {boolean} - 如果链接是外部链接，则返回 `true`，否则返回 `false`。
+ * @param link - 要判断的链接字符串。
+ * @returns 如果链接是外部链接，则返回 `true`，否则返回 `false`。
  */
 export const isExternalLink = (link: string): boolean => /^https?:\/\//.test(link)
 
 /**
  * 初始化 Twikoo 评论系统。
  *
- * 异步函数，动态导入 Twikoo 并进行初始化。
+ * 动态加载 Twikoo 并初始化评论系统。
  *
- * @param {string} envId - Twikoo 的环境 ID。
- * @returns {Promise<void>} - 无返回值的 Promise。
+ * @param envId - Twikoo 的环境 ID。
+ * @returns 无返回值的 Promise。
  */
-export async function initTwikoo(envId: string): Promise<void> {
+export const initTwikoo = async (envId: string): Promise<void> => {
   try {
     const twikoo = await import('twikoo')
     console.log('Twikoo 加载成功')
     if (typeof window !== 'undefined') {
-      // 确保 DOM 元素存在后再进行初始化
       await nextTick() // 等待 DOM 更新
       const twikooElement = document.querySelector('#twikoo')
       if (twikooElement) {
@@ -60,9 +58,9 @@ export async function initTwikoo(envId: string): Promise<void> {
 }
 
 /**
- * 创建一个视频播放状态的 ref 和切换函数。
+ * 创建一个视频播放状态的 ref 以及切换播放状态的函数。
  *
- * @returns { [Ref<boolean>, () => void] } 返回视频播放状态和切换函数。
+ * @returns 包含 `isVideoOpen` 状态和 `toggleVideo` 切换函数的常量数组。
  */
 export const useVideoToggle = () => {
   const isVideoOpen = ref(false)
@@ -74,7 +72,12 @@ export const useVideoToggle = () => {
   return [isVideoOpen, toggleVideo] as const
 }
 
-export function moveDomElements() {
+/**
+ * 将指定的 DOM 元素移动到目标位置。
+ *
+ * 当组件挂载时，将 `.VPHero .text` 内部的内容替换为 `#hero-text` 的内容。
+ */
+export const moveDomElements = () => {
   onMounted(() => {
     const targetElement = document.querySelector('.VPHero .text') as HTMLElement | null
     const sourceElement = document.querySelector('#hero-text') as HTMLElement | null
@@ -86,6 +89,11 @@ export function moveDomElements() {
   })
 }
 
+/**
+ * 创建一个用于复制链接的功能。
+ *
+ * @returns 包含 `copied` 状态和 `copyLink` 函数的对象。
+ */
 export const useCopyLink = () => {
   const copied = ref(false)
 
@@ -96,11 +104,11 @@ export const useCopyLink = () => {
       setTimeout(() => {
         copied.value = false
       }, 2000)
-    } catch (err) {
-      console.error('Failed to copy: ', err)
+    } catch (error) {
+      console.error('复制链接失败：', error)
       alert('复制链接失败，请手动复制。')
     }
   }
 
-  return { copied, copyLink } // 返回对象而不是数组
+  return { copied, copyLink }
 }
