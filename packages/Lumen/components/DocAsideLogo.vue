@@ -10,16 +10,16 @@ const props = defineProps<{ Aside_Data: AsideItem[] }>()
       v-for="(aside, index) in props.Aside_Data"
       :key="index"
       :href="aside.link"
-      :class="{ 'has-activity': aside.Activity, 'has-name': aside.name }"
-      :title="aside.Activity || aside.name"
+      :class="{ 'has-activity': aside.activity, 'has-name': aside.name }"
+      :title="aside.activity || aside.name"
       class="aside-class"
       target="_blank"
       rel="noopener"
     >
-      <img :src="aside.icon" width="22" height="22" :alt="aside.Activity || aside.name" />
+      <img :src="aside.icon" width="22" height="22" :alt="aside.activity || aside.name" />
       <span>
-        <template v-if="aside.Activity">
-          <p class="Activity" v-html="aside.Activity"></p>
+        <template v-if="aside.activity">
+          <p class="activity" v-html="aside.activity"></p>
         </template>
         <template v-if="aside.hide1 || aside.info1">
           <p v-if="aside.hide1" class="hide" v-html="aside.hide1"></p>
@@ -103,7 +103,7 @@ const props = defineProps<{ Aside_Data: AsideItem[] }>()
     -webkit-text-fill-color: transparent;
   }
 
-  .Activity {
+  .activity {
     background-image: linear-gradient(
       292deg,
       rgba(176, 71, 255, 1) 16%,

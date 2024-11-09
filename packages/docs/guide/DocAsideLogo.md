@@ -17,7 +17,7 @@ export const Aside_Data: AsideItem[] = [
   {
     link: 'https://example.com/',
     icon: 'https://example.com/icon.png',
-    Activity: '活动标题',
+    activity: '活动标题',
     info1: '简介1',
     info2: '简介2' // info1/2 支持 `v-html`语法
   },
