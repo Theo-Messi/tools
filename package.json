@@ -12,7 +12,8 @@
     "preview:docs": "pnpm -F=docs preview",
     "release:lumen": "pnpm -F=lumen release",
     "format": "prettier --write .",
-    "format:cheak": "prettier --check ."
+    "format:cheak": "prettier --check .",
+    "change:dly": "npx changelogithub --no-group --no-contributors --no-emoji --dry"
   },
   "devDependencies": {
     "lint-staged": "^15.2.10",
