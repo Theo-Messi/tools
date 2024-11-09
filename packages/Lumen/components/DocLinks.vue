@@ -7,8 +7,8 @@ const props = defineProps<{ items: LinkItem[] }>()
 <template>
   <div class="container">
     <a
-      v-for="link in props.items"
-      :key="link.name"
+      v-for="(link, index) in props.items"
+      :key="link.link + index"
       :href="link.link"
       :title="link.name"
       :target="isExternalLink(link.link) ? '_blank' : '_self'"

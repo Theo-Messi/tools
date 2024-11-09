@@ -7,8 +7,8 @@ const props = defineProps<{ items: BoxItem[] }>()
 <template>
   <div class="box-container">
     <a
-      v-for="box in props.items"
-      :key="box.link"
+      v-for="(box, index) in props.items"
+      :key="box.link + index"
       :href="box.link"
       :title="box.name"
       class="box"
