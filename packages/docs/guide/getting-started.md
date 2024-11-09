@@ -67,7 +67,7 @@ export default {
       icon: 'fas fa-underline',
       color: '#3498db'
     },
-    { name: '页脚配置', link: 'HomeFooter', icon: 'fas fa-cogs', color: '#2ecc71' },
+    { name: '页脚配置', link: 'HomeFooter', icon: 'fas fa-gear', color: '#2ecc71' },
     {
       name: '侧边栏链接',
       link: 'DocAsideLogo',

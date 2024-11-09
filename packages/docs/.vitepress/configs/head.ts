@@ -18,7 +18,7 @@ export const head: HeadConfig[] = [
   ['meta', { name: 'og:description', content: '用于VitePress主题美化和集成Vue功能组件' }],
   ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
   ['meta', { name: 'twitter:site', content: '@TheoMessi_' }],
-  ['meta', { name: 'twitter:title', content: 'TheoJS' }],
+  ['meta', { name: 'twitter:title', content: '@theojs/lumen' }],
   ['meta', { name: 'twitter:description', content: '用于VitePress主题美化和集成Vue功能组件' }],
   ['meta', { name: 'twitter:image', content: 'https://tools.theojs.cn/Logo.png' }],
   [
@@ -29,7 +29,7 @@ export const head: HeadConfig[] = [
         '@context': 'https://schema.org',
         '@type': 'WebSite',
         url: 'https://tools.theojs.cn/',
-        name: 'TheoJS',
+        name: '@theojs/lumen',
         description: '用于VitePress主题美化和集成Vue功能组件',
         author: { '@type': 'Person', name: 'Theo-Messi' }
       })

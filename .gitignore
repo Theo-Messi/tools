@@ -21,9 +21,6 @@ yarn-error.log
 # Vitepress生成的文件
 packages/docs/.vitepress/dist
 packages/docs/.vitepress/cache
-packages/blog/.vitepress/dist
-packages/blog/.vitepress/cache
-packages/Solis/types/serverUtils.js
 
 # Vite缓存文件
 dist/
