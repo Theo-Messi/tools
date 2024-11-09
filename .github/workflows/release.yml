@@ -21,6 +21,6 @@ jobs:
         with:
           node-version: lts/*
 
-      - run: npx changelogithub --no-group
+      - run: npx changelogithub --no-group --no-contributors --no-emoji
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
