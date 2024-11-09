@@ -3,8 +3,7 @@ import type { DefaultTheme } from 'vitepress'
 type SidebarItem = DefaultTheme.SidebarItem
 
 export const sidebar: DefaultTheme.SidebarMulti = {
-  '/guide/': { base: '/guide/', items: guide() },
-  '/solis/': { base: '/solis/', items: solis() }
+  '/guide/': { base: '/guide/', items: guide() }
 }
 
 export function guide(): SidebarItem[] {
@@ -19,7 +18,7 @@ export function guide(): SidebarItem[] {
       ]
     },
     {
-      text: '配置',
+      text: '<i class="fas fa-gears" style="margin-right:0.5rem;color: #3498db;"></i>配置',
       items: [
         {
           text: '<i class="fas fa-palette" style="margin-right:0.5rem;color: #f39c12;"></i>导入主题配色',
@@ -34,7 +33,7 @@ export function guide(): SidebarItem[] {
           link: 'HomeUnderline'
         },
         {
-          text: '<i class="fas fa-cogs" style="margin-right:0.5rem;color: #2ecc71;"></i>页脚配置',
+          text: '<i class="fas fa-gear" style="margin-right:0.5rem;color: #2ecc71;"></i>页脚配置',
           link: 'HomeFooter'
         },
         {
@@ -56,41 +55,6 @@ export function guide(): SidebarItem[] {
         {
           text: '<i class="fas fa-image" style="margin-right:0.5rem;color: #2ecc71;"></i>图片描述',
           link: 'Image-description'
-        },
-        {
-          text: '<i class="fas fa-comments" style="margin-right:0.5rem;color: #3498db;"></i>Twikoo 评论',
-          link: 'DocTwikoo'
-        }
-      ]
-    }
-  ]
-}
-
-export function solis(): SidebarItem[] {
-  return [
-    {
-      // text: '快速开始',
-      items: [
-        {
-          text: '<i class="fas fa-bolt" style="margin-right:0.5rem;color: #63E6BE;"></i>快速开始',
-          link: 'getting-started'
-        }
-      ]
-    },
-    {
-      text: '配置',
-      items: [
-        {
-          text: '<i class="fas fa-sitemap" style="margin-right:0.5rem;color: #f39c12;"></i>项目结构',
-          link: 'project-structure'
-        },
-        {
-          text: '<i class="fas fa-cogs" style="margin-right:0.5rem;color: #e74c3c;"></i>配置VitePress',
-          link: 'configure-vitepress'
-        },
-        {
-          text: '<i class="fas fa-newspaper" style="margin-right:0.5rem;color: #1abc9c;"></i>文章配置',
-          link: 'posts-settings'
         },
         {
           text: '<i class="fas fa-comments" style="margin-right:0.5rem;color: #3498db;"></i>Twikoo 评论',

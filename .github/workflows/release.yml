@@ -7,7 +7,6 @@ on:
   push:
     tags:
       - 'Lumen@*'
-      - 'Solis@*'
 
 jobs:
   release:
@@ -22,12 +21,6 @@ jobs:
         with:
           node-version: lts/*
 
-      - if: startsWith(github.ref, 'refs/tags/Lumen@')
-        run: cd packages/Lumen && npx changelogithub --no-group
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
-      - if: startsWith(github.ref, 'refs/tags/Solis@')
-        run: cd packages/Solis && npx changelogithub --no-group
+      - run: npx changelogithub --no-group
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}

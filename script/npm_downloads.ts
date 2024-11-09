@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { execSync } from 'child_process'
 
-const packagesNames: string[] = ['@theojs/lumen', '@theojs/solis']
+const packagesNames: string[] = ['@theojs/lumen']
 const barkUrl = process.env.BARK_KEY
 
 if (!barkUrl) {

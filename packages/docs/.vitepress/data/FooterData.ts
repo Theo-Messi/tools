@@ -24,10 +24,6 @@ export const Footer_Data: FooterData = {
           href: 'https://github.com/Theo-Messi/xx.theojs.cn'
         },
         {
-          name: '阿里云盘资源分享',
-          href: 'https://github.com/Theo-Messi/share.theojs.cn'
-        },
-        {
           name: '常用配置文件',
           href: 'https://github.com/Theo-Messi/dotfiles'
         },
@@ -93,7 +89,6 @@ export const Footer_Data: FooterData = {
       links: [
         { name: 'Theo-Docs', href: 'https://doc.theojs.cn/' },
         { name: '玄学宝典', href: 'https://xx.theojs.cn/' },
-        { name: '阿里云盘资源分享', href: 'https://share.theojs.cn/' },
         { name: 'VitePress', href: 'https://vitepress.dev/' }
       ]
     }

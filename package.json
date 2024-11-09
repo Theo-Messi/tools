@@ -10,12 +10,7 @@
     "dev:docs": "pnpm -F=docs dev",
     "build:docs": "pnpm -F=docs build",
     "preview:docs": "pnpm -F=docs preview",
-    "dev:blog": "pnpm -F=blog dev",
-    "build:blog": "pnpm -F=blog build",
-    "preview:blog": "pnpm -F=blog preview",
     "release:lumen": "pnpm -F=lumen release",
-    "release:solis": "pnpm -F=solis release",
-    "package:solis": "pnpm -F=solis build",
     "format": "prettier --write .",
     "format:cheak": "prettier --check ."
   },

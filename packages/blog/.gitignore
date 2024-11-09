@@ -1,8 +1,0 @@
-node_modules
-.DS_Store
-dist
-*.local
-.idea
-/*.md
-00_template.md
-.vitepress/cache
