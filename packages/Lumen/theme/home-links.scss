@@ -2,7 +2,7 @@
  * Component: home-links
  * -------------------------------------------------------------------------- */
 
-a.cta {
+a.lumen {
   text-align: center;
   border-radius: 24px;
   padding: 0 24px;
@@ -17,9 +17,7 @@ a.cta {
     background-color: var(--vp-c-default-1);
   }
 
-  &.pan::before,
-  &.xx::before,
-  &.img::before {
+  &.theo::before {
     content: '';
     display: inline-block;
     width: 24px;
@@ -29,13 +27,6 @@ a.cta {
     background-position: bottom;
     margin-right: 0.5em;
     transform: translateY(7px);
-  }
-
-  &.pan::before {
-    background-image: url('https://i.theojs.cn/docs/202405101119004.png');
-  }
-
-  &.xx::before {
     background-image: url('https://i.theojs.cn/avatar.png');
   }
 }
@@ -49,9 +40,8 @@ a.cta {
 }
 
 @media (max-width: 420px) {
-  a.cta {
-    &.pan,
-    &.xx {
+  a.lumen {
+    &.theo {
       max-width: 320px;
       line-height: 1.5em;
       white-space: normal;
