@@ -19,9 +19,7 @@ const prelink: Prelink | undefined = usePrelink()
   font-weight: 600;
   margin-bottom: 1rem;
   background-color: var(--vp-button-alt-bg);
-  transition:
-    background-color 0.3s ease,
-    transform 0.2s ease;
+  transition: all 0.5s ease;
 
   &:hover {
     background-color: var(--vp-button-alt-hover-bg);
