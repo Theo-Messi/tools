@@ -21,6 +21,7 @@ jobs:
         with:
           node-version: lts/*
 
-      - run: npx changelogithub --no-group --no-contributors --no-emoji
+      - if: startsWith(github.ref, 'refs/tags/Lumen@')
+        run: cd packages/Lumen && npx changelogithub
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}

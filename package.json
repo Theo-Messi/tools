@@ -11,9 +11,9 @@
     "build:docs": "pnpm -F=docs build",
     "preview:docs": "pnpm -F=docs preview",
     "release:lumen": "pnpm -F=lumen release",
+    "change:lumen": "cd packages/Lumen && npx changelogithub --dry",
     "format": "prettier --write .",
-    "format:cheak": "prettier --check .",
-    "change:dly": "npx changelogithub --no-group --no-contributors --no-emoji --dry"
+    "format:cheak": "prettier --check ."
   },
   "devDependencies": {
     "lint-staged": "^15.2.10",
