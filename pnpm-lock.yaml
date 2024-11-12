@@ -46,8 +46,8 @@ importers:
         specifier: ^5.6.3
         version: 5.6.3
       vite:
-        specifier: ^5.4.10
-        version: 5.4.10(@types/node@22.9.0)(sass-embedded@1.79.4)(sass@1.80.6)
+        specifier: ^5.4.11
+        version: 5.4.11(@types/node@22.9.0)(sass-embedded@1.79.4)(sass@1.80.6)
       vitepress:
         specifier: ^1.5.0
         version: 1.5.0(@algolia/client-search@5.7.0)(@types/node@22.9.0)(axios@1.7.7)(postcss@8.4.47)(sass-embedded@1.79.4)(sass@1.80.6)(search-insights@2.17.2)(typescript@5.6.3)
@@ -1546,8 +1546,8 @@ packages:
   vfile@6.0.3:
     resolution: {integrity: sha512-KzIbH/9tXat2u30jf+smMwFCsno4wHVdNmzFyL+T/L3UGqqk6JKfVqOFOZEpZSHADH1k40ab6NUIXZq422ov3Q==}
 
-  vite@5.4.10:
-    resolution: {integrity: sha512-1hvaPshuPUtxeQ0hsVH3Mud0ZanOLwVTneA1EgbAM5LhaZEqyPWGRQ7BtaMvUrTDeEaC8pxtj6a6jku3x4z6SQ==}
+  vite@5.4.11:
+    resolution: {integrity: sha512-c7jFQRklXua0mTzneGW9QVyxFjUgwcihC4bXEtujIo2ouWCe1Ajt/amn2PCxYnhYfd5k09JX3SB7OYWFKYqj8Q==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -2097,9 +2097,9 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@vitejs/plugin-vue@5.1.4(vite@5.4.10(@types/node@22.9.0)(sass-embedded@1.79.4)(sass@1.80.6))(vue@3.5.12(typescript@5.6.3))':
+  '@vitejs/plugin-vue@5.1.4(vite@5.4.11(@types/node@22.9.0)(sass-embedded@1.79.4)(sass@1.80.6))(vue@3.5.12(typescript@5.6.3))':
     dependencies:
-      vite: 5.4.10(@types/node@22.9.0)(sass-embedded@1.79.4)(sass@1.80.6)
+      vite: 5.4.11(@types/node@22.9.0)(sass-embedded@1.79.4)(sass@1.80.6)
       vue: 3.5.12(typescript@5.6.3)
 
   '@vue/compiler-core@3.5.12':
@@ -3064,7 +3064,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.2
 
-  vite@5.4.10(@types/node@22.9.0)(sass-embedded@1.79.4)(sass@1.80.6):
+  vite@5.4.11(@types/node@22.9.0)(sass-embedded@1.79.4)(sass@1.80.6):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.4.47
@@ -3094,7 +3094,7 @@ snapshots:
       '@shikijs/transformers': 1.22.2
       '@shikijs/types': 1.22.2
       '@types/markdown-it': 14.1.2
-      '@vitejs/plugin-vue': 5.1.4(vite@5.4.10(@types/node@22.9.0)(sass-embedded@1.79.4)(sass@1.80.6))(vue@3.5.12(typescript@5.6.3))
+      '@vitejs/plugin-vue': 5.1.4(vite@5.4.11(@types/node@22.9.0)(sass-embedded@1.79.4)(sass@1.80.6))(vue@3.5.12(typescript@5.6.3))
       '@vue/devtools-api': 7.5.6
       '@vue/shared': 3.5.12
       '@vueuse/core': 11.1.0(vue@3.5.12(typescript@5.6.3))
@@ -3103,7 +3103,7 @@ snapshots:
       mark.js: 8.11.1
       minisearch: 7.1.0
       shiki: 1.22.2
-      vite: 5.4.10(@types/node@22.9.0)(sass-embedded@1.79.4)(sass@1.80.6)
+      vite: 5.4.11(@types/node@22.9.0)(sass-embedded@1.79.4)(sass@1.80.6)
       vue: 3.5.12(typescript@5.6.3)
     optionalDependencies:
       postcss: 8.4.47
