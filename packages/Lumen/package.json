@@ -43,7 +43,7 @@
     "@fortawesome/fontawesome-free": "^6.6.0",
     "@iconify/vue": "^4.1.2",
     "bumpp": "^9.8.1",
-    "sass": "^1.80.6",
+    "sass": "^1.80.7",
     "twikoo": "^1.6.39",
     "vue": "^3.5.12"
   },
