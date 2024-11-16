@@ -91,12 +91,17 @@ const props = defineProps<{ items: BoxCubeItem[] }>()
     margin-top: -1rem;
     font-size: 3em;
     color: var(--vp-c-text-1);
+    flex-shrink: 0; // 禁止图标在 flex 布局中因空间不足被压缩。
   }
 
   .name {
     position: absolute;
     font-size: 0.875rem;
     bottom: 1.25rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 80%;
   }
 
   .desc {
@@ -104,6 +109,10 @@ const props = defineProps<{ items: BoxCubeItem[] }>()
     font-size: 0.75rem;
     bottom: 0.15rem;
     color: var(--vp-c-text-3);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 80%;
   }
 }
 </style>

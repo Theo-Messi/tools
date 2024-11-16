@@ -53,6 +53,7 @@ const props = defineProps<{ items: LinkItem[] }>()
   border: 1px solid var(--vp-c-bg-alt);
   background-color: var(--vp-c-bg-alt);
   border-radius: 0.8rem;
+  padding: 0 2rem;
   display: flex;
   align-items: center;
   position: relative;
@@ -70,13 +71,13 @@ const props = defineProps<{ items: LinkItem[] }>()
 .iconify {
   width: 2.5rem;
   font-size: 2.5em;
-  margin-left: 1.5rem;
+  flex-shrink: 0; // 禁止图标在 flex 布局中因空间不足被压缩。
 }
 
 .fa-icon {
   width: 2rem;
   font-size: 1.5em;
-  margin-left: 2rem;
+  margin-left: 0.5rem;
 }
 
 .text-content {
@@ -84,6 +85,15 @@ const props = defineProps<{ items: LinkItem[] }>()
   flex-direction: column;
   justify-content: flex-start;
   margin-left: 1rem;
+  overflow: hidden;
+}
+
+.name,
+.desc {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
 }
 
 .name {
