@@ -55,10 +55,7 @@ const props = defineProps<{ items: BoxItem[] }>()
   height: 3.5rem;
   display: flex;
   text-decoration: none !important;
-  letter-spacing: -0.02em;
   align-items: center;
-  overflow: hidden;
-  white-space: nowrap;
   transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 
   &:hover {
@@ -102,6 +99,7 @@ const props = defineProps<{ items: BoxItem[] }>()
 
 .iconify {
   font-size: 2.4em;
+  flex-shrink: 0; // 禁止图标在 flex 布局中因空间不足被压缩。
   margin: 0 -0.1em 0 -0.1em;
   display: flex;
   justify-content: center;
@@ -112,11 +110,6 @@ const props = defineProps<{ items: BoxItem[] }>()
 .name {
   margin-left: 1rem;
   font-size: 0.875rem;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
