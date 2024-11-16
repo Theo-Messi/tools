@@ -35,7 +35,7 @@ import '@theojs/lumen/badge' /* 徽章样式 */
 
 ### 容器
 
-::: info 容器分为 `左侧阴影样式(默认)` 和 `边框样式`
+::: info 容器分为 `左侧阴影样式(默认)` 和 [`边框样式`](./doc-blocks-border.md)
 
 **如需切换至边框样式**，可以在 `theme/index.ts` 中按以下顺序引入
 
