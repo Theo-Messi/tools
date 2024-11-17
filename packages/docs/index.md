@@ -22,16 +22,12 @@ hero:
       text: 快速开始
       link: /guide/getting-started
 
-    - theme: brand
-      text: 博客主题
-      link: /solis
-
     - theme: alt
       text: 账号合租
-      link: https://doc.theojs.cn/serve/sharing/Account-sharing-guide
+      link: https://doc.theojs.cn/serve/sharing/account-sharing-guide
 
     - theme: alt
-      text: 机场推荐
+      text: 专线推荐
       link: https://doc.theojs.cn/serve/airport/qingyunti
 
     - theme: sponsor
