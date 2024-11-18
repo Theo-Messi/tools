@@ -159,3 +159,25 @@ export interface Link {
   /** 链接打开方式，默认 '_blank'。 */
   target?: string
 }
+
+/**
+ * DocVideoLink 接口
+ */
+export interface VideoProps {
+  /** 可选的 id，当选择平台时需要使用 id */
+  id?: string
+  /** 可选的平台类型 */
+  form?: 'youtube' | 'bilibili' | 'tencent' | 'youku' | 'vimeo'
+  /** 可选的自定义链接，只有在 form 不存在时才需要 */
+  src?: string
+}
+
+/**
+ * VideoConfig 接口，用于保存平台的配置信息
+ */
+export interface VideoConfig {
+  /** 获取视频链接的方法，根据不同平台生成不同的链接 */
+  src: (id: string) => string
+  /** 视频播放器的标题 */
+  title: string
+}

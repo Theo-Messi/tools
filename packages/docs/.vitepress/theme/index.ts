@@ -36,7 +36,7 @@ export default {
     app.component('Links', DocLinks)
     app.component('BoxCube', DocBoxCube)
     app.component('Home', HomeUnderline)
-    app.component('VideoLink', DocVideoLink)
+    app.component('Vid', DocVideoLink)
     app.component('Twikoo', Twikoo)
   }
 }
