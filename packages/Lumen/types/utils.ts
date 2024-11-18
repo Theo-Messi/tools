@@ -133,7 +133,7 @@ export const videoform = {
   },
   vimeo: {
     src: (id: string) => `https://player.vimeo.com/video/${id}`,
-    title: 'YouTube video player'
+    title: 'Vimeo video player'
   }
 }
 
