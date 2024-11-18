@@ -1,6 +1,6 @@
 import { computed, nextTick, ref, onMounted } from 'vue'
 import { useData } from 'vitepress'
-import { Prelink } from './types'
+import { Prelink, VideoProps } from './types'
 
 /**
  * 从 `frontmatter` 中提取 `prelink` 信息。
@@ -111,4 +111,39 @@ export const useCopyLink = () => {
   }
 
   return { copied, copyLink }
+}
+
+// 视频平台配置，明确指定每个平台的类型
+export const videoform = {
+  bilibili: {
+    src: (id: string) => `https://player.bilibili.com/player.html?aid=${id}`,
+    title: 'Bilibili video player'
+  },
+  tencent: {
+    src: (id: string) => `https://v.qq.com/txp/iframe/player.html?vid=${id}`,
+    title: 'Tencent Video player'
+  },
+  youku: {
+    src: (id: string) => `https://player.youku.com/embed/${id}`,
+    title: 'Youku video player'
+  },
+  youtube: {
+    src: (id: string) => `https://www.youtube-nocookie.com/embed/${id}`,
+    title: 'YouTube video player'
+  },
+  vimeo: {
+    src: (id: string) => `https://player.vimeo.com/video/${id}`,
+    title: 'Vimeo video player'
+  }
+}
+
+// 计算属性，动态返回对应的视频配置或自定义链接
+export const getVideoConfig = (props: VideoProps) => {
+  if (props.form && props.id) {
+    // 当 form 存在且 id 存在时，返回相应的视频配置
+    return videoform[props.form] || videoform.youtube
+  }
+
+  // 当 form 不存在时，直接使用 src 作为自定义链接
+  return { src: props.src || '', title: 'Custom video player' }
 }
