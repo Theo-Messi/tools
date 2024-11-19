@@ -10,6 +10,7 @@ export { default as Twikoo } from '../components/DocTwikoo.vue'
 export { default as ShareButton } from '../components/ShareButton.vue'
 
 export { Icon } from '@iconify/vue'
+export * from '../analytics'
 export * from './types'
 export * from './utils'
 

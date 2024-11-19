@@ -59,6 +59,10 @@ export function guide(): SidebarItem[] {
         {
           text: '<i class="fas fa-comments" style="margin-right:0.5rem;color: #3498db;"></i>Twikoo 评论',
           link: 'DocTwikoo'
+        },
+        {
+          text: '<i class="fas fa-chart-simple" style="margin-right:0.5rem;color: #3498db;"></i>站点统计',
+          link: 'analytics'
         }
       ]
     }
