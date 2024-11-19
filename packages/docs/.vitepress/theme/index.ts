@@ -1,6 +1,5 @@
 import DefaultTheme from 'vitepress/theme'
 import { h } from 'vue'
-import googleAnalytics from 'vitepress-plugin-google-analytics'
 
 import {
   DocBox,
@@ -12,12 +11,12 @@ import {
   HomeUnderline,
   HomeFooter,
   Twikoo,
-  ShareButton
+  ShareButton,
+  googleAnalytics
 } from '@theojs/lumen'
 import { Aside_Data, Footer_Data, Twikoo_Data } from '../data'
 import 'virtual:group-icons.css'
 import '@theojs/lumen/theme'
-// import '@theojs/lumen/doc-blocks-border'
 
 export default {
   extends: DefaultTheme,
