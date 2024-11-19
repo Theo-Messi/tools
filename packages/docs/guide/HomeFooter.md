@@ -8,7 +8,7 @@ title: 页脚配置
 
 ## 创建数据
 
-在`.vitepress`目录下新建`data/fooertData.ts`文件，并添加以下内容：
+在`.vitepress`目录下新建`data/footerData.ts`文件，并添加以下内容：
 
 ```ts
 // .vitepress/data/footerData.ts
