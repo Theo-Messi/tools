@@ -12,10 +12,7 @@ import {
   HomeFooter,
   Twikoo,
   ShareButton,
-  googleAnalytics,
-  umamiAnalytics,
-  baiduAnalytics,
-  trackPageview
+  googleAnalytics
 } from '@theojs/lumen'
 import { Aside_Data, Footer_Data, Twikoo_Data } from '../data'
 import 'virtual:group-icons.css'
@@ -34,14 +31,6 @@ export default {
   },
   enhanceApp: ({ app }) => {
     googleAnalytics({ id: 'G-DMPNK5Q8CL' })
-    umamiAnalytics({ id: '7c279616-3ad7-40a1-b7bf-55f1726b51b7', src: 'https://cloud.umami.is/script.js' })
-
-    // 只有在浏览器环境下才初始化百度统计
-    baiduAnalytics({ baiduId: '73139204b3e7f47b455402f405fd3131' })
-    if (typeof window !== 'undefined') {
-      trackPageview('73139204b3e7f47b455402f405fd3131', window.location.href)
-    }
-
     app.component('Box', DocBox)
     app.component('Links', DocLinks)
     app.component('BoxCube', DocBoxCube)
