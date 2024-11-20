@@ -114,7 +114,7 @@ export const useCopyLink = () => {
 }
 
 // 视频平台配置，明确指定每个平台的类型
-export const videoform = {
+export const video = {
   bilibili: {
     src: (id: string) => `https://player.bilibili.com/player.html?aid=${id}`,
     title: 'Bilibili video player'
@@ -139,11 +139,19 @@ export const videoform = {
 
 // 计算属性，动态返回对应的视频配置或自定义链接
 export const getVideoConfig = (props: VideoProps) => {
-  if (props.form && props.id) {
-    // 当 form 存在且 id 存在时，返回相应的视频配置
-    return videoform[props.form] || videoform.youtube
+  // 如果传递了 platform（to）和 id，返回相应的视频平台配置
+  if (props.to && props.id) {
+    return video[props.to]
   }
 
-  // 当 form 不存在时，直接使用 src 作为自定义链接
-  return { src: props.src || '', title: 'Custom video player' }
+  // 如果只有 id 存在，返回默认的 YouTube 配置
+  if (props.id) {
+    return video.youtube
+  }
+
+  // 如果没有 platform 和 id，且有自定义 src，返回自定义链接配置
+  return {
+    src: props.src || '',
+    title: 'Custom video player'
+  }
 }
