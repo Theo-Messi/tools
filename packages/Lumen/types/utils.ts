@@ -113,8 +113,13 @@ export const useCopyLink = () => {
   return { copied, copyLink }
 }
 
-// 视频平台配置，明确指定每个平台的类型
-export const videoform = {
+/**
+ * 视频平台配置
+ * 每个平台包含以下属性：
+ * - `src`: 返回视频嵌入链接的函数，接受视频的唯一标识符 `id` 作为参数。
+ * - `title`: 视频播放器的名称。
+ */
+export const video = {
   bilibili: {
     src: (id: string) => `https://player.bilibili.com/player.html?aid=${id}`,
     title: 'Bilibili video player'
@@ -137,13 +142,44 @@ export const videoform = {
   }
 }
 
-// 计算属性，动态返回对应的视频配置或自定义链接
+/**
+ * 动态返回对应的视频配置或自定义链接
+ * @param props - 包含视频相关参数的配置对象
+ * @param props.to - 视频平台的名称（可选）
+ * @param props.id - 视频的唯一标识符（可选）
+ * @param props.src - 自定义视频链接（可选）
+ * @returns 视频配置对象，包括 `src` 和 `title`
+ */
 export const getVideoConfig = (props: VideoProps) => {
-  if (props.form && props.id) {
-    // 当 form 存在且 id 存在时，返回相应的视频配置
-    return videoform[props.form] || videoform.youtube
+  /**
+   * 如果同时传递了 `to` 和 `id`，返回对应视频平台的配置。
+   * @example
+   * getVideoConfig({ to: 'bilibili', id: '12345' });
+   * // 返回 { src: 'https://player.bilibili.com/player.html?aid=12345', title: 'Bilibili video player' }
+   */
+  if (props.to && props.id) {
+    return video[props.to]
   }
 
-  // 当 form 不存在时，直接使用 src 作为自定义链接
-  return { src: props.src || '', title: 'Custom video player' }
+  /**
+   * 如果只有 `id` 存在，则返回默认的 YouTube 视频配置。
+   * @example
+   * getVideoConfig({ id: 'abcd1234' });
+   * // 返回 { src: 'https://www.youtube-nocookie.com/embed/abcd1234', title: 'YouTube video player' }
+   */
+  if (props.id) {
+    return video.youtube
+  }
+
+  /**
+   * 如果没有 `to` 和 `id`，且提供了自定义的 `src`，返回自定义视频配置。
+   * 如果 `src` 为空，则返回空链接。
+   * @example
+   * getVideoConfig({ src: 'https://example.com/custom-video.mp4' });
+   * // 返回 { src: 'https://example.com/custom-video.mp4', title: 'Custom video player' }
+   */
+  return {
+    src: props.src || '',
+    title: 'Custom video player'
+  }
 }

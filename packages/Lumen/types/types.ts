@@ -167,8 +167,8 @@ export interface VideoProps {
   /** 可选的 id，当选择平台时需要使用 id */
   id?: string
   /** 可选的平台类型 */
-  form?: 'youtube' | 'bilibili' | 'tencent' | 'youku' | 'vimeo'
-  /** 可选的自定义链接，只有在 form 不存在时才需要 */
+  to?: 'youtube' | 'bilibili' | 'tencent' | 'youku' | 'vimeo'
+  /** 自定义视频链接，只有在 `to` 和`id` 不存在时才需要提供。 */
   src?: string
 }
 
