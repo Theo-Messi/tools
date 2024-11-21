@@ -18,16 +18,15 @@ const footer = props.Footer_Data
               :icon="section.icon"
               class="iconify"
               :style="{ color: section.style }"
-            /> </template
-          >&nbsp;&nbsp;
-          {{ section.title }}
+            />&nbsp;&nbsp;</template
+          >{{ section.title }}
         </div>
         <ul class="list-link">
           <li v-for="(link, idx) in section.links" :key="link.name + idx">
             <template v-if="link.icon">
               <i v-if="link.icon" :class="link.icon" :style="{ color: link.style }"></i>
-              <Icon v-if="isIconifyIcon(link.icon)" :icon="link.icon" :style="{ color: link.style }" />
-            </template>
+              <Icon v-if="isIconifyIcon(link.icon)" :icon="link.icon" :style="{ color: link.style }" />&nbsp;</template
+            >
             <a
               :target="link.target || section.target || '_blank'"
               rel="noopener"
@@ -39,7 +38,7 @@ const footer = props.Footer_Data
               <Icon
                 v-if="(link.target || section.target || '_blank') === '_blank'"
                 icon="heroicons-outline:arrow-sm-up"
-                style="color: var(--vp-c-text-3); transform: rotate(45deg)"
+                style="color: var(--vp-c-text-3); transform: rotate(45deg); font-size: 1em"
               />
             </a>
           </li>
@@ -51,13 +50,13 @@ const footer = props.Footer_Data
     <div class="info-containe">
       <div class="info-content" v-if="footer.beian?.icp || footer.beian?.police">
         <span class="info-link" v-if="footer.beian?.icp">
-          <Icon v-if="footer.beian?.showIcon" icon="fluent-color:globe-shield-48" />
+          <Icon v-if="footer.beian?.showIcon" icon="fluent-color:globe-shield-48" />&nbsp;
           <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/" title="ICP备案">
             {{ footer.beian.icp }}
           </a>
         </span>
         <span class="info-link" v-if="footer.beian?.police">
-          <Icon v-if="footer.beian?.showIcon" icon="fluent-color:shield-checkmark-48" />
+          <Icon v-if="footer.beian?.showIcon" icon="fluent-color:shield-checkmark-48" />&nbsp;
           <a target="_blank" rel="noopener" href="https://beian.mps.gov.cn/" title="公安备案">
             {{ footer.beian.police }}
           </a>
@@ -65,8 +64,8 @@ const footer = props.Footer_Data
       </div>
       <div class="info-content" v-if="footer.author?.name">
         <span class="info-link">
-          <Icon icon="ri:copyright-line" />{{ new Date().getFullYear() }}
-          <a target="_blank" rel="noopener" title="GitHub" :href="footer.author?.link"> {{ footer.author?.name }}</a
+          <Icon icon="ri:copyright-line" />&nbsp;{{ new Date().getFullYear() }}
+          <a target="_blank" rel="noopener" title="GitHub" :href="footer.author?.link">{{ footer.author?.name }}</a
           >. All Rights Reserved.
         </span>
       </div>
@@ -119,7 +118,8 @@ const footer = props.Footer_Data
 .iconify {
   position: relative;
   display: inline-block;
-  margin: 0 0.25rem -0.1rem 0;
+  margin: 0 0 -0.125rem -0.125rem;
+  font-size: 1.2em;
 }
 
 .info-containe {
