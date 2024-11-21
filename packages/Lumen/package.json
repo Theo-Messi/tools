@@ -1,6 +1,6 @@
 {
   "name": "@theojs/lumen",
-  "version": "4.1.0",
+  "version": "4.2.0",
   "description": "用于 VitePress 主题美化和集成 Vue 功能组件",
   "repository": {
     "type": "git",
@@ -17,16 +17,19 @@
   "keywords": [
     "scss",
     "sass",
-    "styles",
     "vue",
     "vite",
     "typescript",
     "vitepress",
     "vitepress-plugin",
     "vitepress-theme",
-    "ui",
+    "vitepress-ui",
     "comment",
-    "twikoo"
+    "twikoo",
+    "iconify",
+    "fontawesome",
+    "video-player",
+    "youtube"
   ],
   "main": "types/index.ts",
   "style": "theme/all.scss",
@@ -34,12 +37,12 @@
     "release": "bumpp && pnpm publish --registry=https://registry.npmjs.org"
   },
   "devDependencies": {
-    "@types/node": "^22.9.1",
-    "typescript": "^5.6.3",
     "vite": "^5.4.11",
     "vitepress": "^1.5.0"
   },
   "dependencies": {
+    "@types/node": "^22.9.1",
+    "typescript": "^5.6.3",
     "@fortawesome/fontawesome-free": "^6.7.1",
     "@iconify/vue": "^4.1.2",
     "bumpp": "^9.8.1",
@@ -50,6 +53,7 @@
   "files": [
     "theme/",
     "types/",
+    "analytics/",
     "components/",
     "tsconfig.json",
     "readme.md",
@@ -70,5 +74,5 @@
     "./doc-blocks-border": "./theme/doc-blocks-border.scss",
     "./package.json": "./package.json"
   },
-  "packageManager": "pnpm@9.13.2"
+  "packageManager": "pnpm@9.14.2"
 }
