@@ -1,6 +1,6 @@
 import { defineConfig } from 'vitepress'
 import { groupIconVitePlugin } from 'vitepress-plugin-group-icons'
-import { head, markdown, nav, sidebar, search } from './configs'
+import { head, markdown, nav, sidebar, search, socialLinks } from './configs'
 
 export default defineConfig({
   title: 'TheoJS',
@@ -63,10 +63,7 @@ export default defineConfig({
 
     sidebar,
 
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/Theo-Messi/tools' },
-      { icon: 'npm', link: 'https://www.npmjs.com/package/@theojs/lumen' }
-    ],
+    socialLinks,
     search: { provider: 'local', options: search },
     notFound: {
       title: '找不到页面',
