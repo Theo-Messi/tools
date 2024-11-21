@@ -12,7 +12,8 @@ import {
   HomeFooter,
   Twikoo,
   ShareButton,
-  googleAnalytics
+  googleAnalytics,
+  umamiAnalytics
 } from '@theojs/lumen'
 import { Aside_Data, Footer_Data, Twikoo_Data } from '../data'
 import 'virtual:group-icons.css'
@@ -31,6 +32,10 @@ export default {
   },
   enhanceApp: ({ app }) => {
     googleAnalytics({ id: 'G-DMPNK5Q8CL' })
+    umamiAnalytics({
+      id: '02dffc33-9ede-4c00-a0a2-4c988b752ac8',
+      src: 'https://umami.theojs.cn/script.js'
+    })
     app.component('Box', DocBox)
     app.component('Links', DocLinks)
     app.component('BoxCube', DocBoxCube)
