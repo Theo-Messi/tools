@@ -15,3 +15,4 @@ export * from './types'
 export * from './utils'
 
 import '@fortawesome/fontawesome-free/css/all.min.css'
+import 'iconify-icon'

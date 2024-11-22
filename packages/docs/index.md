@@ -39,13 +39,13 @@ hero:
       link: https://xx.theojs.cn
 
 features:
-  - title: '<i class="fas fa-palette" style="margin-right:0.5rem; color:#FF6347" alt="palette"></i>自定义主题配色'
+  - title: '<iconify-icon icon="mdi:palette" style="margin-right:0.25rem; color:#FF6347;" alt="palette"></iconify-icon>自定义主题配色'
     details: 支持自定义主题配色，根据需求调整主题颜色方案。通过简单的配置，轻松地切换不同的主题配色，以符合品牌或个人偏好的视觉风格。
 
-  - title: '<i class="fas fa-cubes" style="margin-right:0.5rem; color:#4682B4" alt="cubes"></i>增强的 Vue 组件'
+  - title: '<iconify-icon icon="mdi:cube-outline" style="margin-right:0.25rem; color:#4682B4;" alt="cubes"></iconify-icon>增强的 Vue 组件'
     details: 包含了一系列增强的 Vue 组件，旨在提供更丰富的功能和更好的用户体验。这些组件可以直接在 VitePress 项目中使用，减少开发时间，同时提高页面的交互性和视觉效果。
 
-  - title: '<i class="fas fa-plug" style="margin-right:0.5rem; color:#32CD32" alt="plug"></i>易于集成和使用'
+  - title: '<iconify-icon icon="mdi:power-plug" style="margin-right:0.25rem; color:#32CD32;" alt="plug"></iconify-icon>易于集成和使用'
     details: 易于集成到现有的 VitePress 项目中。只需简单的安装步骤，即可快速上手使用所有增强的功能和组件，提升文档站点的整体质量和专业性。
 ---
 

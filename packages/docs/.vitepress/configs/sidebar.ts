@@ -12,56 +12,56 @@ export function guide(): SidebarItem[] {
       // text: '快速开始',
       items: [
         {
-          text: '<i class="fas fa-bolt" style="margin-right:0.5rem;color: #63E6BE;"></i>快速开始',
+          text: '<iconify-icon icon="fa6-solid:bolt" style="margin-right:0.25rem;color:#63E6BE;"></iconify-icon>快速开始',
           link: 'getting-started'
         }
       ]
     },
     {
-      text: '<i class="fas fa-gears" style="margin-right:0.5rem;color: #3498db;"></i>配置',
+      text: '<iconify-icon icon="fa6-solid:gears" style="margin-right:0.25rem;color:#3498db;"></iconify-icon>配置',
       items: [
         {
-          text: '<i class="fas fa-palette" style="margin-right:0.5rem;color: #f39c12;"></i>导入主题配色',
+          text: '<iconify-icon icon="mdi:palette" style="margin-right:0.25rem;color:#f39c12;"></iconify-icon>导入主题',
           link: 'theme'
         },
         {
-          text: '<i class="fas fa-bullhorn" style="margin-right:0.5rem;color: #e74c3c;"></i>首页公告栏',
+          text: '<iconify-icon icon="mdi:bullhorn" style="margin-right:0.25rem;color:#e74c3c;"></iconify-icon>首页公告栏',
           link: 'Announcement'
         },
         {
-          text: '<i class="fas fa-underline" style="margin-right:0.5rem;color: #3498db;"></i>首页下划线',
+          text: '<iconify-icon icon="mdi:format-underline" style="margin-right:0.25rem;color:#3498db;"></iconify-icon>首页下划线',
           link: 'HomeUnderline'
         },
         {
-          text: '<i class="fas fa-gear" style="margin-right:0.5rem;color: #2ecc71;"></i>页脚配置',
+          text: '<iconify-icon icon="mdi:cog" style="margin-right:0.25rem;color:#2ecc71;"></iconify-icon>页脚配置',
           link: 'HomeFooter'
         },
         {
-          text: '<i class="fas fa-th-list" style="margin-right:0.5rem;color: #9b59b6;"></i>侧边栏链接',
+          text: '<iconify-icon icon="mdi:view-list" style="margin-right:0.25rem;color:#9b59b6;"></iconify-icon>侧边栏链接',
           link: 'DocAsideLogo'
         },
         {
-          text: '<i class="fas fa-video" style="margin-right:0.5rem;color: #e67e22;"></i>视频组件',
+          text: '<iconify-icon icon="mdi:video" style="margin-right:0.25rem;color:#e67e22;"></iconify-icon>视频组件',
           link: 'DocVideoLink'
         },
         {
-          text: '<i class="fas fa-id-card" style="margin-right:0.5rem;color: #1abc9c;"></i>链接卡片',
+          text: '<iconify-icon icon="mdi:credit-card" style="margin-right:0.25rem;color:#1abc9c;"></iconify-icon>链接卡片',
           link: 'LinkCard'
         },
         {
-          text: '<i class="fas fa-share-alt" style="margin-right:0.5rem;color: #3498db;"></i>页面分享按钮',
+          text: '<iconify-icon icon="fa6-solid:share-nodes" style="margin-right:0.25rem;color:#3498db;"></iconify-icon>页面分享按钮',
           link: 'ShareButton'
         },
         {
-          text: '<i class="fas fa-image" style="margin-right:0.5rem;color: #2ecc71;"></i>图片描述',
+          text: '<iconify-icon icon="mdi:image-filter" style="margin-right:0.25rem;color:#2ecc71;"></iconify-icon>图片描述',
           link: 'Image-description'
         },
         {
-          text: '<i class="fas fa-comments" style="margin-right:0.5rem;color: #3498db;"></i>Twikoo 评论',
+          text: '<iconify-icon icon="mdi:comment-text-multiple" style="margin-right:0.25rem;color:#3498db;"></iconify-icon>Twikoo 评论',
           link: 'DocTwikoo'
         },
         {
-          text: '<i class="fas fa-chart-simple" style="margin-right:0.5rem;color: #3498db;"></i>站点统计',
+          text: '<iconify-icon icon="mdi:chart-box" style="margin-right:0.25rem;color:#3498db;"></iconify-icon>站点统计',
           link: 'analytics'
         }
       ]

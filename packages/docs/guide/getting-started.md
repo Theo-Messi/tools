@@ -50,53 +50,69 @@ export default {
 <BoxCube
   :items="[
     {
-      name: '导入主题配色',
+      name: '导入主题',
       link: 'theme',
-      icon: 'fas fa-palette',
+      icon: 'mdi:palette',
       color: '#f39c12'
     },
     {
       name: '首页公告栏',
       link: 'Announcement',
-      icon: 'fas fa-bullhorn',
+      icon: 'mdi:bullhorn',
       color: '#e74c3c'
     },
     {
       name: '首页下划线',
       link: 'HomeUnderline',
-      icon: 'fas fa-underline',
+      icon: 'mdi:format-underline',
       color: '#3498db'
     },
-    { name: '页脚配置', link: 'HomeFooter', icon: 'fas fa-gear', color: '#2ecc71' },
+    {
+      name: '页脚配置',
+      link: 'HomeFooter',
+      icon: 'mdi:cog',
+      color: '#2ecc71'
+    },
     {
       name: '侧边栏链接',
       link: 'DocAsideLogo',
-      icon: 'fas fa-th-list',
+      icon: 'mdi:view-list',
       color: '#9b59b6'
     },
-    { name: '视频组件', link: 'DocVideoLink', icon: 'fas fa-video', color: '#e67e22' },
+    {
+      name: '视频组件',
+      link: 'DocVideoLink',
+      icon: 'mdi:video',
+      color: '#e67e22'
+    },
     {
       name: '链接卡片',
       link: 'LinkCard',
-      icon: 'fas fa-id-card',
+      icon: 'mdi:credit-card',
       color: '#1abc9c'
     },
     {
       name: '页面分享按钮',
       link: 'ShareButton',
-      icon: 'fas fa-share-alt',
+      icon: 'fa6-solid:share-nodes',
       color: '#3498db'
     },
     {
       name: '图片描述',
       link: 'Image-description',
-      icon: 'fas fa-image',
+      icon: 'mdi:image-filter',
       color: '#2ecc71'
     },
     {
       name: 'Twikoo 评论',
       link: 'DocTwikoo',
-      icon: 'fas fa-comments',
+      icon: 'mdi:comment-text-multiple',
+      color: '#3498db'
+    },
+    {
+      name: '站点统计',
+      link: 'analytics',
+      icon: 'mdi:chart-box',
       color: '#3498db'
     }
   ]"
