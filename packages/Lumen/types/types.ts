@@ -10,7 +10,7 @@ export interface BoxItem {
   tag?: string
   /** 图标的颜色。 */
   color?: string
-  /** 图标名称，支持 `iconify` 或 `fortawesome`。 */
+  /** 图标名称，支持 `iconify`。 */
   icon?: string
   /** 图片地址或包含 light 和 dark 模式的对象。 */
   image?: string | { light: string; dark: string }
@@ -28,7 +28,7 @@ export interface LinkItem {
   link: string
   /** 图标的颜色。 */
   color?: string | null
-  /** 图标名称，支持 `iconify` 或 `fortawesome`。 */
+  /** 图标名称，支持 `iconify`。 */
   icon?: string | null
   /** 支持单一图片地址或包含 light 和 dark 模式的对象。 */
   image?: string | { light: string; dark: string }
@@ -46,7 +46,7 @@ export interface BoxCubeItem {
   desc?: string
   /** 图标的颜色。 */
   color?: string
-  /** 图标名称，支持 `iconify` 或 `fortawesome`。 */
+  /** 图标名称，支持 `iconify`。 */
   icon?: string | null
   /** 图片地址或包含 light 和 dark 模式的对象。 */
   image?: string | { light: string; dark: string }

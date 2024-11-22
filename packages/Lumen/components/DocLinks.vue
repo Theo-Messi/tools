@@ -17,7 +17,6 @@ const props = defineProps<{ items: LinkItem[] }>()
     >
       <template v-if="link.icon">
         <Icon v-if="isIconifyIcon(link.icon)" :icon="link.icon" class="iconify" :style="{ color: link.color }" />
-        <i v-else :class="link.icon + ' icon'" :style="{ color: link.color }"></i>
       </template>
       <template v-else-if="link.image">
         <img v-if="typeof link.image === 'object'" :src="link.image.light" alt="Icon" class="icon light-only" />
@@ -25,7 +24,7 @@ const props = defineProps<{ items: LinkItem[] }>()
         <img v-else :src="link.image" alt="Icon" class="icon" />
       </template>
       <template v-else>
-        <i class="fas fa-arrow-up-right-from-square fa-icon" alt="Icon"></i>
+        <Icon class="default-icon" icon="fa6-solid:arrow-up-right-from-square" alt="Icon" />
       </template>
       <div class="text-content">
         <span class="name">{{ link.name }}</span>
@@ -74,10 +73,10 @@ const props = defineProps<{ items: LinkItem[] }>()
   flex-shrink: 0; // 禁止图标在 flex 布局中因空间不足被压缩。
 }
 
-.fa-icon {
+.default-icon {
   width: 2rem;
   font-size: 1.5em;
-  margin-left: 0.5rem;
+  flex-shrink: 0; // 禁止图标在 flex 布局中因空间不足被压缩。
 }
 
 .text-content {

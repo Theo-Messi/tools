@@ -33,7 +33,7 @@ import '@theojs/lumen/badge' /* 徽章样式 */
 
 ## 图标支持
 
-目前支持 <iconify-icon icon="simple-icons:fontawesome"></iconify-icon> [FontAwesome](https://fontawesome.com/search?o=r&m=free) 和 <iconify-icon icon="line-md:iconify1"></iconify-icon> [Iconify](https://icon-sets.iconify.design/) 图标
+目前支持 <iconify-icon icon="line-md:iconify1"></iconify-icon> [Iconify](https://icon-sets.iconify.design/) 图标
 
 :::details 使用 Iconify 时报错 `[Vue warn]: Failed to resolve component: iconify-icon`
 
@@ -51,10 +51,6 @@ export default defineConfig({
 :::
 
 ```md
-FontAwesome
-<i class="fa-brands fa-font-awesome"></i>
-<i class="fa-brands fa-twitter"></i>
-
 Iconify
 <iconify-icon icon="simple-icons:fontawesome"></iconify-icon>
 <iconify-icon icon="line-md:iconify1"></iconify-icon>

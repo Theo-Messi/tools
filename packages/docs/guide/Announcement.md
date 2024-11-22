@@ -38,7 +38,7 @@ hero:
   textsuffix: 'Theme'
   tagline: ✨ 集成 Vue 功能组件和主题美化的 VitePress 插件
   prelink: // [!code ++]
-    title: '<i class="fas fa-bolt" style="color: #63E6BE;"></i> 快速开始 <p>pnpm add @theojs/lumen</p>' // [!code ++]
+    title: '<iconify-icon icon="fa6-solid:bolt" style="margin-right:0.25rem;color:#63E6BE;"></iconify-icon> 快速开始 <p>pnpm add @theojs/lumen</p>' // [!code ++]
     link: /guide/getting-started // [!code ++]
     target: _blank // [!code ++]
 ---
