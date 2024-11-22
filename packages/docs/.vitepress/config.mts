@@ -11,9 +11,11 @@ export default defineConfig({
   sitemap: { hostname: 'https://tools.theojs.cn' },
   head,
   markdown,
+
   vue: {
     template: { compilerOptions: { isCustomElement: (tag) => tag === 'iconify-icon' } }
   },
+
   vite: {
     plugins: [
       groupIconVitePlugin({
@@ -28,20 +30,24 @@ export default defineConfig({
     ],
     css: { preprocessorOptions: { scss: { api: 'modern' } } }
   },
+
   themeConfig: {
     logo: { src: '/Logo.png', width: 24, height: 24 },
     editLink: {
       pattern: 'https://github.com/Theo-Messi/tools/edit/main/packages/docs/:path',
       text: '为此页提供修改建议'
     },
+
     // 目录设置
     outline: 'deep', // 索引级别
     outlineTitle: '本页目录', // 目录文本
+
     // 上次更新
     lastUpdated: {
       text: '最后更新于',
       formatOptions: { dateStyle: 'full', timeStyle: 'full', hourCycle: 'h24' }
     },
+
     // 文章翻页
     docFooter: { prev: '上一篇', next: '下一篇' },
 
