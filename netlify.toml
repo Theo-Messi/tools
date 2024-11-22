@@ -2,8 +2,8 @@
 NODE_VERSION = "22"
 
 [build]
-publish = "packages/docs/.vitepress/dist"
-command = "pnpm run build:docs"
+publish = "docs/.vitepress/dist"
+command = "pnpm run build"
 
 [[headers]]
 for = "/assets/*"
@@ -12,6 +12,12 @@ cache-control = "max-age=31536000, immutable"
 
 [[redirects]]
 from = "https://tools.theovan.cn/*"
-to = "https://tools.theojs.cn/:splat"
+to = "https://lumen.theojs.cn/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://tools.theojs.cn/*"
+to = "https://lumen.theojs.cn/:splat"
 status = 301
 force = true

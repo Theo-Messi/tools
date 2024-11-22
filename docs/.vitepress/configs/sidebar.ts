@@ -26,39 +26,39 @@ export function guide(): SidebarItem[] {
         },
         {
           text: '<iconify-icon icon="mdi:bullhorn" style="margin-right:0.25rem;color:#e74c3c;"></iconify-icon>首页公告栏',
-          link: 'Announcement'
+          link: 'announcement'
         },
         {
           text: '<iconify-icon icon="mdi:format-underline" style="margin-right:0.25rem;color:#3498db;"></iconify-icon>首页下划线',
-          link: 'HomeUnderline'
+          link: 'homeunderline'
         },
         {
           text: '<iconify-icon icon="mdi:cog" style="margin-right:0.25rem;color:#2ecc71;"></iconify-icon>页脚配置',
-          link: 'HomeFooter'
+          link: 'homefooter'
         },
         {
           text: '<iconify-icon icon="mdi:view-list" style="margin-right:0.25rem;color:#9b59b6;"></iconify-icon>侧边栏链接',
-          link: 'DocAsideLogo'
+          link: 'docasidelogo'
         },
         {
           text: '<iconify-icon icon="mdi:video" style="margin-right:0.25rem;color:#e67e22;"></iconify-icon>视频组件',
-          link: 'DocVideoLink'
+          link: 'docvideolink'
         },
         {
           text: '<iconify-icon icon="mdi:credit-card" style="margin-right:0.25rem;color:#1abc9c;"></iconify-icon>链接卡片',
-          link: 'LinkCard'
+          link: 'linkcard'
         },
         {
           text: '<iconify-icon icon="fa6-solid:share-nodes" style="margin-right:0.25rem;color:#3498db;"></iconify-icon>页面分享按钮',
-          link: 'ShareButton'
+          link: 'sharebutton'
         },
         {
           text: '<iconify-icon icon="mdi:image-filter" style="margin-right:0.25rem;color:#2ecc71;"></iconify-icon>图片描述',
-          link: 'Image-description'
+          link: 'image-description'
         },
         {
           text: '<iconify-icon icon="mdi:comment-text-multiple" style="margin-right:0.25rem;color:#3498db;"></iconify-icon>Twikoo 评论',
-          link: 'DocTwikoo'
+          link: 'doctwikoo'
         },
         {
           text: '<iconify-icon icon="mdi:chart-box" style="margin-right:0.25rem;color:#3498db;"></iconify-icon>站点统计',
