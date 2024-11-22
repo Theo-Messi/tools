@@ -9,11 +9,11 @@ const props = defineProps({
   /**
    * 按钮图标的类名。
    * @type {string}
-   * @default 'fas fa-share-alt'
+   * @default 'solar:share-bold'
    */
   buttonIcon: {
     type: String as PropType<string>,
-    default: 'fas fa-share-alt'
+    default: 'solar:share-bold' // Iconify 的图标名称
   },
 
   /**
@@ -29,11 +29,11 @@ const props = defineProps({
   /**
    * 复制成功后显示的图标的类名。
    * @type {string}
-   * @default 'fas fa-thumbs-up'
+   * @default 'mdi:thumbs-up'
    */
   copiedIcon: {
     type: String as PropType<string>,
-    default: 'fas fa-thumbs-up'
+    default: 'mdi:thumbs-up' // Iconify 的图标名称
   },
 
   /**
@@ -62,13 +62,11 @@ const shareLink = computed(() => {
     <button @click="copyLink(shareLink)" class="share-link-button" :class="{ copied }">
       <span v-if="!copied">
         <Icon v-if="isIconifyIcon(props.buttonIcon)" :icon="props.buttonIcon" class="iconify" />
-        <i v-else :class="props.buttonIcon"></i>
         {{ props.buttonText }}
       </span>
 
       <span v-else>
         <Icon v-if="isIconifyIcon(props.copiedIcon)" :icon="props.copiedIcon" class="iconify" />
-        <i v-else :class="props.copiedIcon"></i>
         {{ props.copiedText }}
       </span>
     </button>

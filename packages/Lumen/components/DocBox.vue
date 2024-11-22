@@ -17,7 +17,6 @@ const props = defineProps<{ items: BoxItem[] }>()
     >
       <template v-if="box.icon">
         <Icon v-if="isIconifyIcon(box.icon)" :icon="box.icon" class="iconify" :style="{ color: box.color }" />
-        <i v-else :class="box.icon + ' icon'" :style="{ color: box.color }" alt="Icon"></i>
       </template>
       <template v-else-if="box.image">
         <img v-if="typeof box.image === 'object'" :src="box.image.light" alt="Icon" class="icon light-only" />

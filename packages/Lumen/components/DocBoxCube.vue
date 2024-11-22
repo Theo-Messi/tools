@@ -22,7 +22,6 @@ const props = defineProps<{ items: BoxCubeItem[] }>()
           class="iconify"
           :style="{ color: boxcube.color }"
         />
-        <i v-else :class="boxcube.icon + ' icon'" :style="{ color: boxcube.color }" alt="Icon"></i>
       </template>
       <template v-else-if="boxcube.image">
         <img v-if="typeof boxcube.image === 'object'" :src="boxcube.image.light" alt="Icon" class="icon light-only" />

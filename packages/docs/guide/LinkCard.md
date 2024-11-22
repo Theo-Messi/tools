@@ -20,12 +20,6 @@ export default {
 
 ```
 
-::: tip `icon` 属性支持使用 `FontAwesome` 和 `Iconify` 图标。
-
-- **FontAwesome**: 使用格式为 `icon: 'fab fa-vuejs'`。查看更多图标，请访问 [FontAwesome](https://fontawesome.com/search?o=r&m=free)。
-- **Iconify**: 使用格式为 `icon: 'vscode-icons:file-type-vue'`。查看更多图标，请访问 [Iconify](https://icon-sets.iconify.design/)。
-  :::
-
 ## Box
 
 ### 示例
@@ -35,8 +29,6 @@ export default {
 ```vue
 <Box
   :items="[
-    //FontAwesome图标
-    { name: 'fontawesome', link: '', icon: 'fas fa-font-awesome', color: '#538DD7' },
     //iconify图标
     { name: 'iconify', link: '', icon: 'line-md:iconify1', color: '#1769AA' },
     //图片
@@ -61,8 +53,6 @@ export default {
 
 <Box
   :items="[
-    //FontAwesome图标
-    { name: 'fontawesome', link: '', icon: 'fas fa-font-awesome', color: '#538DD7' },
     //iconify图标
     { name: 'iconify', link: '', icon: 'line-md:iconify1', color: '#1769AA' },
     //图片
@@ -84,14 +74,14 @@ export default {
 
 ### 参数说明
 
-|  字段   |                     类型                      | 描述                                                                                                                                                            |
-| :-----: | :-------------------------------------------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `name`  |                   `string`                    | DocBox 名称。                                                                                                                                                   |
-| `link`  |                   `string`                    | DocBox 链接。                                                                                                                                                   |
-|  `tag`  |                   `string`                    | <Badge type="tip" text="可选" /> DocBox 标签。                                                                                                                  |
-| `color` |                   `string`                    | <Badge type="tip" text="可选" /> 图标的颜色。                                                                                                                   |
-| `icon`  |                   `string`                    | <Badge type="tip" text="可选" /> 图标名称，支持 [iconify](https://icon-sets.iconify.design/) 或者 [fortawesome](https://fontawesome.com/search?o=r&m=free) 图标 |
-| `image` | `string` \| `{ light: string; dark: string }` | <Badge type="tip" text="可选" /> 图片地址或包含 light 和 dark 模式的对象。                                                                                      |
+|  字段   |                     类型                      | 描述                                                                                              |
+| :-----: | :-------------------------------------------: | ------------------------------------------------------------------------------------------------- |
+| `name`  |                   `string`                    | DocBox 名称。                                                                                     |
+| `link`  |                   `string`                    | DocBox 链接。                                                                                     |
+|  `tag`  |                   `string`                    | <Badge type="tip" text="可选" /> DocBox 标签。                                                    |
+| `color` |                   `string`                    | <Badge type="tip" text="可选" /> 图标的颜色。                                                     |
+| `icon`  |                   `string`                    | <Badge type="tip" text="可选" /> 图标名称，支持 [iconify](https://icon-sets.iconify.design/) 图标 |
+| `image` | `string` \| `{ light: string; dark: string }` | <Badge type="tip" text="可选" /> 图片地址或包含 light 和 dark 模式的对象。                        |
 
 ## Links
 
@@ -102,8 +92,6 @@ export default {
 ```vue
 <Links
   :items="[
-    //FontAwesome图标
-    { name: 'fontawesome', link: '', icon: 'fas fa-font-awesome', color: '#538DD7' },
     //iconify图标
     { name: 'iconify', link: '', icon: 'line-md:iconify1', color: '#1769AA' },
     //图片
@@ -127,8 +115,6 @@ export default {
 **输出**
 <Links
   :items="[
-    //FontAwesome图标
-    { name: 'fontawesome', link: '', icon: 'fas fa-font-awesome', color: '#538DD7' },
     //iconify图标
     { name: 'iconify', link: '', icon: 'line-md:iconify1', color: '#1769AA' },
     //图片
@@ -150,14 +136,14 @@ export default {
 
 ### 参数说明
 
-|  字段   |                     类型                      | 描述                                                                                                                                                              |
-| :-----: | :-------------------------------------------: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `name`  |                   `string`                    | DocLinks 名称。                                                                                                                                                   |
-| `desc`  |                   `string`                    | <Badge type="tip" text="可选" /> DocLinks 描述信息。                                                                                                              |
-| `link`  |                   `string`                    | DocLinks 链接。                                                                                                                                                   |
-| `color` |                   `string`                    | <Badge type="tip" text="可选" /> 图标的颜色。                                                                                                                     |
-| `icon`  |                   `string`                    | <Badge type="tip" text="可选" /> 图标名称，支持 [iconify](https://icon-sets.iconify.design/) 或者 [fortawesome](https://fontawesome.com/search?o=r&m=free) 图标。 |
-| `image` | `string` \| `{ light: string; dark: string }` | <Badge type="tip" text="可选" /> 支持单一图片地址或包含 light 和 dark 两种模式的对象。                                                                            |
+|  字段   |                     类型                      | 描述                                                                                                |
+| :-----: | :-------------------------------------------: | --------------------------------------------------------------------------------------------------- |
+| `name`  |                   `string`                    | DocLinks 名称。                                                                                     |
+| `desc`  |                   `string`                    | <Badge type="tip" text="可选" /> DocLinks 描述信息。                                                |
+| `link`  |                   `string`                    | DocLinks 链接。                                                                                     |
+| `color` |                   `string`                    | <Badge type="tip" text="可选" /> 图标的颜色。                                                       |
+| `icon`  |                   `string`                    | <Badge type="tip" text="可选" /> 图标名称，支持 [iconify](https://icon-sets.iconify.design/) 图标。 |
+| `image` | `string` \| `{ light: string; dark: string }` | <Badge type="tip" text="可选" /> 支持单一图片地址或包含 light 和 dark 两种模式的对象。              |
 
 ## BoxCube
 
@@ -168,8 +154,6 @@ export default {
 ```vue
 <BoxCube
   :items="[
-    //FontAwesome图标
-    { name: 'fontawesome', link: '', icon: 'fas fa-font-awesome', color: '#538DD7' },
     //iconify图标
     { name: 'iconify', link: '', icon: 'line-md:iconify1', color: '#1769AA' },
     //图片
@@ -185,7 +169,7 @@ export default {
       image: { light: 'https://i.theojs.cn/logo/github.svg', dark: 'https://i.theojs.cn/logo/github-dark.svg' }
     },
     //描述
-    { name: 'Vue.js', link: '', icon: 'fab fa-vuejs', desc: 'v3.4.31' }
+    { name: 'Vue.js', link: '', icon: 'devicon:vuejs', desc: 'v3.4.31' }
   ]"
 />
 ```
@@ -193,8 +177,6 @@ export default {
 **输出**
 <BoxCube
   :items="[
-    //FontAwesome图标
-    { name: 'fontawesome', link: '', icon: 'fas fa-font-awesome', color: '#538DD7' },
     //iconify图标
     { name: 'iconify', link: '', icon: 'line-md:iconify1', color: '#1769AA' },
     //图片
@@ -210,17 +192,17 @@ export default {
       image: { light: 'https://i.theojs.cn/logo/github.svg', dark: 'https://i.theojs.cn/logo/github-dark.svg' }
     },
     //描述
-    { name: 'Vue.js', link: '', icon: 'fab fa-vuejs', desc: 'v3.4.31' }
+    { name: 'Vue.js', link: '', icon: 'devicon:vuejs', desc: 'v3.4.31' }
   ]"
 />
 
 ## 参数说明
 
-|  字段   |                     类型                      | 描述                                                                                                                                                              |
-| :-----: | :-------------------------------------------: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `name`  |                   `string`                    | BoxCube 名称。                                                                                                                                                    |
-| `link`  |                   `string`                    | BoxCube 链接。                                                                                                                                                    |
-| `desc`  |                   `string`                    | <Badge type="tip" text="可选" /> BoxCube 描述。                                                                                                                   |
-| `color` |                   `string`                    | <Badge type="tip" text="可选" /> 图标的颜色。                                                                                                                     |
-| `icon`  |                   `string`                    | <Badge type="tip" text="可选" /> 图标名称，支持 [iconify](https://icon-sets.iconify.design/) 或者 [fortawesome](https://fontawesome.com/search?o=r&m=free) 图标。 |
-| `image` | `string` \| `{ light: string; dark: string }` | <Badge type="tip" text="可选" /> 支持单一图片地址或包含 light 和 dark 模式的对象。                                                                                |
+|  字段   |                     类型                      | 描述                                                                                                |
+| :-----: | :-------------------------------------------: | --------------------------------------------------------------------------------------------------- |
+| `name`  |                   `string`                    | BoxCube 名称。                                                                                      |
+| `link`  |                   `string`                    | BoxCube 链接。                                                                                      |
+| `desc`  |                   `string`                    | <Badge type="tip" text="可选" /> BoxCube 描述。                                                     |
+| `color` |                   `string`                    | <Badge type="tip" text="可选" /> 图标的颜色。                                                       |
+| `icon`  |                   `string`                    | <Badge type="tip" text="可选" /> 图标名称，支持 [iconify](https://icon-sets.iconify.design/) 图标。 |
+| `image` | `string` \| `{ light: string; dark: string }` | <Badge type="tip" text="可选" /> 支持单一图片地址或包含 light 和 dark 模式的对象。                  |
