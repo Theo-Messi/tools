@@ -2,8 +2,8 @@
 NODE_VERSION = "22"
 
 [build]
-publish = "packages/docs/.vitepress/dist"
-command = "pnpm run build:docs"
+publish = "docs/.vitepress/dist"
+command = "pnpm run build"
 
 [[headers]]
 for = "/assets/*"
