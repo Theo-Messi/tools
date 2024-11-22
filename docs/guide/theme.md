@@ -27,10 +27,6 @@ import '@theojs/lumen/badge' /* 徽章样式 */
 
 :::
 
-:::tip
-具体可查看所有主题文件 [Lumen/theme](https://github.com/Theo-Messi/tools/tree/main/packages/Lumen/theme)
-:::
-
 ## 图标支持
 
 目前支持 <iconify-icon icon="line-md:iconify1"></iconify-icon> [Iconify](https://icon-sets.iconify.design/) 图标
@@ -39,6 +35,7 @@ import '@theojs/lumen/badge' /* 徽章样式 */
 
 ```ts
 // .vitepress/config.mts
+
 import { defineConfig } from 'vitepress'
 export default defineConfig({
   vue: {// [!code ++]
@@ -66,6 +63,7 @@ Iconify
 
 ```ts
 // theme/index.ts
+
 import '@theojs/lumen/theme'
 import '@theojs/lumen/doc-blocks-border' // [!code ++]
 ```

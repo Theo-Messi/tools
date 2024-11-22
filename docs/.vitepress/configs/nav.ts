@@ -1,6 +1,6 @@
 import type { DefaultTheme } from 'vitepress'
 
-import Lumenpkg from '../../../Lumen/package.json'
+import Lumenpkg from '../../../src/package.json'
 
 const Lumenversion = `Lumen@` + Lumenpkg.version
 

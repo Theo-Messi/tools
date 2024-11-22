@@ -7,18 +7,19 @@
   "author": "Theo-Messi",
   "license": "MIT",
   "scripts": {
-    "dev:docs": "pnpm -F=docs dev",
-    "build:docs": "pnpm -F=docs build",
-    "preview:docs": "pnpm -F=docs preview",
+    "dev": "pnpm -F=docs dev",
+    "build": "pnpm -F=docs build",
+    "preview": "pnpm -F=docs preview",
     "release:lumen": "pnpm -F=lumen release",
-    "change:lumen": "cd packages/Lumen && npx changelogithub --dry",
+    "change:lumen": "cd src && npx changelogithub --dry",
     "format": "prettier --write .",
     "format:cheak": "prettier --check ."
   },
   "devDependencies": {
     "lint-staged": "^15.2.10",
     "prettier": "3.3.3",
-    "simple-git-hooks": "^2.11.1"
+    "simple-git-hooks": "^2.11.1",
+    "changelogithub": "^0.13.11"
   },
   "prettier": {
     "semi": false,

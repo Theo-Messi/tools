@@ -4,7 +4,8 @@ updates:
   - package-ecosystem: 'npm'
     directories:
       - '/'
-      - '/packages/*'
+      - '/docs'
+      - '/src'
     schedule:
       interval: 'daily'
       timezone: 'Asia/Shanghai'
