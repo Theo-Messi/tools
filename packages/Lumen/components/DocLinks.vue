@@ -24,7 +24,7 @@ const props = defineProps<{ items: LinkItem[] }>()
         <img v-else :src="link.image" alt="Icon" class="icon" />
       </template>
       <template v-else>
-        <Icon class="fa-icon" icon="fa6-solid:arrow-up-right-from-square" alt="Icon" />
+        <Icon class="default-icon" icon="fa6-solid:arrow-up-right-from-square" alt="Icon" />
       </template>
       <div class="text-content">
         <span class="name">{{ link.name }}</span>
@@ -73,7 +73,7 @@ const props = defineProps<{ items: LinkItem[] }>()
   flex-shrink: 0; // 禁止图标在 flex 布局中因空间不足被压缩。
 }
 
-.fa-icon {
+.default-icon {
   width: 2rem;
   font-size: 1.5em;
   flex-shrink: 0; // 禁止图标在 flex 布局中因空间不足被压缩。

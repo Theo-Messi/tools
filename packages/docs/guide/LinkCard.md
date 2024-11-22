@@ -169,7 +169,7 @@ export default {
       image: { light: 'https://i.theojs.cn/logo/github.svg', dark: 'https://i.theojs.cn/logo/github-dark.svg' }
     },
     //描述
-    { name: 'Vue.js', link: '', icon: 'fab fa-vuejs', desc: 'v3.4.31' }
+    { name: 'Vue.js', link: '', icon: 'devicon:vuejs', desc: 'v3.4.31' }
   ]"
 />
 ```
@@ -192,7 +192,7 @@ export default {
       image: { light: 'https://i.theojs.cn/logo/github.svg', dark: 'https://i.theojs.cn/logo/github-dark.svg' }
     },
     //描述
-    { name: 'Vue.js', link: '', icon: 'fab fa-vuejs', desc: 'v3.4.31' }
+    { name: 'Vue.js', link: '', icon: 'devicon:vuejs', desc: 'v3.4.31' }
   ]"
 />
 
