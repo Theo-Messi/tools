@@ -12,7 +12,6 @@ const footer = props.Footer_Data
       <div class="list-content" v-for="(section, index) in footer.group || []" :key="section.title + index">
         <div class="list-title">
           <template v-if="section.icon">
-            <i v-if="section.icon" :class="section.icon" :style="{ color: section.style }"></i>
             <Icon
               v-if="isIconifyIcon(section.icon)"
               :icon="section.icon"
@@ -24,7 +23,6 @@ const footer = props.Footer_Data
         <ul class="list-link">
           <li v-for="(link, idx) in section.links" :key="link.name + idx">
             <template v-if="link.icon">
-              <i v-if="link.icon" :class="link.icon" :style="{ color: link.style }"></i>
               <Icon v-if="isIconifyIcon(link.icon)" :icon="link.icon" :style="{ color: link.style }" />&nbsp;</template
             >
             <a
