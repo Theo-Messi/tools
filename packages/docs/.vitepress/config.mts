@@ -11,7 +11,9 @@ export default defineConfig({
   sitemap: { hostname: 'https://tools.theojs.cn' },
   head,
   markdown,
-
+  vue: {
+    template: { compilerOptions: { isCustomElement: (tag) => tag === 'iconify-icon' } }
+  },
   vite: {
     plugins: [
       groupIconVitePlugin({

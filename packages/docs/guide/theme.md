@@ -31,6 +31,35 @@ import '@theojs/lumen/badge' /* 徽章样式 */
 具体可查看所有主题文件 [Lumen/theme](https://github.com/Theo-Messi/tools/tree/main/packages/Lumen/theme)
 :::
 
+## 图标支持
+
+目前支持 <iconify-icon icon="simple-icons:fontawesome"></iconify-icon> [FontAwesome](https://fontawesome.com/search?o=r&m=free) 和 <iconify-icon icon="line-md:iconify1"></iconify-icon> [Iconify](https://icon-sets.iconify.design/) 图标
+
+:::details 使用 Iconify 时报错 `[Vue warn]: Failed to resolve component: iconify-icon`
+
+```ts
+// .vitepress/config.mts
+import { defineConfig } from 'vitepress'
+export default defineConfig({
+  vue: {// [!code ++]
+    template: { compilerOptions: { isCustomElement: (tag) => tag === 'iconify-icon' } }// [!code ++]
+  }// [!code ++]
+  ...
+})
+```
+
+:::
+
+```md
+FontAwesome
+<i class="fa-brands fa-font-awesome"></i>
+<i class="fa-brands fa-twitter"></i>
+
+Iconify
+<iconify-icon icon="simple-icons:fontawesome"></iconify-icon>
+<iconify-icon icon="line-md:iconify1"></iconify-icon>
+```
+
 ## 示例
 
 ### 容器
@@ -43,6 +72,10 @@ import '@theojs/lumen/badge' /* 徽章样式 */
 // theme/index.ts
 import '@theojs/lumen/theme'
 import '@theojs/lumen/doc-blocks-border' // [!code ++]
+```
+
+```
+
 ```
 
 **注意**: 引入 `doc-blocks-border` 时要放在 `@theojs/lumen/theme` 之后，以确保边框样式覆盖默认样式。**如果放在上方，可能会导致样式融合，不同效果相互影响**。
