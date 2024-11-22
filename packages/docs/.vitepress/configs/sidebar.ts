@@ -12,13 +12,13 @@ export function guide(): SidebarItem[] {
       // text: '快速开始',
       items: [
         {
-          text: '<iconify-icon icon="mdi:flash" style="margin-right:0.25rem;color:#63E6BE;"></iconify-icon>快速开始',
+          text: '<iconify-icon icon="fa6-solid:bolt" style="margin-right:0.25rem;color:#63E6BE;"></iconify-icon>快速开始',
           link: 'getting-started'
         }
       ]
     },
     {
-      text: '<iconify-icon icon="mdi:cogs" style="margin-right:0.25rem;color:#3498db;"></iconify-icon>配置',
+      text: '<iconify-icon icon="fa6-solid:gears" style="margin-right:0.25rem;color:#3498db;"></iconify-icon>配置',
       items: [
         {
           text: '<iconify-icon icon="mdi:palette" style="margin-right:0.25rem;color:#f39c12;"></iconify-icon>导入主题',
@@ -49,7 +49,7 @@ export function guide(): SidebarItem[] {
           link: 'LinkCard'
         },
         {
-          text: '<iconify-icon icon="mdi:share" style="margin-right:0.25rem;color:#3498db;"></iconify-icon>页面分享按钮',
+          text: '<iconify-icon icon="fa6-solid:share-nodes" style="margin-right:0.25rem;color:#3498db;"></iconify-icon>页面分享按钮',
           link: 'ShareButton'
         },
         {

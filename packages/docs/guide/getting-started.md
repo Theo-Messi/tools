@@ -94,7 +94,7 @@ export default {
     {
       name: '页面分享按钮',
       link: 'ShareButton',
-      icon: 'mdi:share',
+      icon: 'fa6-solid:share-nodes',
       color: '#3498db'
     },
     {
