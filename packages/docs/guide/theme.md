@@ -74,10 +74,6 @@ import '@theojs/lumen/theme'
 import '@theojs/lumen/doc-blocks-border' // [!code ++]
 ```
 
-```
-
-```
-
 **注意**: 引入 `doc-blocks-border` 时要放在 `@theojs/lumen/theme` 之后，以确保边框样式覆盖默认样式。**如果放在上方，可能会导致样式融合，不同效果相互影响**。
 
 :::
