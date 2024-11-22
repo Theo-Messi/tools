@@ -3,12 +3,12 @@ import { groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 import { head, markdown, nav, sidebar, search, socialLinks } from './configs'
 
 export default defineConfig({
-  title: 'TheoJS',
-  description: '用于VitePress主题美化和集成Vue功能组件',
+  title: 'Lumen',
+  description: '✨ 集成 Vue 功能组件和主题美化的 VitePress 插件',
   lang: 'zh-CN',
   cleanUrls: true,
   lastUpdated: true,
-  sitemap: { hostname: 'https://tools.theojs.cn' },
+  sitemap: { hostname: 'https://lumen.theojs.cn' },
   head,
   markdown,
 
@@ -34,7 +34,7 @@ export default defineConfig({
   themeConfig: {
     logo: { src: '/Logo.png', width: 24, height: 24 },
     editLink: {
-      pattern: 'https://github.com/Theo-Messi/tools/edit/main/packages/docs/:path',
+      pattern: 'https://github.com/Theo-Messi/lumen/edit/main/docs/:path',
       text: '为此页提供修改建议'
     },
 

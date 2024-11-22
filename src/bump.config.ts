@@ -1,7 +1,7 @@
 import { defineConfig } from 'bumpp'
 
 export default defineConfig({
-  tag: 'Lumen@%s',
-  commit: 'release: Lumen@%s',
+  tag: 'v%s',
+  commit: 'release: v%s',
   sign: true
 })

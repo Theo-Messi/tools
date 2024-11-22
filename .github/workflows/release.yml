@@ -6,7 +6,7 @@ permissions:
 on:
   push:
     tags:
-      - 'Lumen@*'
+      - 'v*'
 
 jobs:
   release:
@@ -21,7 +21,6 @@ jobs:
         with:
           node-version: lts/*
 
-      - if: startsWith(github.ref, 'refs/tags/Lumen@')
-        run: cd packages/Lumen && npx changelogithub
+      - run: cd src/ && npx changelogithub
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}

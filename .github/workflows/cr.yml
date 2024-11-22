@@ -3,14 +3,14 @@ name: Publish Any Commit
 on:
   pull_request:
     paths:
-      - 'packages/Lumen/**'
+      - 'src/**'
   push:
     branches:
       - '**'
     tags:
       - '!**'
     paths:
-      - 'packages/Lumen/**'
+      - 'src/**'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.number }}
@@ -43,4 +43,4 @@ jobs:
         run: pnpm install
 
       - name: Release
-        run: pnpm dlx pkg-pr-new publish --compact --pnpm './packages/*'
+        run: pnpm dlx pkg-pr-new publish --compact --pnpm './src'

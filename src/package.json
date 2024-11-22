@@ -4,14 +4,14 @@
   "description": "用于 VitePress 主题美化和集成 Vue 功能组件",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Theo-Messi/tools.git",
-    "directory": "packages/Lumen"
+    "url": "https://github.com/Theo-Messi/lumen.git",
+    "directory": "src/"
   },
   "bugs": {
-    "url": "https://github.com/Theo-Messi/tools/issues"
+    "url": "https://github.com/Theo-Messi/lumen/issues"
   },
-  "homepage": "https://tools.theojs.cn/",
-  "funding": "https://github.com/Theo-Messi/tools?sponsor=1",
+  "homepage": "https://lumen.theojs.cn/",
+  "funding": "https://github.com/Theo-Messi/lumen?sponsor=1",
   "author": "Theo-Messi",
   "license": "MIT",
   "keywords": [
@@ -29,7 +29,8 @@
     "iconify",
     "iconify-icon",
     "video-player",
-    "youtube"
+    "youtube",
+    "tools"
   ],
   "main": "types/index.ts",
   "style": "theme/all.scss",
