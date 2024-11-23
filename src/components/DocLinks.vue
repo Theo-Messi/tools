@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { LinkItem, isExternalLink, isIconifyIcon, Icon } from '../types'
+import { LinkItem, isExternalLink, Icon } from '../types'
 
 const props = defineProps<{ items: LinkItem[] }>()
 </script>
@@ -16,7 +16,7 @@ const props = defineProps<{ items: LinkItem[] }>()
       rel="noopener"
     >
       <template v-if="link.icon">
-        <Icon v-if="isIconifyIcon(link.icon)" :icon="link.icon" class="iconify" :style="{ color: link.color }" />
+        <Icon :icon="link.icon" class="iconify" :style="{ color: link.color }" />
       </template>
       <template v-else-if="link.image">
         <img v-if="typeof link.image === 'object'" :src="link.image.light" alt="Icon" class="icon light-only" />
@@ -24,7 +24,12 @@ const props = defineProps<{ items: LinkItem[] }>()
         <img v-else :src="link.image" alt="Icon" class="icon" />
       </template>
       <template v-else>
-        <Icon class="default-icon" icon="fa6-solid:arrow-up-right-from-square" alt="Icon" />
+        <Icon
+          class="default-icon"
+          icon="fa6-solid:arrow-up-right-from-square"
+          style="color: var(--vp-c-brand-1)"
+          alt="Icon"
+        />
       </template>
       <div class="text-content">
         <span class="name">{{ link.name }}</span>
@@ -70,6 +75,7 @@ const props = defineProps<{ items: LinkItem[] }>()
 .iconify {
   width: 2.5rem;
   font-size: 2.5em;
+  color: var(--vp-c-text-1);
   flex-shrink: 0; // 禁止图标在 flex 布局中因空间不足被压缩。
 }
 

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BoxItem, isExternalLink, isIconifyIcon, Icon } from '../types'
+import { BoxItem, isExternalLink, Icon } from '../types'
 
 const props = defineProps<{ items: BoxItem[] }>()
 </script>
@@ -16,7 +16,7 @@ const props = defineProps<{ items: BoxItem[] }>()
       rel="noopener"
     >
       <template v-if="box.icon">
-        <Icon v-if="isIconifyIcon(box.icon)" :icon="box.icon" class="iconify" :style="{ color: box.color }" />
+        <Icon :icon="box.icon" class="iconify" :style="{ color: box.color }" />
       </template>
       <template v-else-if="box.image">
         <img v-if="typeof box.image === 'object'" :src="box.image.light" alt="Icon" class="icon light-only" />
@@ -88,12 +88,10 @@ const props = defineProps<{ items: BoxItem[] }>()
 }
 
 .icon {
-  height: 1em;
-  font-size: 2em;
+  height: 2em;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--vp-c-text-1);
 }
 
 .iconify {

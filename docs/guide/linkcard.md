@@ -30,7 +30,7 @@ export default {
 <Box
   :items="[
     //iconify图标
-    { name: 'iconify', link: '', icon: 'line-md:iconify1', color: '#1769AA' },
+    { name: 'iconify', link: '#', icon: 'line-md:iconify1', color: '#1769AA' },
     //图片
     {
       name: '支付宝',
@@ -40,11 +40,11 @@ export default {
     //深浅模式的图片
     {
       name: 'GitHub',
-      link: '',
+      link: '#',
       image: { light: 'https://i.theojs.cn/logo/github.svg', dark: 'https://i.theojs.cn/logo/github-dark.svg' }
     },
     //标签
-    { name: 'Vue', link: '', icon: 'vscode-icons:file-type-vue', tag: 'vuejs' }
+    { name: 'Vue', link: '#', icon: 'vscode-icons:file-type-vue', tag: 'vuejs' }
   ]"
 />
 ```
@@ -54,7 +54,7 @@ export default {
 <Box
   :items="[
     //iconify图标
-    { name: 'iconify', link: '', icon: 'line-md:iconify1', color: '#1769AA' },
+    { name: 'iconify', link: '#', icon: 'line-md:iconify1', color: '#1769AA' },
     //图片
     {
       name: '支付宝',
@@ -64,11 +64,11 @@ export default {
     //深浅模式的图片
     {
       name: 'GitHub',
-      link: '',
+      link: '#',
       image: { light: 'https://i.theojs.cn/logo/github.svg', dark: 'https://i.theojs.cn/logo/github-dark.svg' }
     },
     //标签
-    { name: 'Vue', link: '', icon: 'vscode-icons:file-type-vue', tag: 'vuejs' }
+    { name: 'Vue', link: '#', icon: 'vscode-icons:file-type-vue', tag: 'vuejs' }
   ]"
 />
 
@@ -93,7 +93,7 @@ export default {
 <Links
   :items="[
     //iconify图标
-    { name: 'iconify', link: '', icon: 'line-md:iconify1', color: '#1769AA' },
+    { name: 'iconify', link: '#', icon: 'line-md:iconify1', color: '#1769AA' },
     //图片
     {
       name: '支付宝',
@@ -103,7 +103,7 @@ export default {
     //深浅模式的图片
     {
       name: 'GitHub',
-      link: '',
+      link: '#',
       image: { light: 'https://i.theojs.cn/logo/github.svg', dark: 'https://i.theojs.cn/logo/github-dark.svg' }
     },
     // 不使用图标 + 描述
@@ -116,7 +116,7 @@ export default {
 <Links
   :items="[
     //iconify图标
-    { name: 'iconify', link: '', icon: 'line-md:iconify1', color: '#1769AA' },
+    { name: 'iconify', link: '#', icon: 'line-md:iconify1', color: '#1769AA' },
     //图片
     {
       name: '支付宝',
@@ -126,7 +126,7 @@ export default {
     //深浅模式的图片
     {
       name: 'GitHub',
-      link: '',
+      link: '#',
       image: { light: 'https://i.theojs.cn/logo/github.svg', dark: 'https://i.theojs.cn/logo/github-dark.svg' }
     },
     // 不使用图标 + 描述
@@ -155,7 +155,7 @@ export default {
 <BoxCube
   :items="[
     //iconify图标
-    { name: 'iconify', link: '', icon: 'line-md:iconify1', color: '#1769AA' },
+    { name: 'iconify', link: '#', icon: 'line-md:iconify1', color: '#1769AA' },
     //图片
     {
       name: '支付宝',
@@ -165,11 +165,11 @@ export default {
     //深浅模式的图片
     {
       name: 'GitHub',
-      link: '',
+      link: '#',
       image: { light: 'https://i.theojs.cn/logo/github.svg', dark: 'https://i.theojs.cn/logo/github-dark.svg' }
     },
     //描述
-    { name: 'Vue.js', link: '', icon: 'devicon:vuejs', desc: 'v3.4.31' }
+    { name: 'Vue.js', link: '#', icon: 'devicon:vuejs', desc: 'v3.4.31' }
   ]"
 />
 ```
@@ -178,7 +178,7 @@ export default {
 <BoxCube
   :items="[
     //iconify图标
-    { name: 'iconify', link: '', icon: 'line-md:iconify1', color: '#1769AA' },
+    { name: 'iconify', link: '#', icon: 'line-md:iconify1', color: '#1769AA' },
     //图片
     {
       name: '支付宝',
@@ -188,11 +188,11 @@ export default {
     //深浅模式的图片
     {
       name: 'GitHub',
-      link: '',
+      link: '#',
       image: { light: 'https://i.theojs.cn/logo/github.svg', dark: 'https://i.theojs.cn/logo/github-dark.svg' }
     },
     //描述
-    { name: 'Vue.js', link: '', icon: 'devicon:vuejs', desc: 'v3.4.31' }
+    { name: 'Vue.js', link: '#', icon: 'devicon:vuejs', desc: 'v3.4.31' }
   ]"
 />
 
