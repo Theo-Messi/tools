@@ -169,20 +169,6 @@ console.log('Hello, VitePress!')
 
 :::
 
-### 徽章
-
-```vue
-<Badge type="info" text="default" />
-<Badge type="tip" text="^1.9.0" />
-<Badge type="warning" text="beta" />
-<Badge type="danger" text="caution" />
-```
-
-<Badge type="info" text="default" />
-<Badge type="tip" text="^1.9.0" />
-<Badge type="warning" text="beta" />
-<Badge type="danger" text="caution" />
-
 ### GitHub 风格容器
 
 **输入**
@@ -250,6 +236,20 @@ console.log('Hello, VitePress!')
 > [这是一个链接](https://doc.theojs.cn/)
 >
 > 这是一段文字
+
+### 徽章
+
+```vue
+<Badge type="info" text="default" />
+<Badge type="tip" text="^1.9.0" />
+<Badge type="warning" text="beta" />
+<Badge type="danger" text="caution" />
+```
+
+<Badge type="info" text="default" />
+<Badge type="tip" text="^1.9.0" />
+<Badge type="warning" text="beta" />
+<Badge type="danger" text="caution" />
 
 ### 图片浅色与深色模式
 
