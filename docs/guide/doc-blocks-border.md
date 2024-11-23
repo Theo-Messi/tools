@@ -97,3 +97,71 @@ console.log('Hello, VitePress!')
 ```
 
 :::
+
+### GitHub 风格容器
+
+**输入**
+
+```md
+> [!NOTE]
+>
+> [这是一个链接](https://doc.theojs.cn/)
+>
+> 这是一段文字
+
+> [!TIP]
+>
+> [这是一个链接](https://doc.theojs.cn/)
+>
+> 这是一段文字
+
+> [!IMPORTANT]
+>
+> [这是一个链接](https://doc.theojs.cn/)
+>
+> 这是一段文字
+
+> [!WARNING]
+>
+> [这是一个链接](https://doc.theojs.cn/)
+>
+> 这是一段文字
+
+> [!CAUTION]
+>
+> [这是一个链接](https://doc.theojs.cn/)
+>
+> 这是一段文字
+```
+
+**输出**
+
+> [!NOTE]
+>
+> [这是一个链接](https://doc.theojs.cn/)
+>
+> 这是一段文字
+
+> [!TIP]
+>
+> [这是一个链接](https://doc.theojs.cn/)
+>
+> 这是一段文字
+
+> [!IMPORTANT]
+>
+> [这是一个链接](https://doc.theojs.cn/)
+>
+> 这是一段文字
+
+> [!WARNING]
+>
+> [这是一个链接](https://doc.theojs.cn/)
+>
+> 这是一段文字
+
+> [!CAUTION]
+>
+> [这是一个链接](https://doc.theojs.cn/)
+>
+> 这是一段文字
