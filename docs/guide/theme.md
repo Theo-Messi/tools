@@ -29,8 +29,6 @@ import '@theojs/lumen/badge' /* 徽章样式 */
 
 ## 图标支持
 
-目前支持 <iconify-icon icon="line-md:iconify1"></iconify-icon> [Iconify](https://icon-sets.iconify.design/) 图标
-
 :::details 使用 Iconify 时报错 `[Vue warn]: Failed to resolve component: iconify-icon`
 
 ```ts
@@ -48,9 +46,13 @@ export default defineConfig({
 :::
 
 ```md
-Iconify
+<!-- 使用方法查看:https://iconify.design/docs/iconify-icon/ -->
+
 <iconify-icon icon="simple-icons:fontawesome"></iconify-icon>
 <iconify-icon icon="line-md:iconify1"></iconify-icon>
+<iconify-icon icon="cil:locomotive" height="36"></iconify-icon>
+<iconify-icon icon="cil:paper-plane" width="36"></iconify-icon>
+<iconify-icon icon="cil:truck" style="font-size: 18px" height="2em"></iconify-icon>
 ```
 
 ## 示例
