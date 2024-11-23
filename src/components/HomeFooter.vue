@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { FooterData, isIconifyIcon, Icon } from '../types'
+import { FooterData, Icon } from '../types'
 
 // 使用 defineProps 定义属性
 const props = defineProps<{ Footer_Data: FooterData }>()
@@ -12,19 +12,12 @@ const footer = props.Footer_Data
       <div class="list-content" v-for="(section, index) in footer.group || []" :key="section.title + index">
         <div class="list-title">
           <template v-if="section.icon">
-            <Icon
-              v-if="isIconifyIcon(section.icon)"
-              :icon="section.icon"
-              class="iconify"
-              :style="{ color: section.style }"
-            />&nbsp;&nbsp;</template
+            <Icon :icon="section.icon" class="iconify" :style="{ color: section.style }" />&nbsp;&nbsp;</template
           >{{ section.title }}
         </div>
         <ul class="list-link">
           <li v-for="(link, idx) in section.links" :key="link.name + idx">
-            <template v-if="link.icon">
-              <Icon v-if="isIconifyIcon(link.icon)" :icon="link.icon" :style="{ color: link.style }" />&nbsp;</template
-            >
+            <template v-if="link.icon"> <Icon :icon="link.icon" :style="{ color: link.style }" />&nbsp; </template>
             <a
               :target="link.target || section.target || '_blank'"
               rel="noopener"

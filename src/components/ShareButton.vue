@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, PropType } from 'vue'
-import { useCopyLink, isIconifyIcon, Icon } from '../types'
+import { useCopyLink, Icon } from '../types'
 
 import { useRouter } from 'vitepress'
 
@@ -61,12 +61,12 @@ const shareLink = computed(() => {
   <div class="share-link-container">
     <button @click="copyLink(shareLink)" class="share-link-button" :class="{ copied }">
       <span v-if="!copied">
-        <Icon v-if="isIconifyIcon(props.buttonIcon)" :icon="props.buttonIcon" class="iconify" />
+        <Icon :icon="props.buttonIcon" class="iconify" />
         {{ props.buttonText }}
       </span>
 
       <span v-else>
-        <Icon v-if="isIconifyIcon(props.copiedIcon)" :icon="props.copiedIcon" class="iconify" />
+        <Icon :icon="props.copiedIcon" class="iconify" />
         {{ props.copiedText }}
       </span>
     </button>

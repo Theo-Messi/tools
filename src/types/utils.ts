@@ -13,14 +13,6 @@ export const usePrelink = (): Prelink | undefined => {
 }
 
 /**
- * 判断给定图标字符串是否符合 Iconify 格式。
- *
- * @param icon - 要检查的图标字符串。
- * @returns 如果图标是 Iconify 格式，则返回 `true`，否则返回 `false`。
- */
-export const isIconifyIcon = (icon: string): boolean => icon.includes(':')
-
-/**
  * 检查链接是否为外部链接。
  *
  * @param link - 要判断的链接字符串。
