@@ -41,13 +41,16 @@ const footer = props.Footer_Data
     <div class="info-containe">
       <div class="info-content" v-if="footer.beian?.icp || footer.beian?.police">
         <span class="info-link" v-if="footer.beian?.icp">
-          <Icon v-if="footer.beian?.showIcon" icon="fluent-color:globe-shield-48" />&nbsp;
+          <Icon v-if="footer.beian?.showIcon" :icon="footer.beian.icpIcon || 'fluent:globe-shield-48-filled'" />&nbsp;
           <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/" title="ICP备案">
             {{ footer.beian.icp }}
           </a>
         </span>
         <span class="info-link" v-if="footer.beian?.police">
-          <Icon v-if="footer.beian?.showIcon" icon="fluent-color:shield-checkmark-48" />&nbsp;
+          <Icon
+            v-if="footer.beian?.showIcon"
+            :icon="footer.beian.policeIcon || 'fluent:shield-checkmark-48-filled'"
+          />&nbsp;
           <a target="_blank" rel="noopener" href="https://beian.mps.gov.cn/" title="公安备案">
             {{ footer.beian.police }}
           </a>
