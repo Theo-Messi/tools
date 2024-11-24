@@ -1,0 +1,135 @@
+/**
+ * Component: doc-blocks
+ * -------------------------------------------------------------------------- */
+
+.vp-doc .custom-block {
+  border-left: 6px solid;
+  position: relative;
+}
+
+.vp-doc .custom-block.info .custom-block-title,
+.vp-doc .custom-block.note .custom-block-title,
+.vp-doc .custom-block.tip .custom-block-title,
+.vp-doc .custom-block.important .custom-block-title,
+.vp-doc .custom-block.warning .custom-block-title,
+.vp-doc .custom-block.caution .custom-block-title,
+.vp-doc .custom-block.danger .custom-block-title,
+.vp-doc .custom-block.details .custom-block-title {
+  margin-left: 1.25em;
+}
+
+.vp-doc .custom-block:before {
+  content: '';
+  display: inline-block;
+  width: 1.25em;
+  height: 1.25em;
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  position: absolute;
+  margin: 0.15em 0 0 -0.15em;
+}
+
+.vp-doc .custom-block.info,
+.vp-doc .custom-block.note {
+  --svg: url('https://api.iconify.design/ic:round-info.svg');
+  border-left-color: var(--vp-c-text-2);
+  color: var(--vp-c-text-2);
+}
+
+.vp-doc .custom-block.info .custom-block-title,
+.vp-doc .custom-block.info:before,
+.vp-doc .custom-block.note .custom-block-title,
+.vp-doc .custom-block.note:before {
+  color: var(--vp-c-text-1);
+}
+
+.vp-doc .custom-block.tip {
+  --svg: url('https://api.iconify.design/ic:round-info.svg');
+  border-left-color: var(--vp-c-green-1);
+  color: var(--vp-c-green-2);
+  background-color: var(--vp-c-green-soft);
+}
+
+.vp-doc .custom-block.tip .custom-block-title,
+.vp-doc .custom-block.tip:before {
+  color: var(--vp-c-green-1);
+}
+
+.vp-doc .custom-block.tip code {
+  color: var(--vp-c-green-1);
+  background-color: var(--vp-c-green-soft);
+}
+
+.vp-doc .custom-block.tip a {
+  color: var(--vp-c-green-1);
+}
+
+.vp-doc .custom-block.warning,
+.vp-doc .custom-block.caution,
+.vp-doc .custom-block.danger {
+  --svg: url('https://api.iconify.design/ic:round-warning.svg');
+  border-left-color: var(--vp-c-warning-1);
+  color: var(--vp-c-warning-2);
+}
+
+.vp-doc .custom-block.warning .custom-block-title,
+.vp-doc .custom-block.warning:before,
+.vp-doc .custom-block.caution .custom-block-title,
+.vp-doc .custom-block.caution:before,
+.vp-doc .custom-block.danger .custom-block-title,
+.vp-doc .custom-block.danger:before {
+  color: var(--vp-c-warning-1);
+}
+
+.vp-doc .custom-block.warning.danger,
+.vp-doc .custom-block.warning.caution,
+.vp-doc .custom-block.caution.danger,
+.vp-doc .custom-block.caution.caution,
+.vp-doc .custom-block.danger.danger,
+.vp-doc .custom-block.danger.caution {
+  border-left-color: var(--vp-c-danger-1);
+  color: var(--vp-c-danger-2);
+}
+
+.vp-doc .custom-block.warning.danger .custom-block-title,
+.vp-doc .custom-block.warning.danger:before,
+.vp-doc .custom-block.warning.caution .custom-block-title,
+.vp-doc .custom-block.warning.caution:before,
+.vp-doc .custom-block.caution.danger .custom-block-title,
+.vp-doc .custom-block.caution.danger:before,
+.vp-doc .custom-block.caution.caution .custom-block-title,
+.vp-doc .custom-block.caution.caution:before,
+.vp-doc .custom-block.danger.danger .custom-block-title,
+.vp-doc .custom-block.danger.danger:before,
+.vp-doc .custom-block.danger.caution .custom-block-title,
+.vp-doc .custom-block.danger.caution:before {
+  color: var(--vp-c-danger-1);
+}
+
+.vp-doc .custom-block.important {
+  --svg: url('https://api.iconify.design/ic:round-info.svg');
+  border-left-color: var(--vp-c-important-1);
+  color: var(--vp-c-important-2);
+}
+
+.vp-doc .custom-block.important .custom-block-title,
+.vp-doc .custom-block.important:before {
+  color: var(--vp-c-important-1);
+}
+
+.vp-doc .custom-block.details {
+  border-left-color: var(--vp-c-text-2);
+}
+
+.vp-doc .custom-block.details p {
+  color: var(--vp-c-text-2);
+}
+
+.vp-doc .custom-block.details:before {
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3C/svg%3E");
+}

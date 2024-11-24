@@ -1,0 +1,14 @@
+/**
+ * Component: doc
+ * -------------------------------------------------------------------------- */
+
+.vp-doc a {
+  -webkit-text-decoration: underline solid;
+  text-decoration: underline solid;
+  text-underline-offset: 4px;
+}
+
+.vp-doc a:hover {
+  -webkit-text-decoration: underline solid;
+  text-decoration: underline solid;
+}

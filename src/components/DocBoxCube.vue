@@ -29,7 +29,7 @@ const props = defineProps<{ items: BoxCubeItem[] }>()
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 /**
  * 处理不同模式下的图标显示：暗色模式下隐藏浅色图标，浅色模式下隐藏暗色图标。
  */
@@ -57,54 +57,58 @@ const props = defineProps<{ items: BoxCubeItem[] }>()
   -webkit-text-decoration: none !important;
   text-decoration: none !important;
   transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
 
-  &:hover {
-    border-color: var(--vp-c-brand-1);
-    transform: translateY(-3px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
+.link:hover {
+  border-color: var(--vp-c-brand-1);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-  @media (max-width: 1024px) {
+@media (max-width: 1024px) {
+  .link {
     flex: 1 1 calc(25% - 0.5rem);
     max-width: calc(25% - 0.5rem);
   }
+}
 
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
+  .link {
     flex: 1 1 calc(33.33% - 0.5rem);
     max-width: calc(33.33% - 0.5rem);
   }
+}
 
-  .icon {
-    margin-top: -1rem;
-    height: 2.5rem;
-  }
+.icon {
+  margin-top: -1rem;
+  height: 2.5rem;
+}
 
-  .iconify {
-    margin-top: -1rem;
-    font-size: 3em;
-    color: var(--vp-c-text-1);
-    flex-shrink: 0; // 禁止图标在 flex 布局中因空间不足被压缩。
-  }
+.iconify {
+  margin-top: -1rem;
+  font-size: 3em;
+  color: var(--vp-c-text-1);
+  flex-shrink: 0; /* 禁止图标在 flex 布局中因空间不足被压缩 */
+}
 
-  .name {
-    position: absolute;
-    font-size: 0.875rem;
-    bottom: 1.25rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 80%;
-  }
+.name {
+  position: absolute;
+  font-size: 0.875rem;
+  bottom: 1.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80%;
+}
 
-  .desc {
-    position: absolute;
-    font-size: 0.75rem;
-    bottom: 0.15rem;
-    color: var(--vp-c-text-3);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 80%;
-  }
+.desc {
+  position: absolute;
+  font-size: 0.75rem;
+  bottom: 0.15rem;
+  color: var(--vp-c-text-3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80%;
 }
 </style>

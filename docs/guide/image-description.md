@@ -60,65 +60,9 @@ import '@theojs/lumen/pic' /* 图片样式 */
 
 :::
 
-### 也可以单独添加样式到`css/scss`文件中
+### 也可以单独添加样式
 
-::: code-group
-
-```scss [SCSS]
-/* markdown-it-image-figures style */
-
-figure {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-
-  img {
-    border-radius: 0.5rem;
-  }
-
-  figcaption {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--vp-c-text-3);
-    font-size: 0.875rem;
-    font-weight: 400;
-
-    a {
-      color: var(--vp-c-text-3) !important;
-    }
-  }
-}
-```
-
-```css [CSS]
-/* markdown-it-image-figures style */
-
-figure {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-figure img {
-  border-radius: 0.5rem;
-}
-
-figure figcaption {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  color: var(--vp-c-text-3);
-  font-size: 0.875rem;
-  font-weight: 400;
-}
-
-figure figcaption a {
-  color: var(--vp-c-text-3) !important;
-}
-```
-
-:::
+<<< @/../src/theme/picture.css
 
 ## 使用
 

@@ -39,7 +39,7 @@ const props = defineProps<{ items: LinkItem[] }>()
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 :root:not(.dark) .dark-only,
 :root:is(.dark) .light-only {
   display: none;
@@ -63,12 +63,12 @@ const props = defineProps<{ items: LinkItem[] }>()
   position: relative;
   transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
   text-decoration: none !important;
+}
 
-  &:hover {
-    border-color: var(--vp-c-brand-1);
-    transform: translateY(-3px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
+.link:hover {
+  border-color: var(--vp-c-brand-1);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .icon,
@@ -76,13 +76,13 @@ const props = defineProps<{ items: LinkItem[] }>()
   width: 2.5rem;
   font-size: 2.5em;
   color: var(--vp-c-text-1);
-  flex-shrink: 0; // 禁止图标在 flex 布局中因空间不足被压缩。
+  flex-shrink: 0; /* 禁止图标在 flex 布局中因空间不足被压缩。 */
 }
 
 .default-icon {
   width: 2rem;
   font-size: 1.5em;
-  flex-shrink: 0; // 禁止图标在 flex 布局中因空间不足被压缩。
+  flex-shrink: 0; /* 禁止图标在 flex 布局中因空间不足被压缩。 */
 }
 
 .text-content {

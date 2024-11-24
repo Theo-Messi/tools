@@ -20,15 +20,12 @@ export default defineConfig({
     plugins: [
       groupIconVitePlugin({
         customIcon: {
-          scss: 'vscode-icons:file-type-scss2',
-          css: 'vscode-icons:file-type-css',
           所有主题: 'logos:typescript-icon',
           部分主题: 'logos:typescript-icon',
           单独导入: 'logos:typescript-icon'
         }
       })
-    ],
-    css: { preprocessorOptions: { scss: { api: 'modern' } } }
+    ]
   },
 
   themeConfig: {

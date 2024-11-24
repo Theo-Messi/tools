@@ -68,25 +68,26 @@ const footer = props.Footer_Data
   </footer>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .footer {
   background: var(--vp-c-bg-alt);
   font-size: 0.75rem;
   width: 100%;
+}
 
-  a {
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    &:hover {
-      -webkit-text-decoration: underline solid;
-      text-decoration: underline solid;
-      text-underline-offset: 4px;
-      color: var(--vp-c-brand-1);
-    }
-  }
+.footer a {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
 
-  .has-sidebar ~ & {
-    display: none;
-  }
+.footer a:hover {
+  -webkit-text-decoration: underline solid;
+  text-decoration: underline solid;
+  text-underline-offset: 4px;
+  color: var(--vp-c-brand-1);
+}
+
+.has-sidebar ~ .footer {
+  display: none;
 }
 
 .list-container {

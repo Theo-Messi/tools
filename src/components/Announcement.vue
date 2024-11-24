@@ -10,7 +10,7 @@ const prelink: Prelink | undefined = usePrelink()
   </a>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .prelink {
   display: inline-flex;
   border-radius: 0.8rem;
@@ -20,10 +20,10 @@ const prelink: Prelink | undefined = usePrelink()
   margin-bottom: 1rem;
   background-color: var(--vp-button-alt-bg);
   transition: all 0.5s ease;
+}
 
-  &:hover {
-    background-color: var(--vp-button-alt-hover-bg);
-    transform: translateY(-1px);
-  }
+.prelink:hover {
+  background-color: var(--vp-button-alt-hover-bg);
+  transform: translateY(-1px);
 }
 </style>
