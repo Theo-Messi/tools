@@ -128,8 +128,12 @@ export interface Group {
 export interface Beian {
   /** ICP 备案号。 */
   icp?: string
+  /** ICP 图标，默认为 'fluent:globe-shield-48-filled'。 */
+  icpIcon?: string
   /** 公安备案号。 */
   police?: string
+  /** 公安备案图标，默认为 'fluent:shield-checkmark-48-filled'。 */
+  policeIcon?: string
   /** 是否显示图标。 */
   showIcon?: boolean
 }

@@ -107,11 +107,13 @@ export default {
 
 `Beian` 接口用于表示备案信息，包括 ICP 备案号、公安备案号以及是否显示备案图标。
 
-|    字段    |   类型    | 描述                                                              |
-| :--------: | :-------: | ----------------------------------------------------------------- |
-|   `icp`    | `string`  | <Badge type="tip" text="可选" /> ICP 备案号。                     |
-|  `police`  | `string`  | <Badge type="tip" text="可选" /> 公安备案号。                     |
-| `showIcon` | `boolean` | <Badge type="tip" text="可选" /> 是否显示备案图标，默认 `false`。 |
+|     字段     |   类型    | 描述                                                                                        |
+| :----------: | :-------: | ------------------------------------------------------------------------------------------- |
+|    `icp`     | `string`  | <Badge type="tip" text="可选" /> ICP 备案号。                                               |
+|  `icpIcon`   | `string`  | <Badge type="tip" text="可选" /> ICP 图标，默认为 `fluent:globe-shield-48-filled`。         |
+|   `police`   | `string`  | <Badge type="tip" text="可选" /> 公安备案号。                                               |
+| `policeIcon` | `string`  | <Badge type="tip" text="可选" /> 公安备案图标，默认为 `fluent:shield-checkmark-48-filled`。 |
+|  `showIcon`  | `boolean` | <Badge type="tip" text="可选" /> 是否显示备案图标，默认 `false`。                           |
 
 ### `Author` 接口
 
