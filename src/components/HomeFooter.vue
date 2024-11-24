@@ -8,22 +8,22 @@ const footer = props.Footer_Data
 
 <template>
   <footer class="footer">
-    <div class="list-containe" v-if="footer.group">
-      <div class="list-content" v-for="(section, index) in footer.group || []" :key="section.title + index">
+    <div class="list-container" v-if="footer.group">
+      <div class="list-item" v-for="(section, index) in footer.group || []" :key="section.title + index">
         <div class="list-title">
           <template v-if="section.icon">
             <Icon :icon="section.icon" class="iconify" :style="{ color: section.style }" />&nbsp;&nbsp;</template
           >{{ section.title }}
         </div>
-        <ul class="list-link">
+        <ul class="list-links">
           <li v-for="(link, idx) in section.links" :key="link.name + idx">
             <template v-if="link.icon"> <Icon :icon="link.icon" :style="{ color: link.style }" />&nbsp; </template>
             <a
-              :target="link.target || section.target || '_blank'"
-              rel="noopener"
               :name="link.name"
               :title="link.name"
               :href="link.href"
+              rel="noopener"
+              :target="link.target || section.target || '_blank'"
             >
               {{ link.name }}
               <Icon
@@ -37,16 +37,16 @@ const footer = props.Footer_Data
       </div>
     </div>
 
-    <!-- 底部信息栏 -->
-    <div class="info-containe">
-      <div class="info-content" v-if="footer.beian?.icp || footer.beian?.police">
-        <span class="info-link" v-if="footer.beian?.icp">
+    <div class="footer-info">
+      <div v-if="footer.beian?.icp || footer.beian?.police" class="info-item">
+        <span v-if="footer.beian?.icp">
           <Icon v-if="footer.beian?.showIcon" :icon="footer.beian.icpIcon || 'fluent:globe-shield-48-filled'" />&nbsp;
           <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/" title="ICP备案">
             {{ footer.beian.icp }}
           </a>
         </span>
-        <span class="info-link" v-if="footer.beian?.police">
+        <span class="info-spacing"></span>
+        <span v-if="footer.beian?.police">
           <Icon
             v-if="footer.beian?.showIcon"
             :icon="footer.beian.policeIcon || 'fluent:shield-checkmark-48-filled'"
@@ -56,8 +56,9 @@ const footer = props.Footer_Data
           </a>
         </span>
       </div>
-      <div class="info-content" v-if="footer.author?.name">
-        <span class="info-link">
+      <span class="info-spacing-copyright"></span>
+      <div v-if="footer.author?.name" class="info-item">
+        <span>
           <Icon icon="ri:copyright-line" />&nbsp;{{ new Date().getFullYear() }}
           <a target="_blank" rel="noopener" title="GitHub" :href="footer.author?.link">{{ footer.author?.name }}</a
           >. All Rights Reserved.
@@ -88,13 +89,13 @@ const footer = props.Footer_Data
   }
 }
 
-.list-containe {
+.list-container {
   margin: 1.25rem 10% 1.25rem 18%;
   display: flex;
   justify-content: space-evenly;
 }
 
-.list-content {
+.list-item {
   flex-grow: 0.15;
 }
 
@@ -103,7 +104,7 @@ const footer = props.Footer_Data
   font-weight: 600;
 }
 
-.list-link {
+.list-links {
   margin: 0 0.5rem;
   line-height: 1.7rem;
   opacity: 0.9;
@@ -116,21 +117,25 @@ const footer = props.Footer_Data
   font-size: 1.2em;
 }
 
-.info-containe {
+.footer-info {
   text-align: center;
   margin: 1.25rem 0 1.25rem 0;
 }
 
-.info-content {
+.info-item {
   display: inline-block;
 }
 
-.info-link {
+.info-spacing {
+  margin-left: 1rem;
+}
+
+.info-spacing-copyright {
   margin-left: 1rem;
 }
 
 @media (max-width: 768px) {
-  .list-containe {
+  .list-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
@@ -138,6 +143,10 @@ const footer = props.Footer_Data
 
   .list-title {
     font-size: 0.875rem;
+  }
+
+  .info-spacing-copyright {
+    margin-left: -1rem;
   }
 }
 </style>
