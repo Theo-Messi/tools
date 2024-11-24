@@ -61,7 +61,7 @@ const props = defineProps<{ items: BoxCubeItem[] }>()
 
 .link:hover {
   border-color: var(--vp-c-brand-1);
-  transform: translateY(-3px);
+  transform: translateY(-1px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 

@@ -22,7 +22,7 @@ const prelink: Prelink | undefined = usePrelink()
   transition: all 0.5s ease;
 }
 
-.prelink :hover {
+.prelink:hover {
   background-color: var(--vp-button-alt-hover-bg);
   transform: translateY(-1px);
 }
