@@ -15,20 +15,19 @@ figure {
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
 
-  img {
-    border-radius: 0.5rem;
-  }
+figure img {
+  border-radius: 0.5rem;
+}
 
-  figcaption {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--vp-c-text-3);
-    font-size: 0.875rem;
-    font-weight: 400;
+figure figcaption {
+  margin: 0.5rem 0;
+  color: var(--vp-c-text-3);
+  font-size: 0.875rem;
+  font-weight: 400;
+}
 
-    a {
-      color: var(--vp-c-text-3) !important;
-    }
-  }
+figure figcaption a {
+  color: var(--vp-c-text-3) !important;
 }

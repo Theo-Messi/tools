@@ -15,8 +15,7 @@
   "author": "Theo-Messi",
   "license": "MIT",
   "keywords": [
-    "scss",
-    "sass",
+    "css",
     "vue",
     "vite",
     "typescript",
@@ -33,7 +32,7 @@
     "tools"
   ],
   "main": "types/index.ts",
-  "style": "theme/all.scss",
+  "style": "theme/all.css",
   "scripts": {
     "release": "bumpp && pnpm publish --registry=https://registry.npmjs.org"
   },
@@ -45,7 +44,6 @@
     "@types/node": "^22.9.3",
     "bumpp": "^9.8.1",
     "iconify-icon": "^2.1.0",
-    "sass": "^1.81.0",
     "twikoo": "^1.6.40",
     "typescript": "^5.7.2",
     "vite": "^5.4.11",
@@ -62,17 +60,17 @@
   ],
   "exports": {
     ".": "./types/index.ts",
-    "./theme": "./theme/all.scss",
-    "./icon": "./theme/icon.scss",
-    "./button": "./theme/button.scss",
-    "./colors": "./theme/colors.scss",
-    "./doc": "./theme/doc.scss",
-    "./doc-blocks": "./theme/doc-blocks.scss",
-    "./home": "./theme/home.scss",
-    "./home-blocks": "./theme/home-links.scss",
-    "./pic": "./theme/picture.scss",
-    "./badge": "./theme/badge.scss",
-    "./doc-blocks-border": "./theme/doc-blocks-border.scss",
+    "./theme": "./theme/all.css",
+    "./icon": "./theme/icon.css",
+    "./button": "./theme/button.css",
+    "./colors": "./theme/colors.css",
+    "./doc": "./theme/doc.css",
+    "./doc-blocks": "./theme/doc-blocks.css",
+    "./home": "./theme/home.css",
+    "./home-blocks": "./theme/home-links.css",
+    "./pic": "./theme/picture.css",
+    "./badge": "./theme/badge.css",
+    "./doc-blocks-border": "./theme/doc-blocks-border.css",
     "./package.json": "./package.json"
   },
   "packageManager": "pnpm@9.14.2"

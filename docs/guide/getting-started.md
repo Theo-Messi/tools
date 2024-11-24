@@ -20,31 +20,6 @@ yarn add @theojs/lumen
 
 :::
 
-:::details 弃用警告: `The legacy JS API is deprecated and will be removed in Dart Sass 2.0.0.`
-
-::: code-group
-
-```ts [config.ts]
-import { defineConfig } from 'vitepress'
-export default defineConfig({
-  vite: {// [!code ++]
-    css: { preprocessorOptions: { scss: { api: 'modern' } } }// [!code ++]
-  }// [!code ++]
-  ...
-})
-```
-
-```js [vite.config.js]
-export default {
-  css: { // [!code ++]
-    preprocessorOptions: { scss: { api: 'modern' } }// [!code ++]
-  }// [!code ++]
-  ...
-}
-```
-
-:::
-
 ## 快速开始
 
 <BoxCube

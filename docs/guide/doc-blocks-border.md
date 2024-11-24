@@ -1,5 +1,5 @@
-<style lang="scss" scoped>
-@use '@theojs/lumen/doc-blocks-border' 
+<style scoped>
+@import '@theojs/lumen/doc-blocks-border' 
 </style>
 
 **输入**

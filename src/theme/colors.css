@@ -8,11 +8,9 @@
   --c-yellow-3: rgba(222, 201, 110, 1);
   --c-yellow-soft-1: rgba(236, 183, 50, 1);
   --c-yellow-soft-2: rgba(201, 149, 19, 0.3);
-
   --c-white-dark: rgba(248, 248, 248, 1);
   --c-black-darker: rgba(13, 18, 27, 1);
   --c-black: rgba(17, 24, 39, 1);
-
   --c-green-1: rgba(61, 214, 140, 1);
   --c-green-2: rgba(48, 164, 108, 1);
   --c-green-3: rgba(41, 132, 89, 1);
@@ -23,10 +21,8 @@
   --vp-c-brand-2: var(--vp-c-green-2);
   --vp-c-brand-3: var(--vp-c-green-3);
   --vp-c-brand-soft: var(--vp-c-green-soft);
-
   --c-text-dark-1: rgba(217, 230, 235, 1);
   --c-text-light-1: rgba(44, 62, 80, 1);
-
   --vp-c-brand-text: var(--c-text-light-1);
   --c-bg-accent: var(--c-white-dark);
 }
@@ -36,11 +32,9 @@ html.dark:root {
   --vp-c-brand-2: var(--c-yellow-2);
   --vp-c-brand-3: var(--c-yellow-3);
   --vp-c-brand-soft: var(--c-yellow-soft-2);
-
   --vp-c-text-1: var(--c-text-dark-1);
   --vp-c-brand-text: var(--c-text-light-1);
   --c-bg-accent: var(--vp-c-bg-soft);
-
   --vp-c-bg: var(--c-black);
   --vp-c-bg-soft: rgba(22, 31, 50, 1);
   --vp-c-bg-alt: rgba(13, 18, 27, 1);

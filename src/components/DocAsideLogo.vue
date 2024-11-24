@@ -37,7 +37,7 @@ const props = defineProps<{ Aside_Data: AsideItem[] }>()
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .aside-class {
   margin: 0.25rem 0;
   padding: 0.25rem 0;
@@ -53,66 +53,59 @@ const props = defineProps<{ Aside_Data: AsideItem[] }>()
   background-color: var(--vp-c-bg-alt);
   border: 1.5px solid var(--vp-c-bg-alt);
   transition: border-color 0.5s;
+}
 
-  &:last-of-type {
-    margin-bottom: 1rem;
-  }
+.aside-class:last-of-type {
+  margin-bottom: 1rem;
+}
 
-  &:hover {
-    img {
-      transform: scale(1.75);
-    }
+.aside-class:hover img {
+  transform: scale(1.75);
+}
 
-    .hide {
-      opacity: 0.9;
-    }
+.aside-class:hover .hide {
+  opacity: 0.9;
+}
 
-    &.has-activity {
-      border-color: rgba(100, 108, 255, 1);
-    }
+.aside-class:hover.has-activity {
+  border-color: rgba(100, 108, 255, 1);
+}
 
-    &.has-name {
-      border-color: var(--vp-c-brand-1);
-    }
-  }
+.aside-class:hover.has-name {
+  border-color: var(--vp-c-brand-1);
+}
 
-  img {
-    transition: transform 0.5s;
-    transform: scale(1.25);
-  }
+.aside-class img {
+  transition: transform 0.5s;
+  transform: scale(1.25);
+}
 
-  .hide {
-    color: var(--vp-c-text-2);
-    opacity: 0;
-    font-size: 0.75rem;
-    padding-left: 0.1rem;
-    font-weight: 600;
-    transition: opacity 0.5s;
-  }
+.aside-class .hide {
+  color: var(--vp-c-text-2);
+  opacity: 0;
+  font-size: 0.75rem;
+  padding-left: 0.1rem;
+  font-weight: 600;
+  transition: opacity 0.5s;
+}
 
-  .info {
-    color: var(--vp-c-text-2);
-    font-size: 0.75rem;
-    padding-left: 0.1rem;
-  }
+.aside-class .info {
+  color: var(--vp-c-text-2);
+  font-size: 0.75rem;
+  padding-left: 0.1rem;
+}
 
-  .name {
-    background-image: linear-gradient(292deg, var(--vp-c-brand-3) 16%, var(--vp-c-brand-2), var(--vp-c-brand-1));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+.aside-class .name {
+  background-image: linear-gradient(292deg, var(--vp-c-brand-3) 16%, var(--vp-c-brand-2), var(--vp-c-brand-1));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-  .activity {
-    background-image: linear-gradient(
-      292deg,
-      rgba(176, 71, 255, 1) 16%,
-      rgba(100, 108, 255, 1),
-      rgba(116, 123, 255, 1)
-    );
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+.aside-class .activity {
+  background-image: linear-gradient(292deg, rgba(176, 71, 255, 1) 16%, rgba(100, 108, 255, 1), rgba(116, 123, 255, 1));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 </style>
