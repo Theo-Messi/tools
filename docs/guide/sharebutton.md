@@ -48,9 +48,9 @@ export default {
 
 ## 参数说明
 
-|    参数名    |   类型   |       默认值       | 描述                                                                                 |
-| :----------: | :------: | :----------------: | ------------------------------------------------------------------------------------ |
-| `buttonIcon` | `string` | `solar:share-bold` | 按钮图标的类名，支持 [iconify](https://icon-sets.iconify.design/) 图标。             |
-| `buttonText` | `string` |    `分享此页面`    | 按钮显示的文本。                                                                     |
-| `copiedIcon` | `string` |  `mdi:thumbs-up`   | 复制成功后显示的图标的类名，支持 [iconify](https://icon-sets.iconify.design/) 图标。 |
-| `copiedText` | `string` |   `链接已复制!`    | 复制成功后显示的文本。                                                               |
+|    参数名    |   类型   |                                   默认值                                   | 描述                                                                                 |
+| :----------: | :------: | :------------------------------------------------------------------------: | ------------------------------------------------------------------------------------ |
+| `buttonIcon` | `string` | `solar:share-bold` : <iconify-icon icon="solar:share-bold"></iconify-icon> | 按钮图标的类名，支持 [iconify](https://icon-sets.iconify.design/) 图标。             |
+| `buttonText` | `string` |                                `分享此页面`                                | 按钮显示的文本。                                                                     |
+| `copiedIcon` | `string` |    `mdi:thumbs-up` : <iconify-icon icon="mdi:thumbs-up"></iconify-icon>    | 复制成功后显示的图标的类名，支持 [iconify](https://icon-sets.iconify.design/) 图标。 |
+| `copiedText` | `string` |                               `链接已复制!`                                | 复制成功后显示的文本。                                                               |

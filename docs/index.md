@@ -17,6 +17,10 @@ hero:
   #   link: https://ivt01.qytaff.cc/register?aff=jjgD79Jd
   #   target: _blank
 
+  prelink:
+    title: '<iconify-icon icon="fa6-solid:bolt" style="margin-right:0.25rem;color:#63E6BE;"></iconify-icon> 快速开始 <p>pnpm add @theojs/lumen</p>'
+    link: /guide/getting-started
+
   actions:
     - theme: brand
       text: 快速开始
