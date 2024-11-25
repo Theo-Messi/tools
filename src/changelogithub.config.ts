@@ -1,6 +1,4 @@
-import { defineConfig } from 'changelogithub'
-
-export default defineConfig({
+export default {
   // 定义不同类型提交的显示方式和对应的语义化版本（SemVer）更新级别
   types: {
     feat: { title: 'Features', semver: 'minor' },
@@ -28,4 +26,4 @@ export default defineConfig({
 
   // 是否根据提交的作用域分组
   group: false
-})
+}
