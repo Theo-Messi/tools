@@ -21,6 +21,6 @@ jobs:
         with:
           node-version: lts/*
 
-      - run: cd src/ && npx changelogithub
+      - run: cd src && pnpm dlx changelogithub
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}

@@ -11,15 +11,14 @@
     "build": "pnpm -F=docs build",
     "preview": "pnpm -F=docs preview",
     "release": "cd src && pnpm release",
-    "change": "cd src && npx changelogithub --dry",
+    "change": "cd src && pnpm dlx changelogithub --dry",
     "format": "prettier --write .",
     "format:cheak": "prettier --check ."
   },
   "devDependencies": {
     "lint-staged": "^15.2.10",
     "prettier": "3.3.3",
-    "simple-git-hooks": "^2.11.1",
-    "changelogithub": "^0.13.11"
+    "simple-git-hooks": "^2.11.1"
   },
   "prettier": {
     "semi": false,
