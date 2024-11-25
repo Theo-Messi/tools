@@ -10,8 +10,8 @@
     "dev": "pnpm -F=docs dev",
     "build": "pnpm -F=docs build",
     "preview": "pnpm -F=docs preview",
-    "release:lumen": "pnpm -F=lumen release",
-    "change:lumen": "cd src/ && npx changelogithub --dry",
+    "release": "cd src && pnpm release",
+    "change": "cd src && npx changelogithub --dry",
     "format": "prettier --write .",
     "format:cheak": "prettier --check ."
   },
