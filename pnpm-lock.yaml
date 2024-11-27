@@ -61,8 +61,8 @@ importers:
         specifier: ^5.7.2
         version: 5.7.2
       vite:
-        specifier: ^6.0.0
-        version: 6.0.0(@types/node@22.10.0)(jiti@1.21.6)(yaml@2.5.1)
+        specifier: ^6.0.1
+        version: 6.0.1(@types/node@22.10.0)(jiti@1.21.6)(yaml@2.5.1)
       vue:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.7.2)
@@ -1416,8 +1416,8 @@ packages:
       terser:
         optional: true
 
-  vite@6.0.0:
-    resolution: {integrity: sha512-Q2+5yQV79EdnpbNxjD3/QHVMCBaQ3Kpd4/uL51UGuh38bIIM+s4o3FqyCzRvTRwFb+cWIUeZvaWwS9y2LD2qeQ==}
+  vite@6.0.1:
+    resolution: {integrity: sha512-Ldn6gorLGr4mCdFnmeAOLweJxZ34HjKnDm4HGo6P66IEqTxQb36VEdFJQENKxWjupNfoIjvRUnswjn1hpYEpjQ==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
     hasBin: true
     peerDependencies:
@@ -2776,7 +2776,7 @@ snapshots:
       '@types/node': 22.10.0
       fsevents: 2.3.3
 
-  vite@6.0.0(@types/node@22.10.0)(jiti@1.21.6)(yaml@2.5.1):
+  vite@6.0.1(@types/node@22.10.0)(jiti@1.21.6)(yaml@2.5.1):
     dependencies:
       esbuild: 0.24.0
       postcss: 8.4.49
