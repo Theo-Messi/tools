@@ -12,8 +12,8 @@ importers:
         specifier: ^15.2.10
         version: 15.2.10
       prettier:
-        specifier: 3.3.3
-        version: 3.3.3
+        specifier: 3.4.1
+        version: 3.4.1
       simple-git-hooks:
         specifier: ^2.11.1
         version: 2.11.1
@@ -1064,8 +1064,8 @@ packages:
   preact@10.25.0:
     resolution: {integrity: sha512-6bYnzlLxXV3OSpUxLdaxBmE7PMOu0aR3pG6lryK/0jmvcDFPlcXGQAt5DpK3RITWiDrfYZRI0druyaK/S9kYLg==}
 
-  prettier@3.3.3:
-    resolution: {integrity: sha512-i2tDNA0O5IrMO757lfrdQZCc2jPNDVntV0m/+4whiDfWaTKfMNgR7Qz0NAeGz/nRqF4m5/6CLzbP4/liHt12Ew==}
+  prettier@3.4.1:
+    resolution: {integrity: sha512-G+YdqtITVZmOJje6QkXQWzl3fSfMxFwm1tjTyo9exhkmWSqC4Yhd1+lug++IlR2mvRVAxEDDWYkQdeSztajqgg==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -2289,7 +2289,7 @@ snapshots:
 
   preact@10.25.0: {}
 
-  prettier@3.3.3: {}
+  prettier@3.4.1: {}
 
   prompts@2.4.2:
     dependencies:
