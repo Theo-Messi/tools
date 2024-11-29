@@ -24,8 +24,8 @@ importers:
         specifier: ^0.14.0
         version: 0.14.0
       '@mdit/plugin-img-size':
-        specifier: ^0.13.1
-        version: 0.13.1
+        specifier: ^0.14.0
+        version: 0.14.0
       '@theojs/lumen':
         specifier: workspace:*
         version: link:../src
@@ -509,8 +509,8 @@ packages:
       markdown-it:
         optional: true
 
-  '@mdit/plugin-img-size@0.13.1':
-    resolution: {integrity: sha512-cgihl72BNzij7GXjrqcKhl2eOqAlqWHiImOgblJPghDFNFKnnynty/Bf9nwbj8hTnhVWznFeuwawzXBfKYNbkg==}
+  '@mdit/plugin-img-size@0.14.0':
+    resolution: {integrity: sha512-A+HyWSSTXW318Ly48xOf4XnKW4xTstXewoY87cSXjw0eGO/rR50n4golihEJ9ixxUlJ/E8zpGCu454cOOBriKw==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^14.1.0
@@ -1846,7 +1846,7 @@ snapshots:
     dependencies:
       '@types/markdown-it': 14.1.2
 
-  '@mdit/plugin-img-size@0.13.1':
+  '@mdit/plugin-img-size@0.14.0':
     dependencies:
       '@types/markdown-it': 14.1.2
 
