@@ -10,7 +10,7 @@
     "vitepress": "^1.5.0"
   },
   "dependencies": {
-    "@mdit/plugin-figure": "^0.13.1",
+    "@mdit/plugin-figure": "^0.14.0",
     "@mdit/plugin-img-size": "^0.13.1",
     "@theojs/lumen": "workspace:*",
     "vitepress-plugin-group-icons": "^1.3.0",
