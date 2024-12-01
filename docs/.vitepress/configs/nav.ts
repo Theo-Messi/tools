@@ -1,9 +1,5 @@
 import type { DefaultTheme } from 'vitepress'
 
-import Lumenpkg from '../../../src/package.json'
-
-const Lumenversion = `v` + Lumenpkg.version
-
 export const nav: DefaultTheme.NavItem[] = [
   {
     text: '<iconify-icon icon="fa6-solid:bolt" style="margin-right:0.25em;color:#63E6BE;"></iconify-icon>快速开始',
@@ -18,9 +14,7 @@ export const nav: DefaultTheme.NavItem[] = [
     link: 'https://github.com/Theo-Messi/lumen/issues'
   },
   {
-    text:
-      '<iconify-icon icon="fa6-solid:clipboard-list" style="margin-right:0.25rem;color:#FF6347;" alt="clipboard"></iconify-icon>' +
-      Lumenversion,
-    link: `https://github.com/Theo-Messi/lumen/releases/tag/${Lumenversion}`
+    text: '<iconify-icon icon="fa6-solid:clipboard-list" style="margin-right:0.25rem;color:#FF6347;" alt="clipboard"></iconify-icon>变更日志',
+    link: `https://github.com/Theo-Messi/lumen/releases`
   }
 ]

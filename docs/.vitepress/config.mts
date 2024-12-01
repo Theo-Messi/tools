@@ -2,6 +2,10 @@ import { defineConfig } from 'vitepress'
 import { groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 import { head, markdown, nav, sidebar, search, socialLinks } from './configs'
 
+import Lumenpkg from '../../src/package.json'
+
+const Lumenversion = `v` + Lumenpkg.version
+
 export default defineConfig({
   title: 'Lumen',
   description: '✨ 集成 Vue 功能组件和主题美化的 VitePress 插件',
@@ -29,6 +33,7 @@ export default defineConfig({
   },
 
   themeConfig: {
+    siteTitle: `Lumen <code class="VPBadge tip">${Lumenversion}</code>`,
     logo: { src: '/Logo.png', width: 24, height: 24 },
     editLink: {
       pattern: 'https://github.com/Theo-Messi/lumen/edit/main/docs/:path',
