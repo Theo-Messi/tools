@@ -73,5 +73,5 @@
     "./doc-blocks-border": "./theme/doc-blocks-border.css",
     "./package.json": "./package.json"
   },
-  "packageManager": "pnpm@9.14.2"
+  "packageManager": "pnpm@9.14.4"
 }
