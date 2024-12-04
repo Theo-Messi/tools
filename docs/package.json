@@ -13,7 +13,7 @@
     "@mdit/plugin-figure": "^0.14.0",
     "@mdit/plugin-img-size": "^0.14.0",
     "@theojs/lumen": "workspace:*",
-    "vitepress-plugin-group-icons": "^1.3.0",
+    "vitepress-plugin-group-icons": "^1.3.1",
     "vue": "^3.5.13"
   },
   "packageManager": "pnpm@9.14.4"
