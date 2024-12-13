@@ -12,7 +12,6 @@ title: 页脚配置
 
 ```ts
 // .vitepress/data/footerData.ts
-
 import type { FooterData } from '@theojs/lumen'
 
 export const Footer_Data: FooterData = {

@@ -1,6 +1,4 @@
-/**
- * DocBox 接口
- */
+/** DocBox 接口 */
 export interface BoxItem {
   /** DocBox 名称。 */
   name: string
@@ -16,9 +14,7 @@ export interface BoxItem {
   image?: string | { light: string; dark: string }
 }
 
-/**
- * DocLinks 接口
- */
+/** DocLinks 接口 */
 export interface LinkItem {
   /** DocLinks 名称。 */
   name: string
@@ -34,9 +30,7 @@ export interface LinkItem {
   image?: string | { light: string; dark: string }
 }
 
-/**
- * BoxCube 接口
- */
+/** BoxCube 接口 */
 export interface BoxCubeItem {
   /** BoxCube 名称。 */
   name: string
@@ -52,9 +46,7 @@ export interface BoxCubeItem {
   image?: string | { light: string; dark: string }
 }
 
-/**
- * DocAsideLogo 接口
- */
+/** DocAsideLogo 接口 */
 export interface AsideItem {
   /** 链接地址。 */
   link: string
@@ -74,9 +66,7 @@ export interface AsideItem {
   info2?: string
 }
 
-/**
- * Announcement 接口
- */
+/** Announcement 接口 */
 export interface Prelink {
   /** 链接的 URL。 */
   link: string
@@ -86,17 +76,13 @@ export interface Prelink {
   title: string
 }
 
-/**
- * Twikoo 配置数据类型接口。
- */
+/** Twikoo 配置数据类型接口。 */
 export interface TwikooData {
   /** Twikoo 的环境 ID。 */
   envId: string
 }
 
-/**
- * HomeFooter 接口
- */
+/** HomeFooter 接口 */
 export interface FooterData {
   /** 链接分组数组。 */
   group?: Group[]
@@ -106,9 +92,7 @@ export interface FooterData {
   author?: Author
 }
 
-/**
- * HomeFooter Group 接口
- */
+/** HomeFooter Group 接口 */
 export interface Group {
   /** 图标。 */
   icon?: string
@@ -122,9 +106,7 @@ export interface Group {
   links: Link[]
 }
 
-/**
- * HomeFooter Beian 接口
- */
+/** HomeFooter Beian 接口 */
 export interface Beian {
   /** ICP 备案号。 */
   icp?: string
@@ -138,9 +120,7 @@ export interface Beian {
   showIcon?: boolean
 }
 
-/**
- * HomeFooter Author 接口
- */
+/** HomeFooter Author 接口 */
 export interface Author {
   /** 作者姓名。 */
   name?: string
@@ -148,9 +128,7 @@ export interface Author {
   link?: string
 }
 
-/**
- * HomeFooter Link 接口
- */
+/** HomeFooter Link 接口 */
 export interface Link {
   /** 链接图标。 */
   icon?: string
@@ -164,9 +142,7 @@ export interface Link {
   target?: string
 }
 
-/**
- * DocVideoLink 接口
- */
+/** DocVideoLink 接口 */
 export interface VideoProps {
   /** 可选的 id，当选择平台时需要使用 id */
   id?: string
@@ -176,9 +152,7 @@ export interface VideoProps {
   src?: string
 }
 
-/**
- * VideoConfig 接口，用于保存平台的配置信息
- */
+/** VideoConfig 接口，用于保存平台的配置信息 */
 export interface VideoConfig {
   /** 获取视频链接的方法，根据不同平台生成不同的链接 */
   src: (id: string) => string

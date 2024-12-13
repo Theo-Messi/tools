@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+
 import { VideoProps, getVideoConfig } from '../types'
 
 const props = defineProps<VideoProps>()

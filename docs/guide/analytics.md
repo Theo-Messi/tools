@@ -8,8 +8,8 @@ title: 站点统计
 
 ```ts
 // .vitepress/theme/index.ts
-
 import DefaultTheme from 'vitepress/theme'
+
 import { googleAnalytics } from '@theojs/lumen' // [!code ++]
 
 export default {
@@ -17,6 +17,7 @@ export default {
   enhanceApp: ({ app }) => {
     googleAnalytics({ id: 'G-******' }) // [!code ++]
   }
+  ...
 }
 ```
 
@@ -68,8 +69,8 @@ export default {
 
 ```ts
 // .vitepress/theme/index.ts
-
 import DefaultTheme from 'vitepress/theme'
+
 import { umamiAnalytics } from '@theojs/lumen' // [!code ++]
 
 export default {
@@ -77,6 +78,7 @@ export default {
   enhanceApp: ({ app }) => {
     umamiAnalytics({ id: '***-***-***-***', src: 'https://*******' }) // [!code ++]
   }
+  ...
 }
 ```
 

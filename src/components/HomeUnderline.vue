@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useData } from 'vitepress'
+
 import { moveDomElements } from '../types'
 
 /**

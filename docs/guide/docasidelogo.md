@@ -10,7 +10,6 @@ title: 侧边栏链接
 
 ```ts
 // .vitepress/data/AsideData.ts
-
 import type { AsideItem } from '@theojs/lumen'
 
 export const Aside_Data: AsideItem[] = [

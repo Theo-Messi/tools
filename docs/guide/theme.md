@@ -6,23 +6,31 @@ title: 主题配置文件
 
 ```ts [所有主题]
 // theme/index.ts
-
 import '@theojs/lumen/theme'
 ```
 
 ```ts [部分主题]
 // theme/index.ts
-
-import '@theojs/lumen/icon' /* 图标 */
-import '@theojs/lumen/button' /* 按钮 */
-import '@theojs/lumen/colors' /* 配色 */
-import '@theojs/lumen/doc' /* 文档样式 */
-import '@theojs/lumen/doc-blocks' /* 容器(默认):左侧阴影样式 */
-import '@theojs/lumen/doc-blocks-border' /* 容器:边框样式 */
-import '@theojs/lumen/home' /* 首页样式 */
-import '@theojs/lumen/home-blocks' /* 首页按钮 */
-import '@theojs/lumen/pic' /* 图片样式 */
-import '@theojs/lumen/badge' /* 徽章样式 */
+/* 徽章样式 */
+import '@theojs/lumen/badge'
+/* 按钮 */
+import '@theojs/lumen/button'
+/* 配色 */
+import '@theojs/lumen/colors'
+/* 文档样式 */
+import '@theojs/lumen/doc'
+/* 容器(默认):左侧阴影样式 */
+import '@theojs/lumen/doc-blocks'
+/* 容器:边框样式 */
+import '@theojs/lumen/doc-blocks-border'
+/* 首页样式 */
+import '@theojs/lumen/home'
+/* 首页按钮 */
+import '@theojs/lumen/home-blocks'
+/* 图标 */
+import '@theojs/lumen/icon'
+/* 图片样式 */
+import '@theojs/lumen/pic'
 ```
 
 :::
@@ -65,9 +73,9 @@ export default defineConfig({
 
 ```ts
 // theme/index.ts
-
-import '@theojs/lumen/theme'
-import '@theojs/lumen/doc-blocks-border' // [!code ++]
+import '@theojs/lumen/doc-blocks-border'
+import '@theojs/lumen/theme' // [!code ++]
+...
 ```
 
 **注意**: 引入 `doc-blocks-border` 时要放在 `@theojs/lumen/theme` 之后，以确保边框样式覆盖默认样式。**如果放在上方，可能会导致样式融合，不同效果相互影响**。

@@ -2,18 +2,6 @@
   "name": "@theojs/lumen",
   "version": "5.0.2",
   "description": "用于 VitePress 主题美化和集成 Vue 功能组件",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Theo-Messi/lumen.git",
-    "directory": "src"
-  },
-  "bugs": {
-    "url": "https://github.com/Theo-Messi/lumen/issues"
-  },
-  "homepage": "https://lumen.theojs.cn/",
-  "funding": "https://github.com/Theo-Messi/lumen?sponsor=1",
-  "author": "Theo-Messi",
-  "license": "MIT",
   "keywords": [
     "css",
     "vue",
@@ -31,33 +19,18 @@
     "youtube",
     "tools"
   ],
-  "main": "types/index.ts",
-  "style": "theme/all.css",
-  "scripts": {
-    "release": "bumpp && pnpm publish --registry=https://registry.npmjs.org"
+  "homepage": "https://lumen.theojs.cn/",
+  "bugs": {
+    "url": "https://github.com/Theo-Messi/lumen/issues"
   },
-  "devDependencies": {
-    "vitepress": "^1.5.0"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Theo-Messi/lumen.git",
+    "directory": "src"
   },
-  "dependencies": {
-    "@iconify/vue": "^4.2.0",
-    "@types/node": "^22.10.2",
-    "bumpp": "^9.9.1",
-    "iconify-icon": "^2.2.0",
-    "twikoo": "^1.6.40",
-    "typescript": "^5.7.2",
-    "vite": "^6.0.3",
-    "vue": "^3.5.13"
-  },
-  "files": [
-    "theme/",
-    "types/",
-    "analytics/",
-    "components/",
-    "tsconfig.json",
-    "readme.md",
-    "License"
-  ],
+  "funding": "https://github.com/Theo-Messi/lumen?sponsor=1",
+  "license": "MIT",
+  "author": "Theo-Messi",
   "exports": {
     ".": "./types/index.ts",
     "./theme": "./theme/all.css",
@@ -72,6 +45,33 @@
     "./badge": "./theme/badge.css",
     "./doc-blocks-border": "./theme/doc-blocks-border.css",
     "./package.json": "./package.json"
+  },
+  "main": "types/index.ts",
+  "style": "theme/all.css",
+  "files": [
+    "theme/",
+    "types/",
+    "analytics/",
+    "components/",
+    "tsconfig.json",
+    "readme.md",
+    "License"
+  ],
+  "scripts": {
+    "release": "bumpp && pnpm publish --registry=https://registry.npmjs.org"
+  },
+  "dependencies": {
+    "@iconify/vue": "^4.2.0",
+    "@types/node": "^22.10.2",
+    "bumpp": "^9.9.1",
+    "iconify-icon": "^2.2.0",
+    "twikoo": "^1.6.40",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3",
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "vitepress": "^1.5.0"
   },
   "packageManager": "pnpm@9.15.0"
 }

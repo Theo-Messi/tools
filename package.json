@@ -1,30 +1,19 @@
 {
-  "private": true,
   "name": "lumen",
-  "repository": "Theo-Messi/lumen",
+  "private": true,
   "homepage": "https://lumen.theojs.cn/",
+  "repository": "Theo-Messi/lumen",
   "funding": "https://github.com/Theo-Messi/lumen?sponsor=1",
-  "author": "Theo-Messi",
   "license": "MIT",
+  "author": "Theo-Messi",
   "scripts": {
-    "dev": "pnpm -F=docs dev",
     "build": "pnpm -F=docs build",
-    "preview": "pnpm -F=docs preview",
-    "release": "cd src && pnpm release",
     "change": "cd src && pnpm dlx changelogithub --dry",
+    "dev": "pnpm -F=docs dev",
     "format": "prettier --write .",
-    "format:cheak": "prettier --check ."
-  },
-  "devDependencies": {
-    "lint-staged": "^15.2.11",
-    "prettier": "3.4.2",
-    "simple-git-hooks": "^2.11.1"
-  },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true,
-    "printWidth": 120,
-    "trailingComma": "none"
+    "format:cheak": "prettier --check .",
+    "preview": "pnpm -F=docs preview",
+    "release": "cd src && pnpm release"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
@@ -33,6 +22,15 @@
     "*": [
       "prettier --write --ignore-unknown"
     ]
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^5.2.0",
+    "lint-staged": "^15.2.11",
+    "prettier": "3.4.2",
+    "prettier-plugin-jsdoc": "^1.3.0",
+    "prettier-plugin-packagejson": "^2.5.6",
+    "prettier-plugin-sort-json": "^4.0.0",
+    "simple-git-hooks": "^2.11.1"
   },
   "packageManager": "pnpm@9.15.0"
 }

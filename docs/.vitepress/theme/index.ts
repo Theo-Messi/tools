@@ -1,23 +1,26 @@
 import DefaultTheme from 'vitepress/theme'
+
 import { h } from 'vue'
 
 import {
-  DocBox,
-  DocLinks,
-  DocBoxCube,
-  DocVideoLink,
   Announcement,
   DocAsideLogo,
-  HomeUnderline,
+  DocBox,
+  DocBoxCube,
+  DocLinks,
+  DocVideoLink,
   HomeFooter,
-  Twikoo,
+  HomeUnderline,
   ShareButton,
+  Twikoo,
   googleAnalytics,
   umamiAnalytics
 } from '@theojs/lumen'
-import { Aside_Data, Footer_Data, Twikoo_Data } from '../data'
-import 'virtual:group-icons.css'
 import '@theojs/lumen/theme'
+
+import { Aside_Data, Footer_Data, Twikoo_Data } from '../data'
+
+import 'virtual:group-icons.css'
 
 export default {
   extends: DefaultTheme,

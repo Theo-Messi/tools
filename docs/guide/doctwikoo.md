@@ -19,7 +19,6 @@ title: Twikoo 评论
 
 ```ts
 // .vitepress/data/Twikoo.ts
-
 import type { TwikooData } from '@theojs/lumen'
 
 export const Twikoo_Data: TwikooData = {

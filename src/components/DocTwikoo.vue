@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import { onMounted, onBeforeUnmount, watch, nextTick } from 'vue'
 import { useRoute } from 'vitepress'
-import { TwikooData, initTwikoo } from '../types' // 从 types 导入类型和工具函数
+
+import { nextTick, onBeforeUnmount, onMounted, watch } from 'vue'
+
+import { TwikooData, initTwikoo } from '../types'
 
 const props = defineProps<{
   Twikoo_Data: TwikooData

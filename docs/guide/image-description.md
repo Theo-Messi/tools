@@ -48,14 +48,12 @@ export default defineConfig({
 
 ```ts [所有主题]
 // theme/index.ts
-
 import '@theojs/lumen/theme'
 ```
 
 ```ts [单独导入]
 // theme/index.ts
-
-import '@theojs/lumen/pic' /* 图片样式 */
+import '@theojs/lumen/pic'
 ```
 
 :::

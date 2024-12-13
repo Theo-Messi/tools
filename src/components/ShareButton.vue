@@ -1,15 +1,17 @@
 <script setup lang="ts">
-import { computed, PropType } from 'vue'
-import { useCopyLink, Icon } from '../types'
-
 import { useRouter } from 'vitepress'
+
+import { PropType, computed } from 'vue'
+
+import { Icon, useCopyLink } from '../types'
 
 // 定义组件的 props 类型
 const props = defineProps({
   /**
    * 按钮图标的类名。
-   * @type {string}
+   *
    * @default 'solar:share-bold'
+   * @type {string}
    */
   buttonIcon: {
     type: String as PropType<string>,
@@ -18,8 +20,9 @@ const props = defineProps({
 
   /**
    * 按钮显示的文本。
-   * @type {string}
+   *
    * @default '分享此页面'
+   * @type {string}
    */
   buttonText: {
     type: String as PropType<string>,
@@ -28,8 +31,9 @@ const props = defineProps({
 
   /**
    * 复制成功后显示的图标的类名。
-   * @type {string}
+   *
    * @default 'mdi:thumbs-up'
+   * @type {string}
    */
   copiedIcon: {
     type: String as PropType<string>,
@@ -38,8 +42,9 @@ const props = defineProps({
 
   /**
    * 复制成功后显示的文本。
-   * @type {string}
+   *
    * @default '链接已复制!'
+   * @type {string}
    */
   copiedText: {
     type: String as PropType<string>,

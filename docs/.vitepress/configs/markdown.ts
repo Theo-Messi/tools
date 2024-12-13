@@ -1,7 +1,9 @@
 import type { MarkdownOptions } from 'vitepress'
-import { imgSize } from '@mdit/plugin-img-size'
-import { figure } from '@mdit/plugin-figure'
+
 import { groupIconMdPlugin } from 'vitepress-plugin-group-icons'
+
+import { figure } from '@mdit/plugin-figure'
+import { imgSize } from '@mdit/plugin-img-size'
 
 export const markdown: MarkdownOptions = {
   theme: { light: 'one-light', dark: 'one-dark-pro' },

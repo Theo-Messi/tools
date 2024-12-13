@@ -1,8 +1,9 @@
 import { defineConfig } from 'vitepress'
+
 import { groupIconVitePlugin } from 'vitepress-plugin-group-icons'
-import { head, markdown, nav, sidebar, search, socialLinks } from './configs'
 
 import Lumenpkg from '../../src/package.json'
+import { head, markdown, nav, search, sidebar, socialLinks } from './configs'
 
 const Lumenversion = `v` + Lumenpkg.version
 

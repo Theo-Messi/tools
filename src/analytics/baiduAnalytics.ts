@@ -10,9 +10,7 @@ export interface BaiduAnalyticsOptions {
   baiduId: string // 百度统计 ID
 }
 
-/**
- * 注册百度统计
- */
+/** 注册百度统计 */
 export function baiduAnalytics(options: BaiduAnalyticsOptions) {
   const { baiduId } = options
 
@@ -38,6 +36,7 @@ export function baiduAnalytics(options: BaiduAnalyticsOptions) {
 
 /**
  * 上报页面视图
+ *
  * @param baiduId - 百度统计 ID
  * @param pageUrl - 页面 URL
  */

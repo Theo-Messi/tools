@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BoxItem, isExternalLink, Icon } from '../types'
+import { BoxItem, Icon, isExternalLink } from '../types'
 
 const props = defineProps<{ items: BoxItem[] }>()
 </script>
