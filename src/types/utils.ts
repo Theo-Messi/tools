@@ -20,7 +20,7 @@ export const usePrelink = (): Prelink | undefined => {
  * @param link - 要判断的链接字符串。
  * @returns 如果链接是外部链接，则返回 `true`，否则返回 `false`。
  */
-export const isExternalLink = (link: string): boolean => /^https?:\/\//.test(link)
+export const isExternalLink = (link: string): boolean => /^(?:[a-z]+:|\/\/)/i.test(link)
 
 /**
  * 初始化 Twikoo 评论系统。
