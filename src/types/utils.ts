@@ -52,21 +52,6 @@ export const initTwikoo = async (envId: string): Promise<void> => {
 }
 
 /**
- * 创建一个视频播放状态的 ref 以及切换播放状态的函数。
- *
- * @returns 包含 `isVideoOpen` 状态和 `toggleVideo` 切换函数的常量数组。
- */
-export const useVideoToggle = () => {
-  const isVideoOpen = ref(false)
-
-  const toggleVideo = () => {
-    isVideoOpen.value = !isVideoOpen.value
-  }
-
-  return [isVideoOpen, toggleVideo] as const
-}
-
-/**
  * 将指定的 DOM 元素移动到目标位置。
  *
  * 当组件挂载时，将 `.VPHero .text` 内部的内容替换为 `#hero-text` 的内容。
