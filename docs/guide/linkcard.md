@@ -30,7 +30,7 @@ export default {
 <Box
   :items="[
     //iconify图标
-    { name: 'iconify', link: '#', icon: 'line-md:iconify1', color: '#1769AA' },
+    { name: 'iconify', link: '#', icon: 'line-md:iconify2-static', color: '#1769AA' },
     //图片
     {
       name: '支付宝',
@@ -54,7 +54,7 @@ export default {
 <Box
   :items="[
     //iconify图标
-    { name: 'iconify', link: '#', icon: 'line-md:iconify1', color: '#1769AA' },
+    { name: 'iconify', link: '#', icon: 'line-md:iconify2-static', color: '#1769AA' },
     //图片
     {
       name: '支付宝',
@@ -93,7 +93,7 @@ export default {
 <Links
   :items="[
     //iconify图标
-    { name: 'iconify', link: '#', icon: 'line-md:iconify1', color: '#1769AA' },
+    { name: 'iconify', link: '#', icon: 'line-md:iconify2-static', color: '#1769AA' },
     //图片
     {
       name: '支付宝',
@@ -116,7 +116,7 @@ export default {
 <Links
   :items="[
     //iconify图标
-    { name: 'iconify', link: '#', icon: 'line-md:iconify1', color: '#1769AA' },
+    { name: 'iconify', link: '#', icon: 'line-md:iconify2-static', color: '#1769AA' },
     //图片
     {
       name: '支付宝',
@@ -155,7 +155,7 @@ export default {
 <BoxCube
   :items="[
     //iconify图标
-    { name: 'iconify', link: '#', icon: 'line-md:iconify1', color: '#1769AA' },
+    { name: 'iconify', link: '#', icon: 'line-md:iconify2-static', color: '#1769AA' },
     //图片
     {
       name: '支付宝',
@@ -178,7 +178,7 @@ export default {
 <BoxCube
   :items="[
     //iconify图标
-    { name: 'iconify', link: '#', icon: 'line-md:iconify1', color: '#1769AA' },
+    { name: 'iconify', link: '#', icon: 'line-md:iconify2-static', color: '#1769AA' },
     //图片
     {
       name: '支付宝',

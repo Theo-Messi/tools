@@ -12,14 +12,14 @@ hero:
     src: '/Logo.png'
     alt: '@theojs/lumen'
 
-  # prelink:
-  #   title: '🎉 活动不停歇，青云梯 双11 特惠折上折! </br>年付8折/2年付7折/3年付6折 配合优惠码折上折，最高可达48折<div><iconify-icon icon="eos-icons:hourglass" style="font-size: 1rem;"></iconify-icon> 活动时间: 即日起至 <span style="color: var(--vp-c-brand-3); font-weight: bold;">2024年11月17日23点59分</span></div>'
-  #   link: https://qytcc01.qingyunti.pro/register?aff=jjgD79Jd
-  #   target: _blank
-
   prelink:
-    title: '<iconify-icon icon="fa6-solid:bolt" style="margin-right:0.25rem;color:#63E6BE;"></iconify-icon> 快速开始 <p>pnpm add @theojs/lumen</p>'
-    link: /guide/getting-started
+    title: '🎉 活动不停歇，青云梯四周年双旦特惠 </br>· 月/季/半年付85折 优惠码<span style="color: var(--vp-c-brand-3); font-weight: bold;"> qyt85 </span></br>· 年付以及年付以上8折 优惠码<span style="color: var(--vp-c-brand-3); font-weight: bold;"> qyt80</span></br>· 年付8折/2年付7折/3年付6折 配合优惠码折上折，最高可达<span style="color: var(--vp-c-brand-3); font-weight: bold;">48</span>折<div><iconify-icon icon="eos-icons:hourglass" style="font-size: 1rem;"></iconify-icon> 活动时间: 即日至 <span style="color: var(--vp-c-brand-3); font-weight: bold;">2025年1月7日23点59分</span></div>'
+    link: https://qytcc01.qingyunti.pro/register?aff=jjgD79Jd
+    target: _blank
+
+  # prelink:
+  #   title: '<iconify-icon icon="fa6-solid:bolt" style="margin-right:0.25rem;color:#63E6BE;"></iconify-icon> 快速开始 <p>pnpm add @theojs/lumen</p>'
+  #   link: /guide/getting-started
 
   actions:
     - theme: brand
@@ -93,7 +93,7 @@ features:
     link: '/guide/analytics'
     rel: 'noopener'
 
-  - title: '<iconify-icon icon="line-md:iconify1" style="margin-right:0.25rem; " alt="icon"></iconify-icon>Iconify 图标集成'
+  - title: '<iconify-icon icon="line-md:iconify2-static" style="margin-right:0.25rem;color:#1769AA" alt="icon"></iconify-icon>Iconify 图标集成'
     details: 轻松集成 Iconify 图标库，提供上千种矢量图标，支持多种平台，丰富站点的视觉表现和交互体验。
     link: '/guide/theme#图标支持'
     rel: 'noopener'
